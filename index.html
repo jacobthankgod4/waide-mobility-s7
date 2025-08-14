@@ -698,7 +698,7 @@
             </div>
         </section>
 
-  <!-- Pricing Section -->
+ <!-- Pricing Section -->
 <section id="pricing-section" class="pricing-section">
     <div class="container">
         <div class="section-header">
@@ -752,7 +752,7 @@
                     <li>API access & integrations</li>
                     <li>Priority support</li>
                 </ul>
-                <button class="btn btn-cyan" onclick="openPopup('Medium Spaces')">Get Started</button>
+                <button class="btn btn-primary" onclick="openPopup('Medium Spaces')">Get Started</button>
             </div>
 
             <div class="pricing-card">
@@ -820,23 +820,23 @@
   align-items: center;
 }
 
-/* Popup content with cyan border hover effect */
+/* Popup content */
 .popup-content {
   background: #000;
-  padding: 2rem;
+  padding: 1.5rem;
   border: 2px solid lightgrey;
   border-radius: 12px;
   width: 95%;
   max-width: 500px;
   color: #fff;
   position: relative;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Remove cyan glow effect entirely */
 .popup-content:hover,
 .popup-content:focus-within {
-  border-color: cyan;
-  box-shadow: 0 0 20px cyan;
+  border-color: lightgrey;
+  box-shadow: none;
 }
 
 .popup-close {
@@ -862,15 +862,18 @@
   margin: 0.5rem 0 0.2rem;
 }
 
+/* Inputs: shorter height, full width */
 .popup-content input,
 .popup-content textarea {
-  padding: 0.6rem;
+  padding: 0.4rem;
   margin-bottom: 1rem;
   background: #111;
   border: 1px solid #333;
   color: #fff;
   border-radius: 5px;
   font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .popup-content textarea {
@@ -878,10 +881,10 @@
 }
 
 .popup-content button {
-  background: cyan;
+  background: #00ffff;
   color: #000;
   font-weight: bold;
-  padding: 0.7rem;
+  padding: 0.6rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -907,9 +910,9 @@ function closePopup() {
 // Handle form submit via email
 document.getElementById("subscriptionForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  
+
   const formData = new FormData(this);
-  
+
   const subject = `New Subscription Request: ${formData.get("plan")}`;
   const body = 
     `Name: ${formData.get("name")}%0A` +
@@ -919,13 +922,12 @@ document.getElementById("subscriptionForm").addEventListener("submit", function(
     `Phone: ${formData.get("phone")}%0A` +
     `Description: ${formData.get("description")}%0A` +
     `Plan: ${formData.get("plan")}`;
-  
+
   window.location.href = `mailto:waidemobility@gmail.com?subject=${subject}&body=${body}`;
   
   closePopup();
 });
 </script>
-
 
 
         <!-- Footer -->
