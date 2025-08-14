@@ -13,6 +13,7 @@ function initializeApp() {
   initializeForms()
   initializeAnimations()
   initializeNavigation()
+  initializeMapOverlay()
 }
 
 // Accessibility Widget Functionality
@@ -571,6 +572,73 @@ document.addEventListener("input", (e) => {
     }
   }
 })
+
+// Map Overlay Functionality for Fullscreen Detection
+function initializeMapOverlay() {
+  const mapContainer = document.querySelector(".map-container")
+  const fullscreenOverlay = document.querySelector(".map-logo-overlay-fullscreen")
+
+  if (!mapContainer || !fullscreenOverlay) return
+
+  // Function to show/hide fullscreen overlay based on viewport width
+  function checkViewportAndShowOverlay() {
+    const viewportWidth = window.innerWidth
+
+    // Show overlay when viewport is large (desktop) or in fullscreen
+    if (viewportWidth >= 1200) {
+      fullscreenOverlay.style.display = "flex"
+    } else {
+      fullscreenOverlay.style.display = "none"
+    }
+  }
+
+  // Function to handle fullscreen changes
+  function handleFullscreenChange() {
+    const isFullscreen =
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.mozFullScreenElement ||
+      document.msFullscreenElement
+
+    if (isFullscreen && (isFullscreen === mapContainer || mapContainer.contains(isFullscreen))) {
+      fullscreenOverlay.style.display = "flex"
+    } else if (!isFullscreen) {
+      // Check viewport width when exiting fullscreen
+      checkViewportAndShowOverlay()
+    }
+  }
+
+  // Listen for viewport resize
+  window.addEventListener("resize", checkViewportAndShowOverlay)
+
+  // Listen for fullscreen changes
+  document.addEventListener("fullscreenchange", handleFullscreenChange)
+  document.addEventListener("webkitfullscreenchange", handleFullscreenChange)
+  document.addEventListener("mozfullscreenchange", handleFullscreenChange)
+  document.addEventListener("MSFullscreenChange", handleFullscreenChange)
+
+  // Initial check
+  checkViewportAndShowOverlay()
+
+  // Add click handler to iframe for fullscreen detection
+  const iframe = mapContainer.querySelector("iframe")
+  if (iframe) {
+    // Monitor iframe for fullscreen events
+    iframe.addEventListener("load", () => {
+      try {
+        // Try to access iframe content (may be blocked by CORS)
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document
+        if (iframeDoc) {
+          iframeDoc.addEventListener("fullscreenchange", handleFullscreenChange)
+          iframeDoc.addEventListener("webkitfullscreenchange", handleFullscreenChange)
+        }
+      } catch (e) {
+        // CORS blocked - use alternative detection
+        console.log("Cross-origin iframe detected, using viewport-based overlay")
+      }
+    })
+  }
+}
 
 // Add CSS for animations and notifications
 const style = document.createElement("style")
