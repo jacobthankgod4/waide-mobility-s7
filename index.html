@@ -809,8 +809,8 @@
             <button type="submit">Submit</button>
         </form>
 
-        <div id="submissionStatus" style="display: none; text-align: center; padding: 2rem;">
-            <p><strong>Message delivered, you will receive a response shortly.</strong></p>
+        <div id="submissionStatus" style="display: none; text-align: center; padding: 1rem;">
+            <p><strong>We tried to open WhatsApp.</strong> If it didn’t open, <a id="whatsFallback" href="#" target="_blank" rel="noopener">tap here</a>.</p>
         </div>
     </div>
 </div>
@@ -909,35 +909,58 @@
 
 <script>
 function openPopup(planName) {
+    const form = document.getElementById("subscriptionForm");
+    form.reset(); // reset FIRST so we don't clear the selected plan
     document.getElementById("selectedPlan").value = planName;
     document.getElementById("popupPlanName").textContent = planName;
-    document.getElementById("subscriptionPopup").style.display = "flex";
-    document.getElementById("subscriptionForm").reset();
-    document.getElementById("subscriptionForm").style.display = "flex";
+
     document.getElementById("submissionStatus").style.display = "none";
+    document.getElementById("subscriptionPopup").style.display = "flex";
 }
+
 function closePopup() {
     document.getElementById("subscriptionPopup").style.display = "none";
 }
+
 document.getElementById("subscriptionForm").addEventListener("submit", function (e) {
     e.preventDefault();
+
     const form = e.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    let message = `*New Indoor Space Inquiry*%0A%0A` +
-        `*Plan Selected:* ${data.plan}%0A` +
-        `*Full Name:* ${data.name}%0A` +
-        `*Company Name:* ${data.company}%0A` +
-        `*Industry:* ${data.industry}%0A` +
-        `*Email:* ${data.email}%0A` +
-        `*Phone:* ${data.phone || "N/A"}%0A` +
-        `*Project Description:* ${data.description || "N/A"}`;
-    let whatsappUrl = `https://wa.me/2348105634237?text=${message}`;
-    window.open(whatsappUrl, "_blank");
-    form.style.display = 'none';
-    document.getElementById("submissionStatus").style.display = 'block';
+
+    // Build the message with real newlines, then encode the whole string
+    const message =
+`New Indoor Space Inquiry
+
+Plan Selected: ${data.plan}
+Full Name: ${data.name}
+Company Name: ${data.company}
+Industry: ${data.industry}
+Email: ${data.email}
+Phone: ${data.phone || "N/A"}
+Project Description: ${data.description || "N/A"}`;
+
+    const encoded = encodeURIComponent(message);
+
+    // Use api.whatsapp.com for broader compatibility (desktop + mobile)
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=2348105634237&text=${encoded}`;
+
+    // Show fallback link in case a popup blocker prevents opening a new tab
+    const status = document.getElementById("submissionStatus");
+    const fallback = document.getElementById("whatsFallback");
+    fallback.href = whatsappUrl;
+    status.style.display = "block";
+
+    const win = window.open(whatsappUrl, "_blank");
+
+    // If popup blocked, redirect current tab
+    if (!win || win.closed || typeof win.closed === "undefined") {
+        window.location.href = whatsappUrl;
+    }
 });
 </script>
+
 
 
         <!-- Footer -->
