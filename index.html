@@ -779,6 +779,7 @@
     <div class="popup-content">
         <span class="popup-close" onclick="closePopup()">&times;</span>
         <h3>Get Started with <span id="popupPlanName"></span></h3>
+        
         <form id="subscriptionForm">
             <input type="hidden" name="plan" id="selectedPlan">
 
@@ -786,27 +787,31 @@
                 <div>
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required>
-    
+                    
                     <label for="company">Company Name</label>
                     <input type="text" id="company" name="company" required>
-    
+                    
                     <label for="industry">Industry</label>
                     <input type="text" id="industry" name="industry" required>
                 </div>
                 <div>
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required>
-    
+                    
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone">
-    
+                    
                     <label for="description">Project Description</label>
                     <textarea id="description" name="description" rows="4" placeholder="Tell us more about your needs..."></textarea>
                 </div>
             </div>
-
+            
             <button type="submit">Submit</button>
         </form>
+
+        <div id="submissionStatus" style="display: none; text-align: center; padding: 2rem;">
+            <p><strong>Message delivered, you will receive a response shortly.</strong></p>
+        </div>
     </div>
 </div>
 
@@ -832,9 +837,9 @@
     border: 2px solid lightgrey;
     border-radius: 12px;
     width: 95%;
-    max-width: 900px; /* Increased max-width */
-    max-height: 90vh; /* Added max-height */
-    overflow-y: auto; /* Added for scrolling */
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
     color: #fff;
     position: relative;
     transition: border-color 0.3s ease;
@@ -864,7 +869,7 @@
 }
 
 /* Form styling */
-.popup-content form {
+#subscriptionForm {
     display: flex;
     flex-direction: column;
 }
@@ -924,37 +929,66 @@
 </style>
 
 <script>
-function openPopup(planName) {
-    document.getElementById("selectedPlan").value = planName;
-    document.getElementById("popupPlanName").textContent = planName;
-    document.getElementById("subscriptionPopup").style.display = "flex";
-}
+    // Existing functions
+    function openPopup(planName) {
+        document.getElementById("selectedPlan").value = planName;
+        document.getElementById("popupPlanName").textContent = planName;
+        document.getElementById("subscriptionPopup").style.display = "flex";
+        
+        // Reset form and status on open
+        document.getElementById("subscriptionForm").reset();
+        document.getElementById("subscriptionForm").style.display = "flex";
+        document.getElementById("submissionStatus").style.display = "none";
+    }
 
-function closePopup() {
-    document.getElementById("subscriptionPopup").style.display = "none";
-}
+    function closePopup() {
+        document.getElementById("subscriptionPopup").style.display = "none";
+    }
 
-document.getElementById("subscriptionForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+    // NEW: Function to handle form submission via Fetch API
+    document.getElementById("subscriptionForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        const form = e.target;
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
 
-    const formData = new FormData(this);
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
 
-    const subject = `New Subscription Request: ${formData.get("plan")}`;
-    const body =
-        `Name: ${formData.get("name")}%0A` +
-        `Company: ${formData.get("company")}%0A` +
-        `Industry: ${formData.get("industry")}%0A` +
-        `Email: ${formData.get("email")}%0A` +
-        `Phone: ${formData.get("phone")}%0A` +
-        `Description: ${formData.get("description")}%0A` +
-        `Plan: ${formData.get("plan")}`;
+        // Convert FormData to a plain object
+        const data = Object.fromEntries(formData.entries());
 
-    window.location.href = `mailto:waidemobility@gmail.com?subject=${subject}&body=${body}`;
-    
-    closePopup();
-});
+        // **IMPORTANT:** Replace '/api/send-email' with the URL of your actual server-side endpoint.
+        // This endpoint must be able to receive POST requests and send an email.
+        fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(result => {
+            // On success, hide the form and show the success message
+            form.style.display = 'none';
+            document.getElementById("submissionStatus").style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+            
+            // Re-enable button on error
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit';
+        });
+    });
 </script>
-
 
         <!-- Footer -->
         <footer class="footer">
