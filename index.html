@@ -698,7 +698,6 @@
             </div>
         </section>
 
-<!-- Pricing Section -->
 <section id="pricing-section" class="pricing-section">
     <div class="container">
         <div class="section-header">
@@ -776,162 +775,185 @@
     </div>
 </section>
 
-<!-- Popup Form -->
 <div id="subscriptionPopup" class="popup-overlay">
-  <div class="popup-content">
-    <span class="popup-close" onclick="closePopup()">&times;</span>
-    <h3>Get Started with <span id="popupPlanName"></span></h3>
-    <form id="subscriptionForm">
-      <input type="hidden" name="plan" id="selectedPlan">
+    <div class="popup-content">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <h3>Get Started with <span id="popupPlanName"></span></h3>
+        <form id="subscriptionForm">
+            <input type="hidden" name="plan" id="selectedPlan">
 
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+            <div class="form-grid">
+                <div>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" required>
+    
+                    <label for="industry">Industry</label>
+                    <input type="text" id="industry" name="industry" required>
+                </div>
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+    
+                    <label for="description">Project Description</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Tell us more about your needs..."></textarea>
+                </div>
+            </div>
 
-      <label for="company">Company Name</label>
-      <input type="text" id="company" name="company" required>
-
-      <label for="industry">Industry</label>
-      <input type="text" id="industry" name="industry" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone">
-
-      <label for="description">Project Description</label>
-      <textarea id="description" name="description" rows="4" placeholder="Tell us more about your needs..."></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </div>
 
 <style>
 /* Full-screen black popup overlay */
 .popup-overlay {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
 }
 
 /* Popup content box */
 .popup-content {
-  background: #000;
-  padding: 1.8rem;
-  border: 2px solid lightgrey;
-  border-radius: 12px;
-  width: 95%;
-  max-width: 520px;
-  color: #fff;
-  position: relative;
-  transition: border-color 0.3s ease;
+    background: #000;
+    padding: 1.8rem;
+    border: 2px solid lightgrey;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 900px; /* Increased max-width */
+    max-height: 90vh; /* Added max-height */
+    overflow-y: auto; /* Added for scrolling */
+    color: #fff;
+    position: relative;
+    transition: border-color 0.3s ease;
 }
 
 /* Cyan border on hover/focus */
 .popup-content:hover,
 .popup-content:focus-within {
-  border-color: cyan;
+    border-color: cyan;
 }
 
 /* Close button */
 .popup-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 1.5rem;
-  color: #fff;
-  cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
 }
 
 /* Heading */
 .popup-content h3 {
-  margin-top: 0;
-  text-align: center;
-  margin-bottom: 1rem;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 /* Form styling */
 .popup-content form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+/* New: Form grid for two columns */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 }
 
 .popup-content label {
-  margin: 0.5rem 0 0.2rem;
+    margin: 0.5rem 0 0.2rem;
 }
 
 /* Input and textarea */
 .popup-content input,
 .popup-content textarea {
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  background: #111;
-  border: 1px solid #333;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .popup-content textarea {
-  resize: vertical;
+    resize: vertical;
+    min-height: 80px;
 }
 
 /* Submit button */
-.popup-content button {
-  background: cyan;
-  color: #000;
-  font-weight: bold;
-  padding: 0.7rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.popup-content button[type="submit"] {
+    background: cyan;
+    color: #000;
+    font-weight: bold;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
 }
 
-.popup-content button:hover {
-  background: #00e6e6;
+.popup-content button[type="submit"]:hover {
+    background: #00e6e6;
 }
 </style>
 
 <script>
 function openPopup(planName) {
-  document.getElementById("selectedPlan").value = planName;
-  document.getElementById("popupPlanName").textContent = planName;
-  document.getElementById("subscriptionPopup").style.display = "flex";
+    document.getElementById("selectedPlan").value = planName;
+    document.getElementById("popupPlanName").textContent = planName;
+    document.getElementById("subscriptionPopup").style.display = "flex";
 }
 
 function closePopup() {
-  document.getElementById("subscriptionPopup").style.display = "none";
+    document.getElementById("subscriptionPopup").style.display = "none";
 }
 
 document.getElementById("subscriptionForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  const formData = new FormData(this);
+    const formData = new FormData(this);
 
-  const subject = `New Subscription Request: ${formData.get("plan")}`;
-  const body = 
-    `Name: ${formData.get("name")}%0A` +
-    `Company: ${formData.get("company")}%0A` +
-    `Industry: ${formData.get("industry")}%0A` +
-    `Email: ${formData.get("email")}%0A` +
-    `Phone: ${formData.get("phone")}%0A` +
-    `Description: ${formData.get("description")}%0A` +
-    `Plan: ${formData.get("plan")}`;
+    const subject = `New Subscription Request: ${formData.get("plan")}`;
+    const body =
+        `Name: ${formData.get("name")}%0A` +
+        `Company: ${formData.get("company")}%0A` +
+        `Industry: ${formData.get("industry")}%0A` +
+        `Email: ${formData.get("email")}%0A` +
+        `Phone: ${formData.get("phone")}%0A` +
+        `Description: ${formData.get("description")}%0A` +
+        `Plan: ${formData.get("plan")}`;
 
-  window.location.href = `mailto:waidemobility@gmail.com?subject=${subject}&body=${body}`;
-  
-  closePopup();
+    window.location.href = `mailto:waidemobility@gmail.com?subject=${subject}&body=${body}`;
+    
+    closePopup();
 });
 </script>
-
 
 
         <!-- Footer -->
