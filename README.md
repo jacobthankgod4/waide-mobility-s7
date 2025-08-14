@@ -1,4 +1,4 @@
-# Arway.ai clone
+# Indoor and outdoor navigation app
 
 *Automatically synced with your [v0.app](https://v0.app) deployments*
 
