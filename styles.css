@@ -499,7 +499,7 @@ body {
 }
 
 /* Show fullscreen overlay when iframe is expanded or in fullscreen */
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
   .map-logo-overlay-fullscreen {
     display: flex;
   }

@@ -585,7 +585,7 @@ function initializeMapOverlay() {
     const viewportWidth = window.innerWidth
 
     // Show overlay when viewport is large (desktop) or in fullscreen
-    if (viewportWidth >= 1200) {
+    if (viewportWidth >= 900) {
       fullscreenOverlay.style.display = "flex"
     } else {
       fullscreenOverlay.style.display = "none"
