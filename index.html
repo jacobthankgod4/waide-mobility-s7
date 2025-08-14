@@ -698,7 +698,7 @@
             </div>
         </section>
 
- <!-- Pricing Section -->
+<!-- Pricing Section -->
 <section id="pricing-section" class="pricing-section">
     <div class="container">
         <div class="section-header">
@@ -780,7 +780,7 @@
 <div id="subscriptionPopup" class="popup-overlay">
   <div class="popup-content">
     <span class="popup-close" onclick="closePopup()">&times;</span>
-    <h3>Get Started</h3>
+    <h3>Get Started with <span id="popupPlanName"></span></h3>
     <form id="subscriptionForm">
       <input type="hidden" name="plan" id="selectedPlan">
 
@@ -808,7 +808,7 @@
 </div>
 
 <style>
-/* Popup overlay full screen */
+/* Full-screen black popup overlay */
 .popup-overlay {
   display: none;
   position: fixed;
@@ -820,25 +820,26 @@
   align-items: center;
 }
 
-/* Popup content */
+/* Popup content box */
 .popup-content {
   background: #000;
-  padding: 1.5rem;
+  padding: 1.8rem;
   border: 2px solid lightgrey;
   border-radius: 12px;
   width: 95%;
-  max-width: 500px;
+  max-width: 520px;
   color: #fff;
   position: relative;
+  transition: border-color 0.3s ease;
 }
 
-/* Remove cyan glow effect entirely */
+/* Cyan border on hover/focus */
 .popup-content:hover,
 .popup-content:focus-within {
-  border-color: lightgrey;
-  box-shadow: none;
+  border-color: cyan;
 }
 
+/* Close button */
 .popup-close {
   position: absolute;
   top: 15px;
@@ -848,11 +849,14 @@
   cursor: pointer;
 }
 
+/* Heading */
 .popup-content h3 {
   margin-top: 0;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
+/* Form styling */
 .popup-content form {
   display: flex;
   flex-direction: column;
@@ -862,10 +866,10 @@
   margin: 0.5rem 0 0.2rem;
 }
 
-/* Inputs: shorter height, full width */
+/* Input and textarea */
 .popup-content input,
 .popup-content textarea {
-  padding: 0.4rem;
+  padding: 0.5rem;
   margin-bottom: 1rem;
   background: #111;
   border: 1px solid #333;
@@ -880,11 +884,12 @@
   resize: vertical;
 }
 
+/* Submit button */
 .popup-content button {
-  background: #00ffff;
+  background: cyan;
   color: #000;
   font-weight: bold;
-  padding: 0.6rem;
+  padding: 0.7rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -896,18 +901,16 @@
 </style>
 
 <script>
-// Open popup with selected plan
 function openPopup(planName) {
   document.getElementById("selectedPlan").value = planName;
+  document.getElementById("popupPlanName").textContent = planName;
   document.getElementById("subscriptionPopup").style.display = "flex";
 }
 
-// Close popup
 function closePopup() {
   document.getElementById("subscriptionPopup").style.display = "none";
 }
 
-// Handle form submit via email
 document.getElementById("subscriptionForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -928,6 +931,7 @@ document.getElementById("subscriptionForm").addEventListener("submit", function(
   closePopup();
 });
 </script>
+
 
 
         <!-- Footer -->
