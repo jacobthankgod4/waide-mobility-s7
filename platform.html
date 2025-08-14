@@ -50,8 +50,9 @@
                         Comprehensive APIs, SDKs, and tools to integrate smart mobility solutions into your applications. From indoor navigation to fleet management, everything you need is here.
                     </p>
                     <div class="hero-buttons">
+                        <!-- Updated button text from "Get API Key" to "Get in Touch" -->
                         <button class="btn btn-primary btn-large">
-                            Get API Key
+                            Get in Touch
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <line x1="5" y1="12" x2="19" y2="12"/>
                                 <polyline points="12,5 19,12 12,19"/>
@@ -63,8 +64,11 @@
 
                 <!-- Added Interactive Map Section -->
                 <div class="map-section">
+                    <!-- Added partnership text above the map iframe -->
+                    <div class="partnership-text">
+                        <p>In partnership with Situm Maps</p>
+                    </div>
                     <div class="map-header">
-                        <!-- Updated header to show partnership with Situm -->
                         <h2>Waide Mobility in partnership with Situm</h2>
                         <p>Experience our indoor positioning technology in action with real-time interactive mapping</p>
                     </div>
@@ -158,6 +162,155 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Pricing Section -->
+                <section id="pricing" class="pricing-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2>Indoor Space Solutions</h2>
+                            <p>Transform your indoor spaces with our smart navigation technology. Choose monthly or yearly plans.</p>
+                            <div class="pricing-toggle">
+                                <span>Monthly</span>
+                                <button class="toggle-switch" id="pricingToggle">
+                                    <span class="toggle-slider"></span>
+                                </button>
+                                <span>Yearly <span class="discount">Save 20%</span></span>
+                            </div>
+                        </div>
+
+                        <div class="pricing-grid">
+                            <div class="pricing-card">
+                                <div class="pricing-header">
+                                    <h3>Small Spaces</h3>
+                                    <div class="price">
+                                        <span class="currency">$</span>
+                                        <!-- Updated pricing to $1,500 monthly and $13,999 yearly -->
+                                        <span class="amount" data-monthly="1500" data-yearly="13999">1500</span>
+                                        <span class="period">/month</span>
+                                    </div>
+                                    <p>Perfect for retail stores & small offices</p>
+                                </div>
+                                <ul class="features-list">
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Up to 5,000 sq ft coverage
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Basic indoor positioning
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Mobile app integration
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        24/7 support
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary" onclick="window.location.href='contact.html?plan=small'">Get Started</button>
+                            </div>
+
+                            <div class="pricing-card featured">
+                                <div class="popular-badge">Most Popular</div>
+                                <div class="pricing-header">
+                                    <h3>Medium Spaces</h3>
+                                    <div class="price">
+                                        <span class="currency">$</span>
+                                        <!-- Updated pricing to scale appropriately with base pricing -->
+                                        <span class="amount" data-monthly="2500" data-yearly="23999">2500</span>
+                                        <span class="period">/month</span>
+                                    </div>
+                                    <p>Ideal for shopping centers & hospitals</p>
+                                </div>
+                                <ul class="features-list">
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Up to 50,000 sq ft coverage
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Advanced AR navigation
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Real-time analytics
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        API access & integrations
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Priority support
+                                    </li>
+                                </ul>
+                                <button class="btn btn-cyan" onclick="window.location.href='contact.html?plan=medium'">Get Started</button>
+                            </div>
+
+                            <div class="pricing-card">
+                                <div class="pricing-header">
+                                    <h3>Large Spaces</h3>
+                                    <div class="price">
+                                        <span class="custom-price">Custom</span>
+                                    </div>
+                                    <p>For airports & mega complexes</p>
+                                </div>
+                                <ul class="features-list">
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Unlimited coverage area
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Full AI navigation suite
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Custom integrations
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        White-label solutions
+                                    </li>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                        Dedicated support team
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary" onclick="window.location.href='contact.html?plan=enterprise'">Contact Sales</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
     </div>
