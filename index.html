@@ -698,7 +698,7 @@
             </div>
         </section>
 
-<section id="pricing-section" class="pricing-section"> 
+<section id="pricing-section" class="pricing-section">  
     <div class="container">
         <div class="section-header">
             <h2>Indoor Space Solutions</h2>
@@ -792,7 +792,34 @@
                     <input type="text" id="company" name="company" required>
                     
                     <label for="industry">Industry</label>
-                    <input type="text" id="industry" name="industry" required>
+                    <select id="industry" name="industry" required>
+                        <option value="">Select an indoor space type</option>
+                        <option>Airport</option>
+                        <option>Train Station</option>
+                        <option>Bus Terminal</option>
+                        <option>Shopping Mall</option>
+                        <option>Retail Store</option>
+                        <option>Supermarket</option>
+                        <option>Hospital</option>
+                        <option>Clinic</option>
+                        <option>University</option>
+                        <option>School</option>
+                        <option>Museum</option>
+                        <option>Art Gallery</option>
+                        <option>Convention Center</option>
+                        <option>Exhibition Hall</option>
+                        <option>Sports Arena</option>
+                        <option>Stadium</option>
+                        <option>Hotel</option>
+                        <option>Resort</option>
+                        <option>Casino</option>
+                        <option>Government Building</option>
+                        <option>Corporate Office</option>
+                        <option>Factory</option>
+                        <option>Warehouse</option>
+                        <option>Library</option>
+                        <option>Religious Center</option>
+                    </select>
                 </div>
                 <div>
                     <label for="email">Email Address</label>
@@ -877,7 +904,8 @@
     margin: 0.5rem 0 0.2rem;
 }
 .popup-content input,
-.popup-content textarea {
+.popup-content textarea,
+.popup-content select {
     padding: 0.5rem;
     margin-bottom: 1rem;
     background: #111;
@@ -910,7 +938,7 @@
 <script>
 function openPopup(planName) {
     const form = document.getElementById("subscriptionForm");
-    form.reset(); // reset FIRST so we don't clear the selected plan
+    form.reset(); 
     document.getElementById("selectedPlan").value = planName;
     document.getElementById("popupPlanName").textContent = planName;
 
@@ -929,7 +957,6 @@ document.getElementById("subscriptionForm").addEventListener("submit", function 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    // Build the message with real newlines, then encode the whole string
     const message =
 `New Indoor Space Inquiry
 
@@ -942,25 +969,19 @@ Phone: ${data.phone || "N/A"}
 Project Description: ${data.description || "N/A"}`;
 
     const encoded = encodeURIComponent(message);
-
-    // Use api.whatsapp.com for broader compatibility (desktop + mobile)
     const whatsappUrl = `https://api.whatsapp.com/send?phone=2348105634237&text=${encoded}`;
 
-    // Show fallback link in case a popup blocker prevents opening a new tab
     const status = document.getElementById("submissionStatus");
     const fallback = document.getElementById("whatsFallback");
     fallback.href = whatsappUrl;
     status.style.display = "block";
 
     const win = window.open(whatsappUrl, "_blank");
-
-    // If popup blocked, redirect current tab
     if (!win || win.closed || typeof win.closed === "undefined") {
         window.location.href = whatsappUrl;
     }
 });
 </script>
-
 
 
         <!-- Footer -->
