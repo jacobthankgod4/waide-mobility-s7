@@ -122,9 +122,7 @@
                     </div>
                 </div>
 
-
-
-                <section class="app-showcase">
+<section class="app-showcase">
   <style>
     .app-showcase {
       background-color: #000;
@@ -153,7 +151,7 @@
       width: 100%;
       height: auto;
       border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0, 255, 255, 0.2);
+      /* Removed the cyan glow */
     }
 
     .feature-buttons {
@@ -177,8 +175,8 @@
 
     .feature-buttons button:hover,
     .feature-buttons button:focus {
-      border-color: cyan;
-      box-shadow: 0 0 15px cyan;
+      border-color: cyan; /* Keep the cyan border */
+      box-shadow: none; /* No glow */
     }
   </style>
 
@@ -196,6 +194,7 @@
 </section>
 
 
+               
                 
                 <!-- Feature Cards -->
                 <div class="feature-grid">
