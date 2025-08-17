@@ -702,7 +702,8 @@ body.dyslexia-font {
      
 
   
-        <section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        
+  <section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 100px;">
   <!-- Carousel Title -->
   <h2 style="color: #fff; font-size: 2.5rem; text-align: center; margin-bottom: 10px; animation: fadeInTitle 2s ease-in-out;">
     Guide your visitors with customizable AR guide characters
@@ -714,90 +715,63 @@ body.dyslexia-font {
     Navigate effortlessly through environments, providing real-time assistance with intuitive guidance.
   </p>
 
-  <!-- Carousel Container -->
-  <div class="carousel-container" style="display: flex; overflow: hidden; width: 80%; height: 60%; position: relative;">
-    <div class="carousel-slide">
-      <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide">
-    </div>
-    <div class="carousel-slide">
-      <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide">
+  <!-- Smooth Scrolling Carousel -->
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <!-- Duplicate slides for seamless loop -->
+      <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide" />
+      <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide" />
+      <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide (Duplicate)" />
+      <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide (Duplicate)" />
     </div>
   </div>
 
-  <!-- Styles -->
   <style>
-    /* Keyframe Animation for Title */
+    /* Title animation */
     @keyframes fadeInTitle {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    /* Carousel Slide Base Styles */
-    .carousel-slide {
-      flex: 1 0 100%;
-      height: 100%;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    /* Make the active slide visible */
-    .carousel-slide.active {
-      opacity: 1;
+    /* Carousel Container */
+    .carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+      height: 60%;
       position: relative;
     }
 
-    .carousel-slide img {
-      width: 100%;
+    .carousel-track {
+      display: flex;
+      animation: scrollLeft 20s linear infinite;
+    }
+
+    .carousel-track img {
+      width: 100vw;
       height: 100%;
       object-fit: cover;
+      flex-shrink: 0;
+      transition: transform 0.3s;
     }
 
-    /* Hover & Active Effects */
-    .carousel-slide:hover,
-    .carousel-slide:focus {
-      border: 3px solid #00ffff;
+    .carousel-track img:hover {
       transform: scale(1.05);
+      border: 3px solid #00ffff;
       cursor: pointer;
-      z-index: 2;
     }
 
-    .carousel-slide:active {
-      transform: scale(1);
-      border: 3px solid #00ffff;
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-200%); }
+    }
+
+    /* Extra bottom margin for spacing to next section */
+    section {
+      margin-bottom: 100px;
     }
   </style>
-
-  <!-- Script -->
-  <script>
-    const slides = document.querySelectorAll('.carousel-slide');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    // Show first slide initially
-    showSlide(currentSlide);
-
-    // Auto-slide every 3 seconds
-    setInterval(nextSlide, 3000);
-  </script>
 </section>
-  
+
                 
                 <!-- Feature Cards -->
                 <div class="feature-grid">
