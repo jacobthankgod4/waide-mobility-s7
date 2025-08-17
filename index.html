@@ -700,26 +700,23 @@ body.dyslexia-font {
 
 
      
-<!-- Carousel Section -->
-<section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 100px;">
-  <!-- Carousel Title -->
+ 
+
+  
+  <section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 100px;">
   <h2 style="color: #fff; font-size: 2.5rem; text-align: center; margin-bottom: 10px; animation: fadeInTitle 2s ease-in-out;">
     Guide your visitors with customizable AR guide characters
   </h2>
 
-  <!-- Short Description -->
   <p style="color: #aaa; font-size: 1.1rem; text-align: center; max-width: 80%; margin-bottom: 20px;">
     Enhance user experience with interactive AR guide characters that can be customized to your needs. 
     Navigate effortlessly through environments, providing real-time assistance with intuitive guidance.
   </p>
 
-  <!-- Smooth Scrolling Carousel -->
   <div class="carousel-wrapper">
     <div class="carousel-track">
-      <!-- Original slides -->
       <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide" onerror="handleCarouselImageError(this)">
       <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide" onerror="handleCarouselImageError(this)">
-      <!-- Duplicates for seamless loop -->
       <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide (Duplicate)" onerror="handleCarouselImageError(this)">
       <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide (Duplicate)" onerror="handleCarouselImageError(this)">
     </div>
@@ -734,10 +731,9 @@ body.dyslexia-font {
 
     /* Carousel Container */
     .carousel-wrapper {
-      width: 100%;
-      max-width: 540px; /* Based on 9:16 ratio with height of 960px */
-      height: 70vh;
-      max-height: 960px; /* Fixed height for 9:16 ratio */
+      /* Fixed size for the carousel container to ensure a big and consistent display */
+      width: 540px; 
+      height: 960px; 
       overflow: hidden;
       position: relative;
       display: flex;
@@ -748,18 +744,21 @@ body.dyslexia-font {
 
     .carousel-track {
       display: flex;
-      width: calc(540px * 4); /* 4 images at 540px each */
+      /* Calculate the total width of the track based on the number of images */
+      width: calc(540px * 4);
       height: 100%;
       animation: scrollLeft 20s linear infinite;
       will-change: transform;
     }
 
     .carousel-track img {
-      width: 540px; /* Fixed width for 9:16 ratio */
-      height: 960px; /* Fixed height for 9:16 ratio */
+      /* Fixed size for each image to prevent them from changing */
+      width: 540px; 
+      height: 960px;
       object-fit: contain;
       flex-shrink: 0;
-      aspect-ratio: 9 / 16; /* Fixed 9:16 aspect ratio */
+      /* Fixed aspect ratio */
+      aspect-ratio: 9 / 16;
       transition: transform 0.3s ease, border 0.3s ease;
     }
 
@@ -770,35 +769,9 @@ body.dyslexia-font {
     }
 
     @keyframes scrollLeft {
+      /* Scroll through original images */
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-540px * 2)); } /* Scroll through original images */
-    }
-
-    /* Responsive adjustments for carousel */
-    @media (max-width: 768px) {
-      .carousel-wrapper {
-        max-width: 270px; /* Scale down to half for mobile */
-        max-height: 480px; /* Maintain 9:16 ratio */
-        height: 50vh;
-      }
-      .carousel-track img {
-        width: 270px;
-        height: 480px;
-      }
-      .carousel-track {
-        width: calc(270px * 4);
-      }
-      @keyframes scrollLeft {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-270px * 2)); }
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 1rem;
-        max-width: 90%;
-      }
+      100% { transform: translateX(calc(-540px * 2)); }
     }
 
     /* Fallback for broken carousel images */
@@ -825,11 +798,7 @@ body.dyslexia-font {
 
     // Preload carousel images
     function preloadCarouselImages() {
-      const images = [
-        'public/ar-navigation-guide.png',
-        'public/ar-navigation-robot-guide.png',
-        'public/placeholder.png'
-      ];
+      const images = [        'public/ar-navigation-guide.png',        'public/ar-navigation-robot-guide.png',        'public/placeholder.png'      ];
       images.forEach(src => {
         const img = new Image();
         img.src = src;
@@ -841,7 +810,6 @@ body.dyslexia-font {
     window.addEventListener('load', preloadCarouselImages);
   </script>
 </section>
-  
 
     
 
