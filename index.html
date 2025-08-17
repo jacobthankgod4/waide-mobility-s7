@@ -701,9 +701,7 @@ body.dyslexia-font {
 
      
 
-  
-        
-        <section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 100px;">
+  <section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 100px;">
   <!-- Carousel Title -->
   <h2 style="color: #fff; font-size: 2.5rem; text-align: center; margin-bottom: 10px; animation: fadeInTitle 2s ease-in-out;">
     Guide your visitors with customizable AR guide characters
@@ -750,7 +748,7 @@ body.dyslexia-font {
     .carousel-track img {
       width: 100vw;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* Prevent cropping, ensure full image visibility */
       flex-shrink: 0;
       transition: transform 0.3s;
     }
@@ -773,6 +771,10 @@ body.dyslexia-font {
   </style>
 </section>
 
+        
+        
+    
+    
 
                 
                 <!-- Feature Cards -->
