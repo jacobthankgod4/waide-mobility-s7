@@ -705,6 +705,12 @@ body.dyslexia-font {
 
     
 
+
+
+
+
+<script>
+<!-- Carousel Section -->
 <section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 100px;">
   <!-- Carousel Title -->
   <h2 style="color: #fff; font-size: 2.5rem; text-align: center; margin-bottom: 10px; animation: fadeInTitle 2s ease-in-out;">
@@ -721,179 +727,305 @@ body.dyslexia-font {
   <div class="carousel-wrapper">
     <div class="carousel-track">
       <!-- Original slides -->
-      <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide" onerror="handleImageError(this)">
-      <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide" onerror="handleImageError(this)">
+      <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide" onerror="handleCarouselImageError(this)">
+      <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide" onerror="handleCarouselImageError(this)">
       <!-- Duplicates for seamless loop -->
-      <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide (Duplicate)" onerror="handleImageError(this)">
-      <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide (Duplicate)" onerror="handleImageError(this)">
+      <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide (Duplicate)" onerror="handleCarouselImageError(this)">
+      <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide (Duplicate)" onerror="handleCarouselImageError(this)">
     </div>
   </div>
-</section>
 
-<style>
-  /* Title animation */
-  @keyframes fadeInTitle {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+  <style>
+    /* Title animation */
+    @keyframes fadeInTitle {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-  /* Carousel Container */
-  .carousel-wrapper {
-    width: 100%;
-    height: 60vh; /* Explicit height to match section */
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .carousel-track {
-    display: flex;
-    width: calc(100vw * 4); /* 4 images (2 original + 2 duplicates) */
-    height: 100%;
-    animation: scrollLeft 20s linear infinite;
-    will-change: transform; /* Optimize for animation */
-  }
-
-  .carousel-track img {
-    width: 100vw;
-    height: 100%;
-    object-fit: contain; /* Ensure full image visibility */
-    flex-shrink: 0;
-    transition: transform 0.3s ease, border 0.3s ease;
-  }
-
-  .carousel-track img:hover {
-    transform: scale(1.05);
-    border: 3px solid #00ffff;
-    cursor: pointer;
-  }
-
-  @keyframes scrollLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100vw * 2)); } /* Scroll through original images */
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
+    /* Carousel Container */
     .carousel-wrapper {
-      height: 50vh; /* Smaller height for mobile */
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
+    .carousel-track {
+      display: flex;
+      width: calc(100vw * 4 * 4);
+      height: 100%;
+      animation: scrollLeft 20s linear infinite;
+      will-change: transform;
+    }
+
     .carousel-track img {
-      width: 100vw;
-      height: auto; /* Allow height to adjust proportionally */
+      width: calc(100vw * 4);
+      height: 100%;
+      object-fit: contain;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, border 0.3s ease;
+      aspect-ratio: 16 / 9;
     }
-    h2 {
-      font-size: 1.8rem;
+
+    .carousel-track img:hover {
+      transform: scale(1.05);
+      border: 3px solid #00ffff;
+      cursor: pointer;
     }
-    p {
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-100vw * 4 * 2)); }
+    }
+
+    /* Responsive adjustments for carousel */
+    @media (max-width: 768px) {
+      .carousel-wrapper {
+        height: 50vh;
+      }
+      .carousel-track img {
+        width: calc(100vw * 2);
+        height: auto;
+      }
+      .carousel-track {
+        width: calc(100vw * 2 * 4);
+      }
+      @keyframes scrollLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-100vw * 2 * 2)); }
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1rem;
+        max-width: 90%;
+      }
+    }
+
+    /* Fallback for broken carousel images */
+    .carousel-track img.error {
+      background-color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
       font-size: 1rem;
-      max-width: 90%;
+      text-align: center;
     }
-  }
+  </style>
 
-  /* Fallback for broken images */
-  .carousel-track img.error {
-    background-color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1rem;
-    text-align: center;
-  }
-</style>
+  <script>
+    // Error handling for carousel images
+    function handleCarouselImageError(img) {
+      console.warn(`Carousel image failed to load: ${img.src}`);
+      img.src = 'public/placeholder.png';
+      img.classList.add('error');
+      img.alt = 'Image not found';
+      img.style.objectFit = 'contain';
+    }
 
-<script>
-  // Error handling for images
-  function handleImageError(img) {
-    console.warn(`Image failed to load: ${img.src}`);
-    img.src = 'public/placeholder.png'; // Fallback image (ensure this exists)
-    img.classList.add('error');
-    img.alt = 'Image not found';
-    img.style.objectFit = 'contain'; // Ensure fallback fits
-  }
+    // Preload carousel images
+    function preloadCarouselImages() {
+      const images = [
+        'public/ar-navigation-guide.png',
+        'public/ar-navigation-robot-guide.png',
+        'public/placeholder.png'
+      ];
+      images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onerror = () => console.warn(`Failed to preload carousel image: ${src}`);
+      });
+    }
 
-  // Preload images to prevent flicker
-  function preloadImages() {
-    const images = [
-      'public/ar-navigation-guide.png',
-      'public/ar-navigation-robot-guide.png'
-    ];
-    images.forEach(src => {
-      const img = new Image();
-      img.src = src;
-      img.onerror = () => console.warn(`Failed to preload image: ${src}`);
-    });
-  }
-
-  // Run preload on page load
-  window.addEventListener('load', preloadImages);
-</script>
-    
+    // Run preload on page load
+    window.addEventListener('load', preloadCarouselImages);
+  </script>
+</section>
     
 
+
+<!-- Features and Stats Section -->
+<section style="width: 100%; background-color: #111; padding: 50px 20px; color: #fff;">
+  <!-- Feature Grid -->
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="card-image">
+        <img src="public/mobility-app-interface.jpg" alt="Mobile Platform" onerror="handleFeatureImageError(this)">
+      </div>
+      <div class="card-content">
+        <h3>Mobile-First Platform</h3>
+        <p>Deploy mobility solutions across your venues with zero infrastructure cost</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="card-image">
+        <img src="public/ar-navigation.png" alt="AI Analytics" onerror="handleFeatureImageError(this)">
+      </div>
+      <div class="card-content">
+        <h3>Captivate Visitors With Immersive Experiences</h3>
+        <p>Turn every visit into a seamless adventure. Learn movement patterns, and connect people with relevant offers right where they are.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="card-image">
+        <img src="public/global-network.png" alt="Global Infrastructure" onerror="handleFeatureImageError(this)">
+      </div>
+      <div class="card-content">
+        <h3>Global Infrastructure</h3>
+        <p>Worldwide network and cloud infrastructure for seamless mobility services</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Grid -->
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">7M+</div>
+      <div class="stat-label">Daily Trips</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">10+</div>
+      <div class="stat-label">City Partners</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">99.8%</div>
+      <div class="stat-label">Reliability</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">25ms</div>
+      <div class="stat-label">Response Time</div>
+    </div>
+  </div>
+
+  <style>
+    /* Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .feature-card {
+      background-color: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .card-content p {
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 20px;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    /* Responsive adjustments for features and stats */
+    @media (max-width: 768px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+    }
+
+    /* Fallback for broken feature images */
+    .card-image img.error {
+      background-color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1rem;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    // Error handling for feature images
+    function handleFeatureImageError(img) {
+      console.warn(`Feature image failed to load: ${img.src}`);
+      img.src = 'public/placeholder.png';
+      img.classList.add('error');
+      img.alt = 'Image not found';
+      img.style.objectFit = 'contain';
+    }
+
+    // Preload feature images
+    function preloadFeatureImages() {
+      const images = [
+        'public/mobility-app-interface.jpg',
+        'public/ar-navigation.png',
+        'public/global-network.png',
+        'public/placeholder.png'
+      ];
+      images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onerror = () => console.warn(`Failed to preload feature image: ${src}`);
+      });
+    }
+
+    // Run preload on page load
+    window.addEventListener('load', preloadFeatureImages);
+  </script>
+</section>
+     
                 
-                <!-- Feature Cards -->
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="card-image">
-                            <!-- Fixed image path to include public directory -->
-                            <img src="public/mobility-app-interface.jpg" alt="Mobile Platform">
-                        </div>
-                        <div class="card-content">
-                            <h3>Mobile-First Platform</h3>
-                            <p>Deploy mobility solutions across your venues with zero infrastructure cost</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="card-image">
-                            <!-- Fixed image path to include public directory -->
-                            <img src="public/ar-navigation.png" alt="AI Analytics">
-                        </div>
-                        <div class="card-content">
-                            <h3>Captivate Visitors With Immersive Experiences</h3>
-                            <p>Turn every visit into a seamless adventure. learn movement patterns,  and 
-                                connect people with relevant offers right where they are.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="card-image">
-                            <!-- Fixed image path to include public directory -->
-                            <img src="public/global-network.png" alt="Global Infrastructure">
-                        </div>
-                        <div class="card-content">
-                            <h3>Global Infrastructure</h3>
-                            <p>Worldwide network and cloud infrastructure for seamless mobility services</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Section -->
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">7M+</div>
-                        <div class="stat-label">Daily Trips</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">City Partners</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">99.8%</div>
-                        <div class="stat-label">Reliability</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">25ms</div>
-                        <div class="stat-label">Response Time</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+                
         <!-- Accessible Navigation Section -->
         <section class="accessible-nav-section">
             <div class="container">
