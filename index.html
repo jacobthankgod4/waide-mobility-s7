@@ -704,6 +704,716 @@ body.dyslexia-font {
   
 
     
+
+        
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waide Mobility - Smart Navigation Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+</head>
+<body>
+  <div id="accessibility-widget" class="accessibility-widget">
+
+    <button id="accessibility-toggle" class="accessibility-toggle" aria-label="Toggle Accessibility Panel" aria-controls="accessibility-panel" aria-expanded="false">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+            <path d="M12 2A10 10 0 1 0 22 12a10 10 0 0 0-10-10z"/>
+
+            <path d="M12 18V6"/>
+
+            <path d="M10 9l2-2 2 2M10 15l2 2 2-2"/>
+
+        </svg>
+
+    </button>
+
+
+
+    <div id="accessibility-panel" class="accessibility-panel" aria-live="polite">
+
+        <h3>Accessibility Options</h3>
+
+        <div class="accessibility-controls">
+
+            <button id="font-size-increase">Increase Font Size</button>
+
+            <button id="font-size-decrease">Decrease Font Size</button>
+
+            <button id="high-contrast">High Contrast</button>
+
+            <button id="dark-mode">Dark Mode</button>
+
+            <button id="dyslexia-font">Dyslexia Friendly Font</button>
+
+            <button id="keyboard-navigation">Keyboard Navigation</button>
+
+        </div>
+
+        <button id="reset-all" class="reset-button">Reset All</button>
+
+    </div>
+
+</div>
+
+
+
+<style>
+
+/* Base styles for the widget */
+
+.accessibility-widget {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    z-index: 1000;
+
+}
+
+
+
+.accessibility-toggle {
+
+    background: #007bff;
+
+    color: #fff;
+
+    border: none;
+
+    border-radius: 50%;
+
+    width: 50px;
+
+    height: 50px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+
+.accessibility-toggle:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+.accessibility-panel {
+
+    display: none;
+
+    position: absolute;
+
+    bottom: 60px;
+
+    right: 0;
+
+    width: 250px;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    padding: 15px;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+
+.accessibility-panel.visible {
+
+    display: block;
+
+}
+
+
+
+.accessibility-panel h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 10px;
+
+    font-size: 1.1em;
+
+    color: #333;
+
+    border-bottom: 1px solid #eee;
+
+    padding-bottom: 8px;
+
+}
+
+
+
+.accessibility-controls {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.accessibility-controls button, .reset-button {
+
+    background: #f0f0f0;
+
+    border: 1px solid #ccc;
+
+    padding: 8px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 0.9em;
+
+    transition: background-color 0.2s, border-color 0.2s;
+
+}
+
+
+
+.accessibility-controls button:hover, .reset-button:hover {
+
+    background: #e9e9e9;
+
+    border-color: #999;
+
+}
+
+
+
+.accessibility-controls button.active {
+
+    background-color: #007bff;
+
+    color: #fff;
+
+    border-color: #007bff;
+
+}
+
+
+
+.reset-button {
+
+    width: 100%;
+
+    background: #dc3545;
+
+    color: #fff;
+
+    border-color: #dc3545;
+
+}
+
+
+
+.reset-button:hover {
+
+    background: #c82333;
+
+    border-color: #bd2130;
+
+}
+
+
+
+/* Feature-specific styles */
+
+body.font-size-large {
+
+    font-size: 1.1em;
+
+}
+
+
+
+body.font-size-xl {
+
+    font-size: 1.25em;
+
+}
+
+
+
+body.high-contrast {
+
+    background-color: #000 !important;
+
+    color: #fff !important;
+
+}
+
+body.high-contrast a {
+
+    color: #ffff00 !important;
+
+}
+
+
+
+body.dark-mode {
+
+    background-color: #121212;
+
+    color: #e0e0e0;
+
+}
+
+
+
+body.dyslexia-font {
+
+    font-family: 'Open Dyslexic', Arial, sans-serif;
+
+}
+
+
+
+.sr-only {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    padding: 0;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+
+}
+
+</style>
+
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const toggleButton = document.getElementById('accessibility-toggle');
+
+        const panel = document.getElementById('accessibility-panel');
+
+        const increaseFontBtn = document.getElementById('font-size-increase');
+
+        const decreaseFontBtn = document.getElementById('font-size-decrease');
+
+        const highContrastBtn = document.getElementById('high-contrast');
+
+        const darkModeBtn = document.getElementById('dark-mode');
+
+        const dyslexiaFontBtn = document.getElementById('dyslexia-font');
+
+        const keyboardNavBtn = document.getElementById('keyboard-navigation');
+
+        const resetAllBtn = document.getElementById('reset-all');
+
+        const body = document.body;
+
+
+
+        const features = {
+
+            'font-size-large': false,
+
+            'font-size-xl': false,
+
+            'high-contrast': false,
+
+            'dark-mode': false,
+
+            'dyslexia-font': false,
+
+            'keyboard-navigation': false,
+
+        };
+
+
+
+        const saveSettings = () => {
+
+            localStorage.setItem('accessibility-settings', JSON.stringify(features));
+
+        };
+
+
+
+        const loadSettings = () => {
+
+            const savedSettings = JSON.parse(localStorage.getItem('accessibility-settings'));
+
+            if (savedSettings) {
+
+                Object.keys(savedSettings).forEach(key => {
+
+                    if (savedSettings[key]) {
+
+                        features[key] = true;
+
+                        body.classList.add(key);
+
+                        document.getElementById(key).classList.add('active');
+
+                    }
+
+                });
+
+            }
+
+        };
+
+
+
+        const resetAll = () => {
+
+            Object.keys(features).forEach(key => {
+
+                features[key] = false;
+
+                body.classList.remove(key);
+
+                const button = document.getElementById(key);
+
+                if (button) button.classList.remove('active');
+
+            });
+
+            localStorage.removeItem('accessibility-settings');
+
+        };
+
+
+
+        // Panel toggle
+
+        toggleButton.addEventListener('click', () => {
+
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+
+            toggleButton.setAttribute('aria-expanded', !isExpanded);
+
+            panel.classList.toggle('visible');
+
+        });
+
+
+
+        // Font size controls
+
+        increaseFontBtn.addEventListener('click', () => {
+
+            if (features['font-size-xl']) return;
+
+            if (features['font-size-large']) {
+
+                body.classList.add('font-size-xl');
+
+                features['font-size-large'] = false;
+
+                features['font-size-xl'] = true;
+
+            } else {
+
+                body.classList.add('font-size-large');
+
+                features['font-size-large'] = true;
+
+            }
+
+            saveSettings();
+
+        });
+
+
+
+        decreaseFontBtn.addEventListener('click', () => {
+
+            if (features['font-size-xl']) {
+
+                body.classList.remove('font-size-xl');
+
+                features['font-size-large'] = true;
+
+                features['font-size-xl'] = false;
+
+            } else if (features['font-size-large']) {
+
+                body.classList.remove('font-size-large');
+
+                features['font-size-large'] = false;
+
+            }
+
+            saveSettings();
+
+        });
+
+
+
+        // Toggle buttons for other features
+
+        [highContrastBtn, darkModeBtn, dyslexiaFontBtn, keyboardNavBtn].forEach(button => {
+
+            button.addEventListener('click', () => {
+
+                const featureName = button.id.replace(/-/g, '-');
+
+                const isActive = body.classList.contains(featureName);
+
+                
+
+                if (isActive) {
+
+                    body.classList.remove(featureName);
+
+                    button.classList.remove('active');
+
+                    features[featureName] = false;
+
+                } else {
+
+                    body.classList.add(featureName);
+
+                    button.classList.add('active');
+
+                    features[featureName] = true;
+
+                }
+
+                saveSettings();
+
+            });
+
+        });
+
+
+
+        // Reset all button
+
+        resetAllBtn.addEventListener('click', () => {
+
+            resetAll();
+
+        });
+
+
+
+        // Load settings on page load
+
+        loadSettings();
+
+    });
+
+</script>
+
+    <div class="min-h-screen bg-black">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10V6c0-2-2-4-4-4H4c-2 0-4 2-4 4v10c0 1.1.9 2 2 2h2"/>
+                        <circle cx="7" cy="17" r="2"/>
+                        <path d="M9 17h6"/>
+                        <circle cx="17" cy="17" r="2"/>
+                    </svg>
+                </div>
+                <span class="brand-text">Waide Mobility</span>
+            </div>
+            <div class="nav-links">
+              
+                <a href="#solutions-section" id="solutions" class="nav-link">Solutions</a>
+                <a href="#about-section" id="about" class="nav-link">About Us</a>
+                <a href="#pricing-section" id="pricing" class="nav-link">Pricing</a>
+                <button class="btn btn-outline" onclick="window.location.href='login.html'">Sign In</button>
+                <button class="btn btn-primary" onclick="window.location.href='signup.html'">Get Started</button>
+            </div>
+        </nav>
+
+      <section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                </svg>
+                Next-Gen Mobility Platform
+            </div>
+            <h1 class="hero-title">
+                Smart Mobility
+                <br>
+                <span class="gradient-text">Solutions</span>
+            </h1>
+            <p class="hero-description">
+                Revolutionizing mobility for everyone, especially individuals with disabilities, to navigate both indoors and 
+                outdoors through engaging augmented reality experiences that make every journey effortless, fun and inclusive.
+            </p>
+            <div class="hero-buttons" style="justify-content: center;">
+                <a href="mailto:waidemobility@gmail.com" class="btn btn-primary btn-large">
+                    Get in Touch
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12,5 19,12 12,19"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+                <!-- Interactive Map Section -->
+                <div class="map-section">
+                    <div class="map-header">
+                        <h3>Explore Our Indoor Map In Partnership With Situm and Open Street Maps</h3>
+                        <p>Experience our advanced indoor positioning technology with interactive mapping solutions</p>
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://map-viewer.situm.com/"
+                            width="100%" 
+                            height="400" 
+                            style="border:0; border-radius: 12px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Situm Map Viewer - Indoor Navigation">
+                        </iframe>
+                        <div class="map-logo-overlay">
+                            <div class="logo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10V6c0-2-2-4-4-4H4c-2 0-4 2-4 4v10c0 1.1.9 2 2 2h2"/>
+                                    <circle cx="7" cy="17" r="2"/>
+                                    <path d="M9 17h6"/>
+                                    <circle cx="17" cy="17" r="2"/>
+                                </svg>
+                            </div>
+                            <span class="logo-text">Waide Mobility Inc.</span>
+                        </div>
+                    </div>
+                </div>
+
+<section class="app-showcase" style="margin-bottom: 4rem;">
+  <style>
+    .app-showcase {
+      background-color: #000;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .app-showcase h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .app-showcase .app-image {
+      max-width: 1200px; /* Increased size */
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    .app-showcase .app-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    .feature-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .feature-buttons button {
+      background-color: #000;
+      color: #fff;
+      padding: 1rem 2rem;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .feature-buttons button:hover,
+    .feature-buttons button:focus {
+      border-color: cyan;
+      box-shadow: none;
+    }
+  </style>
+
+  <h2>Experience Our Mobile App</h2>
+
+  <div class="app-image">
+    <img src="public/app-screens.png" alt="App Screens" />
+  </div>
+
+  <div class="feature-buttons">
+    <button>Indoor Navigation</button>
+    <button>Augmented Reality</button>
+    <button>Accessibility Tools</button>
+  </div>
+</section>
+
+
+     
+
+  
+
+    
+
 <section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 100px;">
   <!-- Carousel Title -->
   <h2 style="color: #fff; font-size: 2.5rem; text-align: center; margin-bottom: 10px; animation: fadeInTitle 2s ease-in-out;">
@@ -830,10 +1540,999 @@ body.dyslexia-font {
   // Run preload on page load
   window.addEventListener('load', preloadImages);
 </script>
-        
-        
     
     
+
+                
+                <!-- Feature Cards -->
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/mobility-app-interface.jpg" alt="Mobile Platform">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mobile-First Platform</h3>
+                            <p>Deploy mobility solutions across your venues with zero infrastructure cost</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/ar-navigation.png" alt="AI Analytics">
+                        </div>
+                        <div class="card-content">
+                            <h3>Captivate Visitors With Immersive Experiences</h3>
+                            <p>Turn every visit into a seamless adventure. learn movement patterns,  and 
+                                connect people with relevant offers right where they are.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/global-network.png" alt="Global Infrastructure">
+                        </div>
+                        <div class="card-content">
+                            <h3>Global Infrastructure</h3>
+                            <p>Worldwide network and cloud infrastructure for seamless mobility services</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">7M+</div>
+                        <div class="stat-label">Daily Trips</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">City Partners</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.8%</div>
+                        <div class="stat-label">Reliability</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25ms</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessible Navigation Section -->
+        <section class="accessible-nav-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Empowering Accessible Indoor Navigation</h2>
+                    <p>Transforming how individuals with diverse abilities navigate complex indoor environments through innovative our cutting edge navigation solutions</p>
+                </div>
+
+                <div class="two-column-layout">
+                    <div class="content-column">
+                        <h3>Engaging Navigation Platform</h3>
+                        <p>Our revolutionary navigation system empowers individuals both old and young to build their navigation skills through engaging, game-based/reward-based learning experiences. 
+                            By simulating real-world environments, we build confidence and independence for travelers of all abilities without the cognitive load.</p>
+                        <ul class="feature-list">
+                            <li>Immersive virtual environment for all industries</li>
+                            <li>Worldwide deployment with zero infrastructure setup</li>
+                            <li>Comprehensive support tools</li>
+                            <li>Immersive orientation and mobility training enhances travel experiences while building confidence</li>
+                        </ul>
+                    </div>
+                    <div class="image-column">
+                        <div class="feature-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/airport-wayfinding.png" alt="Accessible Airport Navigation">
+                            </div>
+                            <div class="card-content">
+                                <h4>Travel Preparation System</h4>
+                                <p>Comprehensive digital environments that familiarize users with complex travel hubs before arrival, reducing anxiety and building navigation confidence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="three-column-grid">
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/modern-mall-navigation.png" alt="Virtual Training">
+                        </div>
+                        <div class="card-content">
+                            <h4>Digital Simulation</h4>
+                            <p>Advanced virtual environments for safe practice and skill development</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/hospital-smart-navigation.png" alt="Family Support">
+                        </div>
+                        <div class="card-content">
+                            <h4>Collaborative Learning</h4>
+                            <p>Inclusive tools designed for everyone</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/smart-office-navigation.png" alt="Global Deployment">
+                        </div>
+                        <div class="card-content">
+                            <h4>Scalable Solutions</h4>
+                            <p>Adaptable platform for diverse environments, users and global implementation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Indoor Spaces Carousel -->
+        <section class="spaces-carousel-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Spaces We Transform</h2>
+                    <p>Our intelligent navigation solutions adapt to any indoor environment, creating seamless experiences across diverse spaces.</p>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel-track" id="spacesCarousel">
+                        <!-- Shopping & Retail -->
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-mall-interior.png" alt="Shopping Malls">
+                            </div>
+                            <div class="card-content">
+                                <h4>Shopping Malls</h4>
+                                <p>Smart wayfinding and crowd flow optimization</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/airport-terminal-interior.png" alt="Airports">
+                            </div>
+                            <div class="card-content">
+                                <h4>Airports</h4>
+                                <p>Terminal navigation and passenger guidance</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-hospital-interior.png" alt="Hospitals">
+                            </div>
+                            <div class="card-content">
+                                <h4>Hospitals</h4>
+                                <p>Patient and visitor navigation systems</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-office-lobby.png" alt="Office Buildings">
+                            </div>
+                            <div class="card-content">
+                                <h4>Office Buildings</h4>
+                                <p>Workplace navigation and space optimization</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/university-campus-interior.png" alt="Universities">
+                            </div>
+                            <div class="card-content">
+                                <h4>Universities</h4>
+                                <p>Campus navigation for students and visitors</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/luxury-hotel-lobby.png" alt="Hotels">
+                            </div>
+                            <div class="card-content">
+                                <h4>Hotels</h4>
+                                <p>Guest services and facility navigation</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/convention-center-interior.png" alt="Convention Centers">
+                            </div>
+                            <div class="card-content">
+                                <h4>Convention Centers</h4>
+                                <p>Event navigation and crowd management</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/sports-stadium-interior.png" alt="Sports Venues">
+                            </div>
+                            <div class="card-content">
+                                <h4>Sports Venues</h4>
+                                <p>Stadium navigation and seat finding</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/museum-gallery.png" alt="Museums">
+                            </div>
+                            <div class="card-content">
+                                <h4>Museums</h4>
+                                <p>Interactive exhibit navigation and tours</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/train-station-interior.png" alt="Train Stations">
+                            </div>
+                            <div class="card-content">
+                                <h4>Train Stations</h4>
+                                <p>Platform guidance and transit connections</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-library-interior.png" alt="Libraries">
+                            </div>
+                            <div class="card-content">
+                                <h4>Libraries</h4>
+                                <p>Resource location and study space finding</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-warehouse-interior.png" alt="Warehouses">
+                            </div>
+                            <div class="card-content">
+                                <h4>Warehouses</h4>
+                                <p>Inventory navigation and logistics optimization</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/manufacturing-facility-interior.png" alt="Manufacturing">
+                            </div>
+                            <div class="card-content">
+                                <h4>Manufacturing</h4>
+                                <p>Factory floor navigation and safety routing</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/data-center-interior.png" alt="Data Centers">
+                            </div>
+                            <div class="card-content">
+                                <h4>Data Centers</h4>
+                                <p>Server location and maintenance routing</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/parking-garage-interior.png" alt="Parking Garages">
+                            </div>
+                            <div class="card-content">
+                                <h4>Parking Garages</h4>
+                                <p>Vehicle location and space availability</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/cruise-ship-interior.png" alt="Cruise Ships">
+                            </div>
+                            <div class="card-content">
+                                <h4>Cruise Ships</h4>
+                                <p>Deck navigation and amenity location</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed placeholder image path -->
+                                <img src="/placeholder.svg?height=192&width=384" alt="Theme Parks">
+                            </div>
+                            <div class="card-content">
+                                <h4>Theme Parks</h4>
+                                <p>Attraction navigation and queue management</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed placeholder image path -->
+                                <img src="/placeholder.svg?height=192&width=384" alt="Casinos">
+                            </div>
+                            <div class="card-content">
+                                <h4>Casinos</h4>
+                                <p>Gaming floor navigation and amenity finding</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed placeholder image path -->
+                                <img src="/placeholder.svg?height=192&width=384" alt="Subway Systems">
+                            </div>
+                            <div class="card-content">
+                                <h4>Subway Systems</h4>
+                                <p>Underground navigation and transfer guidance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions-section" class="solutions-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Solutions</h2>
+                    <p>Comprehensive indoor navigation and mapping solutions powered by cutting-edge technology</p>
+                </div>
+
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/interactive-indoor-mapping.jpg" alt="Interactive Indoor Mapping">
+                        </div>
+                        <div class="card-content">
+                            <h3>Interactive Indoor Mapping</h3>
+                            <p>Customizable 2D and 3D indoor maps with real-time updates and AI-powered maintenance</p>
+                            <ul>
+                                <li>• Geo-referenced mapping</li>
+                                <li>• Custom branding options</li>
+                                <li>• Multi-floor visualization</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/smart-wayfinding.png" alt="Smart Wayfinding">
+                        </div>
+                        <div class="card-content">
+                            <h3>Smart Wayfinding</h3>
+                            <p>Turn-by-turn navigation with dynamic route adjustments and accessibility options</p>
+                            <ul>
+                                <li>• Personalized guidance</li>
+                                <li>• Multi-stop navigation</li>
+                                <li>• Arrival time calculation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/advanced-search.png" alt="Advanced Search">
+                        </div>
+                        <div class="card-content">
+                            <h3>Advanced Search & Discovery</h3>
+                            <p>Intelligent search with customizable filters for locations, venues, and categories</p>
+                            <ul>
+                                <li>• Building-specific search</li>
+                                <li>• Category filtering</li>
+                                <li>• Location-based results</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/data-visualisation.jpg" alt="Data Visualization">
+                        </div>
+                        <div class="card-content">
+                            <h3>Real-time Data Visualization</h3>
+                            <p>Live sensor integration with calendar systems and ERP for dynamic map data</p>
+                            <ul>
+                                <li>• Occupancy sensors</li>
+                                <li>• Booking system integration</li>
+                                <li>• Traffic flow analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/outdoor-indoor-navigation.png" alt="Outdoor Indoor Navigation">
+                        </div>
+                        <div class="card-content">
+                            <h3>Seamless Outdoor-Indoor Navigation</h3>
+                            <p>Continuous navigation experience from outdoor GPS to indoor positioning</p>
+                            <ul>
+                                <li>• GPS to indoor transition</li>
+                                <li>• Unified user experience</li>
+                                <li>• Cross-platform compatibility</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/smart-building-integration.png" alt="Smart Building Integration">
+                        </div>
+                        <div class="card-content">
+                            <h3>Smart Building Integration</h3>
+                            <p>Complete ecosystem integration for room booking, space management, and IoT devices</p>
+                            <ul>
+                                <li>• Room & desk booking</li>
+                                <li>• Space management</li>
+                                <li>• IoT sensor integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about-section" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Waide Mobility</h2>
+                    <p>We're pioneering the future of urban mobility through innovative technology and sustainable solutions.</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="content-column">
+                        <h3>Our Mission</h3>
+                        <p>To revolutionize accessible mobility by creating intelligent, sustainable, and inclusive transportation ecosystems that connect communities, empower people of all abilities, and reduce environmental impact.</p>
+                        <p>Through cutting-edge AI, immersive engagements, IoT integration, and data-driven insights, we design experiences that make complex and cognitively heavy journeys from city streets to global airports simple,
+                            engaging, and empowering for individuals with disabilities.</p>
+                    </div>
+                    <div class="stats-column">
+                        <div class="stat-card">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                        <div class="stat-card">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                                <path d="M4 22h16"/>
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                            </svg>
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Recognition</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="pricing-section" class="pricing-section">  
+    <div class="container">
+        <div class="section-header">
+            <h2>Indoor Space Solutions</h2>
+            <p>Transform your indoor spaces with our smart navigation technology. Choose monthly or yearly plans.</p>
+            <div class="pricing-toggle">
+                <span>Monthly</span>
+                <button class="toggle-switch" id="pricingToggle">
+                    <span class="toggle-slider"></span>
+                </button>
+                <span>Yearly <span class="discount">Save 20%</span></span>
+            </div>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Small Spaces</h3>
+                    <div class="price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="399" data-yearly="3999">299</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p>Perfect for retail stores & small offices</p>
+                </div>
+                <ul class="features-list">
+                    <li>Up to 5,000 sq ft coverage</li>
+                    <li>Basic indoor positioning</li>
+                    <li>Immersive AR navigation</li>
+                    <li>Mobile app integration</li>
+                    <li>24/7 support</li>
+                </ul>
+                <button class="btn btn-primary" onclick="openPopup('Small Spaces')">Get Started</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="popular-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <h3>Medium Spaces</h3>
+                    <div class="price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="1599" data-yearly="10999">1,199</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p>Ideal for shopping centers & hospitals</p>
+                </div>
+                <ul class="features-list">
+                    <li>Up to 50,000 sq ft coverage</li>
+                    <li>Advanced AR navigation</li>
+                    <li>Real-time analytics</li>
+                    <li>API access & integrations</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="btn btn-primary" onclick="openPopup('Medium Spaces')">Get Started</button>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Large Spaces</h3>
+                    <div class="price">
+                        <span class="custom-price">Custom</span>
+                    </div>
+                    <p>For airports & mega complexes</p>
+                </div>
+                <ul class="features-list">
+                    <li>Unlimited coverage area</li>
+                    <li>Full AI navigation suite</li>
+                    <li>Custom integrations</li>
+                    <li>White-label solutions</li>
+                    <li>Dedicated support team</li>
+                </ul>
+                <button class="btn btn-primary" onclick="openPopup('Large Spaces')">Contact Sales</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="subscriptionPopup" class="popup-overlay">
+    <div class="popup-content">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <h3>Get Started with <span id="popupPlanName"></span></h3>
+        
+        <form id="subscriptionForm">
+            <input type="hidden" name="plan" id="selectedPlan">
+
+            <div class="form-grid">
+                <div>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" required>
+                    
+                    <label for="industry">Industry</label>
+                    <select id="industry" name="industry" required>
+                        <option value="">Select an indoor space type</option>
+                        <option>Airport</option>
+                        <option>Train Station</option>
+                        <option>Bus Terminal</option>
+                        <option>Shopping Mall</option>
+                        <option>Retail Store</option>
+                        <option>Supermarket</option>
+                        <option>Hospital</option>
+                        <option>Clinic</option>
+                        <option>University</option>
+                        <option>School</option>
+                        <option>Museum</option>
+                        <option>Art Gallery</option>
+                        <option>Convention Center</option>
+                        <option>Exhibition Hall</option>
+                        <option>Sports Arena</option>
+                        <option>Stadium</option>
+                        <option>Hotel</option>
+                        <option>Resort</option>
+                        <option>Casino</option>
+                        <option>Government Building</option>
+                        <option>Corporate Office</option>
+                        <option>Factory</option>
+                        <option>Warehouse</option>
+                        <option>Library</option>
+                        <option>Religious Center</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    
+                    <label for="description">Project Description</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Tell us more about your needs..."></textarea>
+                </div>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="submissionStatus" style="display: none; text-align: center; padding: 1rem;">
+            <p><strong>We tried to open WhatsApp.</strong> If it didn’t open, <a id="whatsFallback" href="#" target="_blank" rel="noopener">tap here</a>.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.popup-overlay {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+}
+.popup-content {
+    background: #000;
+    padding: 1.8rem;
+    border: 2px solid lightgrey;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: #fff;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+.popup-content:hover,
+.popup-content:focus-within {
+    border-color: cyan;
+}
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+.popup-content h3 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#subscriptionForm {
+    display: flex;
+    flex-direction: column;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+}
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+.popup-content label {
+    margin: 0.5rem 0 0.2rem;
+}
+.popup-content input,
+.popup-content textarea,
+.popup-content select {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.popup-content textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+.popup-content button[type="submit"] {
+    background: cyan;
+    color: #000;
+    font-weight: bold;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.popup-content button[type="submit"]:hover {
+    background: #00e6e6;
+}
+</style>
+
+<script>
+function openPopup(planName) {
+    const form = document.getElementById("subscriptionForm");
+    form.reset(); 
+    document.getElementById("selectedPlan").value = planName;
+    document.getElementById("popupPlanName").textContent = planName;
+
+    document.getElementById("submissionStatus").style.display = "none";
+    document.getElementById("subscriptionPopup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("subscriptionPopup").style.display = "none";
+}
+
+document.getElementById("subscriptionForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    const message =
+`New Indoor Space Inquiry
+
+Plan Selected: ${data.plan}
+Full Name: ${data.name}
+Company Name: ${data.company}
+Industry: ${data.industry}
+Email: ${data.email}
+Phone: ${data.phone || "N/A"}
+Project Description: ${data.description || "N/A"}`;
+
+    const encoded = encodeURIComponent(message);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=2348105634237&text=${encoded}`;
+
+    const status = document.getElementById("submissionStatus");
+    const fallback = document.getElementById("whatsFallback");
+    fallback.href = whatsappUrl;
+    status.style.display = "block";
+
+    const win = window.open(whatsappUrl, "_blank");
+    if (!win || win.closed || typeof win.closed === "undefined") {
+        window.location.href = whatsappUrl;
+    }
+});
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    .team-section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .team-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      font-weight: 600;
+    }
+
+    .team-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team-card {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+    }
+
+    .team-card:hover {
+      border-color: #00ffff;
+      transform: translateY(-5px);
+    }
+
+    .team-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #333;
+    }
+
+    .team-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-role {
+      color: #aaa;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #00ffff;
+      text-decoration: none;
+      border: 1px solid #00ffff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .linkedin-btn:hover {
+      background-color: #00ffff;
+      color: #0d0d0d;
+    }
+
+    .linkedin-btn i {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<section class="team-section">
+  <h2 class="team-title">Meet the Team</h2>
+  <div class="team-grid">
+    
+    <!-- Team Member -->
+    <div class="team-card">
+      <img src="public/Jacob-thankGod.jpg" alt="Member Photo">
+      <div class="team-name">Jacob ThankGod Kene</div>
+      <div class="team-role">Founder, Digital Twin Expert</div>
+      <a class="linkedin-btn" href="https://linkedin.com/in/thankgod-jacob" target="_blank">
+        <i class="fab fa-linkedin"></i> View LinkedIn
+      </a>
+    </div>
+
+    <!-- Repeat for more members -->
+    <div class="team-card">
+      <img src="public/Abdoulaye-Diakite.jpeg" alt="Member Photo">
+      <div class="team-name">Abdoulaye Diakite PhD</div>
+      <div class="team-role">BIM Expert</div>
+      <a class="linkedin-btn" href="https://linkedin.com/in/johnsmith" target="_blank">
+        <i class="fab fa-linkedin"></i> View LinkedIn
+      </a>
+    </div>
+
+          <div class="team-card">
+      <img src="public/Fareed-Gombilla.jpg" alt="Member Photo">
+      <div class="team-name">Fareed Gombilla</div>
+      <div class="team-role">Visually Impaired, UI/UX Co-designer</div>
+      <a class="linkedin-btn" href="https://linkedin.com/in/johnsmith" target="_blank">
+        <i class="fab fa-linkedin"></i> View LinkedIn
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+
+    
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10V6c0-2-2-4-4-4H4c-2 0-4 2-4 4v10c0 1.1.9 2 2 2h2"/>
+                                    <circle cx="7" cy="17" r="2"/>
+                                    <path d="M9 17h6"/>
+                                    <circle cx="17" cy="17" r="2"/>
+                                </svg>
+                            </div>
+                            <span>Waide Mobility</span>
+                        </div>
+                        <p>The future of smart transportation, powered by artificial intelligence.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Platform</h4>
+                            <ul>
+                                <li><a href="#">Fleet Management</a></li>
+                                <li><a href="#">Analytics Suite</a></li>
+                                <li><a href="#">Mobile SDK</a></li>
+                                <li><a href="#">API Gateway</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h4>Solutions</h4>
+                            <ul>
+                                <li><a href="#">Smart Cities</a></li>
+                                <li><a href="#">Public Transit</a></li>
+                                <li><a href="#">Ride Sharing</a></li>
+                                <li><a href="#">Logistics</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Waide Mobility. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
                 
                 <!-- Feature Cards -->
