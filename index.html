@@ -704,11 +704,6 @@ body.dyslexia-font {
   
 
     
-
-
-
-
-
 <!-- Carousel Section -->
 <section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 100px;">
   <!-- Carousel Title -->
@@ -744,29 +739,32 @@ body.dyslexia-font {
     /* Carousel Container */
     .carousel-wrapper {
       width: 100%;
+      max-width: 540px; /* Based on 9:16 ratio with height of 960px */
       height: 70vh;
+      max-height: 960px; /* Fixed height for 9:16 ratio */
       overflow: hidden;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0 auto;
     }
 
     .carousel-track {
       display: flex;
-      width: calc(100vw * 4 * 4);
+      width: calc(540px * 4); /* 4 images at 540px each */
       height: 100%;
       animation: scrollLeft 20s linear infinite;
       will-change: transform;
     }
 
     .carousel-track img {
-      width: calc(100vw * 4);
-      height: 100%;
+      width: 540px; /* Fixed width for 9:16 ratio */
+      height: 960px; /* Fixed height for 9:16 ratio */
       object-fit: contain;
       flex-shrink: 0;
+      aspect-ratio: 9 / 16; /* Fixed 9:16 aspect ratio */
       transition: transform 0.3s ease, border 0.3s ease;
-      aspect-ratio: 16 / 9;
     }
 
     .carousel-track img:hover {
@@ -777,24 +775,26 @@ body.dyslexia-font {
 
     @keyframes scrollLeft {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-100vw * 4 * 2)); }
+      100% { transform: translateX(calc(-540px * 2)); } /* Scroll through original images */
     }
 
     /* Responsive adjustments for carousel */
     @media (max-width: 768px) {
       .carousel-wrapper {
+        max-width: 270px; /* Scale down to half for mobile */
+        max-height: 480px; /* Maintain 9:16 ratio */
         height: 50vh;
       }
       .carousel-track img {
-        width: calc(100vw * 2);
-        height: auto;
+        width: 270px;
+        height: 480px;
       }
       .carousel-track {
-        width: calc(100vw * 2 * 4);
+        width: calc(270px * 4);
       }
       @keyframes scrollLeft {
         0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-100vw * 2 * 2)); }
+        100% { transform: translateX(calc(-270px * 2)); }
       }
       h2 {
         font-size: 1.8rem;
@@ -845,7 +845,8 @@ body.dyslexia-font {
     window.addEventListener('load', preloadCarouselImages);
   </script>
 </section>
-    
+
+
 
 
 <!-- Features and Stats Section -->
