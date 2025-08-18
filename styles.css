@@ -720,22 +720,28 @@ body {
   gap: 2rem;
 }
 
-/* Carousel */
+
 .spaces-carousel-section {
   padding: 5rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .carousel-container {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   margin-top: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .carousel-track {
   display: flex;
   gap: 2rem;
   animation: scrollLeft 60s linear infinite;
-  width: calc(384px * 20 + 32px * 19);
+  width: max-content; /* Dynamic width based on content */
 }
 
 .carousel-track:hover {
@@ -762,6 +768,8 @@ body {
 
 .carousel-card .card-image {
   height: 192px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .carousel-card .card-content {
@@ -778,6 +786,22 @@ body {
 
 .carousel-card:hover .card-content h4 {
   color: #06b6d4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .spaces-carousel-section {
+    padding: 3rem 1rem;
+  }
+
+  .carousel-card {
+    width: 300px;
+    height: 250px;
+  }
+
+  .carousel-card .card-image {
+    height: 150px;
+  }
 }
 
 /* Solutions Section */
