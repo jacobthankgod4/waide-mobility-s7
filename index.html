@@ -62,7 +62,189 @@
 </section>
                 <!-- Interactive Map Section -->
                 
-                           
+
+
+<section class="hero-section overflow-hidden position-relative z-0 mb-4 mb-lg-0" id="home" aria-labelledby="heroTitle">
+    <style>
+        /* General Body Styles for Dark Theme */
+        body {
+            background-color: #121212; /* Very dark grey */
+            color: #E0E0E0; /* Light grey for text */
+        }
+
+        /* Hero Section Specific Styles */
+        .hero-section {
+            background-color: #1a1a1a; /* Slightly lighter dark for the hero section */
+        }
+
+        .hero-section h1,
+        .hero-section p,
+        .text-white {
+            color: #F8F8F8 !important; /* White/off-white for hero text */
+        }
+
+        .text-light-grey {
+            color: #E0E0E0 !important;
+        }
+
+        /* Button Styles for Dark Theme with Cyan Hover */
+        .btn-primary {
+            background-color: #007bff; /* Original blue, or adjust to a darker shade */
+            border-color: #007bff;
+            color: #ffffff;
+            transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #00FFFF; /* Cyan border on hover/focus */
+            box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* Glowing effect */
+            transform: translateY(-2px); /* Slight lift animation */
+        }
+
+        /* Styles for Download Buttons (App Store, Play Store) */
+        .d-flex.flex-wrap a {
+            border: 2px solid transparent; /* Start with a transparent border */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .d-flex.flex-wrap a:hover,
+        .d-flex.flex-wrap a:focus {
+            border-color: #00FFFF; /* Cyan border on hover/focus */
+            box-shadow: 0 0 8px #00FFFF; /* Cyan glow */
+            transform: scale(1.05); /* Slight zoom animation */
+        }
+
+        /* Impact Stats Section Styles for Dark Theme */
+        .container.border-bottom {
+            border-color: #333333 !important; /* Darker border for the section divider */
+        }
+
+        .impact-stats-section {
+            background-color: #1a1a1a; /* Dark background for the section */
+            padding: 20px; /* Add some padding if needed */
+            border-radius: 8px; /* Slightly rounded corners for the section */
+        }
+
+        /* Card-like effect for the stat columns */
+        .stat-card {
+            background-color: #282828; /* Slightly lighter dark for "cards" */
+            border: 2px solid transparent; /* Start with transparent border */
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer; /* Indicate interactivity */
+        }
+
+        .stat-card:hover,
+        .stat-card:focus-within { /* focus-within for accessibility with keyboard navigation */
+            border-color: #00FFFF; /* Cyan border on hover/focus */
+            box-shadow: 0 0 15px #00FFFF; /* Cyan glow */
+            transform: translateY(-5px); /* Lift effect */
+        }
+
+        .stat-card h3,
+        .text-cyan {
+            color: #00FFFF !important; /* Cyan for the numbers */
+        }
+
+        .stat-card p {
+            color: #BBBBBB; /* Lighter grey for descriptive text */
+        }
+
+        /* Ensure video and images are styled for dark mode if they have backgrounds */
+        .rounded-video-border {
+            border-radius: 15px; /* Softer edges for the video */
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Cyan glow around video */
+        }
+
+        /* Wavy SVG color adjustment if needed, assuming it's an inline SVG or a color-fillable image */
+        .wave {
+            fill: #1a1a1a; /* Match the hero section background or a dark shade */
+        }
+
+        .dark-footer-bg {
+            background-color: #1a1a1a !important;
+        }
+    </style>
+    <div class="hero-background">
+        <div class="container">
+            <div class="row gy-4 gy-md-8 pt-9 pt-lg-0">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 id="heroTitle" class="fs-3 fs-lg-2 text-white fw-bold mb-2 mb-lg-x1 lh-base mt-3 mt-lg-0">
+                        Inclusively <span>Designed By Individuals With Lived Disabilities</span>
+                    </h1>
+                    <p class="fs-8 text-light-grey mb-3 mb-lg-4 lh-lg">
+                       "Nothing for us without us." This powerful phrase, coined by the disability community, captures our core belief. We are a social 
+                        impact team building accessible products that serve the global community. Our products are made by and for disabled people, to empower us all to thrive independently in the world.
+                    </p>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a class="btn btn-primary btn-lg lh-xl mb-4 mb-md-5 mb-lg-7" href="https://www.waidemobility.com/opt-in">Explore Waide Maps</a>
+                    </div>
+                    <p class="text-cyan" style="font-size: 20px; font-weight: bold; text-transform: none;">
+                        Coming soon on iOS and Android
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 position-relative z-2">
+                        <a class="border-0 p-0 bg-transparent cursor-pointer rounded-1 app-store-link" href="#!" aria-label="Download Waide Mobility on the App Store">
+                            <img class="img-fluid" src="assets1/img/logos/App_Store.webp" alt="Download Waide Mobility on the App Store" />
+                        </a>
+                        <a class="border-0 p-0 bg-transparent cursor-pointer rounded-1 play-store-link" href="#!" aria-label="Download Waide Mobility on Google Play">
+                            <img class="img-fluid" src="assets1/img/logos/Play_Store.webp" alt="Download Waide Mobility on Google Play" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 position-lg-relative">
+                    <div class="position-lg-absolute z-1 text-center">
+                        <video class="img-fluid w-50 w-lg-75 rounded-video-border" aria-label="The video demonstrates Waide Mobility's app showing a 3D indoor map. The points of interest are clearly labeled, and a navigation path guides the user seamlessly through the space for easy navigation indoors. The video highlights the user-friendly interface designed for accessibility." autoplay muted loop playsinline aria-describedby="videoDescription">
+                            <source src="public/waidemap.mp4" type="video/mp4">
+                            <p>Your browser does not support the video tag. Please upgrade your browser or view the video content on another platform.</p>
+                        </video>
+                        <div id="videoDescription" class="visually-hidden">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="position-absolute bottom-0 start-0 end-0 z-1">
+        <img class="wave mb-md-n2" src="assets1/img/illustrations/Wave.svg" alt="A wavy graphical design element at the bottom of the section" />
+        <div class="bg-white py-2 py-md-5 dark-footer-bg"></div>
+    </div>
+</section>
+<section class="container border-bottom mb-8 mb-lg-10 impact-stats-section" id="impact-stats" aria-labelledby="Problem-stats-heading">
+    <h2 id="impact-stats-heading" class="visually-hidden">Problem Statement</h2>
+    <div class="row pb-6 pb-lg-8 g-3 g-lg-8 px-3">
+        <div class="col-12 col-md-4 stat-card" tabindex="0">
+            <h3 class="fs-3 fw-bold lh-sm mb-2 text-center text-cyan">
+                <span data-countup='{"endValue":250000000}' aria-label="two hundred and fifty million">0</span>
+            </h3>
+            <p class="fs-8 fw-normal lh-lg mb-0 opacity-70 text-center text-light-grey">
+                Over 250 million individuals live with one form of disability across Africa.
+            </p>
+        </div>
+        <div class="col-12 col-md-4 stat-card" tabindex="0">
+            <h3 class="fs-3 fw-bold lh-sm mb-2 text-center text-cyan">
+                <span data-countup='{"endValue":95, "suffix":"%"}' aria-label="ninety five percent">0%</span>
+            </h3>
+            <p class="fs-8 fw-normal lh-lg mb-0 opacity-70 text-center text-light-grey">
+                Over 95% of public indoor spaces in Africa remain unmapped and inaccessible to these individuals.
+            </p>
+        </div>
+        <div class="col-12 col-md-4 stat-card" tabindex="0">
+            <h3 class="fs-3 fw-bold lh-sm mb-2 text-center text-cyan">
+                <span data-countup='{"endValue":60, "suffix":"%"}' aria-label="sixty percent">0%</span>
+            </h3>
+            <p class="fs-8 fw-normal lh-lg mb-0 opacity-70 text-center text-light-grey">
+                Up to 60% of lost opportunities in healthcare, education, and employment start with inaccessible directions and lack of independence.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+        
 
 <section class="app-showcase" style="margin-bottom: 4rem;">
   <style>
