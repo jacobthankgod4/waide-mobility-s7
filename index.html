@@ -111,6 +111,8 @@
       background-color: #06b6d4;
       transition: all 300ms;
       border: 2px solid transparent;
+      text-decoration: none; /* Add this to remove default underline for anchor tags */
+      display: inline-block; /* Add this to make it behave like a block element for padding */
     }
     .my-interactive-section .button:hover {
       background-color: #0891b2;
@@ -144,20 +146,17 @@
     }
   </style>
   <div class="container">
-    <!-- Left Content -->
     <div class="content">
       <h2 class="title">
         Mobile Phones As Assistive Devices
       </h2>
       <p class="description">
-        Originally, precise navigation was a challenge for visually impaired individuals, limited to costly smart 
-          canes, mobility aids, or guide dogs. Now, Waide enables any blind person with a smartphone to navigate 
-          accurately indoors.
-      <button class="button">
-        Explore Now
-      </button>
+        Originally, precise navigation was a challenge for visually impaired individuals, limited to costly smart
+        canes, mobility aids, or guide dogs. Now, Waide enables any blind person with a smartphone to navigate
+        accurately indoors.
+      </p> <a href="#" class="button"> Explore Now
+      </a>
     </div>
-    <!-- Right Image -->
     <div class="image-container">
       <img
         src="public/Blind-teen-Waide.jpg"
@@ -167,8 +166,6 @@
     </div>
   </div>
 </section>
-
-        
         
 
 <section class="app-showcase" style="margin-bottom: 4rem;">
