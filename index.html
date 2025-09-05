@@ -1398,7 +1398,6 @@ Project Description: ${data.description || "N/A"}`;
       margin: 0 auto;
     }
     .waide-team-section .team-card {
-      position: relative;
       background-color: #1a1a1a;
       border: 2px solid transparent;
       border-radius: 12px;
@@ -1414,25 +1413,19 @@ Project Description: ${data.description || "N/A"}`;
     }
     .waide-team-section .team-image-container {
       width: 100%;
-      height: 350px; /* Increased height to allow content overlay */
+      height: auto; /* Dynamic height to prevent cut-off */
       overflow: hidden;
     }
     .waide-team-section .team-image-container img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
+      height: auto;
       display: block;
     }
     .waide-team-section .team-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
       padding: 1.5rem;
-      background: rgba(26, 26, 26, 0.2); /* Semi-transparent dark background */
+      background: rgba(26, 26, 26, 0.2); /* Semi-transparent dark background for glassmorphism */
       backdrop-filter: blur(8px); /* Glassmorphism blur effect */
-      -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
+      -webkit-backdrop-filter: blur(8px); /* Safari compatibility */
       border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
       text-align: left;
     }
@@ -1541,8 +1534,6 @@ Project Description: ${data.description || "N/A"}`;
     </div>
   </div>
 </section>
-
-
 
     
 
