@@ -66,7 +66,7 @@
 
 
 
- <section class="view-waide-maps-section">
+<section class="view-waide-maps-section">
     <style>
         .view-waide-maps-section {
             min-height: 100vh;
@@ -150,14 +150,14 @@
 
         <!-- YouTube Video Embed -->
         <div class="video-container" tabindex="0">
-            <iframe id="ytFrame"
+            <iframe id="ytFrame-waide"
                 class="video-frame"
                 src="https://www.youtube.com/embed/h5VMVRjg1kA"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
-            <div id="playButton" class="play-button-overlay">
+            <div id="playButton-waide" class="play-button-overlay">
                 <svg xmlns="http://www.w3.org/2000/svg" class="play-button-icon" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
                 </svg>
@@ -166,20 +166,21 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const playButton = document.getElementById('playButton');
-            const ytFrame = document.getElementById('ytFrame');
+            const playButtonWaide = document.getElementById('playButton-waide');
+            const ytFrameWaide = document.getElementById('ytFrame-waide');
 
-            if (playButton && ytFrame) {
-                playButton.addEventListener('click', () => {
+            if (playButtonWaide && ytFrameWaide) {
+                playButtonWaide.addEventListener('click', () => {
                     // Autoplay YouTube when overlay is clicked
-                    ytFrame.src += "&autoplay=1";
-                    playButton.style.opacity = '0';
-                    playButton.style.pointerEvents = 'none';
+                    ytFrameWaide.src += "&autoplay=1";
+                    playButtonWaide.style.opacity = '0';
+                    playButtonWaide.style.pointerEvents = 'none';
                 });
             }
         });
     </script>
 </section>
+
 
 
 
