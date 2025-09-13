@@ -152,7 +152,7 @@
         <div class="video-container" tabindex="0">
             <iframe id="ytFrame-waide"
                 class="video-frame"
-                src="https://www.youtube.com/embed/h5VMVRjg1kA"
+                src="https://www.youtube.com/embed/h5VMVRjg1kA?rel=0"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
@@ -171,8 +171,11 @@
 
             if (playButtonWaide && ytFrameWaide) {
                 playButtonWaide.addEventListener('click', () => {
-                    // Autoplay YouTube when overlay is clicked
-                    ytFrameWaide.src += "&autoplay=1";
+                    // Replace iframe src with autoplay enabled
+                    let baseSrc = "https://www.youtube.com/embed/h5VMVRjg1kA?rel=0&autoplay=1";
+                    ytFrameWaide.src = baseSrc;
+
+                    // Hide play button overlay
                     playButtonWaide.style.opacity = '0';
                     playButtonWaide.style.pointerEvents = 'none';
                 });
