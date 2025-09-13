@@ -65,6 +65,129 @@
 
 
 
+
+ <section class="how-it-works-section">
+    <style>
+        .how-it-works-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1rem;
+            background-color: #121212;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container {
+            max-width: 1152px;
+            margin: auto;
+            text-align: center;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            color: #ffffff;
+            margin-bottom: 3rem;
+        }
+
+        .video-container {
+            position: relative;
+            border-radius: 0.75rem;
+            border: 2px solid #1f2937;
+            margin: auto;
+            max-width: 80rem;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .video-container:focus-within,
+        .video-container:hover {
+            border-width: 4px;
+            border-color: #00FFFF;
+        }
+
+        .video-frame {
+            border-radius: 0.75rem;
+            width: 100%;
+            aspect-ratio: 16/9;
+            display: block;
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .play-button-icon {
+            height: 6rem;
+            width: 6rem;
+            color: white;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .play-button-icon:hover {
+            color: #00FFFF;
+        }
+    </style>
+    <div class="container">
+        <h2 class="section-title">
+            How It Works
+        </h2>
+
+        <!-- YouTube Video Embed -->
+        <div class="video-container" tabindex="0">
+            <iframe id="ytFrame"
+                class="video-frame"
+                src="https://youtu.be/h5VMVRjg1kA"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div id="playButton" class="play-button-overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" class="play-button-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const playButton = document.getElementById('playButton');
+            const ytFrame = document.getElementById('ytFrame');
+
+            if (playButton && ytFrame) {
+                playButton.addEventListener('click', () => {
+                    // Autoplay YouTube when overlay is clicked
+                    ytFrame.src += "&autoplay=1";
+                    playButton.style.opacity = '0';
+                    playButton.style.pointerEvents = 'none';
+                });
+            }
+        });
+    </script>
+</section>
+
+
+
+
+
+        
+
+
 <section class="my-interactive-section" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: black; color: white; font-family: sans-serif;">
   <style>
     .my-interactive-section .container {
