@@ -848,210 +848,400 @@
             </div>
         </section>
 
-       <section class="spaces-carousel-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Spaces We Transform</h2>
-            <p>Our intelligent navigation solutions adapt to any indoor environment, creating seamless experiences across diverse spaces.</p>
+     <!-- Indoor Spaces Carousel SECTION START -->
+<section class="spaces-carousel-section py-16 bg-gray-50 font-sans">
+    <!-- Styles (scoped to the section) -->
+    <style>
+        /* Custom CSS for Carousel functionality */
+        .carousel-track {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory; /* Enables snapping effect */
+            -webkit-overflow-scrolling: touch; /* Improves scrolling performance on iOS */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            scroll-behavior: smooth; /* Ensure smooth scrolling for JS actions */
+            padding-bottom: 1rem; /* Space below the carousel */
+        }
+        .carousel-track::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+        }
+
+        .carousel-card {
+            flex: 0 0 auto; /* Prevent cards from growing/shrinking */
+            width: 80%; /* Default width for mobile */
+            scroll-snap-align: start; /* Snap to the beginning of the card */
+            margin-right: 1.5rem; /* Space between cards */
+            border-radius: 0.75rem; /* rounded-xl */
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-card img {
+            width: 100%;
+            height: 12rem; /* Fixed height for consistency */
+            object-fit: cover;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 640px) {
+            .carousel-card {
+                width: calc(50% - 1.5rem); /* Show 2 cards on tablet */
+            }
+        }
+        @media (min-width: 1024px) {
+            .carousel-card {
+                width: calc(33.333% - 1.5rem); /* Show 3 cards on desktop */
+            }
+        }
+    </style>
+
+    <div class="container mx-auto px-4">
+        <div class="section-header text-center mb-10">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-3">Spaces We Transform</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Our intelligent navigation solutions adapt to any indoor environment, creating seamless experiences across diverse spaces.</p>
         </div>
 
         <div class="carousel-container">
             <div class="carousel-track" id="spacesCarousel">
                 
+                <!-- Original Cards Start -->
+                
+                <!-- Shopping Malls (Index 0) -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/modern-mall-interior.png" alt="Shopping Malls">
                     </div>
-                    <div class="card-content">
-                        <h4>Shopping Malls</h4>
-                        <p>Smart wayfinding and crowd flow optimization</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Shopping Malls</h4>
+                        <p class="text-gray-500 text-sm">Smart wayfinding and crowd flow optimization</p>
                     </div>
                 </div>
 
+                <!-- Airports (Index 1) -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/airport-terminal-interior.png" alt="Airports">
                     </div>
-                    <div class="card-content">
-                        <h4>Airports</h4>
-                        <p>Terminal navigation and passenger guidance</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Airports</h4>
+                        <p class="text-gray-500 text-sm">Terminal navigation and passenger guidance</p>
                     </div>
                 </div>
 
+                <!-- Hospitals (Index 2) -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/modern-hospital-interior.png" alt="Hospitals">
                     </div>
-                    <div class="card-content">
-                        <h4>Hospitals</h4>
-                        <p>Patient and visitor navigation systems</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Hospitals</h4>
+                        <p class="text-gray-500 text-sm">Patient and visitor navigation systems</p>
                     </div>
                 </div>
 
+                <!-- Office Buildings -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/modern-office-lobby.png" alt="Office Buildings">
                     </div>
-                    <div class="card-content">
-                        <h4>Office Buildings</h4>
-                        <p>Workplace navigation and space optimization</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Office Buildings</h4>
+                        <p class="text-gray-500 text-sm">Workplace navigation and space optimization</p>
                     </div>
                 </div>
 
+                <!-- Universities -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/university-campus-interior.png" alt="Universities">
                     </div>
-                    <div class="card-content">
-                        <h4>Universities</h4>
-                        <p>Campus navigation for students and visitors</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Universities</h4>
+                        <p class="text-gray-500 text-sm">Campus navigation for students and visitors</p>
                     </div>
                 </div>
 
+                <!-- Hotels -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/luxury-hotel-lobby.png" alt="Hotels">
                     </div>
-                    <div class="card-content">
-                        <h4>Hotels</h4>
-                        <p>Guest services and facility navigation</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Hotels</h4>
+                        <p class="text-gray-500 text-sm">Guest services and facility navigation</p>
                     </div>
                 </div>
 
+                <!-- Convention Centers -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/convention-center-interior.png" alt="Convention Centers">
                     </div>
-                    <div class="card-content">
-                        <h4>Convention Centers</h4>
-                        <p>Event navigation and crowd management</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Convention Centers</h4>
+                        <p class="text-gray-500 text-sm">Event navigation and crowd management</p>
                     </div>
                 </div>
 
+                <!-- Sports Venues -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/sports-stadium-interior.png" alt="Sports Venues">
                     </div>
-                    <div class="card-content">
-                        <h4>Sports Venues</h4>
-                        <p>Stadium navigation and seat finding</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Sports Venues</h4>
+                        <p class="text-gray-500 text-sm">Stadium navigation and seat finding</p>
                     </div>
                 </div>
 
+                <!-- Museums -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/museum-gallery.png" alt="Museums">
                     </div>
-                    <div class="card-content">
-                        <h4>Museums</h4>
-                        <p>Interactive exhibit navigation and tours</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Museums</h4>
+                        <p class="text-gray-500 text-sm">Interactive exhibit navigation and tours</p>
                     </div>
                 </div>
 
+                <!-- Train Stations -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/train-station-interior.png" alt="Train Stations">
                     </div>
-                    <div class="card-content">
-                        <h4>Train Stations</h4>
-                        <p>Platform guidance and transit connections</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Train Stations</h4>
+                        <p class="text-gray-500 text-sm">Platform guidance and transit connections</p>
                     </div>
                 </div>
 
+                <!-- Libraries -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/modern-library-interior.png" alt="Libraries">
                     </div>
-                    <div class="card-content">
-                        <h4>Libraries</h4>
-                        <p>Resource location and study space finding</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Libraries</h4>
+                        <p class="text-gray-500 text-sm">Resource location and study space finding</p>
                     </div>
                 </div>
 
+                <!-- Warehouses -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/modern-warehouse-interior.png" alt="Warehouses">
                     </div>
-                    <div class="card-content">
-                        <h4>Warehouses</h4>
-                        <p>Inventory navigation and logistics optimization</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Warehouses</h4>
+                        <p class="text-gray-500 text-sm">Inventory navigation and logistics optimization</p>
                     </div>
                 </div>
 
+                <!-- Manufacturing -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/manufacturing-facility-interior.png" alt="Manufacturing">
                     </div>
-                    <div class="card-content">
-                        <h4>Manufacturing</h4>
-                        <p>Factory floor navigation and safety routing</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Manufacturing</h4>
+                        <p class="text-gray-500 text-sm">Factory floor navigation and safety routing</p>
                     </div>
                 </div>
 
+                <!-- Data Centers -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/data-center-interior.png" alt="Data Centers">
                     </div>
-                    <div class="card-content">
-                        <h4>Data Centers</h4>
-                        <p>Server location and maintenance routing</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Data Centers</h4>
+                        <p class="text-gray-500 text-sm">Server location and maintenance routing</p>
                     </div>
                 </div>
 
+                <!-- Parking Garages -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/parking-garage-interior.png" alt="Parking Garages">
                     </div>
-                    <div class="card-content">
-                        <h4>Parking Garages</h4>
-                        <p>Vehicle location and space availability</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Parking Garages</h4>
+                        <p class="text-gray-500 text-sm">Vehicle location and space availability</p>
                     </div>
                 </div>
 
+                <!-- Cruise Ships -->
                 <div class="carousel-card">
                     <div class="card-image">
                         <img src="/public/cruise-ship-interior.png" alt="Cruise Ships">
                     </div>
-                    <div class="card-content">
-                        <h4>Cruise Ships</h4>
-                        <p>Deck navigation and amenity location</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Cruise Ships</h4>
+                        <p class="text-gray-500 text-sm">Deck navigation and amenity location</p>
                     </div>
                 </div>
 
+                <!-- Theme Parks -->
                 <div class="carousel-card">
                     <div class="card-image">
-                        <img src="/placeholder.svg?height=192&width=384" alt="Theme Parks">
+                        <!-- Using actual placeholder URL for consistency -->
+                        <img src="https://placehold.co/384x192/4F46E5/FFFFFF?text=Theme+Parks" alt="Theme Parks">
                     </div>
-                    <div class="card-content">
-                        <h4>Theme Parks</h4>
-                        <p>Attraction navigation and queue management</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Theme Parks</h4>
+                        <p class="text-gray-500 text-sm">Attraction navigation and queue management</p>
                     </div>
                 </div>
 
+                <!-- Casinos -->
                 <div class="carousel-card">
                     <div class="card-image">
-                        <img src="/placeholder.svg?height=192&width=384" alt="Casinos">
+                        <img src="https://placehold.co/384x192/4F46E5/FFFFFF?text=Casinos" alt="Casinos">
                     </div>
-                    <div class="card-content">
-                        <h4>Casinos</h4>
-                        <p>Gaming floor navigation and amenity finding</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Casinos</h4>
+                        <p class="text-gray-500 text-sm">Gaming floor navigation and amenity finding</p>
                     </div>
                 </div>
 
+                <!-- Subway Systems (Last Original Card) -->
                 <div class="carousel-card">
                     <div class="card-image">
-                        <img src="/placeholder.svg?height=192&width=384" alt="Subway Systems">
+                        <img src="https://placehold.co/384x192/4F46E5/FFFFFF?text=Subway+Systems" alt="Subway Systems">
                     </div>
-                    <div class="card-content">
-                        <h4>Subway Systems</h4>
-                        <p>Underground navigation and transfer guidance</p>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Subway Systems</h4>
+                        <p class="text-gray-500 text-sm">Underground navigation and transfer guidance</p>
                     </div>
                 </div>
+                
+                <!-- Original Cards End -->
+
+                <!-- CLONED CARDS START (for infinite loop effect) -->
+
+                <!-- Shopping Malls (Clone 1) -->
+                <div class="carousel-card cloned-card">
+                    <div class="card-image">
+                        <img src="/public/modern-mall-interior.png" alt="Shopping Malls">
+                    </div>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Shopping Malls</h4>
+                        <p class="text-gray-500 text-sm">Smart wayfinding and crowd flow optimization</p>
+                    </div>
+                </div>
+
+                <!-- Airports (Clone 2) -->
+                <div class="carousel-card cloned-card">
+                    <div class="card-image">
+                        <img src="/public/airport-terminal-interior.png" alt="Airports">
+                    </div>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Airports</h4>
+                        <p class="text-gray-500 text-sm">Terminal navigation and passenger guidance</p>
+                    </div>
+                </div>
+
+                <!-- Hospitals (Clone 3) -->
+                <div class="carousel-card cloned-card">
+                    <div class="card-image">
+                        <img src="/public/modern-hospital-interior.png" alt="Hospitals">
+                    </div>
+                    <div class="card-content p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Hospitals</h4>
+                        <p class="text-gray-500 text-sm">Patient and visitor navigation systems</p>
+                    </div>
+                </div>
+
+                <!-- CLONED CARDS END -->
                 
             </div>
         </div>
     </div>
+
+    <!-- JavaScript for Auto-Scrolling Carousel (scoped to the section) -->
+    <script>
+        (function () {
+            const track = document.getElementById('spacesCarousel');
+            if (!track) {
+                console.error("Carousel track element #spacesCarousel not found.");
+                return;
+            }
+
+            const cards = track.querySelectorAll('.carousel-card');
+            if (cards.length === 0) {
+                console.warn("No carousel cards found.");
+                return;
+            }
+
+            // Define the number of original items before the clones
+            // There are 19 original cards (indices 0 to 18)
+            const originalCardCount = cards.length - 3; 
+            
+            // Set the scroll interval (scroll every 3 seconds)
+            const scrollInterval = 3000;
+            let currentCardIndex = 0; // Starts at index 0
+
+            /**
+             * Function to scroll the carousel one card to the right and handle the infinite loop jump.
+             */
+            function autoScroll() {
+                // Increment the index for the next card to scroll to
+                currentCardIndex++;
+
+                // Check if we are at or past the first CLONED card (index 19)
+                if (currentCardIndex >= originalCardCount) {
+                    
+                    // 1. Scroll smoothly to the current cloned card position (index 19, 20, or 21)
+                    const clonePosition = cards[currentCardIndex].offsetLeft;
+                    track.scrollTo({ 
+                        left: clonePosition, 
+                        behavior: 'smooth' 
+                    });
+
+                    // 2. Set a timeout for the silent jump. 
+                    // The jump occurs after the smooth scroll to the clone is initiated.
+                    setTimeout(() => {
+                        // Reset the scroll position instantly to the start of the first original card
+                        track.scrollTo({ left: 0, behavior: 'auto' });
+                        
+                        // Reset the index for the next smooth scroll to begin from index 1
+                        currentCardIndex = 0; 
+                    }, 500); // 500ms allows the scroll animation to start before the jump
+                    
+                    // The scroll for this interval is handled by the smooth scroll above, so we stop here.
+                    return;
+                }
+                
+                // Normal smooth scroll to the next original card position
+                const nextCardPosition = cards[currentCardIndex].offsetLeft;
+
+                // Scroll smoothly to the next card's position
+                track.scrollTo({ 
+                    left: nextCardPosition, 
+                    behavior: 'smooth' 
+                });
+            }
+
+            // Start the auto-scrolling loop
+            let scrollTimer = setInterval(autoScroll, scrollInterval);
+
+            // Optional: Pause scrolling on hover to allow interaction
+            track.addEventListener('mouseenter', () => {
+                clearInterval(scrollTimer);
+            });
+
+            // Optional: Resume scrolling when not hovering
+            track.addEventListener('mouseleave', () => {
+                scrollTimer = setInterval(autoScroll, scrollInterval);
+            });
+        })();
+    </script>
 </section>
+<!-- Indoor Spaces Carousel SECTION END -->
+
 
         <!-- Solutions Section -->
         <section id="solutions-section" class="solutions-section">
