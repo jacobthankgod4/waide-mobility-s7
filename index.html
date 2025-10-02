@@ -45,8 +45,8 @@
                 <span class="gradient-text">Solutions</span>
             </h1>
             <p class="hero-description">
-              Empowering Brands with Indoor and Outdoor Location Intelligence to Outpace Competitors. Waide is an AI-driven navigation platform that delivers real-time 
-                wayfinding and location insights, enabling businesses to optimize customer experiences, streamline operations and 10x their revenue.
+               Indoor and outdoor guidance reimagined for people with disabilities in Africa. Waide is an AI-powered 
+                accessible navigation tool that ensures that individuals with visual impairments can navigate any indoor space seamlessly as long as they own a smartphone.
             </p>
             <div class="hero-buttons" style="justify-content: center;">
                 <a href="mailto:waidemobility@gmail.com" class="btn btn-primary btn-large">
@@ -152,7 +152,7 @@
         <div class="video-container" tabindex="0">
             <iframe id="ytFrame-waide"
                 class="video-frame"
-                src="https://www.youtube.com/embed/r7p2mUvKFIg"
+                src="https://www.youtube.com/embed/h5VMVRjg1kA?rel=0"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
@@ -172,7 +172,7 @@
             if (playButtonWaide && ytFrameWaide) {
                 playButtonWaide.addEventListener('click', () => {
                     // Replace iframe src with autoplay enabled
-                    let baseSrc = "https://www.youtube.com/embed/r7p2mUvKFIg?rel=0&autoplay=1";
+                    let baseSrc = "https://www.youtube.com/embed/h5VMVRjg1kA?rel=0&autoplay=1";
                     ytFrameWaide.src = baseSrc;
 
                     // Hide play button overlay
@@ -276,17 +276,18 @@
   <div class="container">
     <div class="content">
       <h2 class="title">
-        Geospatial-Powered Client Insights
+        Mobile Phones As Assistive Devices
       </h2>
       <p class="description">
-        Waide harnesses cutting-edge satellite geospatial data to map client journeys, empowering brands to predict needs, deliver standout, tailored 
-          experiences, and draw back loyal customers from competing stores.
+        Originally, precise navigation was a challenge for visually impaired individuals, limited to costly smart
+        canes, mobility aids, or guide dogs. Now, Waide enables any blind person with a smartphone to navigate
+        accurately indoors.
       </p> <a href="#" class="button"> Explore Now
       </a>
     </div>
     <div class="image-container">
       <img
-        src="public/location-geospatial.png"
+        src="public/Blind-teen-Waide.jpg"
         alt="Placeholder Image"
         class="image"
       />
@@ -295,7 +296,75 @@
 </section>
         
 
+<section class="app-showcase" style="margin-bottom: 4rem;">
+  <style>
+    .app-showcase {
+      background-color: #000;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
 
+    .app-showcase h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .app-showcase .app-image {
+      max-width: 1200px; /* Increased size */
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    .app-showcase .app-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    .feature-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .feature-buttons button {
+      background-color: #000;
+      color: #fff;
+      padding: 1rem 2rem;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .feature-buttons button:hover,
+    .feature-buttons button:focus {
+      border-color: cyan;
+      box-shadow: none;
+    }
+  </style>
+
+  <h2>Experience Our Mobile App</h2>
+
+  <div class="app-image">
+    <img src="public/app-screens.png" alt="App Screens" />
+  </div>
+
+  <div class="feature-buttons">
+    <button>Indoor Navigation</button>
+    <button>Augmented Reality</button>
+    <button>Accessibility Tools</button>
+  </div>
+</section>
 
 
      
@@ -519,7 +588,30 @@
 
     
 
+<section style="width: 100%; height: 100vh; background-color: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 100px;">
+  <!-- Carousel Title -->
+  <h2 style="color: #fff; font-size: 2.5rem; text-align: center; margin-bottom: 10px; animation: fadeInTitle 2s ease-in-out;">
+    Guide your visitors with customizable AR guide characters
+  </h2>
 
+  <!-- Short Description -->
+  <p style="color: #aaa; font-size: 1.1rem; text-align: center; max-width: 80%; margin-bottom: 20px;">
+    Enhance user experience with interactive AR guide characters that can be customized to your needs. 
+    Navigate effortlessly through environments, providing real-time assistance with intuitive guidance.
+  </p>
+
+  <!-- Smooth Scrolling Carousel -->
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <!-- Original slides -->
+      <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide" onerror="handleImageError(this)">
+      <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide" onerror="handleImageError(this)">
+      <!-- Duplicates for seamless loop -->
+      <img src="public/ar-navigation-guide.png" alt="AR Navigation Guide (Duplicate)" onerror="handleImageError(this)">
+      <img src="public/ar-navigation-robot-guide.png" alt="AR Navigation Robot Guide (Duplicate)" onerror="handleImageError(this)">
+    </div>
+  </div>
+</section>
 
 <style>
   /* Title animation */
@@ -1093,19 +1185,15 @@
             <div class="container">
                 <div class="section-header">
                     <h2>About Waide Mobility</h2>
-                    <p>Founded in Africa with a vision for inclusive indoor navigation, Waide started by solving wayfinding
-                        challenges for the visually impaired using smartphones. Today, we are super excited to expand that foundation to 
-                        B2B, providing real-time location insights from global satellites. Our tech tracks movements
-                        accurately, enabling brands in retail, logistics, and hospitality to personalize services, 
-                        optimize operations, and enhance customer loyalty. </p>
+                    <p>We're pioneering the future of urban mobility through innovative technology and sustainable solutions.</p>
                 </div>
 
                 <div class="about-content">
                     <div class="content-column">
                         <h3>Our Mission</h3>
-                        
-                        <p>Our mission is simple. To create beautiful stories from 
-                        complex geospatial stats and make your venue digitally accessible to the blind community.</p>
+                        <p>To revolutionize accessible mobility by creating intelligent, sustainable, and inclusive transportation ecosystems that connect communities, empower people of all abilities, and reduce environmental impact.</p>
+                        <p>Through cutting-edge AI, immersive engagements, IoT integration, and data-driven insights, we design experiences that make complex and cognitively heavy journeys from city streets to global airports simple,
+                            engaging, and empowering for individuals with disabilities.</p>
                     </div>
                     <div class="stats-column">
                         <div class="stat-card">
