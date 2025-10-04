@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Waide Mobility offers AI-powered accessible navigation for visually impaired users in Africa, enabling seamless indoor and outdoor guidance with smartphone technology.">
+    <meta name="keywords" content="indoor navigation, accessible mobility, AI navigation, visually impaired, AR navigation, smart mobility Africa">
+    <title>Waide Mobility - Smart Navigation Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147004606.js"></script>
+    <!-- End of HubSpot Embed Code -->
+</head>
+<body>
+ 
+
+    <div class="min-h-screen bg-black">
+        <!-- Navigation -->
+        <nav class="nav sticky">
+            <div class="nav-brand">
+                <div class="logo">
+                    <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
+                </div>
+                <span class="brand-text">Waide Mobility</span>
+            </div>
+            <div class="nav-links">
+
+                <a href="solutions.html" id="solutions" class="nav-link">Solutions</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <button class="btn btn-primary" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'nav_request_demo' }); window.location.href='demo.html'">Request Demo</button>
+            </div>
+        </nav>
+
+      <section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                </svg>
+                Next-Gen Mobility Platform
+            </div>
+            <h1 class="hero-title">
+                Smart Mobility
+                <br>
+                <span class="gradient-text">Solutions</span>
+            </h1>
+            <p class="hero-description">
+               Indoor and outdoor guidance reimagined for people with disabilities in Africa. Waide is an AI-powered
+                accessible navigation tool that ensures that individuals with visual impairments can navigate any indoor space seamlessly as long as they own a smartphone. <strong>Limited Time: Free Trial Available!</strong>
+            </p>
+            <div class="hero-buttons" style="justify-content: center;">
+                <a href="mailto:waidemobility@gmail.com" class="btn btn-primary btn-large" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'hero_get_in_touch' });">
+                    Get in Touch
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12,5 19,12 12,19"/>
+                    </svg>
+                </a>
+                <a href="demo.html" class="btn btn-outline btn-large" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'hero_request_demo' });">
+                    Request Demo
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+                <!-- Interactive Map Section -->
+                
+
+
+
+
+<section class="view-waide-maps-section">
+    <style>
+        .view-waide-maps-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1rem;
+            background-color: #121212;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container {
+            max-width: 1152px;
+            margin: auto;
+            text-align: center;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            color: #ffffff;
+            margin-bottom: 3rem;
+        }
+
+        .video-container {
+            position: relative;
+            border-radius: 0.75rem;
+            border: 2px solid #1f2937;
+            margin: auto;
+            max-width: 80rem;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .video-container:focus-within,
+        .video-container:hover {
+            border-width: 4px;
+            border-color: #00FFFF;
+        }
+
+        .video-frame {
+            border-radius: 0.75rem;
+            width: 100%;
+            aspect-ratio: 16/9;
+            display: block;
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .play-button-icon {
+            height: 6rem;
+            width: 6rem;
+            color: white;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .play-button-icon:hover {
+            color: #00FFFF;
+        }
+    </style>
+    <div class="container">
+        <h2 class="section-title">
+            View Waide Maps in Action
+        </h2>
+
+        <!-- YouTube Video Embed -->
+        <div class="video-container" tabindex="0">
+            <iframe id="ytFrame-waide"
+                class="video-frame"
+                src="https://www.youtube.com/embed/h5VMVRjg1kA?rel=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div id="playButton-waide" class="play-button-overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" class="play-button-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const playButtonWaide = document.getElementById('playButton-waide');
+            const ytFrameWaide = document.getElementById('ytFrame-waide');
+
+            if (playButtonWaide && ytFrameWaide) {
+                playButtonWaide.addEventListener('click', () => {
+                    // Replace iframe src with autoplay enabled
+                    let baseSrc = "https://www.youtube.com/embed/h5VMVRjg1kA?rel=0&autoplay=1";
+                    ytFrameWaide.src = baseSrc;
+
+                    // Hide play button overlay
+                    playButtonWaide.style.opacity = '0';
+                    playButtonWaide.style.pointerEvents = 'none';
+                });
+            }
+        });
+    </script>
+</section>
+
+
+
+
+
+
+
+        
+
+
+<section class="my-interactive-section" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: black; color: white; font-family: sans-serif;">
+  <style>
+    .my-interactive-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      padding: 5rem 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .my-interactive-section .container {
+        flex-direction: row;
+      }
+    }
+    .my-interactive-section .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      .my-interactive-section .content {
+        width: 50%;
+      }
+    }
+    .my-interactive-section .title {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1.1;
+    }
+    .my-interactive-section .description {
+      font-size: 1.25rem;
+      color: #9ca3af;
+      line-height: 1.75;
+    }
+    .my-interactive-section .button {
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      color: black;
+      background-color: #06b6d4;
+      transition: all 300ms;
+      border: 2px solid transparent;
+      text-decoration: none; /* Add this to remove default underline for anchor tags */
+      display: inline-block; /* Add this to make it behave like a block element for padding */
+    }
+    .my-interactive-section .button:hover {
+      background-color: #0891b2;
+      border-color: #67e8f9;
+    }
+    .my-interactive-section .button:active {
+      border-color: #67e8f9;
+    }
+    .my-interactive-section .image-container {
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .my-interactive-section .image-container {
+        width: 50%;
+      }
+    }
+    .my-interactive-section .image {
+      width: 100%;
+      height: auto;
+      border-radius: 0.75rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transition: all 300ms;
+      border: 2px solid transparent;
+    }
+    .my-interactive-section .image:hover {
+      transform: scale(1.05);
+      border-color: #67e8f9;
+    }
+    .my-interactive-section .image:active {
+      border-color: #67e8f9;
+    }
+  </style>
+  <div class="container">
+    <div class="content">
+      <h2 class="title">
+        Mobile Phones As Assistive Devices
+      </h2>
+      <p class="description">
+        Originally, precise navigation was a challenge for visually impaired individuals, limited to costly smart
+        canes, mobility aids, or guide dogs. Now, Waide enables any blind person with a smartphone to navigate
+        accurately indoors.
+      </p> <a href="#" class="button"> Explore Now
+      </a>
+    </div>
+    <div class="image-container">
+      <img
+        src="public/Blind-teen-Waide.jpg"
+        alt="Visually impaired teen using Waide navigation app"
+        class="image"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+        
+
+<section class="app-showcase" style="margin-bottom: 4rem;">
+  <style>
+    .app-showcase {
+      background-color: #000;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .app-showcase h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .app-showcase .app-image {
+      max-width: 1200px; /* Increased size */
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    .app-showcase .app-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    .feature-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .feature-buttons button {
+      background-color: #000;
+      color: #fff;
+      padding: 1rem 2rem;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .feature-buttons button:hover,
+    .feature-buttons button:focus {
+      border-color: cyan;
+      box-shadow: none;
+    }
+  </style>
+
+  <h2>Experience Our Mobile App</h2>
+
+  <div class="app-image">
+    <img src="public/app-screens.png" alt="Waide mobile app interface screenshots" loading="lazy" />
+  </div>
+
+  <div class="feature-buttons">
+    <button>Indoor Navigation</button>
+    <button>Augmented Reality</button>
+    <button>Accessibility Tools</button>
+  </div>
+</section>
+
+
+     
+
+  <section class="how-it-works-section">
+    <style>
+        .how-it-works-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1rem;
+            background-color: #121212;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container {
+            max-width: 1152px;
+            margin: auto;
+            text-align: center;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            color: #ffffff;
+            margin-bottom: 3rem;
+        }
+
+        .step-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .step-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .step-card {
+            background-color: #000000;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border: 2px solid #1f2937;
+            transition: transform 0.3s ease-in-out, border-width 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            box-sizing: border-box;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-width: 4px;
+            border-color: #00FFFF;
+        }
+
+        .step-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto 1rem;
+            background-color: #06b6d4;
+            border-radius: 9999px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: black;
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            color: #9ca3af;
+            line-height: 1.625;
+        }
+
+        .video-container {
+            position: relative;
+            border-radius: 0.75rem;
+            border: 2px solid #1f2937;
+            margin: auto;
+            max-width: 80rem;
+            box-sizing: border-box;
+        }
+
+        .video-container:focus-within,
+        .video-container:hover {
+            border-width: 4px;
+            border-color: #00FFFF;
+        }
+
+        .video-frame {
+            border-radius: 0.75rem;
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            display: block;
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .play-button-icon {
+            height: 6rem;
+            width: 6rem;
+            color: white;
+            transition: color 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .play-button-icon:hover {
+            color: #00FFFF;
+        }
+    </style>
+    <div class="container">
+        <h2 class="section-title">
+            How It Works
+        </h2>
+        
+        <!-- 3-Step Process Cards -->
+        <div class="step-cards-grid">
+            <!-- Step 1 Card -->
+            <div class="step-card">
+                <div class="step-number">
+                    <span>1</span>
+                </div>
+                <h3 class="step-title">Venue Floorplan Submission</h3>
+                <p class="step-description">
+                    Venues submit their floorplans, a crucial first step in building a map that enables accessible navigation and independence for everyone.
+                </p>
+            </div>
+
+            <!-- Step 2 Card -->
+            <div class="step-card">
+                <div class="step-number">
+                    <span>2</span>
+                </div>
+                <h3 class="step-title">Digitization & Georeferencing</h3>
+                <p class="step-description">
+                    We digitize the floorplan and georeference it to Earth's coordinates using GIS indoor mapping tools. We then add points of interest and routing for seamless navigation.
+                </p>
+            </div>
+
+            <!-- Step 3 Card -->
+            <div class="step-card">
+                <div class="step-number">
+                    <span>3</span>
+                </div>
+                <h3 class="step-title">App Integration</h3>
+                <p class="step-description">
+                    This digitized interactive floorplan is integrated into our app, providing users with accurate, turn-by-turn directions and a new level of confidence and freedom.
+                </p>
+            </div>
+        </div>
+
+        <!-- Full-width Video Frame -->
+        <div class="video-container" tabindex="0">
+            <video id="howItWorksVideo" class="video-frame" preload="metadata" poster="https://placehold.co/1280x720/1a1a1a/404040?text=Click+to+Play+Video">
+                <source src="public/how-it-works.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div id="playButton" class="play-button-overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" class="play-button-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('howItWorksVideo');
+            const playButton = document.getElementById('playButton');
+
+            if (playButton && video) {
+                playButton.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                        playButton.style.opacity = '0';
+                        playButton.style.pointerEvents = 'none';
+                        video.setAttribute('controls', 'true');
+                    }
+                });
+
+                video.addEventListener('play', () => {
+                    playButton.style.opacity = '0';
+                    playButton.style.pointerEvents = 'none';
+                    video.setAttribute('controls', 'true');
+                });
+
+                video.addEventListener('pause', () => {
+                    playButton.style.opacity = '1';
+                    playButton.style.pointerEvents = 'auto';
+                    video.removeAttribute('controls');
+                });
+            }
+        });
+    </script>
+</section>
+
+
+    
+
+
+    
+    
+
+                
+                <!-- Feature Cards -->
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/mobility-app-interface.jpg" alt="Mobile platform interface for navigation" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mobile-First Platform</h3>
+                            <p>Deploy mobility solutions across your venues with zero infrastructure cost</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/ar-navigation.png" alt="Augmented reality navigation features" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Captivate Visitors With Immersive Experiences</h3>
+                            <p>Turn every visit into a seamless adventure. learn movement patterns,  and
+                                connect people with relevant offers right where they are.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/global-network.png" alt="Global network infrastructure map" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Global Infrastructure</h3>
+                            <p>Worldwide network and cloud infrastructure for seamless mobility services</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">7M+</div>
+                        <div class="stat-label">Daily Trips</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">City Partners</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.8%</div>
+                        <div class="stat-label">Reliability</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25ms</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessible Navigation Section -->
+        <section class="accessible-nav-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Empowering Accessible Indoor Navigation</h2>
+                    <p>Transforming how individuals with diverse abilities navigate complex indoor environments through innovative our cutting edge navigation solutions</p>
+                </div>
+
+                <div class="two-column-layout">
+                    <div class="content-column">
+                        <h3>Engaging Navigation Platform</h3>
+                        <p>Our revolutionary navigation system empowers individuals both old and young to build their navigation skills through engaging, game-based/reward-based learning experiences. 
+                            By simulating real-world environments, we build confidence and independence for travelers of all abilities without the cognitive load.</p>
+                        <ul class="feature-list">
+                            <li>Immersive virtual environment for all industries</li>
+                            <li>Worldwide deployment with zero infrastructure setup</li>
+                            <li>Comprehensive support tools</li>
+                            <li>Immersive orientation and mobility training enhances travel experiences while building confidence</li>
+                        </ul>
+                    </div>
+                    <div class="image-column">
+                        <div class="feature-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/airport-wayfinding.png" alt="Accessible airport navigation system" loading="lazy">
+                            </div>
+                            <div class="card-content">
+                                <h4>Travel Preparation System</h4>
+                                <p>Comprehensive digital environments that familiarize users with complex travel hubs before arrival, reducing anxiety and building navigation confidence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="three-column-grid">
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/modern-mall-navigation.png" alt="Modern mall navigation simulation" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h4>Digital Simulation</h4>
+                            <p>Advanced virtual environments for safe practice and skill development</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/hospital-smart-navigation.png" alt="Hospital smart navigation system" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h4>Collaborative Learning</h4>
+                            <p>Inclusive tools designed for everyone</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <!-- Fixed image path to include public directory -->
+                            <img src="public/smart-office-navigation.png" alt="Smart office navigation features" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h4>Scalable Solutions</h4>
+                            <p>Adaptable platform for diverse environments, users and global implementation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Indoor Spaces Carousel -->
+        <section class="spaces-carousel-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Spaces We Transform</h2>
+                    <p>Our intelligent navigation solutions adapt to any indoor environment, creating seamless experiences across diverse spaces.</p>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel-track" id="spacesCarousel">
+                        <!-- Shopping & Retail -->
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-mall-interior.png" alt="Shopping Malls">
+                            </div>
+                            <div class="card-content">
+                                <h4>Shopping Malls</h4>
+                                <p>Smart wayfinding and crowd flow optimization</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/airport-terminal-interior.png" alt="Airports">
+                            </div>
+                            <div class="card-content">
+                                <h4>Airports</h4>
+                                <p>Terminal navigation and passenger guidance</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-hospital-interior.png" alt="Hospitals">
+                            </div>
+                            <div class="card-content">
+                                <h4>Hospitals</h4>
+                                <p>Patient and visitor navigation systems</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-office-lobby.png" alt="Office Buildings">
+                            </div>
+                            <div class="card-content">
+                                <h4>Office Buildings</h4>
+                                <p>Workplace navigation and space optimization</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/university-campus-interior.png" alt="Universities">
+                            </div>
+                            <div class="card-content">
+                                <h4>Universities</h4>
+                                <p>Campus navigation for students and visitors</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/luxury-hotel-lobby.png" alt="Hotels">
+                            </div>
+                            <div class="card-content">
+                                <h4>Hotels</h4>
+                                <p>Guest services and facility navigation</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/convention-center-interior.png" alt="Convention Centers">
+                            </div>
+                            <div class="card-content">
+                                <h4>Convention Centers</h4>
+                                <p>Event navigation and crowd management</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/sports-stadium-interior.png" alt="Sports Venues">
+                            </div>
+                            <div class="card-content">
+                                <h4>Sports Venues</h4>
+                                <p>Stadium navigation and seat finding</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/museum-gallery.png" alt="Museums">
+                            </div>
+                            <div class="card-content">
+                                <h4>Museums</h4>
+                                <p>Interactive exhibit navigation and tours</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/train-station-interior.png" alt="Train Stations">
+                            </div>
+                            <div class="card-content">
+                                <h4>Train Stations</h4>
+                                <p>Platform guidance and transit connections</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-library-interior.png" alt="Libraries">
+                            </div>
+                            <div class="card-content">
+                                <h4>Libraries</h4>
+                                <p>Resource location and study space finding</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/modern-warehouse-interior.png" alt="Warehouses">
+                            </div>
+                            <div class="card-content">
+                                <h4>Warehouses</h4>
+                                <p>Inventory navigation and logistics optimization</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/manufacturing-facility-interior.png" alt="Manufacturing">
+                            </div>
+                            <div class="card-content">
+                                <h4>Manufacturing</h4>
+                                <p>Factory floor navigation and safety routing</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/data-center-interior.png" alt="Data Centers">
+                            </div>
+                            <div class="card-content">
+                                <h4>Data Centers</h4>
+                                <p>Server location and maintenance routing</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/parking-garage-interior.png" alt="Parking Garages">
+                            </div>
+                            <div class="card-content">
+                                <h4>Parking Garages</h4>
+                                <p>Vehicle location and space availability</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed image path to include public directory -->
+                                <img src="public/cruise-ship-interior.png" alt="Cruise Ships">
+                            </div>
+                            <div class="card-content">
+                                <h4>Cruise Ships</h4>
+                                <p>Deck navigation and amenity location</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed placeholder image path -->
+                                <img src="/placeholder.svg?height=192&width=384" alt="Theme Parks">
+                            </div>
+                            <div class="card-content">
+                                <h4>Theme Parks</h4>
+                                <p>Attraction navigation and queue management</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed placeholder image path -->
+                                <img src="/placeholder.svg?height=192&width=384" alt="Casinos">
+                            </div>
+                            <div class="card-content">
+                                <h4>Casinos</h4>
+                                <p>Gaming floor navigation and amenity finding</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-card">
+                            <div class="card-image">
+                                <!-- Fixed placeholder image path -->
+                                <img src="/placeholder.svg?height=192&width=384" alt="Subway Systems">
+                            </div>
+                            <div class="card-content">
+                                <h4>Subway Systems</h4>
+                                <p>Underground navigation and transfer guidance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+<section class="waide-team-section" style="padding: 4rem 2rem; text-align: center; background-color: #0d0d0d; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: none;">
+  <style>
+    .waide-team-section .team-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 3rem;
+    }
+    .waide-team-section .team-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .waide-team-section .team-card {
+      background-color: #1a1a1a;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      transition: border-color 0.3s, transform 0.3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .waide-team-section .team-card:hover,
+    .waide-team-section .team-card:active {
+      border-color: #00ffff;
+      transform: translateY(-5px);
+    }
+    .waide-team-section .team-image-container {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+    .waide-team-section .team-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .waide-team-section .team-content {
+      padding: 1.5rem;
+      background: rgba(26, 26, 26, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      height: 220px; /* Fixed height for all content sections */
+    }
+    .waide-team-section .team-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    .waide-team-section .team-role {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+      overflow-wrap: break-word;
+    }
+    .waide-team-section .linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: black;
+      background-color: #00ffff;
+      text-decoration: none;
+      border: 2px solid transparent;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: border-color 0.3s, background-color 0.3s;
+      margin-top: auto; /* Push button to the bottom */
+    }
+    .waide-team-section .linkedin-btn:hover,
+    .waide-team-section .linkedin-btn:active {
+      border-color: #00ffff;
+      background-color: #0891b2;
+    }
+    .waide-team-section .linkedin-icon::before {
+      content: "LinkedIn";
+      font-size: 0.9rem;
+    }
+  </style>
+  <h2 class="team-title">Meet the Team</h2>
+  <div class="team-grid">
+    <!-- Team Member -->
+    <div class="team-card">
+      <div class="team-image-container">
+        <img src="public/Jacob-thankGod.jpg" alt="Jacob ThankGod Kene, Founder and AR Expert" loading="lazy">
+      </div>
+      <div class="team-content">
+        <div class="team-name">Jacob ThankGod Kene</div>
+        <div class="team-role">Founder, Augmented Reality and Indoor Mapping Expert</div>
+        <a class="linkedin-btn" href="https://www.linkedin.com/in/thankgod-jacob" target="_blank">
+          <span class="linkedin-icon"></span> View LinkedIn
+        </a>
+      </div>
+    </div>
+    <!-- Team Member -->
+    <div class="team-card">
+      <div class="team-image-container">
+        <img src="public/Abdoulaye-Diakite.jpeg" alt="Abdoulaye Diakite PhD, BIM Expert" loading="lazy">
+      </div>
+      <div class="team-content">
+        <div class="team-name">Abdoulaye Diakite PhD</div>
+        <div class="team-role">BIM Expert, Sydney</div>
+        <a class="linkedin-btn" href="https://www.linkedin.com/in/abdoudt" target="_blank">
+          <span class="linkedin-icon"></span> View LinkedIn
+        </a>
+      </div>
+    </div>
+    <!-- Team Member -->
+    <div class="team-card">
+      <div class="team-image-container">
+        <img src="public/Fareed-Gombilla.jpg" alt="Fareed Gombilla, Visually Impaired UI/UX Co-designer" loading="lazy">
+      </div>
+      <div class="team-content">
+        <div class="team-name">Fareed Gombilla</div>
+        <div class="team-role">Visually Impaired, UI/UX Co-designer</div>
+        <a class="linkedin-btn" href="https://www.linkedin.com/in/fareed-gombilla" target="_blank">
+          <span class="linkedin-icon"></span> View LinkedIn
+        </a>
+      </div>
+    </div>
+    <!-- Team Member -->
+    <div class="team-card">
+      <div class="team-image-container">
+        <img src="public/kaunda-bill.jpg" alt="Kaunda Bill, Integration Partner" loading="lazy">
+      </div>
+      <div class="team-content">
+        <div class="team-name">Kaunda Bill</div>
+        <div class="team-role">Integration Partner, Founder Najimudu Empowerment Initiative (NEI), Kenya</div>
+        <a class="linkedin-btn" href="https://www.linkedin.com/in/bill-kaunda-gwendo-5952b7139" target="_blank">
+          <span class="linkedin-icon"></span> View LinkedIn
+        </a>
+      </div>
+    </div>
+    <!-- Team Member -->
+    <div class="team-card">
+      <div class="team-image-container">
+        <img src="public/charity-adhiambo.jpg" alt="Charity Adhiambo, Integration Partner" loading="lazy">
+      </div>
+      <div class="team-content">
+        <div class="team-name">Charity Adhiambo</div>
+        <div class="team-role">Integration Partner, CEO Najimudu Empowerment Initiative (NEI), Kenya</div>
+        <a class="linkedin-btn" href="https://www.linkedin.com/in/charity-adhiambo-461498226" target="_blank">
+          <span class="linkedin-icon"></span> View LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section" style="padding: 4rem 2rem; background-color: #000; color: #fff; text-align: center;">
+  <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">What Our Partners Say</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+    <div style="max-width: 300px; background: #1a1a1a; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.5); border: 1px solid #333;">
+      <p>"Waide has transformed accessibility in our mall. Visually impaired visitors now navigate independently."</p>
+      <cite>- Mall Manager, Nairobi</cite>
+    </div>
+    <div style="max-width: 300px; background: #1a1a1a; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.5); border: 1px solid #333;">
+      <p>"The AR guides are incredible. Our hospital patients feel more confident moving around."</p>
+      <cite>- Hospital Admin, Lagos</cite>
+    </div>
+    <div style="max-width: 300px; background: #1a1a1a; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.5); border: 1px solid #333;">
+      <p>"Seamless integration with our systems. Highly recommend for any venue."</p>
+      <cite>- Tech Director, Airport</cite>
+    </div>
+  </div>
+</section>
+
+<!-- Partners Section -->
+<section class="partners-section" style="padding: 4rem 2rem; background-color: #0d0d0d; color: #fff; text-align: center;">
+  <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Our Partners</h2>
+  <p style="font-size: 1.1rem; color: #aaa; margin-bottom: 3rem;">We collaborate with leading organizations to advance accessible navigation technology.</p>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+    <div style="background: #1a1a1a; padding: 2rem; border-radius: 8px; border: 2px solid #333; transition: border-color 0.3s ease; text-align: center;">
+      <img src="public/open-street-maps.webp" alt="Open Street Maps Logo" style="width: 150px; height: auto; margin-bottom: 1rem; background-color: white; padding: 0.5rem;" loading="lazy" onerror="this.style.display='none'">
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Open Street Maps</h3>
+      <p style="color: #ccc;">Providing open-source mapping data for global navigation.</p>
+    </div>
+    <div style="background: #1a1a1a; padding: 2rem; border-radius: 8px; border: 2px solid #333; transition: border-color 0.3s ease; text-align: center;">
+      <img src="public/inABLE_LOGO.png" alt="inABLE Logo" style="width: 120px; height: auto; margin-bottom: 1rem;" loading="lazy" onerror="this.style.display='none'">
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">inABLE</h3>
+      <p style="color: #ccc;">Advancing accessibility solutions for inclusive mobility.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section" style="padding: 4rem 2rem; background-color: #000; color: #fff;">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+    <div class="faq-accordion" style="max-width: 800px; margin: 0 auto;">
+      <details class="faq-item" style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">What is Waide Mobility?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Waide Mobility is a cutting-edge platform that reimagines indoor and outdoor navigation for people with disabilities, particularly the visually impaired in Africa. Using AI-powered technology, it transforms smartphones into assistive devices, enabling users to navigate complex spaces seamlessly without costly specialized equipment.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">What is indoor navigation?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Indoor navigation refers to the use of technology to provide accurate directions and location-based services within buildings where traditional GPS doesn't work well. It involves digital maps, sensors, and apps to guide users through malls, airports, hospitals, and other venues.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">How does indoor mapping work?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          The process begins with venues submitting their floorplans. Our team digitizes these plans, georeferences them to real-world coordinates using GIS tools, and adds interactive elements like points of interest, routing paths, and accessibility features to create comprehensive digital environments.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">How does Waide's navigation system work?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Waide integrates with users' smartphones to provide real-time navigation. After selecting a destination, the app uses AR to display virtual guides, offers audio descriptions, and provides haptic feedback. It combines outdoor GPS with indoor positioning for continuous guidance.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">Who can benefit from Waide's services?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Waide is designed for visually impaired individuals, but also helps elderly people, families with children, tourists, and anyone who needs reliable navigation in unfamiliar or complex indoor environments, promoting independence and confidence.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">Is Waide accessible for all users?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Absolutely. Waide adheres to WCAG accessibility standards, featuring intuitive interfaces, voice commands, screen reader compatibility, and customizable options to ensure it's usable by people with diverse abilities, including those with motor or cognitive challenges.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">What types of venues does Waide support?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Waide supports a wide range of indoor spaces including shopping malls, airports, hospitals, office buildings, universities, hotels, convention centers, sports venues, museums, train stations, libraries, warehouses, manufacturing facilities, data centers, parking garages, and even cruise ships.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">How much does Waide cost?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Our pricing is flexible: $299/month for small spaces (up to 5,000 sq ft), $1,199/month for medium spaces (up to 50,000 sq ft), and custom pricing for large complexes. We offer a 20% discount for yearly plans to make it more affordable.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">How do I get started with Waide?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Getting started is easy. Reach out via email at waidemobility@gmail.com or use the contact form in our pricing section. We'll discuss your specific needs, venue type, and provide a tailored solution, including a free trial to experience the platform.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">What are the key features of Waide?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Key features include a mobile-first platform with zero infrastructure costs, immersive AR navigation for engaging experiences, global cloud infrastructure for reliability, real-time data visualization with ERP integrations, and smart building features like room booking and IoT connectivity.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">What is AR navigation in Waide?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          AR navigation in Waide uses augmented reality to overlay interactive digital elements onto the real world through your smartphone camera. This creates virtual guides that appear as friendly characters, providing step-by-step directions, highlighting obstacles, and offering contextual information to enhance navigation.
+        </div>
+      </details>
+      <details style="margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #1a1a1a;">
+        <summary style="padding: 1rem; cursor: pointer; font-weight: bold; background: #333; border-radius: 8px 8px 0 0;">How does Waide ensure data security?</summary>
+        <div style="padding: 1rem; border-top: 1px solid #333;">
+          Waide prioritizes data security with enterprise-grade encryption, secure cloud storage on global infrastructure, compliance with international data protection regulations, and regular security audits. User data is anonymized and never shared without consent.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<script>
+  try {
+    // Optional: Add smooth toggle animation for accordion
+    document.querySelectorAll('.faq-accordion details').forEach((detail) => {
+      const content = detail.querySelector('div');
+      if (content) {
+        content.style.transition = 'max-height 0.3s ease-in-out';
+        if (!detail.open) {
+          content.style.maxHeight = '0';
+        }
+        detail.addEventListener('toggle', (event) => {
+          if (detail.open) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            detail.style.borderColor = '#00FFFF'; // Cyan highlight
+            detail.style.borderWidth = '2px';
+          } else {
+            content.style.maxHeight = '0';
+            detail.style.borderColor = '#333'; // Reset to original
+            detail.style.borderWidth = '1px';
+          }
+        });
+        // Add hover effect
+        detail.addEventListener('mouseenter', () => {
+          detail.style.borderColor = '#00FFFF';
+          detail.style.borderWidth = '2px';
+          detail.style.transform = 'scale(1.02)';
+          detail.style.transition = 'transform 0.3s ease, border-color 0.3s ease, border-width 0.3s ease';
+        });
+        detail.addEventListener('mouseleave', () => {
+          if (!detail.open) {
+            detail.style.borderColor = '#333';
+            detail.style.borderWidth = '1px';
+          }
+          detail.style.transform = 'scale(1)';
+        });
+      }
+    });
+  } catch (error) {
+    console.warn('FAQ accordion animation failed to load:', error);
+    // Accordion still works without JS via native <details>
+  }
+</script>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo">
+                               <div class="logo">
+                    <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
+                </div>
+                            </div>
+                            <span>Waide Mobility</span>
+                        </div>
+                        <p>The future of smart navigation, powered by artificial intelligence.</p>
+                        <a href="demo.html" class="btn btn-primary" style="margin-top: 1rem;" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'footer_request_demo' });">Request Demo</a>
+                    </div>
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Solutions</h4>
+                            <ul>
+                                <li><a href="#">Fleet Management</a></li>
+                                <li><a href="#">Analytics Suite</a></li>
+                                <li><a href="#">Location-baseds Ads</a></li>
+                              
+                        
+                            
+                            
+                                <li><a href="#">Smart Cities</a></li>
+                                <li><a href="#">Public Transit</a></li>
+                                <li><a href="#">Indoor Navigation</a></li>
+                                <li><a href="#">Asset Tracking</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Waide Mobility. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
