@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Waide Mobility's flexible pricing plans for AI-powered indoor navigation solutions. Choose from Small, Medium, or Large spaces with custom features. Start your free trial today.">
+    <meta name="keywords" content="indoor navigation pricing, AI mobility solutions, accessible navigation plans, smart building integration pricing">
+    <title>Waide Mobility Pricing Plans | AI Indoor Navigation Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147004606.js"></script>
+    <!-- End of HubSpot Embed Code -->
+    <!-- Structured Data for Pricing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Waide Mobility Pricing Plans",
+      "description": "Flexible pricing plans for AI-powered indoor navigation solutions",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Small Spaces Plan",
+          "description": "Perfect for retail stores & small offices",
+          "price": "399",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Medium Spaces Plan",
+          "description": "Ideal for shopping centers & hospitals",
+          "price": "1199",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Large Spaces Plan",
+          "description": "For airports & mega complexes",
+          "price": "Custom",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="min-h-screen bg-black">
+        <!-- Navigation -->
+        <nav class="nav sticky">
+        <style>
+            .sticky {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                background-color: #000;
+            }
+            .footer {
+                width: 100%;
+                background-color: #000;
+            }
+            .footer .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 1rem 2rem;
+                color: #fff;
+            }
+        </style>
+            <a href="index.html" class="nav-brand">
+                <div class="logo">
+                    <img src="public/waide-logo.png" alt="logo" width="30" height="30">
+                </div>
+                <span class="brand-text">Waide Mobility</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="#pricing-section" id="pricing" class="nav-link">Pricing</a>
+                <button class="btn btn-primary" onclick="document.getElementById('pricing-cards').scrollIntoView({behavior: 'smooth'});">Get Started</button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="main-content">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                        </svg>
+                        Flexible Pricing
+                    </div>
+                    <h1 class="hero-title">
+                        Choose Your
+                        <br>
+                        <span class="gradient-text">Perfect Plan</span>
+                    </h1>
+                    <p class="hero-description">
+                        From startups to enterprise organizations, we have the right mobility solution for your needs. Scale as you grow with transparent, predictable pricing.
+                    </p>
+                    <!-- Hero Buttons -->
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large">
+                            Get in Touch
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-outline btn-large">Compare Plans</button>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h2>Indoor Space Solutions</h2>
+                    <p>Transform your indoor spaces with our smart navigation technology. Choose monthly or yearly plans.</p>
+                    <div class="pricing-toggle">
+                        <span>Monthly</span>
+                        <button class="toggle-switch" id="pricingToggle">
+                            <span class="toggle-slider"></span>
+                        </button>
+                        <span>Yearly <span class="discount">Save 20%</span></span>
+                    </div>
+                </div>
+
+                <div class="pricing-grid" id="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Small Spaces</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="399" data-yearly="3999">299</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p>Perfect for retail stores & small offices</p>
+                        </div>
+                        <ul class="features-list">
+                            <li>Up to 5,000 sq ft coverage</li>
+                            <li>Basic indoor positioning</li>
+                            <li>Immersive AR navigation</li>
+                            <li>Mobile app integration</li>
+                            <li>Location-based advertising capped</li>
+                            <li>24/7 support</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openPopup('Small Spaces')">Start Your Free Trial Now</button>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Medium Spaces</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="1599" data-yearly="10999">1,199</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p>Ideal for shopping centers & hospitals</p>
+                        </div>
+                        <ul class="features-list">
+                            <li>Up to 50,000 sq ft coverage</li>
+                            <li>Advanced AR navigation</li>
+                            <li>Real-time analytics</li>
+                            <li>API access & integrations</li>
+                            <li>Geoconquesting (competitor targeting)</li>
+                            <li>Seamless outdoor-indoor navigation</li>
+                            <li>Smart building integration</li>
+                            <li>Location-based advertising uncapped</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openPopup('Medium Spaces')">Start Your Free Trial Now</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Large Spaces</h3>
+                            <div class="price">
+                                <span class="custom-price">Custom</span>
+                            </div>
+                            <p>For airports & mega complexes</p>
+                        </div>
+                        <ul class="features-list">
+                            <li>Unlimited coverage area</li>
+                            <li>Full AI navigation suite</li>
+                            <li>Custom integrations</li>
+                            <li>White-label solutions</li>
+                            <li>Dedicated support team</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openPopup('Large Spaces')">Contact Sales</button>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2 class="faq-title">Frequently Asked Questions</h2>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                Can I change plans anytime?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                Is there a free trial?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                All plans include a 14-day free trial with full access to features. No credit card required to start your trial.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                What payment methods do you accept?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                We accept all major credit cards, ACH transfers, and wire transfers for enterprise accounts. Annual billing receives a 15% discount.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                Do you offer custom solutions?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                Yes, our Enterprise plan includes custom development, integrations, and deployment options tailored to your specific needs.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                What happens if I exceed my plan limits (e.g., coverage area)?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                We'll notify you when approaching limits. You can upgrade your plan anytime, or pay overage fees for temporary excess usage.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                How does the location-based advertising work?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                Our capped/uncapped advertising targets users based on their indoor location, delivering relevant offers via the app. Capped plans limit impressions, while uncapped allows unlimited targeting.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                What kind of support is included?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                All plans include email support. Medium and Large plans add priority support and dedicated account managers.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                Can I integrate with my existing systems?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                Yes, our API allows integration with ERP, booking systems, and IoT devices. Custom integrations are available for Large plans.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                Is my data secure?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                We use enterprise-grade encryption and comply with GDPR/CCPA. Data is stored securely and never shared without consent.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                What if I need to cancel?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                You can cancel anytime with no penalties. Refunds are prorated for unused months.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                Do you offer training or onboarding?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                Yes, we provide comprehensive onboarding, virtual training sessions, and documentation for all plans.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                Are there setup fees?
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                No setup fees for Small and Medium plans. Large plans may include custom setup costs, discussed during consultation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                .faq-section {
+                    margin-top: 3rem;
+                    max-width: 900px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    color: white;
+                    font-family: 'Inter', sans-serif;
+                }
+                .faq-title {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                }
+                .faq-accordion {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                }
+                @media (max-width: 768px) {
+                    .faq-accordion {
+                        grid-template-columns: 1fr;
+                    }
+                }
+                .faq-item {
+                    background-color: #111;
+                    border: 1px solid #333;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                }
+                .faq-question {
+                    background: none;
+                    border: none;
+                    color: white;
+                    padding: 1rem 1.5rem;
+                    width: 100%;
+                    text-align: left;
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    transition: background-color 0.3s ease;
+                }
+                .faq-question:hover,
+                .faq-question:focus {
+                    background-color: #222;
+                    outline: none;
+                }
+                .faq-icon {
+                    font-size: 1.5rem;
+                    transition: transform 0.3s ease;
+                }
+                .faq-question[aria-expanded="true"] .faq-icon {
+                    transform: rotate(45deg);
+                }
+                .faq-answer {
+                    padding: 1rem 1.5rem;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    background-color: #222;
+                    animation: fadeIn 0.3s ease forwards;
+                }
+                @keyframes fadeIn {
+                    from { opacity: 0; max-height: 0; }
+                    to { opacity: 1; max-height: 1000px; }
+                }
+                </style>
+
+                <script>
+                document.querySelectorAll('.faq-question').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const expanded = button.getAttribute('aria-expanded') === 'true';
+                        button.setAttribute('aria-expanded', !expanded);
+                        const answer = button.nextElementSibling;
+                        if (!expanded) {
+                            answer.hidden = false;
+                        } else {
+                            answer.hidden = true;
+                        }
+                    });
+                });
+                </script>
+
+                <!-- CTA -->
+                <div class="cta-section">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Join thousands of organizations already using Waide Mobility to 10x their venue, satisfy visitors and beat competitors.</p>
+                    <button class="btn btn-primary btn-large">Start Your Free Trial</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo">
+                               <div class="logo">
+                    <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
+                </div>
+                            </div>
+                            <span>Waide Mobility</span>
+                        </div>
+                        <p>The future of smart navigation, powered by artificial intelligence.</p>
+                        <a href="demo.html" class="btn btn-primary" style="margin-top: 1rem;" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'footer_request_demo' });">Request Demo</a>
+                    </div>
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Solutions</h4>
+                            <ul>
+                                <li><a href="#">Fleet Management</a></li>
+                                <li><a href="#">Analytics Suite</a></li>
+                                <li><a href="#">Location-baseds Ads</a></li>
+
+
+
+                                <li><a href="#">Smart Cities</a></li>
+                                <li><a href="#">Public Transit</a></li>
+                                <li><a href="#">Indoor Navigation</a></li>
+                                <li><a href="#">Asset Tracking</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Waide Mobility. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                    </div>
+                    <div class="trust-badges" style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="SSL Secure" style="width: 20px; height: 20px;" loading="lazy">
+                        <span style="font-size: 12px; color: #ccc;">SSL Encrypted & Secure</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="subscriptionPopup" class="popup-overlay">
+            <div class="popup-content">
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+                <h3>Get Started with <span id="popupPlanName"></span></h3>
+
+                <form id="subscriptionForm">
+                    <input type="hidden" name="plan" id="selectedPlan">
+
+                    <div class="form-grid">
+                        <div>
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" required>
+
+                            <label for="industry">Industry</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select an indoor space type</option>
+                                <option>Airport</option>
+                                <option>Train Station</option>
+                                <option>Bus Terminal</option>
+                                <option>Shopping Mall</option>
+                                <option>Retail Store</option>
+                                <option>Supermarket</option>
+                                <option>Hospital</option>
+                                <option>Clinic</option>
+                                <option>University</option>
+                                <option>School</option>
+                                <option>Museum</option>
+                                <option>Art Gallery</option>
+                                <option>Convention Center</option>
+                                <option>Exhibition Hall</option>
+                                <option>Sports Arena</option>
+                                <option>Stadium</option>
+                                <option>Hotel</option>
+                                <option>Resort</option>
+                                <option>Casino</option>
+                                <option>Government Building</option>
+                                <option>Corporate Office</option>
+                                <option>Factory</option>
+                                <option>Warehouse</option>
+                                <option>Library</option>
+                                <option>Religious Center</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+
+                            <label for="description">Project Description</label>
+                            <textarea id="description" name="description" rows="4" placeholder="Tell us more about your needs..."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+
+                <div id="submissionStatus" style="display: none; text-align: center; padding: 1rem;">
+                    <p><strong>We tried to open WhatsApp.</strong> If it didn’t open, <a id="whatsFallback" href="#" target="_blank" rel="noopener">tap here</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            border: 2px solid #fff;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background: #000;
+            padding: 1.8rem;
+            border: 2px solid lightgrey;
+            border-radius: 12px;
+            width: 95%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            color: #fff;
+            position: relative;
+            transition: border-color 0.3s ease;
+        }
+        .popup-content:hover,
+        .popup-content:focus-within {
+            border-color: cyan;
+        }
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+        }
+        .popup-content h3 {
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        #subscriptionForm {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+        }
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+        .popup-content label {
+            margin: 0.5rem 0 0.2rem;
+        }
+        .popup-content input,
+        .popup-content textarea,
+        .popup-content select {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            background: #111;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .popup-content textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .popup-content button[type="submit"] {
+            background: cyan;
+            color: #000;
+            font-weight: bold;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .popup-content button[type="submit"]:hover {
+            background: #00e6e6;
+        }
+        </style>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.getElementById('pricingToggle');
+            const amounts = document.querySelectorAll('.amount');
+
+            toggle.addEventListener('click', function() {
+                toggle.classList.toggle('active');
+                const isYearly = toggle.classList.contains('active');
+
+                amounts.forEach(amount => {
+                    const monthly = amount.getAttribute('data-monthly');
+                    const yearly = amount.getAttribute('data-yearly');
+                    amount.textContent = isYearly ? Math.round(yearly / 12) : monthly;
+                });
+            });
+        });
+
+        function openPopup(planName) {
+            const form = document.getElementById("subscriptionForm");
+            form.reset();
+            document.getElementById("selectedPlan").value = planName;
+            document.getElementById("popupPlanName").textContent = planName;
+
+            document.getElementById("submissionStatus").style.display = "none";
+            document.getElementById("subscriptionPopup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("subscriptionPopup").style.display = "none";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const formData = localStorage.getItem('formData');
+            if (formData) {
+                const data = JSON.parse(formData);
+                const calendlyUrl = 'https://calendly.com/jacob-waidemobility-sbdo/30min';
+                const prefill = `?name=${encodeURIComponent(data.firstname + ' ' + data.lastname)}&email=${encodeURIComponent(data.email)}&a1=${encodeURIComponent(data.company)}&a2=${encodeURIComponent(data.phone)}&a3=${encodeURIComponent(data.message)}`;
+                localStorage.removeItem('formData');
+                window.location.href = calendlyUrl + prefill;
+            }
+        });
+
+        document.getElementById("subscriptionForm").addEventListener("submit", function (e) {
+            const formData = new FormData(this);
+            const nameParts = formData.get('name').split(' ');
+            const data = {
+                firstname: nameParts[0] || '',
+                lastname: nameParts.slice(1).join(' ') || '',
+                email: formData.get('email'),
+                company: formData.get('company'),
+                phone: formData.get('phone') || '',
+                message: `Industry: ${formData.get('industry')}\nProject Description: ${formData.get('description') || 'N/A'}\nPlan: ${formData.get('plan')}`
+            };
+            localStorage.setItem('formData', JSON.stringify(data));
+            // Form will submit normally, HubSpot will capture via tracking code
+        });
+        </script>
+    </div>
+    <script>
+      // Intercom live chat widget
+      window.intercomSettings = {
+        app_id: "your_app_id"
+      };
+    </script>
+    <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/your_app_id';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+    <script src="script.js"></script>
+</body>
+</html>
