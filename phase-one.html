@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Waide Mobility's Phase One: Mapping Nigeria's first 100 public buildings in Lagos, powered by community donations. Transforming accessibility and independence for millions.">
+    <meta name="keywords" content="Waide Mobility, indoor mapping, Nigeria, Lagos, accessibility, visually impaired, climate resilience, SDG 3, SDG 10, SDG 13">
+    <title>Phase One: Mapping Nigeria's Future - Waide Mobility</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+    <link rel="manifest" href="public/site.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147004606.js"></script>
+    <!-- End of HubSpot Embed Code -->
+</head>
+<body>
+    <div class="min-h-screen bg-black">
+        <!-- Navigation -->
+        <nav class="nav sticky">
+            <div class="nav-brand">
+                <div class="logo">
+                    <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
+                </div>
+                <span class="brand-text">Waide Mobility</span>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-item">
+                    <a href="use-cases.html" class="nav-link">Use Cases</a>
+                    <button class="mobile-dropdown-toggle" style="display: none;">
+                        Use Cases
+                        <span>▼</span>
+                    </button>
+                    <div class="mega-dropdown">
+                        <div class="mega-dropdown-content">
+                            <div class="dropdown-section">
+                                <h4>🏥 Healthcare & Public</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/hospital-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏥</span>
+                                        Hospital Navigation
+                                    </a>
+                                    <a href="blog/library-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">📚</span>
+                                        Library Navigation
+                                    </a>
+                                    <a href="blog/museum-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏛️</span>
+                                        Museum Navigation
+                                    </a>
+                                    <a href="blog/university-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎓</span>
+                                        University Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🏢 Commercial & Retail</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/mall-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🛍️</span>
+                                        Mall Navigation
+                                    </a>
+                                    <a href="blog/office-building-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏢</span>
+                                        Office Building Navigation
+                                    </a>
+                                    <a href="blog/hotel-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏨</span>
+                                        Hotel Navigation
+                                    </a>
+                                    <a href="blog/casino-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎰</span>
+                                        Casino Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🚇 Transportation & Logistics</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/airport-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">✈️</span>
+                                        Airport Navigation
+                                    </a>
+                                    <a href="blog/train-station-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚂</span>
+                                        Train Station Navigation
+                                    </a>
+                                    <a href="blog/subway-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚇</span>
+                                        Subway Navigation
+                                    </a>
+                                    <a href="blog/warehouse-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">📦</span>
+                                        Warehouse Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-dropdown-content" style="margin-top: 1rem;">
+                            <div class="dropdown-section">
+                                <h4>🎯 Entertainment & Events</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/sports-venue-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">⚽</span>
+                                        Sports Venue Navigation
+                                    </a>
+                                    <a href="blog/theme-park-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎢</span>
+                                        Theme Park Navigation
+                                    </a>
+                                    <a href="blog/convention-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏢</span>
+                                        Convention Center Navigation
+                                    </a>
+                                    <a href="blog/cruise-ship-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚢</span>
+                                        Cruise Ship Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🏭 Industrial & Tech</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/manufacturing-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏭</span>
+                                        Manufacturing Navigation
+                                    </a>
+                                    <a href="blog/data-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">💾</span>
+                                        Data Center Navigation
+                                    </a>
+                                    <a href="blog/parking-garage-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚗</span>
+                                        Parking Garage Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <div class="mobile-dropdown-section">
+                            <h4>🏥 Healthcare & Public</h4>
+                            <a href="blog/hospital-navigation.html" class="dropdown-link">🏥 Hospital Navigation</a>
+                            <a href="blog/library-navigation.html" class="dropdown-link">📚 Library Navigation</a>
+                            <a href="blog/museum-navigation.html" class="dropdown-link">🏛️ Museum Navigation</a>
+                            <a href="blog/university-navigation.html" class="dropdown-link">🎓 University Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🛍️ Commercial & Retail</h4>
+                            <a href="blog/mall-navigation.html" class="dropdown-link">🛍️ Mall Navigation</a>
+                            <a href="blog/office-building-navigation.html" class="dropdown-link">🏢 Office Building Navigation</a>
+                            <a href="blog/hotel-navigation.html" class="dropdown-link">🏨 Hotel Navigation</a>
+                            <a href="blog/casino-navigation.html" class="dropdown-link">🎰 Casino Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🚊 Transportation & Logistics</h4>
+                            <a href="blog/airport-navigation.html" class="dropdown-link">✈️ Airport Navigation</a>
+                            <a href="blog/train-station-navigation.html" class="dropdown-link">🚊 Train Station Navigation</a>
+                            <a href="blog/subway-navigation.html" class="dropdown-link">🚇 Subway Navigation</a>
+                            <a href="blog/warehouse-navigation.html" class="dropdown-link">📦 Warehouse Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🎪 Entertainment & Events</h4>
+                            <a href="blog/sports-venue-navigation.html" class="dropdown-link">⚽ Sports Venue Navigation</a>
+                            <a href="blog/theme-park-navigation.html" class="dropdown-link">🎢 Theme Park Navigation</a>
+                            <a href="blog/convention-center-navigation.html" class="dropdown-link">🏢 Convention Center Navigation</a>
+                            <a href="blog/cruise-ship-navigation.html" class="dropdown-link">🚢 Cruise Ship Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🏭 Industrial & Tech</h4>
+                            <a href="blog/manufacturing-navigation.html" class="dropdown-link">🏭 Manufacturing Navigation</a>
+                            <a href="blog/data-center-navigation.html" class="dropdown-link">💾 Data Center Navigation</a>
+                            <a href="blog/parking-garage-navigation.html" class="dropdown-link">🚗 Parking Garage Navigation</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="blog/index.html" class="nav-link">Blog</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <button class="btn btn-primary" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'nav_request_demo' }); window.location.href='demo.html'">Request Demo</button>
+            </div>
+        </nav>
+
+        <!-- Blog Hero Section -->
+        <section class="blog-hero" style="padding: 6rem 2rem; background: linear-gradient(135deg, #0d0d0d 0%, #000 100%), url('public/phase-one-lagos.jpg'); background-size: cover; background-position: center; color: white; text-align: center; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7);"></div>
+            <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: #1a1a1a; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 2rem;">
+                    <span style="color: #00ffff; font-weight: bold;">🇳🇬</span>
+                    <span style="color: #ccc;">Phase One</span>
+                </div>
+                <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2;">
+                    Mapping Nigeria's Future:<br>
+                    <span style="color: #00ffff;">Lagos Takes the Lead</span>
+                </h1>
+                <p style="font-size: 1.25rem; color: #ccc; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6;">
+                    How Waide Mobility is transforming accessibility in Africa's most populous city, one building at a time, powered by community-driven innovation and climate-resilient technology.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <div style="background: #1a1a1a; padding: 0.75rem 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                        <span style="color: #00ffff; font-weight: bold;">100 Buildings</span>
+                        <span style="color: #ccc; margin-left: 0.5rem;">Target</span>
+                    </div>
+                    <div style="background: #1a1a1a; padding: 0.75rem 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                        <span style="color: #00ffff; font-weight: bold;">21M People</span>
+                        <span style="color: #ccc; margin-left: 0.5rem;">Lagos Population</span>
+                    </div>
+                    <div style="background: #1a1a1a; padding: 0.75rem 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                        <span style="color: #00ffff; font-weight: bold;">250M+</span>
+                        <span style="color: #ccc; margin-left: 0.5rem;">Africans with Disabilities</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Content -->
+        <section class="blog-content" style="padding: 4rem 2rem; background-color: #0d0d0d; color: white;">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <article style="line-height: 1.8; font-size: 1.1rem;">
+
+                    <div style="margin: 2rem 0; text-align: center;">
+                        <img src="public/Lagos-City.jpg" alt="Modern Lagos cityscape showing urban development" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,255,255,0.15);">
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Lagos: Africa's most populous city and Phase One's testing ground</p>
+                    </div>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">The Lagos Challenge: Urban Complexity Meets Human Need</h2>
+                    <p>Lagos, Nigeria's economic powerhouse and Africa's most populous city, presents unique challenges for accessibility. With over 21 million residents squeezed into a metropolitan area of just 1,171 square kilometers, the city's rapid urbanization has created complex navigation barriers that disproportionately affect vulnerable populations.</p>
+
+                    <p>According to the World Health Organization, approximately 15% of the world's population lives with some form of disability, and in developing regions like Sub-Saharan Africa, this figure rises significantly. In Lagos alone, an estimated 2.5-3 million people face mobility challenges, from visual impairments to physical disabilities, compounded by the city's notorious traffic congestion and inadequate infrastructure.</p>
+
+                    <blockquote style="background: #1a1a1a; border-left: 4px solid #00ffff; padding: 2rem; margin: 2rem 0; font-style: italic;">
+                        "In Lagos, getting from point A to point B shouldn't require superhuman effort. Our vision is to make every building, every street, every public space accessible to everyone." - Jacob ThankGod Kene, Founder, Waide Mobility
+                    </blockquote>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Community-Powered Mapping: A Revolutionary Approach</h2>
+                    
+                    <div style="margin: 2rem 0; text-align: center;">
+                        <img src="public/community-mappers.jpg" alt="Community mappers working on accessibility solutions" style="width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,255,255,0.15);">
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Community-driven approach: Local mappers building accessible navigation solutions</p>
+                    </div>
+                    
+                    <p>Waide Mobility's Phase One initiative represents a paradigm shift in how accessibility solutions are developed and deployed. Rather than relying on traditional funding models, we're leveraging both community donations and B2B SaaS funding to map Lagos's first 100 public buildings, creating a foundation for nationwide accessibility transformation.</p>
+
+                    <p>This hybrid approach not only reduces costs but also ensures that the solution is built by and for the community it serves while maintaining commercial sustainability. Local stakeholders, including disability rights organizations, urban planners, and technology enthusiasts, are actively involved in identifying priority buildings and testing the mapping technology.</p>
+
+                    <h3>Priority Buildings Include:</h3>
+                    <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                        <li><strong>Government Offices:</strong> Federal Secretariat, Local Government Headquarters</li>
+                        <li><strong>Healthcare Facilities:</strong> Lagos University Teaching Hospital, Primary Health Centers</li>
+                        <li><strong>Educational Institutions:</strong> University of Lagos, Technical Colleges</li>
+                        <li><strong>Transportation Hubs:</strong> Major bus terminals, ferry stations</li>
+                        <li><strong>Public Services:</strong> Post offices, social service centers</li>
+                    </ul>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Technology Meets Local Realities: Climate-Resilient Design</h2>
+                    <p>Lagos faces significant climate challenges, including flooding, extreme heat, and seasonal disruptions. Waide's mapping technology is specifically designed for these conditions:</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Offline Capability</h4>
+                            <p>Works without internet connectivity during network outages or extreme weather events</p>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Battery Optimization</h4>
+                            <p>Low-power design ensures navigation works during extended power outages</p>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Multi-Language Support</h4>
+                            <p>Yoruba, Pidgin English, and other local languages integrated</p>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Emergency Routing</h4>
+                            <p>Alternative paths avoiding flood-prone areas and unsafe zones</p>
+                        </div>
+                    </div>
+
+
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Economic Impact: Jobs, Inclusion, and Growth</h2>
+                    
+                    <div style="margin: 2rem 0; text-align: center;">
+                        <img src="public/wheel-chair-assistive-tech-mobility.jpg" alt="Assistive technology for mobility and accessibility" style="width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,255,255,0.15);">
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Assistive technology: Empowering mobility and independence for all users</p>
+                    </div>
+                    
+                    <p>The Phase One initiative is projected to create significant economic opportunities:</p>
+
+                    <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                        <li><strong>Direct Employment:</strong> 50+ mapping specialists, data analysts, and community coordinators</li>
+                        <li><strong>Technology Sector Growth:</strong> Stimulating local tech ecosystem development</li>
+                        <li><strong>Inclusive Business Opportunities:</strong> Opening new markets for accessibility-focused enterprises</li>
+                        <li><strong>Tourism Boost:</strong> Making Lagos more attractive to international visitors with disabilities</li>
+                    </ul>
+
+                    <p>Research from the World Bank indicates that improving accessibility can increase GDP by up to 7% in developing economies, with particularly strong impacts in service sectors like tourism and healthcare.</p>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Measuring Success: Beyond the Numbers</h2>
+                    <p>Success in Phase One will be measured through multiple indicators:</p>
+
+                    <div style="background: #1a1a1a; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                        <h3 style="color: #00ffff; margin-bottom: 1rem;">Key Performance Indicators</h3>
+                        <ul style="margin-left: 2rem;">
+                            <li>Number of buildings successfully mapped and made accessible</li>
+                            <li>User adoption rates among target demographics</li>
+                            <li>Reduction in navigation-related anxiety and accidents</li>
+                            <li>Economic benefits to local businesses and service providers</li>
+                            <li>Community engagement and feedback scores</li>
+                        </ul>
+                    </div>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">The Road Ahead: Scaling from Lagos to Nigeria</h2>
+                    <p>Phase One serves as a proof-of-concept for nationwide implementation. The success in Lagos will inform strategies for scaling to other Nigerian cities including Abuja, Port Harcourt, and Kano. Key learnings will include:</p>
+
+                    <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                        <li>Optimal mapping methodologies for different building types</li>
+                        <li>Effective community engagement strategies</li>
+                        <li>Technology adaptations for diverse urban environments</li>
+                        <li>Sustainable funding models beyond initial donations</li>
+                    </ul>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Join the Movement: How You Can Help</h2>
+                    <p>Waide Mobility's Phase One is powered by community support. Here's how you can contribute:</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="text-align: center;">
+                            <h4 style="color: #00ffff;">Donate</h4>
+                            <p>Support the mapping of public buildings through our community donation program</p>
+                            <a href="demo.html" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #00ffff; color: #000; border-radius: 6px; text-decoration: none; font-weight: bold;">Support Now</a>
+                        </div>
+                        <div style="text-align: center;">
+                            <h4 style="color: #00ffff;">Partner</h4>
+                            <p>Organizations can sponsor building mapping or provide technical expertise</p>
+                            <a href="partner-form.html" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #00ffff; color: #000; border-radius: 6px; text-decoration: none; font-weight: bold;">Partner With Us</a>
+                        </div>
+                    </div>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Conclusion: A New Era of Inclusive Urban Living</h2>
+                    <p>Waide Mobility's Phase One initiative in Lagos represents more than just mapping buildings—it's about mapping hope, independence, and opportunity for millions. By combining cutting-edge technology with community-driven implementation, we're not just solving accessibility challenges; we're building a more inclusive, resilient, and prosperous Nigeria.</p>
+
+                    <p>The journey from Lagos to nationwide accessibility begins here. Join us in creating a world where every person, regardless of ability, can navigate their environment with confidence and dignity.</p>
+
+                    <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #000; border-radius: 8px; border: 1px solid #333;">
+                        <h3 style="color: #00ffff; margin-bottom: 1rem;">Ready to Make a Difference?</h3>
+                        <p style="margin-bottom: 1.5rem;">Be part of the accessibility revolution in Nigeria</p>
+                        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                            <a href="demo.html" class="btn btn-primary">Learn More</a>
+                            <a href="mailto:waidemobility@gmail.com" style="padding: 0.75rem 1.5rem; background: transparent; color: #00ffff; border: 1px solid #00ffff; border-radius: 6px; text-decoration: none;">Contact Us</a>
+                        </div>
+                    </div>
+
+
+
+                </article>
+
+                <!-- Related Articles -->
+                <section style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #333;">
+                    <h3 style="color: #00ffff; margin-bottom: 2rem;">Continue Reading</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <a href="phase-two.html" style="background: #1a1a1a; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: white; transition: border 0.3s;">
+                            <div style="color: #00ffff; margin-bottom: 0.5rem;">🇰🇪 Phase Two</div>
+                            <h4 style="margin-bottom: 0.5rem;">Kenya Pilots Begin</h4>
+                            <p style="color: #ccc; font-size: 0.9rem;">Extending accessibility solutions to East Africa</p>
+                        </a>
+                        <a href="phase-three.html" style="background: #1a1a1a; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: white; transition: border 0.3s;">
+                            <div style="color: #00ffff; margin-bottom: 0.5rem;">🌍 Phase Three</div>
+                            <h4 style="margin-bottom: 0.5rem;">Africa-Wide Rollout</h4>
+                            <p style="color: #ccc; font-size: 0.9rem;">Scaling to 100,000+ locations across the continent</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
+                            </div>
+                            <span>Waide Mobility</span>
+                        </div>
+                        <p>The future of smart navigation, powered by artificial intelligence.</p>
+                        <a href="demo.html" class="btn btn-primary" style="margin-top: 1rem;" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'footer_request_demo' });">Request Demo</a>
+                    </div>
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Use Cases</h4>
+                            <ul>
+                                <li><a href="#">Fleet Management</a></li>
+                                <li><a href="#">Analytics Suite</a></li>
+                                <li><a href="#">Location-based Ads</a></li>
+                                <li><a href="#">Smart Cities</a></li>
+                                <li><a href="#">Public Transit</a></li>
+                                <li><a href="#">Indoor Navigation</a></li>
+                                <li><a href="#">Asset Tracking</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="about.html">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Waide Mobility. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

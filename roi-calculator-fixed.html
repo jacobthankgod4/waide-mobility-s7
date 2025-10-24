@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Calculator | Waide Mobility</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen bg-black">
+        <!-- Navigation -->
+        <nav class="nav sticky">
+            <a href="index.html" class="nav-brand">
+                <div class="logo">
+                    <img src="public/waide-logo.png" alt="logo" width="30" height="30">
+                </div>
+                <span class="brand-text">Waide Mobility</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <button class="btn btn-primary" onclick="window.location.href='pricing.html'">Get Started</button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" style="padding: 2rem 0;">
+            <div class="container">
+                <div class="hero-content" style="text-align: center; margin-bottom: 2rem;">
+                    <h1 class="hero-title">
+                        ROI Calculator
+                        <br>
+                        <span class="gradient-text">See Your Potential Returns</span>
+                    </h1>
+                    <p class="hero-description">
+                        Calculate how much revenue you can increase with Waide Mobility's AI-powered indoor navigation solutions.
+                    </p>
+                </div>
+
+                <!-- ROI Calculator -->
+                <div class="roi-calculator-container" style="max-width: 1200px; margin: 0 auto; background: #111; border-radius: 16px; padding: 2rem; border: 1px solid #333;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <div>
+                            <h2 style="margin: 0; color: #fff;">Calculate Your ROI</h2>
+                            <p style="margin: 0.5rem 0 0 0; color: #888;">Enter your business metrics to see potential returns</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <button class="plan-selector active" data-plan="Starter" onclick="selectPlan('Starter')">Starter</button>
+                            <button class="plan-selector" data-plan="Professional" onclick="selectPlan('Professional')">Professional</button>
+                            <button class="plan-selector" data-plan="Enterprise" onclick="selectPlan('Enterprise')">Enterprise</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 2fr 3fr; gap: 3rem;">
+                        <!-- Input Section -->
+                        <div>
+                            <h3 style="margin-bottom: 1.5rem; color: #fff; font-size: 1.2rem;">📊 Your Business Metrics</h3>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                                <!-- Monthly Visitors -->
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <label for="monthlyVisitors" style="font-weight: 500; color: #fff;">Monthly Visitors:</label>
+                                        <button onclick="toggleAccordion('visitors')" style="background: none; border: none; color: #00e6ff; cursor: pointer; font-size: 0.9rem;">ℹ️ What's this?</button>
+                                    </div>
+                                    <input type="number" id="monthlyVisitors" placeholder="e.g., 10,000" oninput="calculateROI()" style="width: 100%; padding: 0.75rem; background: #222; border: 1px solid #444; color: #fff; border-radius: 8px;">
+                                    <small style="color: #888; font-size: 0.85rem;">Total people entering your venue each month</small>
+                                    
+                                    <div id="visitors-accordion" class="metric-accordion" style="display: none; margin-top: 1rem; background: #1a1a1a; padding: 1rem; border-radius: 8px; border-left: 3px solid #00ff88;">
+                                        <h4 style="color: #00ff88; margin-bottom: 0.75rem; font-size: 1rem;">📊 Monthly Visitors Explained</h4>
+                                        <p style="margin-bottom: 1rem; line-height: 1.5; color: #ccc;"><strong>Definition:</strong> The total number of people who physically enter your venue in a typical month.</p>
+                                        <div style="text-align: center; margin-top: 1rem;">
+                                            <button onclick="toggleAccordion('visitors')" style="background: #333; border: 1px solid #555; color: #ccc; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Average Spend -->
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <label for="avgSpendPerVisitor" style="font-weight: 500; color: #fff;">Average Spend per Visitor ($):</label>
+                                        <button onclick="toggleAccordion('spend')" style="background: none; border: none; color: #06b6d4; cursor: pointer; font-size: 0.9rem;">ℹ️ What's this?</button>
+                                    </div>
+                                    <input type="number" id="avgSpendPerVisitor" placeholder="e.g., 45" oninput="calculateROI()" style="width: 100%; padding: 0.75rem; background: #222; border: 1px solid #444; color: #fff; border-radius: 8px;">
+                                    <small style="color: #888; font-size: 0.85rem;">Average amount each visitor spends</small>
+                                    
+                                    <div id="spend-accordion" class="metric-accordion" style="display: none; margin-top: 1rem; background: #1a1a1a; padding: 1rem; border-radius: 8px; border-left: 3px solid #00ff88;">
+                                        <h4 style="color: #00ff88; margin-bottom: 0.75rem; font-size: 1rem;">💰 Average Spend Explained</h4>
+                                        <p style="margin-bottom: 1rem; line-height: 1.5; color: #ccc;"><strong>Definition:</strong> Total revenue divided by total visitors.</p>
+                                        <div style="text-align: center; margin-top: 1rem;">
+                                            <button onclick="toggleAccordion('spend')" style="background: #333; border: 1px solid #555; color: #ccc; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Conversion Rate -->
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <label for="currentConversionRate" style="font-weight: 500; color: #fff;">Conversion Rate (%):</label>
+                                        <button onclick="toggleAccordion('conversion')" style="background: none; border: none; color: #06b6d4; cursor: pointer; font-size: 0.9rem;">ℹ️ What's this?</button>
+                                    </div>
+                                    <input type="number" id="currentConversionRate" placeholder="e.g., 15" oninput="calculateROI()" style="width: 100%; padding: 0.75rem; background: #222; border: 1px solid #444; color: #fff; border-radius: 8px;">
+                                    <small style="color: #888; font-size: 0.85rem;">Percentage of visitors who make a purchase</small>
+                                    
+                                    <div id="conversion-accordion" class="metric-accordion" style="display: none; margin-top: 1rem; background: #1a1a1a; padding: 1rem; border-radius: 8px; border-left: 3px solid #00ff88;">
+                                        <h4 style="color: #00ff88; margin-bottom: 0.75rem; font-size: 1rem;">📈 Conversion Rate Explained</h4>
+                                        <p style="margin-bottom: 1rem; line-height: 1.5; color: #ccc;"><strong>Definition:</strong> Percentage of visitors who make a purchase.</p>
+                                        <div style="text-align: center; margin-top: 1rem;">
+                                            <button onclick="toggleAccordion('conversion')" style="background: #333; border: 1px solid #555; color: #ccc; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Results Section -->
+                        <div id="roiResults" style="display: none;">
+                            <h3 style="color: #00ff88; margin-bottom: 1.5rem; font-size: 1.2rem;">💰 Your ROI Projection</h3>
+                            
+                            <div style="background: #0a0a0a; padding: 2rem; border-radius: 12px;">
+                                <!-- Revenue Bars -->
+                                <div style="display: flex; justify-content: center; align-items: end; gap: 4rem; height: 150px; margin-bottom: 2rem;">
+                                    <div style="text-align: center;">
+                                        <div id="currentBar" style="background: #666; width: 60px; margin: 0 auto; border-radius: 6px 6px 0 0; transition: height 0.5s ease;"></div>
+                                        <div style="margin-top: 1rem;">
+                                            <div style="color: #ccc; font-size: 0.9rem;">Current Revenue</div>
+                                            <div style="font-weight: 600; font-size: 1.3rem; color: #fff;">$<span id="currentRevenue">0</span></div>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div id="projectedBar" style="background: linear-gradient(180deg, #00ff88, #00cc6a); width: 60px; margin: 0 auto; border-radius: 6px 6px 0 0; transition: height 0.5s ease;"></div>
+                                        <div style="margin-top: 1rem;">
+                                            <div style="color: #00ff88; font-size: 0.9rem;">With Waide</div>
+                                            <div style="font-weight: 600; font-size: 1.3rem; color: #00ff88;">$<span id="projectedRevenue">0</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Metrics Grid -->
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                                    <div style="text-align: center; padding: 1rem; background: #1a1a1a; border-radius: 8px;">
+                                        <div style="font-size: 0.85rem; color: #ccc;">Monthly Increase</div>
+                                        <div style="font-size: 1.4rem; font-weight: 600; color: #00ff88;">$<span id="revenueIncrease">0</span></div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #1a1a1a; border-radius: 8px;">
+                                        <div style="font-size: 0.85rem; color: #ccc;">Annual Increase</div>
+                                        <div style="font-size: 1.4rem; font-weight: 600; color: #00ff88;">$<span id="annualIncrease">0</span></div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: #1a1a1a; border-radius: 8px;">
+                                        <div style="font-size: 0.85rem; color: #ccc;"><span id="selectedPlan">Starter</span> Plan Cost</div>
+                                        <div style="font-size: 1.4rem; font-weight: 600; color: #fff;">$<span id="planCost">3,990</span></div>
+                                    </div>
+                                    <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #00ff88, #00cc6a); border-radius: 8px; color: #000;">
+                                        <div style="font-size: 0.85rem; font-weight: 500;">ROI</div>
+                                        <div style="font-size: 1.6rem; font-weight: 700;"><span id="roiPercentage">0</span>%</div>
+                                    </div>
+                                </div>
+                                
+                                <div style="text-align: center;">
+                                    <button class="btn btn-primary" onclick="openDownloadModal()" style="padding: 0.75rem 1.5rem; font-size: 1rem;">
+                                        📄 Download PDF Report
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Placeholder -->
+                        <div id="roiPlaceholder" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #666;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">📊</div>
+                            <h3 style="color: #888; margin-bottom: 0.5rem;">Enter Your Metrics</h3>
+                            <p>Fill in your business metrics to see your potential ROI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Modal -->
+        <div id="downloadModal" class="popup-overlay" style="display: none;">
+            <div class="popup-content" style="max-width: 500px;">
+                <span class="popup-close" onclick="closeDownloadModal()">&times;</span>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3>Download Your ROI Report</h3>
+                </div>
+                
+                <form id="downloadForm" onsubmit="handleDownload(event)">
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #fff;">First Name *</label>
+                        <input type="text" name="firstName" required style="width: 100%; padding: 0.75rem; background: #222; border: 1px solid #444; color: #fff; border-radius: 6px;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #fff;">Email *</label>
+                        <input type="email" name="email" required style="width: 100%; padding: 0.75rem; background: #222; border: 1px solid #444; color: #fff; border-radius: 6px;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #fff;">Company *</label>
+                        <input type="text" name="company" required style="width: 100%; padding: 0.75rem; background: #222; border: 1px solid #444; color: #fff; border-radius: 6px;">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Download Report</button>
+                </form>
+                
+                <div id="downloadSuccess" style="display: none; text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; color: #00e6ff; margin-bottom: 1rem;">✓</div>
+                    <h3 style="color: #00e6ff;">Report Generated!</h3>
+                    <p style="color: #ccc;">Your ROI report has been downloaded.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .sticky { position: sticky; top: 0; z-index: 1000; background-color: #000; }
+        .plan-selector {
+            padding: 0.5rem 1rem; background: #222; border: 1px solid #444; color: #ccc;
+            border-radius: 6px; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;
+        }
+        .plan-selector:hover { background: #333; border-color: #555; }
+        .plan-selector.active { background: #00e6ff; color: #000; border-color: #00e6ff; font-weight: 600; }
+        .metric-accordion { transition: all 0.3s ease; }
+        .popup-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8); display: flex; justify-content: center;
+            align-items: center; z-index: 10000;
+        }
+        .popup-content {
+            background: #111; border-radius: 12px; padding: 2rem;
+            position: relative; border: 1px solid #333; color: #fff;
+        }
+        .popup-close {
+            position: absolute; top: 1rem; right: 1rem; background: none;
+            border: none; color: #888; font-size: 1.5rem; cursor: pointer;
+        }
+        .popup-close:hover { color: #fff; }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script>
+        // Configuration
+        const SUPABASE_URL = 'https://elkkokyluvibctjqkjus.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVsa2tva3lsdXZpYmN0anFranVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3Mjg5NDMsImV4cCI6MjA3NjMwNDk0M30.s84ZwOqFV_uiIlXoBb6ZII-ATWLpDaF_JaUYF6M0rWM';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        let currentPlan = 'Starter';
+        
+        // Plan Selection
+        function selectPlan(planName) {
+            currentPlan = planName;
+            document.querySelectorAll('.plan-selector').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-plan="${planName}"]`).classList.add('active');
+            document.getElementById('selectedPlan').textContent = planName;
+            
+            const planCosts = { 'Starter': 3990, 'Professional': 11990, 'Enterprise': 50000 };
+            document.getElementById('planCost').textContent = planCosts[planName].toLocaleString();
+            calculateROI();
+        }
+        
+        // ROI Calculation
+        function calculateROI() {
+            const visitors = parseInt(document.getElementById('monthlyVisitors').value) || 0;
+            const avgSpend = parseFloat(document.getElementById('avgSpendPerVisitor').value) || 0;
+            const conversionRate = parseFloat(document.getElementById('currentConversionRate').value) || 0;
+            
+            if (visitors && avgSpend && conversionRate) {
+                const currentRevenue = visitors * (conversionRate / 100) * avgSpend;
+                const improvements = { 'Starter': 0.25, 'Professional': 0.35, 'Enterprise': 0.40 };
+                const projectedRevenue = currentRevenue * (1 + improvements[currentPlan]);
+                const revenueIncrease = projectedRevenue - currentRevenue;
+                const annualIncrease = revenueIncrease * 12;
+                const planCosts = { 'Starter': 3990, 'Professional': 11990, 'Enterprise': 50000 };
+                const roi = ((annualIncrease - planCosts[currentPlan]) / planCosts[currentPlan] * 100);
+                
+                // Update display
+                document.getElementById('currentRevenue').textContent = Math.round(currentRevenue).toLocaleString();
+                document.getElementById('projectedRevenue').textContent = Math.round(projectedRevenue).toLocaleString();
+                document.getElementById('revenueIncrease').textContent = Math.round(revenueIncrease).toLocaleString();
+                document.getElementById('annualIncrease').textContent = Math.round(annualIncrease).toLocaleString();
+                document.getElementById('roiPercentage').textContent = Math.round(roi);
+                
+                // Update charts
+                const maxRevenue = Math.max(currentRevenue, projectedRevenue);
+                document.getElementById('currentBar').style.height = Math.max((currentRevenue / maxRevenue) * 120, 20) + 'px';
+                document.getElementById('projectedBar').style.height = Math.max((projectedRevenue / maxRevenue) * 120, 20) + 'px';
+                
+                // Show results
+                document.getElementById('roiResults').style.display = 'block';
+                document.getElementById('roiPlaceholder').style.display = 'none';
+            } else {
+                document.getElementById('roiResults').style.display = 'none';
+                document.getElementById('roiPlaceholder').style.display = 'flex';
+            }
+        }
+        
+        // Accordion Toggle
+        function toggleAccordion(accordionId) {
+            const accordion = document.getElementById(accordionId + '-accordion');
+            const isVisible = accordion.style.display !== 'none';
+            
+            document.querySelectorAll('.metric-accordion').forEach(acc => acc.style.display = 'none');
+            
+            if (!isVisible) {
+                accordion.style.display = 'block';
+            }
+        }
+        
+        // Modal Functions
+        function openDownloadModal() {
+            if (document.getElementById('roiResults').style.display === 'none') {
+                alert('Please calculate your ROI first.');
+                return;
+            }
+            document.getElementById('downloadModal').style.display = 'flex';
+        }
+        
+        function closeDownloadModal() {
+            document.getElementById('downloadModal').style.display = 'none';
+            document.getElementById('downloadForm').style.display = 'block';
+            document.getElementById('downloadSuccess').style.display = 'none';
+        }
+        
+        // Form Submission
+        async function handleDownload(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            
+            // Show success
+            document.getElementById('downloadForm').style.display = 'none';
+            document.getElementById('downloadSuccess').style.display = 'block';
+            
+            // Generate simple PDF
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            doc.setFontSize(20);
+            doc.text('ROI Analysis Report', 20, 30);
+            doc.setFontSize(12);
+            doc.text(`Company: ${formData.get('company')}`, 20, 50);
+            doc.text(`Current Revenue: $${document.getElementById('currentRevenue').textContent}`, 20, 70);
+            doc.text(`Projected Revenue: $${document.getElementById('projectedRevenue').textContent}`, 20, 90);
+            doc.text(`ROI: ${document.getElementById('roiPercentage').textContent}%`, 20, 110);
+            
+            doc.save(`${formData.get('company')}_ROI_Analysis.pdf`);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            selectPlan('Starter');
+        });
+    </script>
+</body>
+</html>

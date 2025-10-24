@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Waide Mobility's Phase Two: Expanding accessibility to Kenya, Uganda, and Rwanda. Mapping 1,000+ public buildings in Nairobi and beyond.">
+    <meta name="keywords" content="Waide Mobility, indoor mapping, Kenya, Nairobi, Uganda, Rwanda, East Africa, accessibility, climate resilience, SDG 3, SDG 10, SDG 13">
+    <title>Phase Two: East Africa Expansion - Waide Mobility</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+    <link rel="manifest" href="public/site.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147004606.js"></script>
+    <!-- End of HubSpot Embed Code -->
+</head>
+<body>
+    <div class="min-h-screen bg-black">
+        <!-- Navigation -->
+        <nav class="nav sticky">
+            <div class="nav-brand">
+                <div class="logo">
+                    <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
+                </div>
+                <span class="brand-text">Waide Mobility</span>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-item">
+                    <a href="use-cases.html" class="nav-link">Use Cases</a>
+                    <button class="mobile-dropdown-toggle" style="display: none;">
+                        Use Cases
+                        <span>▼</span>
+                    </button>
+                    <div class="mega-dropdown">
+                        <div class="mega-dropdown-content">
+                            <div class="dropdown-section">
+                                <h4>🏥 Healthcare & Public</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/hospital-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏥</span>
+                                        Hospital Navigation
+                                    </a>
+                                    <a href="blog/library-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">📚</span>
+                                        Library Navigation
+                                    </a>
+                                    <a href="blog/museum-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏛️</span>
+                                        Museum Navigation
+                                    </a>
+                                    <a href="blog/university-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎓</span>
+                                        University Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🏢 Commercial & Retail</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/mall-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🛍️</span>
+                                        Mall Navigation
+                                    </a>
+                                    <a href="blog/office-building-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏢</span>
+                                        Office Building Navigation
+                                    </a>
+                                    <a href="blog/hotel-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏨</span>
+                                        Hotel Navigation
+                                    </a>
+                                    <a href="blog/casino-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎰</span>
+                                        Casino Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🚇 Transportation & Logistics</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/airport-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">✈️</span>
+                                        Airport Navigation
+                                    </a>
+                                    <a href="blog/train-station-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚂</span>
+                                        Train Station Navigation
+                                    </a>
+                                    <a href="blog/subway-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚇</span>
+                                        Subway Navigation
+                                    </a>
+                                    <a href="blog/warehouse-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">📦</span>
+                                        Warehouse Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-dropdown-content" style="margin-top: 1rem;">
+                            <div class="dropdown-section">
+                                <h4>🎯 Entertainment & Events</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/sports-venue-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">⚽</span>
+                                        Sports Venue Navigation
+                                    </a>
+                                    <a href="blog/theme-park-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎢</span>
+                                        Theme Park Navigation
+                                    </a>
+                                    <a href="blog/convention-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏢</span>
+                                        Convention Center Navigation
+                                    </a>
+                                    <a href="blog/cruise-ship-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚢</span>
+                                        Cruise Ship Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🏭 Industrial & Tech</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/manufacturing-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏭</span>
+                                        Manufacturing Navigation
+                                    </a>
+                                    <a href="blog/data-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">💾</span>
+                                        Data Center Navigation
+                                    </a>
+                                    <a href="blog/parking-garage-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚗</span>
+                                        Parking Garage Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <div class="mobile-dropdown-section">
+                            <h4>🏥 Healthcare & Public</h4>
+                            <a href="blog/hospital-navigation.html" class="dropdown-link">🏥 Hospital Navigation</a>
+                            <a href="blog/library-navigation.html" class="dropdown-link">📚 Library Navigation</a>
+                            <a href="blog/museum-navigation.html" class="dropdown-link">🏛️ Museum Navigation</a>
+                            <a href="blog/university-navigation.html" class="dropdown-link">🎓 University Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🛍️ Commercial & Retail</h4>
+                            <a href="blog/mall-navigation.html" class="dropdown-link">🛍️ Mall Navigation</a>
+                            <a href="blog/office-building-navigation.html" class="dropdown-link">🏢 Office Building Navigation</a>
+                            <a href="blog/hotel-navigation.html" class="dropdown-link">🏨 Hotel Navigation</a>
+                            <a href="blog/casino-navigation.html" class="dropdown-link">🎰 Casino Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🚊 Transportation & Logistics</h4>
+                            <a href="blog/airport-navigation.html" class="dropdown-link">✈️ Airport Navigation</a>
+                            <a href="blog/train-station-navigation.html" class="dropdown-link">🚊 Train Station Navigation</a>
+                            <a href="blog/subway-navigation.html" class="dropdown-link">🚇 Subway Navigation</a>
+                            <a href="blog/warehouse-navigation.html" class="dropdown-link">📦 Warehouse Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🎪 Entertainment & Events</h4>
+                            <a href="blog/sports-venue-navigation.html" class="dropdown-link">⚽ Sports Venue Navigation</a>
+                            <a href="blog/theme-park-navigation.html" class="dropdown-link">🎢 Theme Park Navigation</a>
+                            <a href="blog/convention-center-navigation.html" class="dropdown-link">🏢 Convention Center Navigation</a>
+                            <a href="blog/cruise-ship-navigation.html" class="dropdown-link">🚢 Cruise Ship Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🏭 Industrial & Tech</h4>
+                            <a href="blog/manufacturing-navigation.html" class="dropdown-link">🏭 Manufacturing Navigation</a>
+                            <a href="blog/data-center-navigation.html" class="dropdown-link">💾 Data Center Navigation</a>
+                            <a href="blog/parking-garage-navigation.html" class="dropdown-link">🚗 Parking Garage Navigation</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="blog/index.html" class="nav-link">Blog</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <button class="btn btn-primary" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'nav_request_demo' }); window.location.href='demo.html'">Request Demo</button>
+            </div>
+        </nav>
+
+        <!-- Blog Hero Section -->
+        <section class="blog-hero" style="padding: 6rem 2rem; background: linear-gradient(135deg, #0d0d0d 0%, #000 100%), url('public/phase-two-nairobi.jpg'); background-size: cover; background-position: center; color: white; text-align: center; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7);"></div>
+            <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: #1a1a1a; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 2rem;">
+                    <span style="color: #00ffff; font-weight: bold;">🌍</span>
+                    <span style="color: #ccc;">Phase Two</span>
+                </div>
+                <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2;">
+                    Africa Rising:<br>
+                    <span style="color: #00ffff;">All 54 Countries, Starting Strong</span>
+                </h1>
+                <p style="font-size: 1.25rem; color: #ccc; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6;">
+                    Expanding accessibility across all African nations, with critical focus on South Africa and other developed economies. Building inclusive infrastructure from Lagos to Cape Town, Nairobi to Dakar.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <div style="background: #1a1a1a; padding: 0.75rem 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                        <span style="color: #00ffff; font-weight: bold;">1,000+ Buildings</span>
+                        <span style="color: #ccc; margin-left: 0.5rem;">Initial Target</span>
+                    </div>
+                    <div style="background: #1a1a1a; padding: 0.75rem 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                        <span style="color: #00ffff; font-weight: bold;">1.4B People</span>
+                        <span style="color: #ccc; margin-left: 0.5rem;">African Population</span>
+                    </div>
+                    <div style="background: #1a1a1a; padding: 0.75rem 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                        <span style="color: #00ffff; font-weight: bold;">Pan-African Impact</span>
+                        <span style="color: #ccc; margin-left: 0.5rem;">54 Countries</span>
+                    </div>
+                    <div style="background: #1a1a1a; padding: 0.75rem 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                        <span style="color: #00ffff; font-weight: bold;">100,000 Spaces</span>
+                        <span style="color: #ccc; margin-left: 0.5rem;">Mapped by 2030</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Content -->
+        <section class="blog-content" style="padding: 4rem 2rem; background-color: #0d0d0d; color: white;">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <article style="line-height: 1.8; font-size: 1.1rem;">
+
+                    <div style="margin: 2rem 0; text-align: center;">
+                        <img src="public/nairobi-kenya-waide-mobility.jpg" alt="Nairobi Kenya skyline representing East African expansion" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,255,255,0.15);">
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Nairobi: Gateway to East African accessibility expansion across all 54 nations</p>
+                    </div>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Africa's Economic Powerhouses: Leading the Charge</h2>
+                    <p>Phase Two strategically targets Africa's most developed economies and urban centers, recognizing that accessibility improvements in these high-impact areas will create ripple effects across the continent. South Africa, Nigeria, Kenya, Egypt, and Morocco represent critical hubs where inclusive infrastructure can drive maximum economic and social impact.</p>
+
+                    <p>These nations collectively represent over 60% of Africa's GDP and urban population, making them essential for demonstrating the transformative power of accessible technology. By focusing on these key markets first, Waide Mobility can establish robust business models and technical standards that can be scaled to other African countries.</p>
+
+                    <blockquote style="background: #1a1a1a; border-left: 4px solid #00ffff; padding: 2rem; margin: 2rem 0; font-style: italic;">
+                        "Africa's developed economies must lead by example. When South Africa, Nigeria, and Kenya embrace accessibility, the entire continent follows." - Charity Adhiambo, Integration Partner, Waide Mobility
+                    </blockquote>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Building on Lagos Success: Pan-African Expansion Strategy</h2>
+                    <p>Phase Two leverages the proven methodologies and community-driven approach established in Lagos, adapting them to Africa's diverse economic contexts. The initiative targets 1,000+ public buildings across transport hubs, universities, government offices, and cultural centers in all 54 African nations, with priority given to major economic centers.</p>
+
+                    <p>This pan-African approach recognizes the interconnected nature of African economies and the shared challenges of accessibility across borders. By establishing strong partnerships with local organizations and governments, Waide Mobility aims to create a scalable model for accessibility implementation across the entire continent.</p>
+
+                    <h3>Strategic Partnerships Driving Change:</h3>
+                    <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                        <li><strong>South Africa:</strong> Partnership with University of Cape Town and South African National Council for the Blind</li>
+                        <li><strong>Nigeria:</strong> Collaboration with Lagos State Government and National Commission for Persons with Disabilities</li>
+                        <li><strong>Kenya:</strong> Working with University of Nairobi and Kenya Institute of Special Education</li>
+                        <li><strong>Egypt:</strong> Partnership with Cairo University and Egyptian Federation for Disabilities</li>
+                        <li><strong>Morocco:</strong> Collaboration with Mohammed V University and Moroccan Association for the Deaf</li>
+                        <li><strong>Regional:</strong> African Union integration for continent-wide accessibility standards</li>
+                    </ul>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Addressing Africa's Diverse Accessibility Challenges</h2>
+                    <p>Africa's 54 nations present a rich tapestry of accessibility challenges that require comprehensive, context-aware solutions:</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Urban-Rural Spectrum</h4>
+                            <p>From Cape Town's modern infrastructure to rural villages, bridging accessibility gaps across development levels</p>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Linguistic Diversity</h4>
+                            <p>Supporting 2,000+ languages from Arabic and Swahili to indigenous languages and colonial legacies</p>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Infrastructure Variations</h4>
+                            <p>Adapting to different building standards from advanced cities like Johannesburg to developing urban centers</p>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Economic Diversity</h4>
+                            <p>Creating sustainable models from high-income nations like South Africa to developing economies across the continent</p>
+                        </div>
+                    </div>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Climate Adaptation: Building Resilience Across Africa</h2>
+                    
+                    <div style="margin: 2rem 0; text-align: center;">
+                        <img src="public/Nairobi_Flooding_Aerials.jpg" alt="Climate resilience and emergency navigation in African cities" style="width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,255,255,0.15);">
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Climate-resilient navigation: Essential for Africa's extreme weather challenges</p>
+                    </div>
+                    
+                    <p>Africa's vulnerability to climate change makes accessibility solutions even more critical. From the Sahara's extreme heat to coastal flooding and tropical cyclones, the continent's diverse climate challenges necessitate technology that works reliably in all conditions.</p>
+
+                    <p>Waide Mobility's Phase Two incorporates climate-resilient features specifically designed for Africa's varied environmental conditions:</p>
+
+                    <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                        <li><strong>Drought-Resistant Navigation:</strong> Offline capabilities for arid regions like the Sahara and Kalahari</li>
+                        <li><strong>Flood-Aware Routing:</strong> Alternative paths avoiding flood-prone areas from Lagos to Maputo</li>
+                        <li><strong>Heat-Optimized Interfaces:</strong> Battery-efficient designs for extreme temperatures across the continent</li>
+                        <li><strong>Multi-Hazard Preparedness:</strong> Emergency navigation during cyclones, earthquakes, and other extreme events</li>
+                        <li><strong>Desert Storm Navigation:</strong> Sand-resistant technology for North African operations</li>
+                    </ul>
+
+
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Economic Transformation Through Inclusion</h2>
+                    <p>Phase Two's economic impact extends beyond direct accessibility benefits, targeting Africa's largest economies for maximum impact:</p>
+
+                    <div style="background: #1a1a1a; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                        <h3 style="color: #00ffff; margin-bottom: 1rem;">Projected Economic Benefits</h3>
+                        <ul style="margin-left: 2rem;">
+                            <li><strong>Job Creation:</strong> 500+ positions in mapping, technology, and community engagement across major cities</li>
+                            <li><strong>Tech Ecosystem Growth:</strong> Stimulating Africa's technology sector from Lagos to Cape Town</li>
+                            <li><strong>Tourism Enhancement:</strong> Making African cities from Cairo to Johannesburg more attractive to international visitors</li>
+                            <li><strong>Productivity Gains:</strong> Reducing navigation-related time losses and improving workforce participation continent-wide</li>
+                            <li><strong>Innovation Hub Development:</strong> Positioning Africa's major cities as global leaders in accessible technology</li>
+                        </ul>
+                    </div>
+
+                    <p>The World Bank's research indicates that improving accessibility in developing regions can yield returns of 4-7% of GDP through increased workforce participation and enhanced service delivery. In Africa's context, this translates to billions in economic value creation across the continent's major economies.</p>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Technology Localization: African Innovation Ecosystem</h2>
+                    
+                    <div style="margin: 2rem 0; text-align: center;">
+                        <img src="public/pan-african-professionals.jpg" alt="Pan-African technology professionals collaborating" style="width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,255,255,0.15);">
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Pan-African collaboration: Technology professionals building continent-wide solutions</p>
+                    </div>
+                    
+                    <p>Phase Two emphasizes technology adaptation to Africa's diverse contexts, from advanced economies to developing nations:</p>
+
+                    <h3>Localized Features:</h3>
+                    <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                        <li><strong>Multi-Language Support:</strong> Primary language support for Arabic, Swahili, French, Portuguese, and indigenous languages</li>
+                        <li><strong>Mobile Money Integration:</strong> Payment and donation systems using M-Pesa, Airtel Money, MTN Mobile Money, and Orange Money</li>
+                        <li><strong>Community Mapping:</strong> Involving local youth and disability advocates in data collection across all 54 nations</li>
+                        <li><strong>Continental Connectivity:</strong> Cross-border navigation for African Union citizens and regional economic communities</li>
+                        <li><strong>Offline-First Design:</strong> Critical for areas with unreliable internet infrastructure across the continent</li>
+                    </ul>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Measuring Impact: Comprehensive Evaluation Framework</h2>
+                    <p>Success in Phase Two will be evaluated through multiple dimensions:</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Accessibility Metrics</h4>
+                            <p>Buildings mapped, users reached, navigation efficiency improvements</p>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Economic Indicators</h4>
+                            <p>Jobs created, businesses supported, tourism revenue impact</p>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Social Impact</h4>
+                            <p>Community engagement, disability inclusion, awareness building</p>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                            <h4 style="color: #00ffff; margin-bottom: 0.5rem;">Climate Resilience</h4>
+                            <p>Emergency navigation effectiveness, disaster response improvements</p>
+                        </div>
+                    </div>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">The Path Forward: From Economic Hubs to Continental Standards</h2>
+                    <p>Phase Two serves as a bridge between Lagos's proof-of-concept and continent-wide implementation, focusing on Africa's most influential economies. Key objectives include:</p>
+
+                    <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                        <li>Establishing continental accessibility standards through Africa's economic powerhouses</li>
+                        <li>Developing sustainable funding models that leverage South Africa's and Nigeria's advanced markets</li>
+                        <li>Building local capacity for ongoing mapping and maintenance across all economic contexts</li>
+                        <li>Creating replicable models from Johannesburg's infrastructure to smaller African cities</li>
+                        <li>Fostering cross-border collaboration and knowledge sharing through the African Union</li>
+                        <li>Demonstrating ROI in major markets to attract investment for broader continental rollout</li>
+                    </ul>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Join Africa's Accessibility Movement</h2>
+                    <p>Your support can help transform accessibility across all 54 African nations, starting with our economic powerhouses:</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div style="text-align: center;">
+                            <h4 style="color: #00ffff;">Support Pan-African Expansion</h4>
+                            <p>Contribute to mapping initiatives across Africa's major economies and beyond</p>
+                            <a href="demo.html" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #00ffff; color: #000; border-radius: 6px; text-decoration: none; font-weight: bold;">Donate Now</a>
+                        </div>
+                        <div style="text-align: center;">
+                            <h4 style="color: #00ffff;">Partner Across Africa</h4>
+                            <p>Organizations can sponsor continental mapping or provide expertise in any African nation</p>
+                            <a href="partner-form.html" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #00ffff; color: #000; border-radius: 6px; text-decoration: none; font-weight: bold;">Partner With Us</a>
+                        </div>
+                    </div>
+
+                    <h2 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Conclusion: Africa Leading Inclusive Innovation</h2>
+                    <p>Waide Mobility's Phase Two initiative represents Africa's commitment to inclusive development. By starting with our economic powerhouses like South Africa, Nigeria, and Kenya, and expanding across all 54 nations, we're not just mapping buildings—we're mapping a more accessible, resilient, and prosperous future for 1.4 billion Africans.</p>
+
+                    <p>The success of this pan-African expansion will serve as a blueprint for accessibility implementation across the continent, proving that inclusive technology can drive both social and economic transformation from Cape Town to Cairo.</p>
+
+                    <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #000; border-radius: 8px; border: 1px solid #333;">
+                        <h3 style="color: #00ffff; margin-bottom: 1rem;">Be Part of Africa's Future</h3>
+                        <p style="margin-bottom: 1.5rem;">Support accessibility innovation across all 54 African nations</p>
+                        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                            <a href="demo.html" class="btn btn-primary">Learn More</a>
+                            <a href="mailto:waidemobility@gmail.com" style="padding: 0.75rem 1.5rem; background: transparent; color: #00ffff; border: 1px solid #00ffff; border-radius: 6px; text-decoration: none;">Contact Us</a>
+                        </div>
+                    </div>
+
+
+
+                </article>
+
+                <!-- Related Articles -->
+                <section style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #333;">
+                    <h3 style="color: #00ffff; margin-bottom: 2rem;">Continue Reading</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <a href="phase-one.html" style="background: #1a1a1a; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: white; transition: border 0.3s;">
+                            <div style="color: #00ffff; margin-bottom: 0.5rem;">🇳🇬 Phase One</div>
+                            <h4 style="margin-bottom: 0.5rem;">Mapping Nigeria's Future</h4>
+                            <p style="color: #ccc; font-size: 0.9rem;">Lagos kickoff and community-driven innovation</p>
+                        </a>
+                        <a href="phase-three.html" style="background: #1a1a1a; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: white; transition: border 0.3s;">
+                            <div style="color: #00ffff; margin-bottom: 0.5rem;">🌍 Phase Three</div>
+                            <h4 style="margin-bottom: 0.5rem;">Africa-Wide Rollout</h4>
+                            <p style="color: #ccc; font-size: 0.9rem;">Scaling to 100,000+ locations across the continent</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
+                            </div>
+                            <span>Waide Mobility</span>
+                        </div>
+                        <p>The future of smart navigation, powered by artificial intelligence.</p>
+                        <a href="demo.html" class="btn btn-primary" style="margin-top: 1rem;" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'footer_request_demo' });">Request Demo</a>
+                    </div>
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Use Cases</h4>
+                            <ul>
+                                <li><a href="#">Fleet Management</a></li>
+                                <li><a href="#">Analytics Suite</a></li>
+                                <li><a href="#">Location-based Ads</a></li>
+                                <li><a href="#">Smart Cities</a></li>
+                                <li><a href="#">Public Transit</a></li>
+                                <li><a href="#">Indoor Navigation</a></li>
+                                <li><a href="#">Asset Tracking</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="about.html">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Waide Mobility. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

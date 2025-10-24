@@ -1,0 +1,160 @@
+<div class="nav-item">
+                    <a href="use-cases.html" class="nav-link">Use Cases</a>
+                    <button class="mobile-dropdown-toggle" style="display: none;">
+                        Solutions
+                        <span>▼</span>
+                    </button>
+                    <div class="mega-dropdown">
+                        <div class="mega-dropdown-content">
+                            <div class="dropdown-section">
+                                <h4>🏥 Healthcare & Public</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/hospital-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏥</span>
+                                        Hospital Navigation
+                                    </a>
+                                    <a href="blog/library-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">📚</span>
+                                        Library Navigation
+                                    </a>
+                                    <a href="blog/museum-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏛️</span>
+                                        Museum Navigation
+                                    </a>
+                                    <a href="blog/university-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎓</span>
+                                        University Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🏢 Commercial & Retail</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/mall-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🛍️</span>
+                                        Mall Navigation
+                                    </a>
+                                    <a href="blog/office-building-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏢</span>
+                                        Office Building Navigation
+                                    </a>
+                                    <a href="blog/hotel-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏨</span>
+                                        Hotel Navigation
+                                    </a>
+                                    <a href="blog/casino-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎰</span>
+                                        Casino Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🚇 Transportation & Logistics</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/airport-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">✈️</span>
+                                        Airport Navigation
+                                    </a>
+                                    <a href="blog/train-station-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚂</span>
+                                        Train Station Navigation
+                                    </a>
+                                    <a href="blog/subway-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚇</span>
+                                        Subway Navigation
+                                    </a>
+                                    <a href="blog/warehouse-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">📦</span>
+                                        Warehouse Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-dropdown-content" style="margin-top: 1rem;">
+                            <div class="dropdown-section">
+                                <h4>🎯 Entertainment & Events</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/sports-venue-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">⚽</span>
+                                        Sports Venue Navigation
+                                    </a>
+                                    <a href="blog/theme-park-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎢</span>
+                                        Theme Park Navigation
+                                    </a>
+                                    <a href="blog/convention-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏢</span>
+                                        Convention Center Navigation
+                                    </a>
+                                    <a href="blog/cruise-ship-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚢</span>
+                                        Cruise Ship Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🏭 Industrial & Tech</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/manufacturing-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏭</span>
+                                        Manufacturing Navigation
+                                    </a>
+                                    <a href="blog/data-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">💾</span>
+                                        Data Center Navigation
+                                    </a>
+                                    <a href="blog/parking-garage-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚗</span>
+                                        Parking Garage Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <div class="dropdown-section">
+                            <h4>🏥 Healthcare & Public</h4>
+                            <div class="dropdown-links">
+                                <a href="blog/hospital-navigation.html" class="dropdown-link">🏥 Hospital Navigation</a>
+                                <a href="blog/library-navigation.html" class="dropdown-link">📚 Library Navigation</a>
+                                <a href="blog/museum-navigation.html" class="dropdown-link">🏛️ Museum Navigation</a>
+                                <a href="blog/university-navigation.html" class="dropdown-link">🎓 University Navigation</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <h4>🏢 Commercial & Retail</h4>
+                            <div class="dropdown-links">
+                                <a href="blog/mall-navigation.html" class="dropdown-link">🛍️ Mall Navigation</a>
+                                <a href="blog/office-building-navigation.html" class="dropdown-link">🏢 Office Building Navigation</a>
+                                <a href="blog/hotel-navigation.html" class="dropdown-link">🏨 Hotel Navigation</a>
+                                <a href="blog/casino-navigation.html" class="dropdown-link">🎰 Casino Navigation</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <h4>🚇 Transportation & Logistics</h4>
+                            <div class="dropdown-links">
+                                <a href="blog/airport-navigation.html" class="dropdown-link">✈️ Airport Navigation</a>
+                                <a href="blog/train-station-navigation.html" class="dropdown-link">🚂 Train Station Navigation</a>
+                                <a href="blog/subway-navigation.html" class="dropdown-link">🚇 Subway Navigation</a>
+                                <a href="blog/warehouse-navigation.html" class="dropdown-link">📦 Warehouse Navigation</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <h4>🎯 Entertainment & Events</h4>
+                            <div class="dropdown-links">
+                                <a href="blog/sports-venue-navigation.html" class="dropdown-link">⚽ Sports Venue Navigation</a>
+                                <a href="blog/theme-park-navigation.html" class="dropdown-link">🎢 Theme Park Navigation</a>
+                                <a href="blog/convention-center-navigation.html" class="dropdown-link">🏢 Convention Center Navigation</a>
+                                <a href="blog/cruise-ship-navigation.html" class="dropdown-link">🚢 Cruise Ship Navigation</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <h4>🏭 Industrial & Tech</h4>
+                            <div class="dropdown-links">
+                                <a href="blog/manufacturing-navigation.html" class="dropdown-link">🏭 Manufacturing Navigation</a>
+                                <a href="blog/data-center-navigation.html" class="dropdown-link">💾 Data Center Navigation</a>
+                                <a href="blog/parking-garage-navigation.html" class="dropdown-link">🚗 Parking Garage Navigation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
