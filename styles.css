@@ -2324,6 +2324,25 @@ img {
     overflow-y: auto;
   }
 
+  /* Mobile Timeline Styles */
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: calc(100% - 40px);
+    margin-left: 40px;
+    margin-right: 0;
+  }
+
+  .timeline-item::before {
+    left: -30px;
+  }
+
+  .timeline-content {
+    text-align: left !important;
+  }
+
   .nav-links.active {
     transform: translateX(0);
   }
