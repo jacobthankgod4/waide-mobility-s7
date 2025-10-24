@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore Waide Mobility's comprehensive solutions for smart wayfinding, interactive indoor mapping, and intelligent building management.">
@@ -16,20 +17,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+=======
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solutions - Waide Mobility</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+>>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+<<<<<<< HEAD
       gtag('config', 'G-XXXXXXXXXX');
     </script>
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147004606.js"></script>
     <!-- End of HubSpot Embed Code -->
+=======
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <!-- HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147004606.js"></script>
+>>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
 </head>
 <body>
     <div class="min-h-screen bg-black">
         <!-- Navigation -->
         <nav class="nav sticky">
+<<<<<<< HEAD
             <div class="nav-brand">
                 <div class="logo">
                     <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
@@ -292,17 +311,145 @@
                         <a href="smart-building-integration.html" style="color: #00ffff; text-decoration: none; font-weight: bold;">Learn More →</a>
                     </div>
 
+=======
+            <div class="nav-brand" style="display: flex; align-items: center; gap: 8px;">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+                    <div class="logo" style="display: flex; align-items: center;">
+                        <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy" style="display: block;" />
+                    </div>
+                    <span class="brand-text" style="line-height: 1; font-weight: 600;">Waide Mobility</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="solutions.html" id="solutions" class="nav-link active">Solutions</a>
+                <a href="about.html" id="about" class="nav-link">About Us</a>
+                <a href="pricing.html" id="pricing" class="nav-link">Pricing</a>
+                <button class="btn btn-primary" onclick="window.location.href='demo.html'">Request Demo</button>
+            </div>
+        </nav>
+
+        <!-- Solutions Section -->
+        <section class="solutions-section" style="padding: 4rem 1rem; color: white; font-family: 'Inter', sans-serif;">
+            <div class="container" style="max-width: 1152px; margin: auto; text-align: center;">
+                <div class="section-header" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.05em;">Our Solutions</h2>
+                    <p style="font-size: 1.25rem; color: #9ca3af;">Comprehensive indoor navigation and mapping solutions powered by cutting-edge technology</p>
+                </div>
+
+                <div class="solutions-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                    <div class="solution-card" style="background-color: #000; border-radius: 12px; padding: 1.5rem; border: 2px solid #1f2937;">
+                        <div class="card-image" style="margin-bottom: 1rem;">
+                            <img src="public/geofence2.avif" alt="Geoconquesting and competitor tracking features" loading="lazy" style="width: 100%; border-radius: 8px;" />
+                        </div>
+                        <div class="card-content" style="text-align: left;">
+                            <h3>Geoconquesting (Competitor Tracking through Geofencing)</h3>
+                            <p>Track competitors' locations and target customers in their vicinity with geofencing to gain competitive advantage and increase market share.</p>
+                            <ul>
+                                <li>• Competitor Geofencing</li>
+                                <li>• Real-Time Tracking</li>
+                                <li>• Market Share Expansion</li>
+                            </ul>
+                            <a href="geoconquesting.html" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" style="background-color: #000; border-radius: 12px; padding: 1.5rem; border: 2px solid #1f2937;">
+                        <div class="card-image" style="margin-bottom: 1rem;">
+                            <img src="public/smart-wayfinding.png" alt="Smart wayfinding navigation system" loading="lazy" style="width: 100%; border-radius: 8px;" />
+                        </div>
+                        <div class="card-content" style="text-align: left;">
+                            <h3>Smart Wayfinding</h3>
+                            <p>Turn-by-turn navigation with dynamic route adjustments and accessibility options</p>
+                            <ul>
+                                <li>• Personalized guidance</li>
+                                <li>• Multi-stop navigation</li>
+                                <li>• Arrival time calculation</li>
+                            </ul>
+                            <a href="smart-wayfinding.html" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" style="background-color: #000; border-radius: 12px; padding: 1.5rem; border: 2px solid #1f2937;">
+                        <div class="card-image" style="margin-bottom: 1rem;">
+                            <img src="public/interactive-indoor-mapping.jpg" alt="Interactive indoor mapping interface" loading="lazy" style="width: 100%; border-radius: 8px;" />
+                        </div>
+                        <div class="card-content" style="text-align: left;">
+                            <h3>Interactive Indoor Mapping</h3>
+                            <p>Customizable 2D and 3D indoor maps with real-time updates and AI-powered maintenance</p>
+                            <ul>
+                                <li>• Geo-referenced mapping</li>
+                                <li>• Custom branding options</li>
+                                <li>• Multi-floor visualization</li>
+                            </ul>
+                            <a href="interactive-indoor-mapping.html" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" style="background-color: #000; border-radius: 12px; padding: 1.5rem; border: 2px solid #1f2937;">
+                        <div class="card-image" style="margin-bottom: 1rem;">
+                            <img src="public/location-based-ads.png" alt="Indoor proximity advertising features" loading="lazy" style="width: 100%; border-radius: 8px;" />
+                        </div>
+                        <div class="card-content" style="text-align: left;">
+                            <h3>Indoor Proximity Advertising</h3>
+                            <p>Serve hyper-targeted ads based on a visitor's exact position within your venue (e.g., mall, museum, airport). Convert foot traffic into immediate sales.</p>
+                            <ul>
+                                <li>• Zone-Level Triggers: Target users by specific floor or store area.</li>
+                                <li>• Real-Time Offers: Push immediate deals as visitors approach a product.</li>
+                                <li>• In-Venue Analytics: Measure ad performance based on physical movement.</li>
+                            </ul>
+                            <a href="indoor-proximity-advertising.html" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" style="background-color: #000; border-radius: 12px; padding: 1.5rem; border: 2px solid #1f2937;">
+                        <div class="card-image" style="margin-bottom: 1rem;">
+                            <img src="public/outdoor-indoor-navigation.png" alt="Seamless outdoor to indoor navigation" loading="lazy" style="width: 100%; border-radius: 8px;" />
+                        </div>
+                        <div class="card-content" style="text-align: left;">
+                            <h3>Seamless Outdoor-Indoor Navigation</h3>
+                            <p>Continuous navigation experience from outdoor GPS to indoor positioning</p>
+                            <ul>
+                                <li>• GPS to indoor transition</li>
+                                <li>• Unified user experience</li>
+                                <li>• Cross-platform compatibility</li>
+                            </ul>
+                            <a href="seamless-outdoor-indoor-navigation.html" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" style="background-color: #000; border-radius: 12px; padding: 1.5rem; border: 2px solid #1f2937;">
+                        <div class="card-image" style="margin-bottom: 1rem;">
+                            <img src="public/smart-building-integration.png" alt="Smart building integration features" loading="lazy" style="width: 100%; border-radius: 8px;" />
+                        </div>
+                        <div class="card-content" style="text-align: left;">
+                            <h3>Smart Building Integration</h3>
+                            <p>Complete ecosystem integration for room booking, space management, and IoT devices</p>
+                            <ul>
+                                <li>• Room & desk booking</li>
+                                <li>• Space management</li>
+                                <li>• IoT sensor integration</li>
+                            </ul>
+                            <a href="smart-building-integration.html" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
+                        </div>
+                    </div>
+>>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
+<<<<<<< HEAD
         <footer class="footer">
+=======
+        <footer class="footer" style="margin-top: 4rem;">
+>>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-brand">
                         <div class="footer-logo">
                             <div class="logo">
+<<<<<<< HEAD
                                <div class="logo">
                     <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
                 </div>
@@ -319,6 +466,22 @@
                                 <li><a href="#">Fleet Management</a></li>
                                 <li><a href="#">Analytics Suite</a></li>
                                 <li><a href="#">Location-baseds Ads</a></li>
+=======
+                                <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy" />
+                            </div>
+                        </div>
+                        <span>Waide Mobility</span>
+                        <p>The future of smart navigation, powered by artificial intelligence.</p>
+                        <a href="demo.html" class="btn btn-primary" style="margin-top: 1rem;">Request Demo</a>
+                    </div>
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Solutions</h4>
+                            <ul>
+                                <li><a href="#">Fleet Management</a></li>
+                                <li><a href="#">Analytics Suite</a></li>
+                                <li><a href="#">Location-based Ads</a></li>
+>>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
                                 <li><a href="#">Smart Cities</a></li>
                                 <li><a href="#">Public Transit</a></li>
                                 <li><a href="#">Indoor Navigation</a></li>
@@ -336,7 +499,11 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div class="footer-bottom">
+=======
+                <div class="footer-bottom" style="text-align: center; margin-top: 1rem;">
+>>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
                     <p>&copy; 2024 Waide Mobility. All rights reserved.</p>
                     <div class="footer-legal">
                         <a href="#">Privacy Policy</a>
@@ -347,7 +514,12 @@
             </div>
         </footer>
     </div>
+<<<<<<< HEAD
 
     <script src="script.js"></script>
 </body>
 </html>
+=======
+</body>
+</html>
+>>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
