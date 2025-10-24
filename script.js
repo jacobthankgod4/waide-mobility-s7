@@ -122,11 +122,6 @@ function initializePricingToggle() {
   toggle.addEventListener("click", function () {
     this.classList.toggle("active")
     const isYearly = this.classList.contains("active")
-  let isYearly = false
-
-  toggle.addEventListener("click", function () {
-    isYearly = !isYearly
-    this.classList.toggle("active")
     updatePricing(isYearly)
   })
 }
@@ -494,8 +489,6 @@ function initializeAnimations() {
           entry.target.style.opacity = "1"
           entry.target.style.transform = "translateY(0)"
         }
-        entry.target.style.opacity = "1"
-        entry.target.style.transform = "translateY(0)"
       }
     })
   }, observerOptions)
@@ -519,9 +512,6 @@ function initializeAnimations() {
       el.style.transform = "translateY(30px)"
       el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
     }
-    el.style.opacity = "0"
-    el.style.transform = "translateY(30px)"
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
     observer.observe(el)
   })
 
@@ -632,7 +622,6 @@ function initializeNavigation() {
 
   // Active navigation highlighting
   const navLinkElements = document.querySelectorAll(".nav-link")
-  const navLinks = document.querySelectorAll(".nav-link")
   const sections = document.querySelectorAll("section[id]")
 
   if (sections.length > 0) {
@@ -642,7 +631,6 @@ function initializeNavigation() {
           if (entry.isIntersecting) {
             const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`)
             navLinkElements.forEach((link) => link.classList.remove("active"))
-            navLinks.forEach((link) => link.classList.remove("active"))
             if (activeLink) {
               activeLink.classList.add("active")
             }

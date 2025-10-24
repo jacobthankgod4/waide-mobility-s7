@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+complete /* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -258,8 +258,6 @@ img {
   background-color: #000000;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 50;
 }
 
 .nav-brand {
@@ -320,8 +318,6 @@ img {
 
 .nav-links {
   display: flex;
-.nav-links {
-  display: none;
   align-items: center;
   gap: 2rem;
 }
@@ -974,7 +970,6 @@ img {
   flex-shrink: 0;
   width: 384px;
   min-height: 320px;
-  height: 320px;
   background-color: #000000;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
@@ -1408,8 +1403,6 @@ img {
 .toggle-switch.active .toggle-slider {
   transform: translateX(20px);
   background-color: #ffffff;
-.toggle-switch.active .toggle-slider {
-  transform: translateX(20px);
 }
 
 .pricing-grid {
@@ -1607,10 +1600,6 @@ img {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-}
-
-  grid-template-columns: 1fr;
-  gap: 1rem;
 }
 
 .form-label {
@@ -2287,7 +2276,6 @@ img {
   }
 }
 
-/* Responsive Design */
 @media (min-width: 640px) {
   .hero-buttons {
     flex-direction: row;
