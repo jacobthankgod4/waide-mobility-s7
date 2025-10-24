@@ -14,10 +14,7 @@ function initializeApp() {
   initializeAnimations()
   initializeNavigation()
   initializeMapOverlay()
-<<<<<<< HEAD
   initializeAccordion()
-=======
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
 }
 
 // Accessibility Widget Functionality
@@ -122,17 +119,14 @@ function initializePricingToggle() {
   const toggle = document.getElementById("pricingToggle")
   if (!toggle) return
 
-<<<<<<< HEAD
   toggle.addEventListener("click", function () {
     this.classList.toggle("active")
     const isYearly = this.classList.contains("active")
-=======
   let isYearly = false
 
   toggle.addEventListener("click", function () {
     isYearly = !isYearly
     this.classList.toggle("active")
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
     updatePricing(isYearly)
   })
 }
@@ -153,7 +147,6 @@ function updatePricing(isYearly) {
   periods.forEach((period) => {
     period.textContent = isYearly ? "/year" : "/month"
   })
-<<<<<<< HEAD
 
   // Show/hide savings badges
   const pricingCards = document.querySelectorAll('.pricing-card')
@@ -214,8 +207,6 @@ function updatePricing(isYearly) {
   } else if (limitedOffer) {
     limitedOffer.style.display = 'none'
   }
-=======
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
 }
 
 // Form Functionality
@@ -496,7 +487,6 @@ function initializeAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-<<<<<<< HEAD
         // Handle different animation types
         if (entry.target.classList.contains('animate-slide-in-left') || entry.target.classList.contains('animate-slide-in-right')) {
           entry.target.classList.add('animate-visible')
@@ -504,10 +494,8 @@ function initializeAnimations() {
           entry.target.style.opacity = "1"
           entry.target.style.transform = "translateY(0)"
         }
-=======
         entry.target.style.opacity = "1"
         entry.target.style.transform = "translateY(0)"
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
       }
     })
   }, observerOptions)
@@ -517,7 +505,6 @@ function initializeAnimations() {
     ".animate-fade-in, .animate-fade-in-up, .animate-slide-in-left, .animate-slide-in-right",
   )
   animatedElements.forEach((el) => {
-<<<<<<< HEAD
     // Set initial states for different animation types
     if (el.classList.contains('animate-slide-in-left')) {
       el.style.opacity = "0"
@@ -532,11 +519,9 @@ function initializeAnimations() {
       el.style.transform = "translateY(30px)"
       el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
     }
-=======
     el.style.opacity = "0"
     el.style.transform = "translateY(30px)"
     el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
     observer.observe(el)
   })
 
@@ -576,7 +561,6 @@ function animateCounter(element) {
 
 // Navigation Functionality
 function initializeNavigation() {
-<<<<<<< HEAD
   // Hamburger menu toggle
   const hamburger = document.querySelector('.hamburger')
   const navLinks = document.querySelector('.nav-links')
@@ -629,8 +613,6 @@ function initializeNavigation() {
     })
   }
 
-=======
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
   // Smooth scrolling for anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]')
   anchorLinks.forEach((link) => {
@@ -649,11 +631,8 @@ function initializeNavigation() {
   })
 
   // Active navigation highlighting
-<<<<<<< HEAD
   const navLinkElements = document.querySelectorAll(".nav-link")
-=======
   const navLinks = document.querySelectorAll(".nav-link")
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
   const sections = document.querySelectorAll("section[id]")
 
   if (sections.length > 0) {
@@ -662,11 +641,8 @@ function initializeNavigation() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`)
-<<<<<<< HEAD
             navLinkElements.forEach((link) => link.classList.remove("active"))
-=======
             navLinks.forEach((link) => link.classList.remove("active"))
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
             if (activeLink) {
               activeLink.classList.add("active")
             }
@@ -871,7 +847,6 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
-<<<<<<< HEAD
 // Add pulse animation for savings badges
 const pulseStyle = document.createElement('style')
 pulseStyle.textContent = `
@@ -883,8 +858,6 @@ pulseStyle.textContent = `
 `
 document.head.appendChild(pulseStyle)
 
-=======
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
 // Error handling
 window.addEventListener("error", (e) => {
   console.error("JavaScript Error:", e.error)
@@ -898,7 +871,6 @@ window.addEventListener("load", () => {
   console.log(`Page loaded in ${Math.round(loadTime)}ms`)
 })
 
-<<<<<<< HEAD
 // Accordion functionality
 function initializeAccordion() {
   const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -934,8 +906,6 @@ function initializeAccordion() {
   });
 }
 
-=======
->>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
 // Service Worker Registration (for future PWA features)
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {

@@ -183,34 +183,42 @@ To run from source:
 go run . help
 ```
 =======
-# Indoor and outdoor navigation app
+# Waide Mobility - Indoor Navigation App
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/jacobthankgod4-5488s-projects/v0-waidemobility)
 [![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/ZuANLNHTyzR)
 
 ## Overview
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+Waide is an indoor and outdoor navigation application focused on mapping African venues for climate resilience and accessibility. Our mission is to map 100,000 venues across Africa, starting with Nigeria and expanding continent-wide.
+
+## Features
+
+- Indoor navigation for public buildings
+- Accessibility-focused mapping
+- Multi-language support for African languages
+- Community-driven mapping initiative
+- Climate resilience integration
 
 ## Deployment
 
-Your project is live at:
+To deploy this project:
 
-**[https://vercel.com/jacobthankgod4-5488s-projects/v0-waidemobility](https://vercel.com/jacobthankgod4-5488s-projects/v0-waidemobility)**
+1. **Vercel**: Import repository at [vercel.com](https://vercel.com)
+2. **Netlify**: Connect GitHub repository
+3. **GitHub Pages**: Enable in repository settings
 
-## Build your app
+## Local Development
 
-Continue building your app on:
+```bash
+# Serve locally
+python -m http.server 8000
+# or
+npx serve .
+```
 
-**[https://v0.app/chat/projects/ZuANLNHTyzR](https://v0.app/chat/projects/ZuANLNHTyzR)**
+## Project Structure
 
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- `index.html` - Main landing page
+- `public/` - Static assets
+- Phase pages for mapping timeline
 >>>>>>> ead6d99b8bec1903e724e07bfede3898cc88e6f0
