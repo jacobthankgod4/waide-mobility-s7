@@ -1361,11 +1361,11 @@
             }
         });
         
-        // AI Configuration
+        // AI Configuration - Keys should be set via environment variables
         const AI_KEYS = [
-            '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',
-            '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',
-            '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'
+            process.env.OPENROUTER_API_KEY_1 || 'YOUR_API_KEY_1',
+            process.env.OPENROUTER_API_KEY_2 || 'YOUR_API_KEY_2',
+            process.env.OPENROUTER_API_KEY_3 || 'YOUR_API_KEY_3'
         ];
         
         async function generateAIContent(leadData) {
@@ -2141,7 +2141,7 @@
                 const response = await fetch('https://api.resend.com/emails', {
                     method: 'POST',
                     headers: {
-                        'Authorization': 'Bearer re_123456789_REPLACE_WITH_ACTUAL_RESEND_API_KEY',
+                        'Authorization': `Bearer ${process.env.RESEND_API_KEY || 'YOUR_RESEND_API_KEY'}`,
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
