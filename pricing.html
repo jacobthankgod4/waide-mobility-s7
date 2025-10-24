@@ -138,49 +138,63 @@
 
                 <div class="pricing-grid" id="pricing-cards">
                     <div class="pricing-card">
+                        <div class="savings-badge" style="display: none;">Save $958/year</div>
                         <div class="pricing-header">
                             <h3>Small Spaces</h3>
                             <div class="price">
                                 <span class="currency">$</span>
-                                <span class="amount" data-monthly="399" data-yearly="3999">299</span>
+                                <span class="amount" data-monthly="399" data-yearly="3830">399</span>
                                 <span class="period">/month</span>
                             </div>
                             <p>Perfect for retail stores & small offices</p>
                         </div>
+                        <div class="value-highlight">Essential indoor navigation for small venues</div>
                         <ul class="features-list">
-                            <li>Up to 5,000 sq ft coverage</li>
-                            <li>Basic indoor positioning</li>
-                            <li>Immersive AR navigation</li>
-                            <li>Mobile app integration</li>
-                            <li>Location-based advertising capped</li>
-                            <li>24/7 support</li>
+                            <li>Up to 1 venue (10,000 sq ft and below)</li>
+                            <li>Unlimited monthly active users</li>
+                            <li>Indoor navigation & wayfinding</li>
+                            <li>Location-based advertising (5,000 impressions/month)</li>
+                            <li>Basic analytics suite</li>
+                            <li>Promotional push notifications (1,000/month)</li>
+                            <li>Tenant directory integration</li>
+                            <li>Basic heat mapping & foot traffic</li>
+                            <li>Mobile SDK integration</li>
+                            <li>Email support (48h response)</li>
                         </ul>
-                        <button class="btn btn-primary" onclick="openPopup('Small Spaces')">Start Your Free Trial Now</button>
+                        <a href="roi-calculator.html" class="roi-link">📊 Calculate ROI</a>
+                        <div class="usage-limits">Perfect for: Large retail stores, warehouses, medium offices, community centers</div>
+                        <button class="btn btn-primary" onclick="openPopup('Small Spaces')">Get Started</button>
                     </div>
 
                     <div class="pricing-card featured">
                         <div class="popular-badge">Most Popular</div>
+                        <div class="savings-badge" style="display: none;">Save $2,878/year</div>
                         <div class="pricing-header">
                             <h3>Medium Spaces</h3>
                             <div class="price">
                                 <span class="currency">$</span>
-                                <span class="amount" data-monthly="1599" data-yearly="10999">1,199</span>
+                                <span class="amount" data-monthly="1199" data-yearly="11510">1,199</span>
                                 <span class="period">/month</span>
                             </div>
                             <p>Ideal for shopping centers & hospitals</p>
                         </div>
+                        <div class="value-highlight">Advanced navigation for growing businesses</div>
                         <ul class="features-list">
-                            <li>Up to 50,000 sq ft coverage</li>
-                            <li>Advanced AR navigation</li>
-                            <li>Real-time analytics</li>
-                            <li>API access & integrations</li>
-                            <li>Geoconquesting (competitor targeting)</li>
-                            <li>Seamless outdoor-indoor navigation</li>
-                            <li>Smart building integration</li>
-                            <li>Location-based advertising uncapped</li>
-                            <li>Priority support</li>
+                            <li>Up to 5 venues (50,000 sq ft each)</li>
+                            <li>Unlimited monthly active users</li>
+                            <li>Advanced indoor navigation & AR guidance</li>
+                            <li>Smart cities integration</li>
+                            <li>Advanced location-based advertising (unlimited)</li>
+                            <li>Geoconquesting & competitor traffic capture</li>
+                            <li>Advanced analytics suite with AI insights</li>
+                            <li>Behavioral analytics & purchase prediction</li>
+                            <li>Cross-venue marketing campaigns</li>
+                            <li>API access & custom integrations</li>
+                            <li>Priority support & phone support (24h)</li>
                         </ul>
-                        <button class="btn btn-primary" onclick="openPopup('Medium Spaces')">Start Your Free Trial Now</button>
+                        <a href="roi-calculator.html" class="roi-link">📊 Calculate ROI</a>
+                        <div class="usage-limits">Perfect for: Shopping centers, hospitals, universities</div>
+                        <button class="btn btn-primary" onclick="openPopup('Medium Spaces')">Start Free Trial</button>
                     </div>
 
                     <div class="pricing-card">
@@ -191,13 +205,24 @@
                             </div>
                             <p>For airports & mega complexes</p>
                         </div>
+                        <div class="value-highlight">Enterprise solution with unlimited scale</div>
                         <ul class="features-list">
-                            <li>Unlimited coverage area</li>
-                            <li>Full AI navigation suite</li>
-                            <li>Custom integrations</li>
-                            <li>White-label solutions</li>
-                            <li>Dedicated support team</li>
+                            <li>Unlimited venues & users</li>
+                            <li>Enterprise indoor navigation platform</li>
+                            <li>Smart cities platform integration</li>
+                            <li>Enterprise advertising platform with full control</li>
+                            <li>Advanced customer data platform (CDP)</li>
+                            <li>Predictive analytics & AI modeling</li>
+                            <li>Dynamic content personalization engine</li>
+                            <li>Multi-venue campaign orchestration</li>
+                            <li>Custom marketing automation workflows</li>
+                            <li>Competitive intelligence dashboard</li>
+                            <li>White-label platform solutions</li>
+                            <li>Custom development & integrations</li>
+                            <li>Dedicated customer success manager</li>
                         </ul>
+                        <a href="roi-calculator.html" class="roi-link">📊 Calculate ROI</a>
+                        <div class="usage-limits">Perfect for: Airports, mega malls, smart cities</div>
                         <button class="btn btn-primary" onclick="openPopup('Large Spaces')">Contact Sales</button>
                     </div>
                 </div>
@@ -398,6 +423,29 @@
                     from { opacity: 0; max-height: 0; }
                     to { opacity: 1; max-height: 1000px; }
                 }
+                .roi-link {
+                    display: inline-block;
+                    color: #00FFFF;
+                    text-decoration: none;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+                    padding: 0.5rem 0;
+                    border-bottom: 1px solid transparent;
+                    transition: border-color 0.3s ease;
+                }
+                .roi-link:hover {
+                    border-bottom-color: #00FFFF;
+                }
+                
+                /* Enhanced FAQ styling */
+                .faq-item:hover {
+                    border-color: #00FFFF;
+                    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+                }
+                .faq-question[aria-expanded="true"] {
+                    background-color: #1a1a1a;
+                    border-bottom: 1px solid #333;
+                }
                 </style>
 
                 <script>
@@ -474,9 +522,19 @@
                         <a href="#">Terms of Service</a>
                         <a href="#">Security</a>
                     </div>
-                    <div class="trust-badges" style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="SSL Secure" style="width: 20px; height: 20px;" loading="lazy">
-                        <span style="font-size: 12px; color: #ccc;">SSL Encrypted & Secure</span>
+                    <div class="trust-badges" style="display: flex; align-items: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <span style="color: #00FFFF; font-size: 16px;">🔒</span>
+                            <span style="font-size: 12px; color: #ccc;">SSL Encrypted</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <span style="color: #00FFFF; font-size: 16px;">🛡️</span>
+                            <span style="font-size: 12px; color: #ccc;">GDPR Compliant</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <span style="color: #00FFFF; font-size: 16px;">✅</span>
+                            <span style="font-size: 12px; color: #ccc;">SOC 2 Certified</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -654,24 +712,197 @@
         .popup-content button[type="submit"]:hover {
             background: #00e6e6;
         }
+        
+        /* Enhanced pricing card styling */
+        .pricing-card {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+        }
+        .pricing-card.featured {
+            border: 2px solid #00FFFF;
+            transform: scale(1.05);
+        }
+        .features-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #333;
+        }
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+        .value-highlight {
+            background: linear-gradient(135deg, #00FFFF, #0080FF);
+            color: #000;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .features-list li {
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .features-list li::before {
+            content: '•';
+            color: #00FFFF;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .usage-limits {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1rem;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        /* Pricing toggle styling */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .toggle-switch {
+            position: relative !important;
+            width: 60px !important;
+            height: 30px !important;
+            background: #333 !important;
+            border: none !important;
+            border-radius: 15px !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            outline: none !important;
+        }
+        .toggle-switch:hover {
+            opacity: 0.8 !important;
+        }
+        .toggle-slider {
+            position: absolute !important;
+            top: 3px !important;
+            left: 3px !important;
+            width: 24px !important;
+            height: 24px !important;
+            background: white !important;
+            border-radius: 50% !important;
+            transition: transform 0.3s ease !important;
+            pointer-events: none !important;
+        }
+        .discount {
+            background: #00FFFF;
+            color: #000;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        .savings-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #00FF00;
+            color: #000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Mobile enhancements */
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .pricing-card.featured {
+                transform: none;
+                order: -1;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .btn-large {
+                width: 100%;
+            }
+        }
         </style>
 
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Simple toggle implementation
+        function initPricingToggle() {
             const toggle = document.getElementById('pricingToggle');
             const amounts = document.querySelectorAll('.amount');
+            const periods = document.querySelectorAll('.period');
+            const savingsBadges = document.querySelectorAll('.savings-badge');
+            
+            let isYearly = false; // Track state manually
+            
+            if (toggle && amounts.length > 0) {
+                toggle.onclick = function(e) {
+                    e.preventDefault();
+                    
+                    // Toggle state
+                    isYearly = !isYearly;
+                    
+                    // Update visual state
+                    if (isYearly) {
+                        toggle.style.setProperty('background-color', '#00FFFF', 'important');
+                        toggle.querySelector('.toggle-slider').style.transform = 'translateX(30px)';
+                    } else {
+                        toggle.style.setProperty('background-color', '#333', 'important');
+                        toggle.querySelector('.toggle-slider').style.transform = 'translateX(0)';
+                    }
 
-            toggle.addEventListener('click', function() {
-                toggle.classList.toggle('active');
-                const isYearly = toggle.classList.contains('active');
+                    // Update prices
+                    amounts.forEach(amount => {
+                        const monthly = parseInt(amount.getAttribute('data-monthly'));
+                        if (isYearly) {
+                            const yearlyPrice = Math.round(monthly * 12 * 0.8);
+                            amount.textContent = yearlyPrice.toLocaleString();
+                        } else {
+                            amount.textContent = monthly.toLocaleString();
+                        }
+                    });
 
-                amounts.forEach(amount => {
-                    const monthly = amount.getAttribute('data-monthly');
-                    const yearly = amount.getAttribute('data-yearly');
-                    amount.textContent = isYearly ? Math.round(yearly / 12) : monthly;
-                });
-            });
-        });
+                    // Update periods
+                    periods.forEach(period => {
+                        period.textContent = isYearly ? '/year' : '/month';
+                    });
+                    
+                    // Show/hide savings badges
+                    savingsBadges.forEach(badge => {
+                        badge.style.display = isYearly ? 'block' : 'none';
+                    });
+                };
+            }
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPricingToggle);
+        } else {
+            initPricingToggle();
+        }
+        
+        // Backup initialization
+        setTimeout(initPricingToggle, 1000);
 
         function openPopup(planName) {
             const form = document.getElementById("subscriptionForm");
