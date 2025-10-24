@@ -6,6 +6,7 @@
     <title>ROI Calculator | Waide Mobility</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
 </head>
 <body>
     <!-- Skip Links for Accessibility -->
@@ -568,7 +569,7 @@
                             <div style="background: #0a0a0a; padding: 2rem; border-radius: 12px;">
                                 <!-- Modern Interactive Bar Chart -->
                                 <div style="height: 250px; margin-bottom: 3rem; position: relative;">
-                                    <canvas id="modernBarChart" aria-label="Revenue comparison chart" style="max-height: 200px;"></canvas>
+                                    <canvas id="modernBarChart" width="400" height="200" aria-label="Revenue comparison chart" style="max-height: 200px; width: 100%; background: rgba(10, 10, 10, 0.5); border-radius: 8px;"></canvas>
                                     <div id="chart-description" style="display: none; margin-bottom: 2rem; padding: 1rem; background: rgba(0, 230, 255, 0.1); border-radius: 8px; color: #00e6ff; font-size: 0.9rem;" aria-live="polite">Chart data will be announced here when ROI is calculated</div>
 
                                     <!-- Accessible Data Table (hidden visually but available to screen readers) -->
@@ -1012,6 +1013,15 @@
                 const planCosts = { 'Starter': 3990, 'Professional': 11990, 'Enterprise': 50000 };
                 const roi = ((totalAnnualBenefit - planCosts[currentPlan]) / planCosts[currentPlan] * 100);
                 
+                // Create results object
+                const results = {
+                    currentRevenue: Math.round(currentRevenue),
+                    projectedRevenue: Math.round(projectedRevenue),
+                    revenueIncrease: Math.round(revenueIncrease),
+                    annualIncrease: Math.round(annualIncrease),
+                    roi: Math.round(roi)
+                };
+                
                 // Update display with screen reader announcements
                 document.getElementById('currentRevenue').textContent = results.currentRevenue.toLocaleString();
                 document.getElementById('projectedRevenue').textContent = results.projectedRevenue.toLocaleString();
@@ -1024,6 +1034,11 @@
                 document.getElementById('roiResults').setAttribute('aria-label', resultsAnnouncement);
 
                 
+                // Initialize chart if it doesn't exist
+                if (!revenueChart) {
+                    initializeChart();
+                }
+                
                 // Update modern bar chart with accessibility announcements
                 if (revenueChart && revenueChart.data && revenueChart.data.datasets && revenueChart.data.datasets[0]) {
                     revenueChart.data.datasets[0].data = [results.currentRevenue, results.projectedRevenue];
@@ -1031,7 +1046,23 @@
                         revenueChart.update('active');
                     } catch (chartError) {
                         console.warn('Chart update failed:', chartError);
+                        // Try to reinitialize chart
+                        initializeChart();
+                        if (revenueChart && revenueChart.data && revenueChart.data.datasets && revenueChart.data.datasets[0]) {
+                            revenueChart.data.datasets[0].data = [results.currentRevenue, results.projectedRevenue];
+                            revenueChart.update('active');
+                        }
                     }
+                } else {
+                    // Chart doesn't exist, try to initialize it
+                    setTimeout(() => {
+                        initializeChart();
+                        if (revenueChart && revenueChart.data && revenueChart.data.datasets && revenueChart.data.datasets[0]) {
+                            revenueChart.data.datasets[0].data = [results.currentRevenue, results.projectedRevenue];
+                            revenueChart.update('active');
+                        }
+                    }, 100);
+                }
 
                     // Update chart accessibility attributes
                     const chartCanvas = document.getElementById('modernBarChart');
@@ -1157,7 +1188,12 @@
                     return;
                 }
 
-            revenueChart = new Chart(ctx, {
+                // Destroy existing chart if it exists
+                if (revenueChart) {
+                    revenueChart.destroy();
+                }
+
+                revenueChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: ['Current Revenue', 'With Waide Mobility'],
@@ -1264,20 +1300,23 @@
         
         // Initialize chart when page loads with proper timing
         document.addEventListener('DOMContentLoaded', function() {
-            // Delay chart initialization to ensure DOM is fully rendered
-            setTimeout(() => {
-                const canvas = document.getElementById('modernBarChart');
-                if (canvas) {
-                    initializeChart();
-                } else {
-                    console.warn('Chart canvas not found, retrying...');
-                    setTimeout(() => {
-                        if (document.getElementById('modernBarChart')) {
-                            initializeChart();
+            // Initialize chart immediately
+            initializeChart();
+            // Also initialize when results become visible
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                        const roiResults = document.getElementById('roiResults');
+                        if (roiResults && roiResults.style.display !== 'none' && !revenueChart) {
+                            setTimeout(initializeChart, 100);
                         }
-                    }, 500);
-                }
-            }, 100);
+                    }
+                });
+            });
+            const roiResults = document.getElementById('roiResults');
+            if (roiResults) {
+                observer.observe(roiResults, { attributes: true, attributeFilter: ['style'] });
+            }
         });
         
         // Plan Selection with Keyboard Support
