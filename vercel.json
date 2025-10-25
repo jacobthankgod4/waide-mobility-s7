@@ -1,15 +1,19 @@
 {
-  "version": 2,
-  "builds": [
+  "headers": [
     {
-      "src": "**/*",
-      "use": "@vercel/static"
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        }
+      ]
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
     }
   ]
 }
