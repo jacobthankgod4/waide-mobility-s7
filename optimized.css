@@ -1,0 +1,266 @@
+/* Optimized CSS - Extracted from inline styles */
+
+/* How It Works Section */
+.modern-how-it-works {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-how-it-works::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%), 
+              radial-gradient(circle at 70% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.modern-how-it-works .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.modern-how-it-works .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.modern-how-it-works h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #00ffff, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modern-how-it-works .subtitle {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  border-color: #00ffff;
+}
+
+.step-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #00ffff, #06b6d4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.step-description {
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+.cta-center {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #00ffff, #06b6d4);
+  color: #000;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+.video-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.video-container:hover {
+  border-color: #00ffff;
+  transform: scale(1.02);
+}
+
+.video-frame {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(0, 255, 255, 1);
+}
+
+/* Section Spacing */
+.section-spacing {
+  margin-top: 8rem;
+  padding: 2rem;
+}
+
+.accessible-nav-section {
+  margin-top: 6rem;
+}
+
+/* Venue Owner Section */
+.venue-owner-section {
+  padding: 4rem 2rem;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+.venue-owner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.venue-owner-text {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.venue-owner-image {
+  text-align: center;
+}
+
+.venue-owner-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  border: 2px solid #00ffff;
+}
+
+.venue-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.venue-cta a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #00ffff;
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+/* Waide Mobility Section */
+.waide-mobility-section {
+  padding: 4rem 2rem;
+  background-color: #121212;
+  color: #fff;
+}
+
+.waide-mobility-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.waide-mobility-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.waide-mobility-description {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .venue-owner-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .step-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modern-how-it-works h2 {
+    font-size: 2rem;
+  }
+}

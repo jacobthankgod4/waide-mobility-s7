@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Existing PDF Generation</title>
+    <style>
+        body { background: #000; color: #fff; font-family: Inter, sans-serif; padding: 2rem; }
+        .btn { background: linear-gradient(135deg, #00e6ff, #00ff88); color: #000; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <h1>PDF Generation Integration</h1>
+    
+    <!-- Method 1: Direct function call -->
+    <button class="btn" onclick="directPDFGeneration()">
+        Generate PDF Directly
+    </button>
+    
+    <!-- Method 2: Use existing modal -->
+    <button class="btn" onclick="useExistingModal()">
+        Use Existing Modal System
+    </button>
+    
+    <!-- Method 3: Programmatic generation -->
+    <button class="btn" onclick="programmaticGeneration()">
+        Programmatic Generation
+    </button>
+
+    <!-- Include the ROI calculator scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // Copy the essential functions from roi-calculator.html
+        
+        // Brand colors
+        const brandColors = {
+            primary: [0, 230, 255],
+            secondary: [0, 255, 136],
+            accent: [255, 170, 0],
+            background: [0, 0, 0],
+            text: [255, 255, 255],
+            lightText: [204, 204, 204]
+        };
+        
+        // Method 1: Direct PDF generation
+        function directPDFGeneration() {
+            const leadData = {
+                company: 'Demo Company Inc.',
+                firstName: 'John',
+                email: 'john@demo.com',
+                currentRevenue: '50,000',
+                projectedRevenue: '62,500',
+                roi: '125'
+            };
+            
+            generateSimplePDF(leadData);
+        }
+        
+        // Method 2: Use existing modal (requires copying modal HTML)
+        function useExistingModal() {
+            alert('Copy the downloadModal HTML from roi-calculator.html to use this method');
+        }
+        
+        // Method 3: Programmatic generation
+        function programmaticGeneration() {
+            const leadData = {
+                company: 'Programmatic Company',
+                firstName: 'Jane',
+                email: 'jane@prog.com',
+                currentRevenue: '75,000',
+                projectedRevenue: '93,750',
+                roi: '150'
+            };
+            
+            generateAdvancedPDF(leadData);
+        }
+        
+        // Simple PDF generation (2 pages)
+        function generateSimplePDF(leadData) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Page 1: Executive Summary
+            doc.setFillColor(...brandColors.background);
+            doc.rect(0, 0, 210, 297, 'F');
+            
+            doc.setFontSize(24);
+            doc.setTextColor(...brandColors.primary);
+            doc.text('WAIDE MOBILITY', 20, 25);
+            
+            doc.setFontSize(12);
+            doc.setTextColor(...brandColors.secondary);
+            doc.text('ROI Analysis Report', 20, 35);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(...brandColors.text);
+            doc.text(`Company: ${leadData.company}`, 20, 60);
+            doc.text(`ROI: ${leadData.roi}%`, 20, 75);
+            
+            // Page 2: Contact
+            doc.addPage();
+            doc.setFillColor(...brandColors.background);
+            doc.rect(0, 0, 210, 297, 'F');
+            
+            doc.setFontSize(16);
+            doc.setTextColor(...brandColors.primary);
+            doc.text('Contact Information', 20, 30);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(...brandColors.secondary);
+            doc.text('Email: jacob@waidemobility.org', 20, 50);
+            
+            doc.save(`${leadData.company}-ROI-Report.pdf`);
+        }
+        
+        // Advanced PDF generation (copy from roi-calculator.html)
+        function generateAdvancedPDF(leadData) {
+            // This would use the full generatePDFInBackground function
+            // Copy the entire function from roi-calculator.html for full functionality
+            generateSimplePDF(leadData); // Fallback to simple version
+        }
+    </script>
+</body>
+</html>
