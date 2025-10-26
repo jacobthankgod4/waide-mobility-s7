@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test All JavaScript Fixes</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #000; color: #fff; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background: #0f5132; border: 1px solid #198754; }
+        .error { background: #842029; border: 1px solid #dc3545; }
+        .warning { background: #664d03; border: 1px solid #ffc107; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Fixes Test Results</h1>
+    <div id="test-results"></div>
+
+    <script>
+        const results = [];
+        
+        function addResult(message, type = 'success') {
+            results.push({ message, type });
+            updateDisplay();
+        }
+        
+        function updateDisplay() {
+            const container = document.getElementById('test-results');
+            container.innerHTML = results.map(result => 
+                `<div class="test-result ${result.type}">${result.message}</div>`
+            ).join('');
+        }
+        
+        // Test 1: Load segmentation.js
+        try {
+            const script1 = document.createElement('script');
+            script1.src = 'js/segmentation.js';
+            script1.onload = () => addResult('✅ segmentation.js loaded successfully');
+            script1.onerror = () => addResult('❌ segmentation.js failed to load', 'error');
+            document.head.appendChild(script1);
+        } catch (error) {
+            addResult('❌ Error loading segmentation.js: ' + error.message, 'error');
+        }
+        
+        // Test 2: Load industry-personas.js
+        try {
+            const script2 = document.createElement('script');
+            script2.src = 'js/industry-personas.js';
+            script2.onload = () => addResult('✅ industry-personas.js loaded successfully');
+            script2.onerror = () => addResult('❌ industry-personas.js failed to load', 'error');
+            document.head.appendChild(script2);
+        } catch (error) {
+            addResult('❌ Error loading industry-personas.js: ' + error.message, 'error');
+        }
+        
+        // Test 3: Load atomic-personas.js
+        try {
+            const script3 = document.createElement('script');
+            script3.src = 'js/atomic-personas.js';
+            script3.onload = () => addResult('✅ atomic-personas.js loaded successfully');
+            script3.onerror = () => addResult('❌ atomic-personas.js failed to load', 'error');
+            document.head.appendChild(script3);
+        } catch (error) {
+            addResult('❌ Error loading atomic-personas.js: ' + error.message, 'error');
+        }
+        
+        // Test 4: Load complete-messaging.js
+        try {
+            const script4 = document.createElement('script');
+            script4.src = 'js/complete-messaging.js';
+            script4.onload = () => addResult('✅ complete-messaging.js loaded successfully');
+            script4.onerror = () => addResult('❌ complete-messaging.js failed to load', 'error');
+            document.head.appendChild(script4);
+        } catch (error) {
+            addResult('❌ Error loading complete-messaging.js: ' + error.message, 'error');
+        }
+        
+        // Test 5: Check for undefined references
+        setTimeout(() => {
+            try {
+                if (typeof VisitorSegmentation !== 'undefined') {
+                    addResult('✅ VisitorSegmentation is defined');
+                } else {
+                    addResult('⚠️ VisitorSegmentation is not defined (expected)', 'warning');
+                }
+                
+                if (typeof EnhancedSegmentation !== 'undefined') {
+                    addResult('✅ EnhancedSegmentation is defined');
+                } else {
+                    addResult('❌ EnhancedSegmentation is not defined', 'error');
+                }
+                
+                if (typeof AtomicPersonas !== 'undefined') {
+                    addResult('✅ AtomicPersonas is defined');
+                } else {
+                    addResult('❌ AtomicPersonas is not defined', 'error');
+                }
+                
+                if (typeof CompleteMessaging !== 'undefined') {
+                    addResult('✅ CompleteMessaging is defined');
+                } else {
+                    addResult('❌ CompleteMessaging is not defined', 'error');
+                }
+                
+                addResult('✅ All tests completed successfully!');
+                
+            } catch (error) {
+                addResult('❌ Error during testing: ' + error.message, 'error');
+            }
+        }, 2000);
+        
+        // Global error handler
+        window.addEventListener('error', (e) => {
+            addResult('❌ Global error: ' + (e.error?.message || e.message), 'error');
+        });
+        
+        addResult('🚀 Starting JavaScript tests...');
+    </script>
+</body>
+</html>

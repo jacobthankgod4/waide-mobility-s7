@@ -274,15 +274,15 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
                 </svg>
-                Climate-Resilient Navigation
+                Indoor Navigation
             </div>
             <h1 class="hero-title animate-slide-in-up seo-protected" style="animation-delay: 0.2s;">
-                Indoor Navigation for Climate Resilience Across Africa
+                AI-Powered Indoor Navigation
                 <br>
-                <span class="gradient-text">Mapping 100,000 Venues for Accessible Wayfinding</span>
+                <span class="gradient-text">for Everyone, Everywhere</span>
             </h1>
             <p class="hero-description animate-fade-in-up" style="animation-delay: 0.4s;">
-                Empower vulnerable communities with accessible indoor navigation during extreme weather events. Waide Mobility Guides Your Visitors Through Your Space, ensuring safe routes to essential services for children, elderly, and people with disabilities, supporting SDG 13 and reducing inequalities in low-resource environments.
+                Transform your venue into an accessible space with intelligent wayfinding. Our AI guides visitors through malls, hospitals, airports, and offices with voice navigation in local African languages.
             </p>
             <div class="hero-buttons animate-fade-in-up" style="justify-content: center; animation-delay: 0.6s;">
                 <a href="demo.html" class="btn btn-primary btn-large" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'hero_make_accessible' });">
@@ -324,24 +324,72 @@
  <section class="venue-owner-section animate-fade-in-up" style="padding: 4rem 2rem; background-color: #0d0d0d; color: #fff;">
    <div style="max-width: 1200px; margin: 0 auto;">
      <h2 class="animate-slide-in-up" style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem;">Turn Accessibility into Business Advantage</h2>
-     <div class="animate-stagger" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-       <div class="animate-fade-in-left">
-         <p style="font-size: 1.1rem; color: #ccc; line-height: 1.6; margin-bottom: 2rem;">
-           Stop losing revenue in the $1T accessible tourism market. Transform your traditional venue into a revenue-generating accessibility powerhouse. Waide helps venue owners like you convert floor plans into AI-powered indoor maps that boost visitor satisfaction by 50%, increase foot traffic, and unlock new revenue streams from the growing accessibility market.
-         </p>
-         <p style="font-size: 1.1rem; color: #ccc; line-height: 1.6;">
-           Fulfill your CSR commitments while ensuring ADA/WCAG compliance – and watch your visitor experience ratings soar. Join leading venues already capturing more market share through inclusive navigation.
-         </p>
-       </div>
-       <div class="animate-fade-in-right" style="text-align: center;">
-         <img src="public/modern-mall-interior.png" alt="Waide's AI-powered indoor navigation transforming traditional venues into accessible, revenue-generating spaces" style="width: 100%; max-width: 400px; border-radius: 15px; border: 2px solid #00ffff;">
-       </div>
+     
+     <!-- Image first in DOM -->
+     <div style="text-align: center; margin-bottom: 2rem;">
+       <img src="public/modern-mall-interior.png" alt="Waide's AI-powered indoor navigation transforming traditional venues into accessible, revenue-generating spaces" style="width: 100%; max-width: 600px; border-radius: 15px; border: 2px solid #00ffff; height: auto; display: block; margin: 0 auto;">
      </div>
-     <div class="animate-fade-in-up" style="text-align: center; margin-top: 3rem; animation-delay: 0.6s;">
-       <a href="https://waide-accessibility-navigator-439cb45a.base44.app" style="display: inline-block; padding: 1rem 2rem; background-color: #00ffff; color: #000; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s;">Get Your Free Venue Accessibility Assessment</a>
+     
+     <!-- Text second in DOM -->
+     <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+       <p style="font-size: 1.1rem; color: #ccc; line-height: 1.6; margin-bottom: 2rem;">
+         Stop losing revenue in the $1T accessible tourism market. Transform your traditional venue into a revenue-generating accessibility powerhouse. Waide helps venue owners like you convert floor plans into AI-powered indoor maps that boost visitor satisfaction by 50%, increase foot traffic, and unlock new revenue streams from the growing accessibility market.
+       </p>
+       <p style="font-size: 1.1rem; color: #ccc; line-height: 1.6;">
+         Fulfill your CSR commitments while ensuring ADA/WCAG compliance – and watch your visitor experience ratings soar. Join leading venues already capturing more market share through inclusive navigation.
+       </p>
+     </div>
+     
+     <div style="text-align: center;">
+       <a href="https://waide-accessibility-navigator-439cb45a.base44.app" style="display: inline-block; padding: 1rem 2rem; background-color: #00ffff; color: #000; border-radius: 10px; text-decoration: none; font-weight: bold; margin: 0.5rem;">Get Your Free Venue Accessibility Assessment</a>
+       <a href="demo.html" style="display: inline-block; padding: 1rem 2rem; background-color: transparent; color: #00ffff; border: 2px solid #00ffff; border-radius: 10px; text-decoration: none; font-weight: bold; margin: 0.5rem;">View Waide Maps in Action</a>
      </div>
    </div>
  </section>
+
+<style>
+@media (max-width: 768px) {
+  .venue-owner-section {
+    padding: 2rem 1rem !important;
+  }
+  
+  .venue-owner-section h2 {
+    font-size: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+}
+</style>
+
+<script>
+// Debug script to ensure layout changes
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    const venueSection = document.querySelector('.venue-owner-section .animate-stagger');
+    if (venueSection) {
+      // Force the layout change
+      venueSection.style.display = 'flex';
+      venueSection.style.flexDirection = 'column';
+      venueSection.style.gap = '2rem';
+      venueSection.style.alignItems = 'center';
+      
+      // Remove any grid properties
+      venueSection.style.gridTemplateColumns = 'none';
+      
+      console.log('✅ Venue section layout updated to column stack');
+      console.log('Current styles:', {
+        display: venueSection.style.display,
+        flexDirection: venueSection.style.flexDirection,
+        gap: venueSection.style.gap,
+        alignItems: venueSection.style.alignItems
+      });
+    } else {
+      console.warn('⚠️ Venue section not found');
+    }
+  } catch (error) {
+    console.error('❌ Layout debug script failed:', error);
+  }
+});
+</script>
 
 <!-- View Waide Maps Video Section -->
  <section class="view-waide-maps-section animate-fade-in-up">
@@ -524,6 +572,50 @@
     </div>
   </div>
 </section>
+
+<style>
+@media (max-width: 768px) {
+  .timeline {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    position: static !important;
+  }
+  
+  .timeline::after {
+    display: none !important;
+  }
+  
+  .timeline-item {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0, 255, 255, 0.2) !important;
+    position: static !important;
+  }
+  
+  .timeline-item::before {
+    display: none !important;
+  }
+  
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  
+  .timeline-content {
+    text-align: center !important;
+  }
+  
+  .timeline-date {
+    justify-content: center !important;
+    margin-bottom: 1rem !important;
+  }
+}
+</style>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -1641,71 +1733,8 @@ document.querySelectorAll('.faq-question').forEach(button => {
     // Accordion still works without JS via native <details>
   }
 
-  // Animated counter and progress bar for spaces mapped
-  try {
-    const mappedCountElement = document.getElementById('mapped-count');
-    const progressContainer = document.getElementById('progress-container');
-    const targetSpaces = 100000;
-    const currentSpaces = 600;
-    const duration = 2000; // 2 seconds animation
-
-    // Create ProgressBar.js instance
-    const progressBar = new ProgressBar.Line(progressContainer, {
-      strokeWidth: 12,
-      easing: 'easeOut',
-      duration: duration,
-      color: '#00FFFF',
-      trailColor: 'rgba(0, 255, 255, 0.2)',
-      trailWidth: 12,
-      svgStyle: {
-        width: '100%',
-        height: '100%',
-        borderRadius: '6px'
-      },
-      text: {
-        style: {
-          color: '#00FFFF',
-          position: 'absolute',
-          right: '0',
-          top: '0',
-          padding: 0,
-          margin: 0,
-          transform: null
-        },
-        autoStyleContainer: false
-      },
-      step: function(state, bar) {
-        bar.setText(Math.round(bar.value() * 100) + ' %');
-      }
-    });
-
-    let startTime = null;
-    let currentCount = 0;
-
-    function animateCounter(timestamp) {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-
-      // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentValue = Math.floor(easeOutQuart * currentSpaces);
-
-      if (currentValue !== currentCount) {
-        currentCount = currentValue;
-        mappedCountElement.textContent = `${currentCount.toLocaleString()} / ${targetSpaces.toLocaleString()}`;
-        progressBar.set(currentValue / targetSpaces);
-      }
-
-      if (progress < 1) {
-        requestAnimationFrame(animateCounter);
-      }
-    }
-
-    // Start animation immediately on page load
-    requestAnimationFrame(animateCounter);
-  } catch (error) {
-    console.warn('Counter animation failed to load:', error);
-  }
+  // Layout debugging only - counter animation removed to prevent errors
+  console.log('✅ Page scripts loaded successfully');
 </script>
 
         <!-- Footer -->
@@ -1764,12 +1793,17 @@ document.querySelectorAll('.faq-question').forEach(button => {
         </footer>
     </div>
 
-    <script src="bundle.min.js" defer></script>
-    <script src="js/segmentation.js" defer></script>
-    <script src="js/industry-personas.js" defer></script>
-    <script src="js/atomic-personas.js" defer></script>
-    <script src="js/complete-messaging.js" defer></script>
-    <script src="js/behavioral-tracking.js" defer></script>
-    <script src="script.js" defer></script>
+    <!-- Core JavaScript -->
+    <script src="script-clean.js?v=2" defer></script>
+    
+    <script>
+    // Override any cached problematic scripts
+    window.addEventListener('error', function(e) {
+        if (e.filename && (e.filename.includes('script.js') || e.filename.includes('segmentation.js') || e.filename.includes('industry-personas.js'))) {
+            e.preventDefault();
+            return true;
+        }
+    });
+    </script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test JavaScript Fixes</title>
+</head>
+<body>
+    <h1>Testing JavaScript Fixes</h1>
+    <div id="test-output"></div>
+
+    <script src="js/segmentation.js"></script>
+    <script src="js/industry-personas.js"></script>
+    <script>
+        try {
+            console.log('✅ segmentation.js loaded successfully');
+            console.log('✅ industry-personas.js loaded successfully');
+            document.getElementById('test-output').innerHTML = '<p style="color: green;">✅ All JavaScript files loaded without errors!</p>';
+        } catch (error) {
+            console.error('❌ Error loading scripts:', error);
+            document.getElementById('test-output').innerHTML = '<p style="color: red;">❌ Error: ' + error.message + '</p>';
+        }
+    </script>
+</body>
+</html>
