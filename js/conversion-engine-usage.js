@@ -182,7 +182,7 @@ Results confirmed: ${copy.hook.pain}
 
 ${copy.problem.insight}
 
-${copy.problem.deepInsight ? copy.problem.deepInsight : ''}
+${copy.problem.deepInsight || ''}
 
 ${copy.solution.reframe}
 

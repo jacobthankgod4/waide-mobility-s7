@@ -46,7 +46,7 @@ class PsychologicalConversionEngine {
             // AUTHORITY TRIGGERS (Credibility)
             authorityThroughSacrifice: { weight: 0.10, active: false },
             dataCredibility: { weight: 0.15, active: false },
-            mathematicalAuthority: { weight: 0.08, active: false },
+            deepInsightAuthority: { weight: 0.08, active: false },
             socialProofBrand: { weight: 0.12, active: false },
             
             // CURIOSITY TRIGGERS (Engagement)
@@ -105,7 +105,7 @@ class PsychologicalConversionEngine {
         // Real data/case studies/examples
         if (this.context.hasRealData) score += 0.25;
         
-        // Deep insight (formula, framework, unique perspective)
+        // Deep insight (unique perspective, framework, counterintuitive truth)
         if (this.context.hasDeepInsight) score += 0.15;
         
         // Social proof (brand, expert, testimonial)
@@ -259,17 +259,22 @@ class PsychologicalConversionEngine {
             healthcare: {
                 question: "Why do patients die metres from emergency care?",
                 insight: "Navigation isn't a convenience issue—it's a life-or-death economic problem.",
-                deepInsight: this.context.hasDeepInsight ? "Patient Outcomes (PO) = f(Navigation Efficiency (NE), Response Time (RT), Cognitive Load (CL))" : null
+                deepInsight: "The design of a hospital doesn't just shape how people navigate; it orchestrates their entire experience, from mental effort to subtle prompts, steering behaviors in predictable, life-saving ways."
             },
             retail: {
                 question: "Why do shoppers abandon purchases metres from checkout?",
                 insight: "Navigation isn't a UX issue—it's a revenue optimization problem.",
-                deepInsight: this.context.hasDeepInsight ? "Revenue Per Visitor (RPV) = f(Navigation Efficiency (NE), Dwell Time (DT), Accessibility (A))" : null
+                deepInsight: "The design of a space doesn't just shape how people navigate; it orchestrates their entire experience, from mental effort to subtle prompts, steering behaviors in predictable, profitable ways."
             },
             transportation: {
                 question: "Why do passengers miss flights despite arriving on time?",
                 insight: "Navigation isn't an operations issue—it's a capacity optimization problem.",
-                deepInsight: this.context.hasDeepInsight ? "Passenger Throughput (PT) = f(Wayfinding Clarity (WC), Cognitive Load (CL), Accessibility (A))" : null
+                deepInsight: "Every pause, wrong turn, or hesitation bears measurable financial cost. If we can understand how people move, we can guide how they flow through your terminal."
+            },
+            ngo: {
+                question: "Why do vulnerable communities suffer most during climate disasters?",
+                insight: "Navigation isn't an infrastructure issue—it's a survival problem.",
+                deepInsight: "When disasters strike, navigation becomes the difference between life and death. Every second of confusion costs lives."
             }
         };
 
