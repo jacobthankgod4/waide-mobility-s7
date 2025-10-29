@@ -140,12 +140,13 @@ AtomicSegmentation.prototype.generatePersonaKey = function() {
 
 AtomicSegmentation.prototype.getDefaultMessage = function() {
     return {
-        title: 'Transform Indoor Navigation Across Africa',
-        subtitle: 'AI-powered wayfinding solutions for accessible, climate-resilient navigation in African venues',
-        cta: 'Get Started Today',
-        ctaLink: 'demo.html'
+        title: "Africa’s First AI Mapping Software for Smart, Inclusive Navigation",
+        subtitle: "Waide empowers organizations to digitize buildings, analyze movement, and deliver accessible, data-driven indoor navigation—designed for Africa’s next generation of smart, climate-resilient cities.",
+        cta: "Start Free Trial",
+        ctaLink: "/signup"
     };
 };
+
 
 AtomicSegmentation.prototype.applyAtomicModifiers = function(message) {
     let { title, subtitle, cta, ctaLink } = message;
