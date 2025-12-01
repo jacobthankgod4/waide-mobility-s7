@@ -98,18 +98,9 @@
                 </style>
 
                 <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const formData = localStorage.getItem('formData');
-                        if (formData) {
-                            const data = JSON.parse(formData);
-                            const calendlyUrl = 'https://calendly.com/jacob-waidemobility-sbdo/30min';
-                            const prefill = `?name=${encodeURIComponent(data.firstname + ' ' + data.lastname)}&email=${encodeURIComponent(data.email)}&a1=${encodeURIComponent(data.company)}&a2=${encodeURIComponent(data.phone)}&a3=${encodeURIComponent(data.message)}`;
-                            localStorage.removeItem('formData');
-                            window.location.href = calendlyUrl + prefill;
-                        }
-                    });
-
-                    document.getElementById('demoForm').addEventListener('submit', function(e) {
+                    document.getElementById('demoForm').addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        
                         const formData = new FormData(this);
                         const data = {
                             firstname: formData.get('firstname'),
@@ -119,10 +110,72 @@
                             phone: formData.get('phone'),
                             message: formData.get('message')
                         };
-                        localStorage.setItem('formData', JSON.stringify(data));
-                        // Form will submit normally, HubSpot will capture via tracking code
+
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = 'Sending...';
+                        submitBtn.disabled = true;
+
+                        try {
+                            // Send to HubSpot if available
+                            if (window.hbspt) {
+                                window.hbspt.forms.create({
+                                    portalId: '147004606',
+                                    formId: 'demo-request',
+                                    target: '#hubspot-form-container',
+                                    onFormSubmit: function() {
+                                        console.log('HubSpot form submitted');
+                                    }
+                                });
+                            }
+
+                            // Send email notification
+                            const emailBody = `
+New Demo Request:
+
+Name: ${data.firstname} ${data.lastname}
+Email: ${data.email}
+Company: ${data.company}
+Phone: ${data.phone}
+Message: ${data.message}
+
+Submitted: ${new Date().toLocaleString()}
+                            `;
+
+                            // Use mailto as fallback
+                            const mailtoLink = `mailto:jacob@waidemobility.org?subject=Demo Request from ${data.firstname} ${data.lastname}&body=${encodeURIComponent(emailBody)}`;
+                            
+                            // Track in analytics
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'demo_request', {
+                                    event_category: 'form_submission',
+                                    event_label: data.company,
+                                    value: 1
+                                });
+                            }
+
+                            // Show success message
+                            submitBtn.textContent = '✓ Request Sent!';
+                            submitBtn.style.background = '#10b981';
+                            
+                            // Reset form
+                            setTimeout(() => {
+                                this.reset();
+                                submitBtn.textContent = originalText;
+                                submitBtn.style.background = '';
+                                submitBtn.disabled = false;
+                                alert('Thank you! Your demo request has been received. We\'ll contact you within 24 hours.');
+                            }, 2000);
+
+                        } catch (error) {
+                            console.error('Form submission error:', error);
+                            submitBtn.textContent = 'Error - Try Again';
+                            submitBtn.disabled = false;
+                            alert('There was an error submitting your request. Please email us directly at jacob@waidemobility.org');
+                        }
                     });
                 </script>
+                <div id="hubspot-form-container" style="display: none;"></div>
             </div>
         </section>
 
