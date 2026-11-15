@@ -176,7 +176,7 @@ The business-consultant review identified six gaps. All six now have a structura
 |---|---|
 | **No measured pilot outcome** | New `case-study-novare-lekki.html`: scope, deployment status (live / in progress / not started), a metric-by-metric measurement plan with definitions, baselines and reporting points, and an explicit “no results yet” statement. The page is the permanent home for the first real numbers. |
 | **`pricing.html` undermined trust** | Rewritten from scratch. Removed the 48-hour countdown, the expired January 2025 price warning, the “2,847 venues / 153 spots” scarcity copy, the 40%/45%/60%/85%/89% benefit claims, the $2.5M/$3.8M figures, 98.7% accuracy, 3.2× ROI, and the SOC 2 / GDPR badges. Replaced with three engagement routes, indicative rates, a clear included/not-included split, and the four inputs that build a quote. |
-| **Commercial model was implicit** | New homepage section “Three routes. One starting point.” — Pilot, Single venue, Portfolio — each with who it is for, what it includes, a price cue and a link to the matching pricing anchor. |
+| **Commercial model was implicit** | New homepage section “Three ways to buy” — Pilot, Single venue, Portfolio — each with who it is for, what it includes, a price cue and a link to the matching pricing anchor. |
 | **Three conversion actions** | Every “Request Demo” and “Book a Demo” across all 50 HTML files now reads “Request a walkthrough” and points to `contact.html`. The footer mailto button was replaced. Email remains as plain-text fallback, not a parallel CTA. |
 | **Self-referential proof** | The pilot page separates what is deployed from what is proven, and replaces a fabricated testimonial with a written policy: no partner quote is published until the named person has approved it in writing. The video stays as a product walkthrough and is labelled as one. |
 | **Unmeasured “15–20% / US$5–7M”** | Unchanged from round one, but now cross-linked from the pricing page and the pilot page: industry estimate and illustrative model, with the formula and the instruction not to quote them as results. |
@@ -194,3 +194,56 @@ The business-consultant review identified six gaps. All six now have a structura
 - Navigation: the longer CTA label caused a 21 px overflow at 785 px. Tablet nav now uses tighter padding and type; verified at 785 px with zero horizontal overflow.
 - Lighthouse after round two: `pricing.html` and `case-study-novare-lekki.html` both **100 / 100 / 100** (accessibility, best practices, SEO); homepage remains 100 / 100 / 100. No console errors. All local links resolve.
 - `sitemap.xml`: case study added, pricing and homepage dates updated to 2026-11-15.
+
+---
+
+## 10. Round three: the copy audit
+
+The content was accurate but read like it was written by a machine. The fix was sentence-level, not structural: shorter sentences, concrete nouns, and no rhetorical balancing acts.
+
+### What was cut, and why
+
+| Pattern | Example before | Rewrite |
+|---|---|---|
+| Rhetorical question aimed at the reader | “Who are you here as?” | “Visiting, or running the venue?” |
+| Essay-style framing | “Waide is used by people walking through a building and by the teams responsible for it. Those are two different questions, so start with the one that is yours.” | “Both use the same map. Visitors need directions. Operators need the data behind them.” |
+| False antithesis (“not X, but Y”) | “Defend your asset story.” “Anchor spillover measured rather than assumed.” | “Make the case to your board.” “Anchor spillover measured from real movement.” |
+| Soft intensifiers | “actually”, “quietly”, “finally” | Removed. |
+| British retail metaphor that does not travel | “before it ever reaches your till” | “before it ever reaches your shop” |
+| Consultant headings | “Choose the route that matches your decision.” “What the fee covers — and what it doesn’t.” “Pricing questions, answered plainly.” | “Pick the route that fits where you are.” “Included and not included.” “Common questions” |
+| Decorative triads | “From floor plan to live intelligence.” | “How a deployment works” |
+| Slogan headings on the pilot page | “A hard building, not a showroom.” “The numbers this pilot is built to produce.” “Why there is no quote here yet.” | “A working mall, not a demo.” “What the pilot will measure” “No partner quote yet” |
+
+### Rules now applied to new copy
+
+1. Subject, verb, object. If a sentence needs a comma to hold it together, split it.
+2. No “not just”, “more than just”, “isn’t just”. Say the thing.
+3. No adverbs doing the work of evidence: “actually”, “quietly”, “seamlessly”, “truly”.
+4. Headings are labels, not arguments. “Common questions”, not “The things buyers ask first.”
+5. Every number keeps its label: measured, observed, model, industry estimate.
+6. Second person only when giving an instruction. No “you” used to flatter the reader.
+
+### Still outstanding elsewhere on the site
+
+The four rewritten pages are clean. The older pages were not touched in this round, and carry the previous house style:
+
+| Phrase | Occurrences across legacy pages |
+|---|---|
+| `seamless` | 99 |
+| `revolution` | 33 |
+| `transform your` | 24 |
+| `leverage` | 18 |
+| `not just` | 11 |
+| `cutting-edge` | 10 |
+| `empower` | 9 |
+| `isn't just` | 7 |
+
+These need a page-by-page rewrite, not a find-and-replace: “seamless” usually replaces a sentence that should describe what actually happens. The highest-value targets are `solutions.html`, `use-cases.html`, the industry pages and the blog index, because they carry the most search traffic.
+
+### Round-three verification
+
+- Lighthouse on `index.html`, `evidence.html`, `pricing.html` and `case-study-novare-lekki.html`: **100 / 100 / 100**, zero accessibility failures.
+- No horizontal overflow at 785 px or 1100 px.
+- No console errors.
+- All local links resolve; `/sitemap.xml` returns 200.
+- Zero remaining occurrences of `till`, `actually`, `quietly`, `seamless`, `unlock`, `empower`, `revolution`, `leverage`, `cutting-edge`, `transform your`, `not just`, `isn't just`, `more than just`, `we believe`, `holistic` or `synergy` in the four rewritten pages.
