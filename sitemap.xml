@@ -3,9 +3,15 @@
   <!-- Main Pages -->
   <url>
     <loc>https://waidemobility.org/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://waidemobility.org/case-study-novare-lekki.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://waidemobility.org/roi-calculator.html</loc>
@@ -27,9 +33,15 @@
   </url>
   <url>
     <loc>https://waidemobility.org/pricing.html</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://waidemobility.org/evidence.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://waidemobility.org/contact.html</loc>

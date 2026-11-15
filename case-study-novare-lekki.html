@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Novare Lekki Mall pilot: the scope Waide mapped, what is live today, the metrics the six-month pilot will publish, and what we do not yet claim.">
+    <meta name="keywords" content="Novare Lekki Mall navigation, Waide pilot Lagos, mall digital twin Nigeria, indoor navigation case study, spatial analytics pilot">
+    <title>Novare Lekki Mall Pilot — Scope &amp; Measurement Plan | Waide Mobility</title>
+    <link rel="canonical" href="https://waidemobility.org/case-study-novare-lekki.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Novare Lekki Mall Pilot — Scope &amp; Measurement Plan">
+    <meta property="og:description" content="What the six-month pilot covers, what is live today, and the metrics it will publish. No projections presented as results.">
+    <meta property="og:image" content="https://waidemobility.org/public/modern-mall-navigation.png">
+    <meta property="og:image:alt" content="Waide digital twin of Novare Lekki Mall">
+    <meta property="og:url" content="https://waidemobility.org/case-study-novare-lekki.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Waide Mobility">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Novare Lekki Mall Pilot — Scope &amp; Measurement Plan">
+    <meta name="twitter:description" content="What the pilot covers, what is live, and what it will measure.">
+    <meta name="twitter:image" content="https://waidemobility.org/public/modern-mall-navigation.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+    <link rel="manifest" href="public/site.webmanifest">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WAIDE2024"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WAIDE2024');
+    </script>
+
+    <style>
+    .cs-hero {
+        position: relative;
+        padding: 9rem 0 4rem;
+        background: radial-gradient(ellipse at 20% 0%, rgba(0, 255, 255, 0.10), transparent 55%), #000;
+        color: #fff;
+    }
+    .cs-wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+    .cs-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        padding: 0.4rem 0.85rem;
+        border: 1px solid rgba(0, 255, 255, 0.35);
+        border-radius: 999px;
+        background: rgba(0, 255, 255, 0.07);
+        color: #00ffff;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+    .cs-badge .cs-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #00ffff;
+        box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.15);
+    }
+    .cs-title {
+        max-width: 20ch;
+        margin: 0 0 1.25rem;
+        font-size: clamp(2.1rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+    }
+    .cs-sub {
+        max-width: 66ch;
+        margin: 0 0 2rem;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 1.1rem;
+        line-height: 1.65;
+    }
+    .cs-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .cs-meta {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        margin-top: 3rem;
+        border: 1px solid #232323;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #232323;
+    }
+    .cs-meta div {
+        padding: 1.15rem 1.25rem;
+        background: #0d0d0d;
+    }
+    .cs-meta dt {
+        margin-bottom: 0.35rem;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+    .cs-meta dd {
+        margin: 0;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .cs-section {
+        padding: 4.5rem 0;
+        background: #000;
+        color: #fff;
+    }
+    .cs-section-alt {
+        background: #0a0a0a;
+        border-top: 1px solid #1b1b1b;
+        border-bottom: 1px solid #1b1b1b;
+    }
+    .cs-kicker {
+        margin: 0 0 0.75rem;
+        color: #00ffff;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+    .cs-h2 {
+        margin: 0 0 1rem;
+        color: #fff;
+        font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+        font-weight: 800;
+        line-height: 1.2;
+    }
+    .cs-lede {
+        max-width: 72ch;
+        margin: 0 0 2.5rem;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 1.02rem;
+        line-height: 1.7;
+    }
+    .cs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 1.25rem;
+    }
+    .cs-card {
+        padding: 1.75rem 1.5rem;
+        background: #101010;
+        border: 1px solid #242424;
+        border-radius: 14px;
+    }
+    .cs-card h3 {
+        margin: 0 0 0.6rem;
+        color: #fff;
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+    .cs-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.92rem;
+        line-height: 1.65;
+    }
+    .cs-table-wrap {
+        overflow-x: auto;
+        border: 1px solid #242424;
+        border-radius: 14px;
+        background: #0f0f0f;
+    }
+    .cs-table {
+        width: 100%;
+        min-width: 720px;
+        border-collapse: collapse;
+    }
+    .cs-table th,
+    .cs-table td {
+        padding: 0.95rem 1.15rem;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid #202020;
+        font-size: 0.92rem;
+        line-height: 1.55;
+    }
+    .cs-table thead th {
+        background: #151515;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+    }
+    .cs-table tbody th {
+        color: #fff;
+        font-weight: 600;
+    }
+    .cs-table tbody td {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .cs-table tbody tr:last-child th,
+    .cs-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+    .cs-pill {
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+    }
+    .cs-pill-live {
+        background: rgba(0, 255, 255, 0.12);
+        border: 1px solid rgba(0, 255, 255, 0.4);
+        color: #00ffff;
+    }
+    .cs-pill-progress {
+        background: rgba(255, 193, 7, 0.1);
+        border: 1px solid rgba(255, 193, 7, 0.35);
+        color: #ffc107;
+    }
+    .cs-pill-pending {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .cs-note {
+        margin: 1.5rem 0 0;
+        padding: 1rem 1.25rem;
+        border-left: 3px solid #00ffff;
+        background: rgba(0, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.92rem;
+        line-height: 1.65;
+    }
+    .cs-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.9rem;
+    }
+    .cs-list li {
+        position: relative;
+        padding-left: 1.75rem;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.96rem;
+        line-height: 1.65;
+    }
+    .cs-list li::before {
+        content: '\2014';
+        position: absolute;
+        left: 0;
+        color: rgba(255, 255, 255, 0.35);
+    }
+    .cs-quote {
+        padding: 2rem;
+        border: 1px dashed #2c2c2c;
+        border-radius: 14px;
+        background: #0c0c0c;
+    }
+    .cs-quote p {
+        margin: 0 0 0.9rem;
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+    .cs-quote footer {
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.85rem;
+    }
+    .cs-cta {
+        max-width: 680px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .cs-cta .cs-actions {
+        justify-content: center;
+        margin-top: 1.75rem;
+    }
+    .cs-updated {
+        margin-top: 2.5rem;
+        color: rgba(255, 255, 255, 0.35);
+        font-size: 0.8rem;
+    }
+    /* Secondary text kept above the 4.5:1 contrast threshold on black */
+    .cs-meta dt,
+    .cs-quote footer,
+    .cs-updated,
+    .cs-table thead th {
+        color: rgba(255, 255, 255, 0.68);
+    }
+
+    @media (max-width: 900px) {
+        .cs-meta {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+    @media (max-width: 600px) {
+        .cs-hero {
+            padding-top: 7.5rem;
+        }
+        .cs-meta {
+            grid-template-columns: 1fr;
+        }
+        .cs-section {
+            padding: 3rem 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="min-h-screen bg-black">
+<nav class="nav sticky">
+            <div class="nav-brand">
+                <div class="logo">
+                    <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
+                </div>
+                <span class="brand-text">Waide Mobility</span>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-item">
+                    <a href="use-cases.html" class="nav-link">Use Cases</a>
+                    <button class="mobile-dropdown-toggle" style="display: none;">
+                        Use Cases
+                        <span>▼</span>
+                    </button>
+                    <div class="mega-dropdown">
+                        <div class="mega-dropdown-content">
+                            <div class="dropdown-section">
+                                <h4>🏥 Healthcare & Public</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/hospital-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏥</span>
+                                        Hospital Navigation
+                                    </a>
+                                    <a href="blog/library-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">📚</span>
+                                        Library Navigation
+                                    </a>
+                                    <a href="blog/museum-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏛️</span>
+                                        Museum Navigation
+                                    </a>
+                                    <a href="blog/university-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎓</span>
+                                        University Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🏢 Commercial & Retail</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/mall-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🛍️</span>
+                                        Mall Navigation
+                                    </a>
+                                    <a href="blog/office-building-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏢</span>
+                                        Office Building Navigation
+                                    </a>
+                                    <a href="blog/hotel-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏨</span>
+                                        Hotel Navigation
+                                    </a>
+                                    <a href="blog/casino-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎰</span>
+                                        Casino Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🚇 Transportation & Logistics</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/airport-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">✈️</span>
+                                        Airport Navigation
+                                    </a>
+                                    <a href="blog/train-station-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚂</span>
+                                        Train Station Navigation
+                                    </a>
+                                    <a href="blog/subway-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚇</span>
+                                        Subway Navigation
+                                    </a>
+                                    <a href="blog/warehouse-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">📦</span>
+                                        Warehouse Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-dropdown-content" style="margin-top: 1rem;">
+                            <div class="dropdown-section">
+                                <h4>🎯 Entertainment & Events</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/sports-venue-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">⚽</span>
+                                        Sports Venue Navigation
+                                    </a>
+                                    <a href="blog/theme-park-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🎢</span>
+                                        Theme Park Navigation
+                                    </a>
+                                    <a href="blog/convention-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏢</span>
+                                        Convention Center Navigation
+                                    </a>
+                                    <a href="blog/cruise-ship-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚢</span>
+                                        Cruise Ship Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <h4>🏭 Industrial & Tech</h4>
+                                <div class="dropdown-links">
+                                    <a href="blog/manufacturing-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🏭</span>
+                                        Manufacturing Navigation
+                                    </a>
+                                    <a href="blog/data-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">💾</span>
+                                        Data Center Navigation
+                                    </a>
+                                    <a href="blog/parking-garage-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">🚗</span>
+                                        Parking Garage Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <div class="mobile-dropdown-section">
+                            <h4>🏥 Healthcare & Public</h4>
+                            <a href="blog/hospital-navigation.html" class="dropdown-link">🏥 Hospital Navigation</a>
+                            <a href="blog/library-navigation.html" class="dropdown-link">📚 Library Navigation</a>
+                            <a href="blog/museum-navigation.html" class="dropdown-link">🏛️ Museum Navigation</a>
+                            <a href="blog/university-navigation.html" class="dropdown-link">🎓 University Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🛍️ Commercial & Retail</h4>
+                            <a href="blog/mall-navigation.html" class="dropdown-link">🛍️ Mall Navigation</a>
+                            <a href="blog/office-building-navigation.html" class="dropdown-link">🏢 Office Building Navigation</a>
+                            <a href="blog/hotel-navigation.html" class="dropdown-link">🏨 Hotel Navigation</a>
+                            <a href="blog/casino-navigation.html" class="dropdown-link">🎰 Casino Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🚊 Transportation & Logistics</h4>
+                            <a href="blog/airport-navigation.html" class="dropdown-link">✈️ Airport Navigation</a>
+                            <a href="blog/train-station-navigation.html" class="dropdown-link">🚊 Train Station Navigation</a>
+                            <a href="blog/subway-navigation.html" class="dropdown-link">🚇 Subway Navigation</a>
+                            <a href="blog/warehouse-navigation.html" class="dropdown-link">📦 Warehouse Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🎪 Entertainment & Events</h4>
+                            <a href="blog/sports-venue-navigation.html" class="dropdown-link">⚽ Sports Venue Navigation</a>
+                            <a href="blog/theme-park-navigation.html" class="dropdown-link">🎢 Theme Park Navigation</a>
+                            <a href="blog/convention-center-navigation.html" class="dropdown-link">🏢 Convention Center Navigation</a>
+                            <a href="blog/cruise-ship-navigation.html" class="dropdown-link">🚢 Cruise Ship Navigation</a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h4>🏭 Industrial & Tech</h4>
+                            <a href="blog/manufacturing-navigation.html" class="dropdown-link">🏭 Manufacturing Navigation</a>
+                            <a href="blog/data-center-navigation.html" class="dropdown-link">💾 Data Center Navigation</a>
+                            <a href="blog/parking-garage-navigation.html" class="dropdown-link">🚗 Parking Garage Navigation</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="blog/index.html" class="nav-link">Blog</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <button class="btn btn-primary" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'nav_request_demo' }); window.location.href='contact.html'">Request a walkthrough</button>
+            </div>
+        </nav>
+        <main id="main-content">
+            <!-- Hero -->
+            <header class="cs-hero">
+                <div class="cs-wrap">
+                    <p class="cs-badge"><span class="cs-dot" aria-hidden="true"></span>Active pilot &middot; Lagos, Nigeria</p>
+                    <h1 class="cs-title">Novare Lekki Mall: what the pilot covers.</h1>
+                    <p class="cs-sub">
+                        A six-month pilot across 22,000 m&sup2; of mall in Lekki, Lagos. This page records the scope, what is live today, and the measures the pilot will publish. It does not present projections as results.
+                    </p>
+                    <div class="cs-actions">
+                        <a href="evidence.html" class="btn btn-cyan btn-large">Read the evidence register</a>
+                        <a href="contact.html" class="btn btn-outline btn-large">Request a 20-minute walkthrough</a>
+                    </div>
+                    <dl class="cs-meta">
+                        <div><dt>Status</dt><dd>Active pilot</dd></div>
+                        <div><dt>Floor area</dt><dd>22,000 m&sup2;</dd></div>
+                        <div><dt>Levels mapped</dt><dd>Ground, Level 1, Parking A</dd></div>
+                        <div><dt>Pilot window</dt><dd>Six months</dd></div>
+                    </dl>
+                </div>
+            </header>
+
+            <!-- Why this venue -->
+            <section class="cs-section">
+                <div class="cs-wrap">
+                    <p class="cs-kicker">Why this venue</p>
+                    <h2 class="cs-h2">A hard building, not a showroom.</h2>
+                    <p class="cs-lede">
+                        Novare Lekki is a working mall with an anchor supermarket, a dense tenant mix and a car park that feeds visitors into the building. If navigation works here, it works in most African retail.
+                    </p>
+                    <div class="cs-grid">
+                        <div class="cs-card">
+                            <h3>900 Shoprite shelves</h3>
+                            <p>Product-level search inside the anchor supermarket. Aisle and shelf destinations, not just store names.</p>
+                        </div>
+                        <div class="cs-card">
+                            <h3>150+ store footprints</h3>
+                            <p>Each tenant is a destination with its own entrance, level and opening hours.</p>
+                        </div>
+                        <div class="cs-card">
+                            <h3>1,000 parking bays</h3>
+                            <p>The journey starts in the car park. Parking Level A is mapped as part of the route, not treated as an afterthought.</p>
+                        </div>
+                    </div>
+                    <p class="cs-note">
+                        Venue figures are supplied by the mall and used as deployment scope, not as performance claims. They describe the size of the problem, not the size of the result.
+                    </p>
+                </div>
+            </section>
+
+            <!-- What is deployed -->
+            <section class="cs-section cs-section-alt">
+                <div class="cs-wrap">
+                    <p class="cs-kicker">Deployment status</p>
+                    <h2 class="cs-h2">What is live, what is in progress, what has not started.</h2>
+                    <p class="cs-lede">
+                        The pilot deploys the same three layers sold commercially: a digital twin, a visitor navigation interface, and an operator dashboard. The table separates what a visitor can use today from what is still being built.
+                    </p>
+                    <div class="cs-table-wrap">
+                        <table class="cs-table">
+                            <caption class="cs-sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Novare Lekki pilot deployment status</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Component</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Detail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Digital twin</th>
+                                    <td><span class="cs-pill cs-pill-live">Live</span></td>
+                                    <td>Ground floor, Level 1 and Parking Level A mapped, including tenant footprints and facilities.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Visitor navigation</th>
+                                    <td><span class="cs-pill cs-pill-live">Live</span></td>
+                                    <td>QR entry points open the web app in the browser. No app install. Store, shelf, counter, lift and toilet destinations.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Operator dashboard</th>
+                                    <td><span class="cs-pill cs-pill-live">Live</span></td>
+                                    <td>Search log, zone traffic and drop-off views available to the venue team.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Baseline capture</th>
+                                    <td><span class="cs-pill cs-pill-progress">In progress</span></td>
+                                    <td>Pre-launch baseline for the pilot metrics, so change can be compared with something.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Accessibility route validation</th>
+                                    <td><span class="cs-pill cs-pill-progress">In progress</span></td>
+                                    <td>Step-free paths checked on site. This is a route check, not a third-party accessibility audit.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Measured outcome report</th>
+                                    <td><span class="cs-pill cs-pill-pending">Not started</span></td>
+                                    <td>Published at the end of the pilot window. No commercial result is claimed before then.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Named partner quotation</th>
+                                    <td><span class="cs-pill cs-pill-pending">Pending permission</span></td>
+                                    <td>No public quotation has been approved. See the note below.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Measurement plan -->
+            <section class="cs-section">
+                <div class="cs-wrap">
+                    <p class="cs-kicker">Measurement plan</p>
+                    <h2 class="cs-h2">The numbers this pilot is built to produce.</h2>
+                    <p class="cs-lede">
+                        These are the measures agreed for the evaluation. Each has a definition, a baseline captured before launch, and a reporting point. Definitions are fixed in advance so the result cannot be chosen after the fact.
+                    </p>
+                    <div class="cs-table-wrap">
+                        <table class="cs-table">
+                            <caption class="cs-sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Pilot metrics and definitions</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Metric</th>
+                                    <th scope="col">Definition</th>
+                                    <th scope="col">Baseline</th>
+                                    <th scope="col">First read</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Search completion</th>
+                                    <td>Share of product or store searches that end with the visitor reaching the destination.</td>
+                                    <td>Pre-launch observation</td>
+                                    <td>Day 90</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Drop-off zone</th>
+                                    <td>The zone where abandoned routes cluster most often.</td>
+                                    <td>Pre-launch observation</td>
+                                    <td>Day 90</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Top unmet searches</th>
+                                    <td>Searches with no matching destination or no completed route, ranked by volume.</td>
+                                    <td>Not applicable</td>
+                                    <td>Day 30</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">QR scan to route</th>
+                                    <td>Share of QR scans that start a navigation route within the session.</td>
+                                    <td>Not applicable</td>
+                                    <td>Day 30</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Zone dwell change</th>
+                                    <td>Change in time spent in a zone, compared with the same period before launch.</td>
+                                    <td>Pre-launch observation</td>
+                                    <td>Day 90</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Route completion time</th>
+                                    <td>Median time from route start to arrival for the same destination type.</td>
+                                    <td>Pre-launch observation</td>
+                                    <td>Day 90</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="cs-note">
+                        <strong>No results are published yet.</strong> When the evaluation closes, the measured figures will be added to this page and to the evidence register, with the sample size and the period they cover. Until then, the US$5&ndash;7M figure on the homepage remains a model, not a pilot result.
+                    </p>
+                </div>
+            </section>
+
+            <!-- What we do not claim -->
+            <section class="cs-section cs-section-alt">
+                <div class="cs-wrap">
+                    <p class="cs-kicker">Limits</p>
+                    <h2 class="cs-h2">What this case study does not claim.</h2>
+                    <ul class="cs-list">
+                        <li>It is not a commercial rollout. One venue is live; no multi-site deployment is claimed.</li>
+                        <li>It does not claim a measured sales lift, basket increase or rent uplift. The pilot is designed to test those, not to prove them in advance.</li>
+                        <li>It does not claim third-party accessibility certification. Accessible routes are mapped, but no external audit has been completed.</li>
+                        <li>It does not include a customer quotation, because none has been approved for publication.</li>
+                        <li>It does not use venue size as a performance result. 22,000 m&sup2; describes the deployment, not the outcome.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Partner comment -->
+            <section class="cs-section">
+                <div class="cs-wrap">
+                    <p class="cs-kicker">Partner comment</p>
+                    <h2 class="cs-h2">Why there is no quote here yet.</h2>
+                    <div class="cs-quote">
+                        <p>
+                            Novare Lekki has not approved a public quotation for this page. We would rather leave the space empty than paraphrase one, or attribute a sentence that was never said.
+                        </p>
+                        <p>
+                            When written permission is given, the quotation and the speaker's name and role will appear here, alongside the date it was approved.
+                        </p>
+                        <footer>Waide Mobility &middot; editorial policy for partner quotes</footer>
+                    </div>
+                    <p class="cs-note">
+                        The same rule applies to testimonials elsewhere on this site. If a quote is not attributable to a named person who has approved it, it should not be published.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Evaluation report -->
+            <section class="cs-section cs-section-alt">
+                <div class="cs-wrap">
+                    <p class="cs-kicker">Evaluation</p>
+                    <h2 class="cs-h2">What the end-of-pilot report will contain.</h2>
+                    <div class="cs-grid">
+                        <div class="cs-card">
+                            <h3>Scope and method</h3>
+                            <p>What was mapped, how routes were built, what changed during the pilot, and what was excluded.</p>
+                        </div>
+                        <div class="cs-card">
+                            <h3>Measured metrics</h3>
+                            <p>Each metric above, with its baseline, sample size, period and any caveats about data quality.</p>
+                        </div>
+                        <div class="cs-card">
+                            <h3>What did not work</h3>
+                            <p>Routes that failed, zones that underperformed, and the operational issues the venue team had to absorb.</p>
+                        </div>
+                        <div class="cs-card">
+                            <h3>Operator actions</h3>
+                            <p>What the venue changed as a result: signage, directory edits, tenant placement, staff routing.</p>
+                        </div>
+                        <div class="cs-card">
+                            <h3>Cost and rollout</h3>
+                            <p>What a second venue would cost, what would be reused, and what would have to be rebuilt.</p>
+                        </div>
+                        <div class="cs-card">
+                            <h3>Open questions</h3>
+                            <p>The questions the pilot could not answer, stated plainly rather than folded into a conclusion.</p>
+                        </div>
+                    </div>
+                    <p class="cs-updated">Page last updated 15 November 2026. It will be revised when the pilot evaluation closes.</p>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="cs-section">
+                <div class="cs-wrap">
+                    <div class="cs-cta">
+                        <p class="cs-kicker">Next step</p>
+                        <h2 class="cs-h2">See the deployment, then scope your own.</h2>
+                        <p class="cs-lede" style="margin-left:auto;margin-right:auto;">
+                            A 20-minute walkthrough covers the visitor flow, the operator dashboard and what a pilot in your venue would measure.
+                        </p>
+                        <div class="cs-actions">
+                            <a href="contact.html" class="btn btn-cyan btn-large">Request a 20-minute walkthrough</a>
+                            <a href="pricing.html" class="btn btn-outline btn-large">See engagement models</a>
+                        </div>
+                        <p class="cs-updated">Prefer email? <a href="mailto:thankgod@waidemobility.org" style="color:#00ffff;">thankgod@waidemobility.org</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+<footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
+                            </div>
+                            <span>Waide Mobility</span>
+                        </div>
+                        <p>Spatial intelligence infrastructure for physical indoor environments — mapping the spaces people get lost in and turning them into data-driven assets that generate measurable commercial value.</p>
+                        <a href="mailto:thankgod@waidemobility.org" class="btn btn-primary" style="margin-top: 1rem;" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'footer_discuss_property' });">Discuss Your Property</a>
+                    </div>
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h3 class="link-group-title">Industries</h3>
+                            <ul>
+                                <li><a href="use-cases.html">Retail Malls</a></li>
+                                <li><a href="use-cases.html">Supermarkets &amp; Grocery</a></li>
+                                <li><a href="use-cases.html">Hospitals &amp; Healthcare</a></li>
+                                <li><a href="use-cases.html">Airports &amp; Transport</a></li>
+                                <li><a href="use-cases.html">Universities &amp; Campuses</a></li>
+                                <li><a href="use-cases.html">Warehouses &amp; Logistics</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h3 class="link-group-title">Company</h3>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="evidence.html">Evidence &amp; claims</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Waide Mobility Ltd. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="evidence.html">Evidence &amp; claims</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
