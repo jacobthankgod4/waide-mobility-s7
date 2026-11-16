@@ -1338,6 +1338,7 @@ body.cx img, body.cx svg { max-width: 100%; }
 .cx-gallery-slide img {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: contain;
   background: #05080a;
@@ -1648,6 +1649,12 @@ body.cx img, body.cx svg { max-width: 100%; }
     overflow-wrap: normal;
     white-space: nowrap;
   }
+
+  .cx-gallery--project .cx-gallery-caption,
+  .cx-gallery--project .cx-gallery-caption > span:last-child {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
 }
 
 .cx-gallery--novare .cx-gallery-num {
@@ -1832,6 +1839,16 @@ body.cx img, body.cx svg { max-width: 100%; }
     border-left: 1px solid rgba(255, 255, 255, 0.08);
   }
 
+  .cx-gallery--project .cx-gallery-console {
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+    height: auto;
+    min-height: calc(min(76vh, 50vw, 800px) + 56px);
+  }
+
+  .cx-gallery--project .cx-gallery-side-group--captures {
+    max-height: calc(min(76vh, 50vw, 800px) - 284px);
+  }
+
   .cx-gallery-readout {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.75rem;
@@ -1893,6 +1910,10 @@ body.cx img, body.cx svg { max-width: 100%; }
   .cx-novare-index-number { display: inline-block; margin-right: 0.75rem; }
   .cx-novare-index > p { display: inline-block; }
   .cx-gallery-head-note { display: none; }
+  .cx-gallery--novare { overflow-anchor: none; }
+  .cx-gallery--novare .cx-gallery-track { overflow-y: hidden; }
+  .cx-gallery--novare .cx-gallery-slide > img,
+  .cx-gallery--novare .cx-gallery-slide > .cx-gallery-caption { flex-shrink: 0; }
 }
 
 @media (max-width: 600px) {

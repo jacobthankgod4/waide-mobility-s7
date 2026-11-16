@@ -118,6 +118,7 @@
     if (!track) return
 
     var manifest = root.hasAttribute("data-gallery-manifest") ? window.waideNovareGallery : null
+    var slideIdPrefix = root.getAttribute("data-gallery-id-prefix") || "home-nv"
     var thumbsList = root.querySelector("[data-gallery-thumbs]")
     var dateNav = root.querySelector("[data-gallery-dates]")
 
@@ -139,7 +140,7 @@
 
       manifest.forEach(function (item, index) {
         var imagePath = "public/novare/captures/novare-" + ("0" + item.capture).slice(-2) + ".jpg"
-        var slideId = "home-nv-" + (index + 1)
+        var slideId = slideIdPrefix + "-" + (index + 1)
         var slide = document.createElement("div")
         slide.className = "cx-gallery-slide"
         slide.id = slideId
@@ -239,24 +240,62 @@
       return Math.min(count - 1, Math.max(0, Math.round(track.scrollLeft / width)))
     }
 
+    var compactGallery = window.matchMedia("(max-width: 760px)")
+
+    function fitTrack(index) {
+      if (!root.classList.contains("cx-gallery--novare")) return
+      if (!compactGallery.matches) {
+        track.style.height = ""
+        return
+      }
+
+      var slide = slides[index]
+      var image = slide && slide.querySelector("img")
+      var caption = slide && slide.querySelector(".cx-gallery-caption")
+      if (!image || !caption) return
+
+      var height = image.getBoundingClientRect().height + caption.getBoundingClientRect().height
+      if (height > 0 && Math.abs(track.getBoundingClientRect().height - height) > 0.5) {
+        track.style.height = height + "px"
+      }
+    }
+
     function goTo(index) {
       var target = Math.min(count - 1, Math.max(0, index))
+      fitTrack(target)
       track.scrollTo({
         left: target * track.clientWidth,
         behavior: reduceMotion.matches ? "auto" : "smooth"
       })
-      if (thumbs[target] && thumbs[target].scrollIntoView) {
-        thumbs[target].scrollIntoView({
-          block: "nearest",
-          inline: "nearest",
-          behavior: reduceMotion.matches ? "auto" : "smooth"
-        })
+      if (thumbs[target] && thumbsList) {
+        var listRect = thumbsList.getBoundingClientRect()
+        var thumbRect = thumbs[target].getBoundingClientRect()
+        var visibleLeft = listRect.left + thumbsList.clientLeft
+        var visibleTop = listRect.top + thumbsList.clientTop
+        var visibleRight = visibleLeft + thumbsList.clientWidth
+        var visibleBottom = visibleTop + thumbsList.clientHeight
+        var scrollLeft = thumbsList.scrollLeft
+        var scrollTop = thumbsList.scrollTop
+
+        if (thumbRect.left < visibleLeft) scrollLeft += thumbRect.left - visibleLeft
+        else if (thumbRect.right > visibleRight) scrollLeft += thumbRect.right - visibleRight
+        if (thumbRect.top < visibleTop) scrollTop += thumbRect.top - visibleTop
+        else if (thumbRect.bottom > visibleBottom) scrollTop += thumbRect.bottom - visibleBottom
+
+        if (scrollLeft !== thumbsList.scrollLeft || scrollTop !== thumbsList.scrollTop) {
+          thumbsList.scrollTo({
+            left: scrollLeft,
+            top: scrollTop,
+            behavior: reduceMotion.matches ? "auto" : "smooth"
+          })
+        }
       }
     }
 
     function sync() {
       var index = currentIndex()
       lastIndex = index
+      fitTrack(index)
       if (indexEl) indexEl.textContent = ("0" + (index + 1)).slice(-2)
       if (totalEl) totalEl.textContent = count
       if (progressBar) {
@@ -320,9 +359,13 @@
       track.style.scrollBehavior = "auto"
       track.scrollLeft = lastIndex * track.clientWidth
       track.style.scrollBehavior = previous
+      sync()
     })
 
     sync()
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { fitTrack(currentIndex()) })
+    }
   })
 
   /* Print button for the capability statement */

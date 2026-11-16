@@ -465,14 +465,14 @@
       <h2 class="cx-h2">From satellite imagery to a routed floor.</h2>
       <p class="cx-lead" style="margin-top:0.8rem;">Ten captures from the working environment, in the order the work happened: the site, the car park, the building interior, the tagging, and the routes that come out of it.</p>
       <div style="margin-top:2rem;">
-        <figure class="cx-gallery" data-gallery aria-labelledby="cx-gallery-title">
-  <figcaption class="cx-gallery-head" id="cx-gallery-title">
-    <span class="cx-kicker">Project images</span>
-    <span class="cx-gallery-hint">Use the arrows, the thumbnails, or scroll the strip.</span>
+        <figure class="cx-gallery cx-gallery--novare cx-gallery--project" data-gallery aria-labelledby="cx-gallery-title">
+  <figcaption class="cx-gallery-head cx-gallery-head--novare" id="cx-gallery-title">
+    <span class="cx-gallery-live"><span class="cx-novare-pulse" aria-hidden="true"></span> Project captures</span>
+    <span class="cx-gallery-head-note">Site mapping <span aria-hidden="true">&rarr;</span> route testing</span>
   </figcaption>
 
-  <div class="cx-gallery-stage">
-    <div class="cx-gallery-track" data-gallery-track tabindex="0" role="group" aria-roledescription="carousel" aria-label="Novare Lekki Mall project images">
+  <div class="cx-gallery-stage cx-gallery-stage--novare">
+    <div class="cx-gallery-track cx-gallery-track--novare" data-gallery-track tabindex="0" role="group" aria-roledescription="carousel" aria-label="Novare Lekki Mall project images">
 
       <div class="cx-gallery-slide" id="nv-1" role="group" aria-roledescription="slide" aria-label="1 of 10">
         <img src="public/novare/novare-01-site-overview.jpg" alt="Satellite imagery of the Novare Lekki Mall site in JOSM, with the mall building, car park, service roads and roundabout drawn as vector geometry over the aerial photograph." width="1280" height="720" decoding="async">
@@ -534,9 +534,18 @@
     </button>
   </div>
 
-  <div class="cx-gallery-bar">
-    <p class="cx-gallery-count"><span data-gallery-index>01</span> <span aria-hidden="true">/</span> <span class="cx-visually-hidden">of</span> 10</p>
-    <ul class="cx-gallery-thumbs" data-gallery-thumbs>
+  <div class="cx-gallery-console">
+    <div class="cx-gallery-readout">
+      <div><span class="cx-gallery-readout-label">PROJECT</span><strong>Novare Lekki Mall</strong></div>
+      <div><span class="cx-gallery-readout-label">COLLECTION</span><strong>10 captures</strong></div>
+      <p class="cx-gallery-count"><span data-gallery-index>01</span><span class="cx-gallery-count-divider">/</span><span data-gallery-total>10</span></p>
+    </div>
+    <div class="cx-gallery-progress cx-gallery-progress--side" role="progressbar" aria-label="Image sequence progress" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" data-gallery-progress>
+      <span></span>
+    </div>
+    <div class="cx-gallery-side-group cx-gallery-side-group--captures">
+      <h3 class="cx-gallery-side-label">All captures</h3>
+      <ul class="cx-gallery-thumbs cx-gallery-thumbs--novare" data-gallery-thumbs>
       <li><a href="#nv-1" data-gallery-thumb aria-label="Show image 1: mall plan and parking over satellite imagery"><img src="public/novare/novare-01-site-overview.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
       <li><a href="#nv-2" data-gallery-thumb aria-label="Show image 2: mall-and-parking layout with retail tags"><img src="public/novare/novare-02-parking-bays.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
       <li><a href="#nv-3" data-gallery-thumb aria-label="Show image 3: parking bays, lanes and roundabout"><img src="public/novare/novare-03-parking-vector.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
@@ -547,7 +556,8 @@
       <li><a href="#nv-8" data-gallery-thumb aria-label="Show image 8: Shoprite-to-Shoprite route itinerary"><img src="public/novare/novare-08-parking-route.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
       <li><a href="#nv-9" data-gallery-thumb aria-label="Show image 9: Level 0 route over labelled shops"><img src="public/novare/novare-09-indoor-route.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
       <li><a href="#nv-10" data-gallery-thumb aria-label="Show image 10: route results and itinerary options"><img src="public/novare/novare-10-route-panel.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
-    </ul>
+      </ul>
+    </div>
   </div>
 
   <p class="cx-visually-hidden" aria-live="polite" data-gallery-status></p>
