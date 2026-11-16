@@ -38,7 +38,7 @@ Last reviewed: 16 November 2026.
 | Six-month pilot | Projects, case study, procurement register | Stated pilot duration |
 | Browser and QR access, no app install required for visitor wayfinding | Platform, accessible mobility service, case study | Project implementation |
 | Pilot outcome metrics are not published | Projects, case study, platform | No measured results released |
-| Named collaborators: Abdoulaye Diakite PhD (BIM, Sydney), Fareed Gombilla (UI/UX co-design, accessibility), Kaunda Bill and Charity Adhiambo (Najimudu Empowerment Initiative, Kenya) | Expertise, Procurement, capability statement | Confirmed collaborators |
+| Named collaborators: Abdoulaye Diakite PhD (BIM, Sydney), Fareed Gombilla (UI/UX co-design, accessibility) | Expertise | Confirmed collaborators |
 | Prior roles: Desby.app (CTO & Full-Stack Engineer), Perazim Proptee Ltd. (Senior Full-Stack Engineer), STEM Inclusive Africa (Technical Programme Lead), Techbionics (Senior Software Engineer) | Expertise, capability statement | Founder's professional history |
 | Photograph `public/iac-2025-group.jpg` shows the Inclusive Africa Conference 2025 | About | Event photograph |
 | Photograph `public/Jacob-thankGod.jpg` is the founder portrait | Expertise | Supplied portrait |

@@ -179,7 +179,7 @@
             <tr><th scope="row">Parking Level A</th><td>Yes</td><td>More than 1,000 bays, vehicle network, pedestrian transfer points</td></tr>
             <tr><th scope="row">Store footprints</th><td>150+</td><td>Digitised polygons with tenant attributes</td></tr>
             <tr><th scope="row">Shelf index</th><td>900 shelves</td><td>Anchor supermarket only</td></tr>
-            <tr><th scope="row">Accessible routes</th><td>Yes</td><td>Step-free network validated on site; not a third-party audit</td></tr>
+            <tr><th scope="row">Accessible routes</th><td>Yes</td><td>Step-free network validated on site</td></tr>
             <tr><th scope="row">Sensor integration</th><td>No</td><td>Outside pilot scope</td></tr>
           </tbody>
         </table>
@@ -305,11 +305,8 @@
           <text x="775" y="224" text-anchor="middle" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="10">QR / browser</text>
           <text x="775" y="242" text-anchor="middle" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="10">step-free option</text>
 
-          <text x="24" y="418" fill="#7f8a94" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">SCHEMATIC &middot; NOT A DEPLOYMENT DIAGRAM</text>
         </svg>
-        <figcaption>Indoor data layers and routing flow &middot; schematic illustration</figcaption>
       </figure>
-      <p class="cx-note" style="margin-top:1rem;">The diagram shows the logical structure of the dataset. It is not a screenshot of the pilot environment.</p>
     </div>
   </section>
 
@@ -431,7 +428,6 @@
           <li>Vehicle routes checked against the parking layout and one-way flows.</li>
           <li>Findings logged and corrected before the route layer was accepted.</li>
         </ul>
-        <p class="cx-note" style="margin-top:1rem;">This is project-level quality control. It is not a formal certification, an independent audit or a compliance statement.</p>
       </div>
     </div>
   </section>
@@ -465,110 +461,100 @@
 
   <section class="cx-section">
     <div class="cx-wrap">
-      <p class="cx-kicker">15 &middot; Technical visualisation</p>
-      <h2 class="cx-h2">Mapped scope.</h2>
-      <div style="max-width:760px; margin-top:2rem;">
-        <figure class="cx-project-visual">
-  <svg viewBox="0 0 640 420" role="img" aria-labelledby="projTitle projDesc">
-    <title id="projTitle">Novare Lekki mapped scope</title>
-    <desc id="projDesc">Diagram of the three mapped levels: Parking Level A with more than 1,000 bays, the ground floor with the anchor supermarket and more than 150 store footprints, and Level 1. A step-free route line connects all three.</desc>
-    <defs>
-      <pattern id="projGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.04)"/>
-      </pattern>
-    </defs>
-    <rect width="640" height="420" fill="#05080a"/>
-    <rect width="640" height="420" fill="url(#projGrid)"/>
-    <text x="24" y="30" fill="#7f8a94" font-family="ui-monospace, monospace" font-size="9" letter-spacing="2">MAPPED SCOPE / NOVARE LEKKI</text>
-    <text x="616" y="30" text-anchor="end" fill="#00e1df" font-family="ui-monospace, monospace" font-size="9" letter-spacing="2">3 LEVELS</text>
-    <line x1="24" y1="42" x2="616" y2="42" stroke="rgba(255,255,255,0.12)"/>
+      <p class="cx-kicker">15 &middot; Project images</p>
+      <h2 class="cx-h2">From satellite imagery to a routed floor.</h2>
+      <p class="cx-lead" style="margin-top:0.8rem;">Ten captures from the working environment, in the order the work happened: the site, the car park, the building interior, the tagging, and the routes that come out of it.</p>
+      <div style="margin-top:2rem;">
+        <figure class="cx-gallery" data-gallery aria-labelledby="cx-gallery-title">
+  <figcaption class="cx-gallery-head" id="cx-gallery-title">
+    <span class="cx-kicker">Project images</span>
+    <span class="cx-gallery-hint">Use the arrows, the thumbnails, or scroll the strip.</span>
+  </figcaption>
 
-    <!-- Level 1 -->
-    <g>
-      <rect x="56" y="64" width="420" height="86" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.18)"/>
-      <g fill="rgba(6,182,212,0.06)" stroke="rgba(6,182,212,0.3)">
-        <rect x="70" y="78" width="52" height="30"/>
-        <rect x="128" y="78" width="52" height="30"/>
-        <rect x="186" y="78" width="52" height="30"/>
-        <rect x="244" y="78" width="52" height="30"/>
-        <rect x="302" y="78" width="52" height="30"/>
-        <rect x="360" y="78" width="52" height="30"/>
-        <rect x="418" y="78" width="44" height="30"/>
-      </g>
-      <g fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)">
-        <rect x="70" y="116" width="52" height="22"/>
-        <rect x="128" y="116" width="52" height="22"/>
-        <rect x="186" y="116" width="52" height="22"/>
-        <rect x="244" y="116" width="52" height="22"/>
-        <rect x="302" y="116" width="52" height="22"/>
-        <rect x="360" y="116" width="52" height="22"/>
-        <rect x="418" y="116" width="44" height="22"/>
-      </g>
-      <text x="492" y="84" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Level 1</text>
-      <text x="492" y="103" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">RETAIL UNITS</text>
-      <text x="492" y="121" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">WAYPOINTS</text>
-    </g>
+  <div class="cx-gallery-stage">
+    <div class="cx-gallery-track" data-gallery-track tabindex="0" role="group" aria-roledescription="carousel" aria-label="Novare Lekki Mall project images">
 
-    <!-- Ground floor -->
-    <g>
-      <rect x="56" y="168" width="420" height="86" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.18)"/>
-      <g fill="rgba(0,225,223,0.07)" stroke="rgba(0,225,223,0.4)">
-        <rect x="70" y="182" width="126" height="58"/>
-      </g>
-      <text x="80" y="205" fill="#00e1df" font-family="ui-monospace, monospace" font-size="7">ANCHOR SUPERMARKET</text>
-      <text x="80" y="217" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="7">900 SHELVES INDEXED</text>
-      <g fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.16)">
-        <rect x="208" y="182" width="60" height="26"/>
-        <rect x="274" y="182" width="60" height="26"/>
-        <rect x="340" y="182" width="60" height="26"/>
-        <rect x="406" y="182" width="56" height="26"/>
-        <rect x="208" y="214" width="60" height="26"/>
-        <rect x="274" y="214" width="60" height="26"/>
-        <rect x="340" y="214" width="60" height="26"/>
-        <rect x="406" y="214" width="56" height="26"/>
-      </g>
-      <text x="492" y="188" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Ground floor</text>
-      <text x="492" y="207" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">150+ FOOTPRINTS</text>
-      <text x="492" y="225" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">SHELF-LEVEL INDEX</text>
-    </g>
+      <div class="cx-gallery-slide" id="nv-1" role="group" aria-roledescription="slide" aria-label="1 of 10">
+        <img src="public/novare/novare-01-site-overview.jpg" alt="Satellite imagery of the Novare Lekki Mall site in JOSM, with the mall building, car park, service roads and roundabout drawn as vector geometry over the aerial photograph." width="1280" height="720" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">01</span><span>The whole site over satellite imagery: mall building, car park, service roads and roundabout drawn as vector geometry.</span></p>
+      </div>
 
-    <!-- Parking -->
-    <g>
-      <rect x="56" y="272" width="420" height="86" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.18)"/>
-      <g fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.13)">
-        <rect x="70" y="288" width="34" height="20"/>
-        <rect x="110" y="288" width="34" height="20"/>
-        <rect x="150" y="288" width="34" height="20"/>
-        <rect x="190" y="288" width="34" height="20"/>
-        <rect x="230" y="288" width="34" height="20"/>
-        <rect x="270" y="288" width="34" height="20"/>
-        <rect x="70" y="316" width="34" height="20"/>
-        <rect x="110" y="316" width="34" height="20"/>
-        <rect x="150" y="316" width="34" height="20"/>
-        <rect x="190" y="316" width="34" height="20"/>
-        <rect x="230" y="316" width="34" height="20"/>
-        <rect x="270" y="316" width="34" height="20"/>
-      </g>
-      <text x="320" y="322" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">VEHICLE NETWORK / PARKING BAYS</text>
-      <text x="492" y="292" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Parking A</text>
-      <text x="492" y="311" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">1,000+ BAYS</text>
-      <text x="492" y="329" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">STEP-FREE ACCESS</text>
-    </g>
+      <div class="cx-gallery-slide" id="nv-2" role="group" aria-roledescription="slide" aria-label="2 of 10">
+        <img src="public/novare/novare-02-parking-bays.jpg" alt="A JOSM view of Novare's mall-and-parking layout over satellite imagery, with the selected site feature tagged landuse=retail and named Novare Lekki Mall." width="1277" height="720" loading="lazy" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">02</span><span>The mall-and-parking layout over satellite imagery, with the selected site feature tagged landuse=retail.</span></p>
+      </div>
 
-    <!-- route -->
-    <path d="M60 372 H500 V330" fill="none" stroke="rgba(0,225,223,0.5)" stroke-width="2" stroke-dasharray="4 6"/>
-    <path d="M504 330 V240 H500 V156" fill="none" stroke="rgba(0,225,223,0.35)" stroke-width="2" stroke-dasharray="4 6"/>
-    <circle cx="500" cy="330" r="4" fill="#00e1df"/>
-    <circle cx="500" cy="240" r="4" fill="#00e1df"/>
-    <circle cx="500" cy="156" r="4" fill="#00e1df"/>
+      <div class="cx-gallery-slide" id="nv-3" role="group" aria-roledescription="slide" aria-label="3 of 10">
+        <img src="public/novare/novare-03-parking-vector.jpg" alt="JOSM vector view of the parking bays, connecting lanes and roundabout, with editable nodes shown along the mapped geometry." width="1280" height="720" loading="lazy" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">03</span><span>Parking bays, connecting lanes and roundabout shown as editable vector geometry.</span></p>
+      </div>
 
-    <text x="24" y="404" fill="#7f8a94" font-family="ui-monospace, monospace" font-size="8" letter-spacing="1.5">APPROX. 22,000 m² &middot; REPORTED PROJECT SCOPE</text>
-  </svg>
-  <figcaption>Diagram of mapped scope &middot; not a screenshot</figcaption>
+      <div class="cx-gallery-slide" id="nv-4" role="group" aria-roledescription="slide" aria-label="4 of 10">
+        <img src="public/novare/novare-04-aisle-tags.jpg" alt="Aisle 6 selected in JOSM with highway=service, level=0, parking:lane=perpendicular and ref=A6 shown in its tags." width="1280" height="720" loading="lazy" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">04</span><span>Aisle 6 is selected with highway=service, level=0, parking:lane=perpendicular and ref=A6 in its tags.</span></p>
+      </div>
+
+      <div class="cx-gallery-slide" id="nv-5" role="group" aria-roledescription="slide" aria-label="5 of 10">
+        <img src="public/novare/novare-05-ground-floor-units.jpg" alt="The ground-floor retail units are mapped as polygons in JOSM; LifeMate is highlighted in pink and the Shoprite area contains dense shelf geometry." width="1280" height="720" loading="lazy" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">05</span><span>Ground-floor shop polygons, with LifeMate highlighted in pink and dense shelf geometry in the Shoprite area.</span></p>
+      </div>
+
+      <div class="cx-gallery-slide" id="nv-6" role="group" aria-roledescription="slide" aria-label="6 of 10">
+        <img src="public/novare/novare-06-door-nodes.jpg" alt="A ground-floor corridor in JOSM: door nodes tagged at level 0 connect the shops FunWorld, PEP, Ritus, Med Plus and Kilimanjaro to the circulation space." width="1280" height="720" loading="lazy" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">06</span><span>A ground-floor corridor. Door nodes tagged at level 0 connect FunWorld, PEP, Ritus, Med Plus and Kilimanjaro to the circulation space.</span></p>
+      </div>
+
+      <div class="cx-gallery-slide" id="nv-7" role="group" aria-roledescription="slide" aria-label="7 of 10">
+        <img src="public/novare/novare-07-layer-stack.jpg" alt="The JOSM layer panel listing the exported Novare dataset, leasing plans, source imagery and the parking area, beside the selected feature's tags landuse=retail and name=Novare Lekki Mall." width="1280" height="720" loading="lazy" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">07</span><span>The layer stack beside the selected feature's tags: leasing plans, source imagery, exported dataset, landuse=retail, name=Novare Lekki Mall.</span></p>
+      </div>
+
+      <div class="cx-gallery-slide" id="nv-8" role="group" aria-roledescription="slide" aria-label="8 of 10">
+        <img src="public/novare/novare-08-parking-route.jpg" alt="The Woosmap venue console shows a 7-minute, 392-metre Level 0 itinerary between two Shoprite entries, with the Disability compliant toggle visible." width="1280" height="637" loading="lazy" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">08</span><span>A 7-minute, 392-metre Level 0 itinerary between two Shoprite entries; the Disability compliant toggle is visible.</span></p>
+      </div>
+
+      <div class="cx-gallery-slide" id="nv-9" role="group" aria-roledescription="slide" aria-label="9 of 10">
+        <img src="public/novare/novare-09-indoor-route.jpg" alt="The Woosmap Level 0 venue map shows a route across labelled shops and facilities; the itinerary is set to Shoprite at both endpoints." width="1280" height="637" loading="lazy" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">09</span><span>The Level 0 venue map shows a route across labelled shops and facilities, with Shoprite at both itinerary endpoints.</span></p>
+      </div>
+
+      <div class="cx-gallery-slide" id="nv-10" role="group" aria-roledescription="slide" aria-label="10 of 10">
+        <img src="public/novare/novare-10-route-panel.jpg" alt="The itinerary panel shows both endpoints set to Shoprite at Level 0, the 7-minute, 392-metre result and the Disability compliant toggle." width="1280" height="637" loading="lazy" decoding="async">
+        <p class="cx-gallery-caption"><span class="cx-gallery-num">10</span><span>Both itinerary endpoints are set to Shoprite at Level 0; the panel shows 7 minutes, 392 metres and the Disability compliant toggle.</span></p>
+      </div>
+
+    </div>
+
+    <button type="button" class="cx-gallery-nav cx-gallery-nav--prev" data-gallery-prev aria-label="Previous image">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5 L8 12 L15 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button type="button" class="cx-gallery-nav cx-gallery-nav--next" data-gallery-next aria-label="Next image">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5 L16 12 L9 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <div class="cx-gallery-bar">
+    <p class="cx-gallery-count"><span data-gallery-index>01</span> <span aria-hidden="true">/</span> <span class="cx-visually-hidden">of</span> 10</p>
+    <ul class="cx-gallery-thumbs" data-gallery-thumbs>
+      <li><a href="#nv-1" data-gallery-thumb aria-label="Show image 1: mall plan and parking over satellite imagery"><img src="public/novare/novare-01-site-overview.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+      <li><a href="#nv-2" data-gallery-thumb aria-label="Show image 2: mall-and-parking layout with retail tags"><img src="public/novare/novare-02-parking-bays.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+      <li><a href="#nv-3" data-gallery-thumb aria-label="Show image 3: parking bays, lanes and roundabout"><img src="public/novare/novare-03-parking-vector.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+      <li><a href="#nv-4" data-gallery-thumb aria-label="Show image 4: Aisle 6 tags"><img src="public/novare/novare-04-aisle-tags.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+      <li><a href="#nv-5" data-gallery-thumb aria-label="Show image 5: ground-floor shops and LifeMate"><img src="public/novare/novare-05-ground-floor-units.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+      <li><a href="#nv-6" data-gallery-thumb aria-label="Show image 6: Level 0 shop door nodes"><img src="public/novare/novare-06-door-nodes.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+      <li><a href="#nv-7" data-gallery-thumb aria-label="Show image 7: Novare source layers and retail tags"><img src="public/novare/novare-07-layer-stack.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+      <li><a href="#nv-8" data-gallery-thumb aria-label="Show image 8: Shoprite-to-Shoprite route itinerary"><img src="public/novare/novare-08-parking-route.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+      <li><a href="#nv-9" data-gallery-thumb aria-label="Show image 9: Level 0 route over labelled shops"><img src="public/novare/novare-09-indoor-route.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+      <li><a href="#nv-10" data-gallery-thumb aria-label="Show image 10: route results and itinerary options"><img src="public/novare/novare-10-route-panel.jpg" alt="" width="120" height="68" loading="lazy" decoding="async"></a></li>
+    </ul>
+  </div>
+
+  <p class="cx-visually-hidden" aria-live="polite" data-gallery-status></p>
 </figure>
 
       </div>
-      <p class="cx-note" style="margin-top:1rem;">Diagram of the mapped levels and networks. It is an illustration of the project scope, not a screenshot of the pilot interface, and it does not reproduce the venue's plans.</p>
+      <p class="cx-note" style="margin-top:1rem;">These are screen captures of the project's working environment: JOSM for digitisation and the browser-based venue console used for route testing. They are not renders or marketing mock-ups. The route views show a test configuration, not recorded visitor journeys. The console is a third-party venue-mapping product used during the pilot; the dataset behind the routes is the one digitised in this project.</p>
     </div>
   </section>
 
