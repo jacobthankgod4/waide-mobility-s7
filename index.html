@@ -1,792 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Waide turns malls, supermarkets, hospitals and airports into navigable digital twins. Visitors find products by QR scan; operators get zone traffic, search demand and drop-off data. Live pilot at Novare Lekki Mall, Lagos.">
-    <meta name="keywords" content="indoor navigation, digital twin, mall navigation, supermarket wayfinding, spatial analytics, zone performance, shopper analytics, hospital wayfinding, airport navigation, Nigeria retail technology">
-    <title>Waide Mobility — Indoor Navigation, Digital Twins &amp; Spatial Analytics</title>
-    <link rel="canonical" href="https://waidemobility.org/">
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Waide Mobility — Know your space. Guide every visitor. Understand what happens inside.">
-    <meta property="og:description" content="Waide turns large indoor spaces into intelligent, navigable digital twins. Live pilot at Novare Lekki Mall — 22,000m² mapped.">
-    <meta property="og:image" content="https://waidemobility.org/public/modern-mall-navigation.png">
-    <meta property="og:image:alt" content="Waide digital twin of Novare Lekki Mall">
-    <meta property="og:url" content="https://waidemobility.org/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Waide Mobility">
-    
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Waide Mobility — Indoor Navigation, Digital Twins & Spatial Analytics">
-    <meta name="twitter:description" content="Visitors find what they came for. Operators see how the space performs. Live pilot at Novare Lekki Mall, Lagos.">
-    <meta name="twitter:image" content="https://waidemobility.org/public/modern-mall-navigation.png">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
-    <link rel="manifest" href="public/site.webmanifest">
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="optimized.css" as="style">
-    <link rel="preload" href="bundle.min.js" as="script">
-    <link rel="preload" href="public/waide-logo.png" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
-    
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="optimized.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
-    
-    <!-- Critical Inline Styles -->
-    <style>
-    .modern-how-it-works{padding:6rem 2rem;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;position:relative;overflow:hidden}
-    .step-card{background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);border:1px solid rgba(0,255,255,0.2);border-radius:20px;padding:2.5rem;text-align:center;transition:all 0.3s ease;position:relative;overflow:hidden}
-    .step-card:hover{transform:translateY(-10px);border-color:#00ffff}
-    .step-icon{width:80px;height:80px;margin:0 auto 1.5rem;background:linear-gradient(135deg,#00ffff,#06b6d4);border-radius:50%;display:flex;align-items:center;justify-content:center}
-    .cta-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;background:linear-gradient(135deg,#00ffff,#06b6d4);color:#000;border-radius:50px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all 0.3s ease}
-    .cta-btn:hover{transform:translateY(-2px)}
-    .video-container{position:relative;border-radius:20px;overflow:hidden;border:2px solid rgba(0,255,255,0.3);transition:all 0.3s ease}
-    .video-container:hover{border-color:#00ffff;transform:scale(1.02)}
-    .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;background:rgba(0,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s ease;backdrop-filter:blur(10px)}
-    .play-btn:hover{transform:translate(-50%,-50%) scale(1.1);background:rgba(0,255,255,1)}
-    .section-spacing{margin-top:8rem;padding:2rem}
-    .accessible-nav-section{margin-top:6rem}
-    </style>
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Waide Mobility",
-      "description": "Spatial intelligence infrastructure for physical indoor environments — digital twins, indoor navigation, shopper analytics, inventory sync, and phygital commerce across Africa",
-      "url": "https://waidemobility.org",
-      "logo": "https://waidemobility.org/public/waide-logo.png",
-      "foundingDate": "2024",
-      "founders": [{
-        "@type": "Person",
-        "name": "Jacob ThankGod Kene"
-      }],
-      "areaServed": "Africa",
-      "serviceType": "Spatial Retail Intelligence Infrastructure",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "NG"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/waide-mobility"
-      ]
-    }
-    </script>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WAIDE2024"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WAIDE2024');
-    </script>
-    <!-- HubSpot temporarily disabled for testing -->
-    <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147004606.js"></script> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waide Mobility | Geospatial Engineering, Digital Twins & Digital Infrastructure</title>
+  <meta name="description" content="Waide Mobility is a geospatial and digital systems consultancy in Lagos, Nigeria, delivering spatial data engineering, digital twins, GIS platforms and accessible wayfinding.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://waidemobility.com/">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:title" content="Waide Mobility | Geospatial Engineering, Digital Twins & Digital Infrastructure">
+  <meta property="og:description" content="Waide Mobility is a geospatial and digital systems consultancy in Lagos, Nigeria, delivering spatial data engineering, digital twins, GIS platforms and accessible wayfinding.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://waidemobility.com/">
+  <meta property="og:site_name" content="Waide Mobility">
+  <meta property="og:image" content="https://waidemobility.com/public/og-waide.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Waide Mobility | Geospatial Engineering, Digital Twins & Digital Infrastructure">
+  <meta name="twitter:description" content="Waide Mobility is a geospatial and digital systems consultancy in Lagos, Nigeria, delivering spatial data engineering, digital twins, GIS platforms and accessible wayfinding.">
+  <meta name="twitter:image" content="https://waidemobility.com/public/og-waide.png">
+  <meta name="twitter:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="consultancy.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Geospatial engineering, digital twins and digital infrastructure consultancy based in Lagos, Nigeria.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Geospatial engineering","Indoor mapping","Digital twins","GIS platforms","Spatial data infrastructure","Accessible wayfinding","Building information modelling"]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://waidemobility.com/#webpage","url":"https://waidemobility.com/","name":"Waide Mobility | Geospatial Engineering, Digital Twins \u0026 Digital Infrastructure","description":"Waide Mobility is a geospatial and digital systems consultancy in Lagos, Nigeria, delivering spatial data engineering, digital twins, GIS platforms and accessible wayfinding.","inLanguage":"en","about":{"@id":"https://waidemobility.com/#organization"}}
+  </script>
 </head>
-<body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="min-h-screen bg-black">
-        <!-- Navigation -->
-        <nav class="nav sticky">
-            <div class="nav-brand">
-                <div class="logo">
-                    <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
-                </div>
-                <span class="brand-text">Waide Mobility</span>
-            </div>
-            <button class="hamburger" aria-label="Toggle navigation menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <div class="nav-item">
-                    <a href="use-cases.html" class="nav-link">Use Cases</a>
-                    <button class="mobile-dropdown-toggle" style="display: none;">
-                        Use Cases
-                        <span>▼</span>
-                    </button>
-                    <div class="mega-dropdown">
-                        <div class="mega-dropdown-content">
-                            <div class="dropdown-section">
-                                <p class="dropdown-heading">🏥 Healthcare & Public</p>
-                                <div class="dropdown-links">
-                                    <a href="blog/hospital-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🏥</span>
-                                        Hospital Navigation
-                                    </a>
-                                    <a href="blog/library-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">📚</span>
-                                        Library Navigation
-                                    </a>
-                                    <a href="blog/museum-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🏛️</span>
-                                        Museum Navigation
-                                    </a>
-                                    <a href="blog/university-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🎓</span>
-                                        University Navigation
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="dropdown-section">
-                                <p class="dropdown-heading">🏢 Commercial & Retail</p>
-                                <div class="dropdown-links">
-                                    <a href="blog/mall-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🛍️</span>
-                                        Mall Navigation
-                                    </a>
-                                    <a href="blog/office-building-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🏢</span>
-                                        Office Building Navigation
-                                    </a>
-                                    <a href="blog/hotel-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🏨</span>
-                                        Hotel Navigation
-                                    </a>
-                                    <a href="blog/casino-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🎰</span>
-                                        Casino Navigation
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="dropdown-section">
-                                <p class="dropdown-heading">🚇 Transportation & Logistics</p>
-                                <div class="dropdown-links">
-                                    <a href="blog/airport-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">✈️</span>
-                                        Airport Navigation
-                                    </a>
-                                    <a href="blog/train-station-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🚂</span>
-                                        Train Station Navigation
-                                    </a>
-                                    <a href="blog/subway-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🚇</span>
-                                        Subway Navigation
-                                    </a>
-                                    <a href="blog/warehouse-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">📦</span>
-                                        Warehouse Navigation
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mega-dropdown-content" style="margin-top: 1rem;">
-                            <div class="dropdown-section">
-                                <p class="dropdown-heading">🎯 Entertainment & Events</p>
-                                <div class="dropdown-links">
-                                    <a href="blog/sports-venue-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">⚽</span>
-                                        Sports Venue Navigation
-                                    </a>
-                                    <a href="blog/theme-park-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🎢</span>
-                                        Theme Park Navigation
-                                    </a>
-                                    <a href="blog/convention-center-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🏢</span>
-                                        Convention Center Navigation
-                                    </a>
-                                    <a href="blog/cruise-ship-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🚢</span>
-                                        Cruise Ship Navigation
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="dropdown-section">
-                                <p class="dropdown-heading">🏭 Industrial & Tech</p>
-                                <div class="dropdown-links">
-                                    <a href="blog/manufacturing-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🏭</span>
-                                        Manufacturing Navigation
-                                    </a>
-                                    <a href="blog/data-center-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">💾</span>
-                                        Data Center Navigation
-                                    </a>
-                                    <a href="blog/parking-garage-navigation.html" class="dropdown-link">
-                                        <span class="dropdown-link-icon">🚗</span>
-                                        Parking Garage Navigation
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mobile-dropdown-content">
-                        <div class="mobile-dropdown-section">
-                            <p class="dropdown-heading">🏥 Healthcare & Public</p>
-                            <a href="blog/hospital-navigation.html" class="dropdown-link">🏥 Hospital Navigation</a>
-                            <a href="blog/library-navigation.html" class="dropdown-link">📚 Library Navigation</a>
-                            <a href="blog/museum-navigation.html" class="dropdown-link">🏛️ Museum Navigation</a>
-                            <a href="blog/university-navigation.html" class="dropdown-link">🎓 University Navigation</a>
-                        </div>
-                        <div class="mobile-dropdown-section">
-                            <p class="dropdown-heading">🛍️ Commercial & Retail</p>
-                            <a href="blog/mall-navigation.html" class="dropdown-link">🛍️ Mall Navigation</a>
-                            <a href="blog/office-building-navigation.html" class="dropdown-link">🏢 Office Building Navigation</a>
-                            <a href="blog/hotel-navigation.html" class="dropdown-link">🏨 Hotel Navigation</a>
-                            <a href="blog/casino-navigation.html" class="dropdown-link">🎰 Casino Navigation</a>
-                        </div>
-                        <div class="mobile-dropdown-section">
-                            <p class="dropdown-heading">🚊 Transportation & Logistics</p>
-                            <a href="blog/airport-navigation.html" class="dropdown-link">✈️ Airport Navigation</a>
-                            <a href="blog/train-station-navigation.html" class="dropdown-link">🚊 Train Station Navigation</a>
-                            <a href="blog/subway-navigation.html" class="dropdown-link">🚇 Subway Navigation</a>
-                            <a href="blog/warehouse-navigation.html" class="dropdown-link">📦 Warehouse Navigation</a>
-                        </div>
-                        <div class="mobile-dropdown-section">
-                            <p class="dropdown-heading">🎪 Entertainment & Events</p>
-                            <a href="blog/sports-venue-navigation.html" class="dropdown-link">⚽ Sports Venue Navigation</a>
-                            <a href="blog/theme-park-navigation.html" class="dropdown-link">🎢 Theme Park Navigation</a>
-                            <a href="blog/convention-center-navigation.html" class="dropdown-link">🏢 Convention Center Navigation</a>
-                            <a href="blog/cruise-ship-navigation.html" class="dropdown-link">🚢 Cruise Ship Navigation</a>
-                        </div>
-                        <div class="mobile-dropdown-section">
-                            <p class="dropdown-heading">🏭 Industrial & Tech</p>
-                            <a href="blog/manufacturing-navigation.html" class="dropdown-link">🏭 Manufacturing Navigation</a>
-                            <a href="blog/data-center-navigation.html" class="dropdown-link">💾 Data Center Navigation</a>
-                            <a href="blog/parking-garage-navigation.html" class="dropdown-link">🚗 Parking Garage Navigation</a>
-                        </div>
-                    </div>
-                </div>
-                <a href="solutions.html" class="nav-link">Solutions</a>
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="blog/index.html" class="nav-link">Blog</a>
-                <a href="pricing.html" class="nav-link">Pricing</a>
-                <button class="btn btn-primary" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'nav_request_demo' }); window.location.href='contact.html'">Request a walkthrough</button>
-            </div>
-        </nav>
+<body class="cx">
+  <a class="cx-skip" href="#main-content">Skip to content</a>
+<header class="cx-header">
+  <div class="cx-wrap cx-header-inner">
+    <a class="cx-brand" href="index.html">
+      <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
+      <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+    </a>
+    <button class="cx-menu-btn" type="button" aria-expanded="false" aria-controls="cx-primary-nav" aria-label="Open navigation menu">
+      <span aria-hidden="true"></span>
+    </button>
+    <nav class="cx-nav" id="cx-primary-nav" aria-label="Primary">
+      <a href="services.html" data-nav="services">Services</a>
+      <a href="projects.html" data-nav="projects">Projects</a>
+      <a href="approach.html" data-nav="approach">Approach</a>
+      <a href="expertise.html" data-nav="expertise">Expertise</a>
+      <a href="insights.html" data-nav="insights">Insights</a>
+      <a href="procurement.html" data-nav="procurement">Procurement</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a class="cx-header-cta" href="contact.html">Discuss a project</a>
+    </nav>
+  </div>
+</header>
 
-        <!-- ============================================================
-             Homepage v2
-             Structure: hero -> audience -> problem -> what we do ->
-             proof -> how it works -> outcomes -> industries ->
-             accessibility -> FAQ -> final CTA
-             Claims on this page are annotated. See evidence.html.
-             ============================================================ -->
+<main id="main-content">
 
-        <main id="main-content">
+  <section class="cx-hero">
+    <div class="cx-wrap cx-hero-grid">
+      <div>
+        <p class="cx-eyebrow">Geospatial engineering &amp; digital infrastructure</p>
+        <h1 class="cx-h1">Intelligent spatial systems for the built environment.</h1>
+        <p class="cx-sub">We design and deliver geospatial platforms, digital twins and accessible navigation systems that make buildings and infrastructure more understandable, connected and operationally useful.</p>
+        <div class="cx-hero-actions">
+          <a class="cx-btn cx-btn--primary" href="services.html">Explore our capabilities</a>
+          <a class="cx-btn cx-btn--ghost" href="contact.html">Discuss a project</a>
+        </div>
+        <div class="cx-hero-meta">
+          <span><span class="cx-dot" aria-hidden="true"></span>Lagos, Nigeria</span>
+          <span>Novare Lekki pilot</span>
+          <span>Independent consultancy</span>
+        </div>
+      </div>
+      <figure class="cx-hero-panel">
+  <svg viewBox="0 0 640 460" role="img" aria-labelledby="heroMapTitle heroMapDesc">
+    <title id="heroMapTitle">Illustrative indoor spatial model</title>
+    <desc id="heroMapDesc">A stylised floor plan showing mapped units, a central atrium, a step-free pedestrian route and a vehicle route from parking. This is an illustration of a spatial data model, not a screenshot of an operational system.</desc>
+    <defs>
+      <pattern id="cxGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+        <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/>
+      </pattern>
+      <linearGradient id="cxGlow" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#00e1df" stop-opacity="0.5"/>
+        <stop offset="1" stop-color="#06b6d4" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
 
-        <!-- HERO -->
-        <section class="hp-hero">
-            <div class="container">
-                <p class="hp-eyebrow"><span class="hp-pulse" aria-hidden="true"></span> Live pilot &middot; Novare Lekki Mall, Lagos</p>
+    <rect width="640" height="460" fill="#05080a"/>
+    <rect width="640" height="460" fill="url(#cxGrid)"/>
 
-                <h1 class="hp-hero-title">
-                    Know your space.<br>
-                    Guide every visitor.<br>
-                    <span class="gradient-text">Understand what happens inside.</span>
-                </h1>
+    <text x="24" y="30" fill="#7f8a94" font-family="ui-monospace, monospace" font-size="9" letter-spacing="2">SPATIAL MODEL / 001</text>
+    <text x="616" y="30" text-anchor="end" fill="#00e1df" font-family="ui-monospace, monospace" font-size="9" letter-spacing="2">LAGOS, NG</text>
+    <line x1="24" y1="42" x2="616" y2="42" stroke="rgba(255,255,255,0.12)"/>
 
-                <p class="hp-hero-sub">
-                    We map a mall, supermarket, hospital or airport into a digital twin. Visitors get directions to the shelf, store or gate. Operators see what people searched for, where they went, and where they gave up.
-                </p>
+    <!-- building shell -->
+    <path d="M70 78 H570 V368 H70 Z" fill="rgba(6,182,212,0.035)" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+    <path d="M70 78 H570 V368 H70 Z" fill="none" stroke="rgba(6,182,212,0.25)" stroke-width="0.5" transform="translate(4 4)"/>
 
-                <div class="hp-hero-actions">
-                    <a href="case-study-novare-lekki.html" class="btn btn-cyan btn-large" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'hero_see_pilot' });">See the Novare Lekki pilot</a>
-                    <a href="contact.html" class="btn btn-outline btn-large" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'hero_book_walkthrough' });">Request a 20-minute walkthrough</a>
-                </div>
+    <!-- units, upper row -->
+    <g fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.16)">
+      <rect x="92" y="96" width="66" height="52"/>
+      <rect x="168" y="96" width="66" height="52"/>
+      <rect x="244" y="96" width="66" height="52"/>
+      <rect x="320" y="96" width="66" height="52"/>
+      <rect x="396" y="96" width="66" height="52"/>
+      <rect x="472" y="96" width="78" height="52"/>
+    </g>
 
-                <ul class="hp-capabilities" aria-label="What Waide provides">
-                    <li>Indoor navigation</li>
-                    <li>Digital twins</li>
-                    <li>Spatial analytics</li>
-                </ul>
+    <!-- units, lower row -->
+    <g fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.16)">
+      <rect x="92" y="286" width="66" height="58"/>
+      <rect x="168" y="286" width="66" height="58"/>
+      <rect x="244" y="286" width="66" height="58"/>
+      <rect x="320" y="286" width="66" height="58"/>
+      <rect x="396" y="286" width="66" height="58"/>
+      <rect x="472" y="286" width="78" height="58"/>
+    </g>
 
-                <figure class="hp-shot">
-                    <img src="public/modern-mall-navigation.png" alt="Waide digital twin of Novare Lekki Mall showing store and shelf-level navigation" width="1200" height="675" fetchpriority="high">
-                    <figcaption>Novare Lekki Mall &middot; 22,000 m&sup2; digital twin &middot; pilot in progress</figcaption>
-                </figure>
+    <!-- central island -->
+    <g fill="rgba(6,182,212,0.06)" stroke="rgba(6,182,212,0.35)">
+      <rect x="196" y="184" width="90" height="58" rx="3"/>
+      <rect x="354" y="184" width="90" height="58" rx="3"/>
+    </g>
 
-                <p class="hp-status-note">
-                    Pilot in progress at Novare Lekki. Commercial results are still being measured. <a href="evidence.html">Read the claims register</a>.
-                </p>
-            </div>
-        </section>
+    <!-- atrium -->
+    <circle cx="320" cy="213" r="40" fill="rgba(0,225,223,0.05)" stroke="rgba(0,225,223,0.45)"/>
+    <circle cx="320" cy="213" r="26" fill="none" stroke="rgba(0,225,223,0.25)" stroke-dasharray="3 5"/>
+    <text x="320" y="216" text-anchor="middle" fill="#00e1df" font-family="ui-monospace, monospace" font-size="7" letter-spacing="1.5">ATRIUM</text>
 
-        <!-- AUDIENCE SPLIT -->
-        <section class="hp-section hp-section--alt" id="start">
-            <div class="container">
-                <p class="hp-kicker">Start here</p>
-                <h2 class="hp-h2">Visiting, or running the venue?</h2>
-                <p class="hp-lead">
-                    Both use the same map. Visitors need directions. Operators need the data behind them.
-                </p>
+    <!-- vehicle route -->
+    <path d="M100 430 V344 H320 V300" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-dasharray="2 7"/>
 
-                <div class="hp-audience-grid">
-                    <article class="hp-audience-card">
-                        <p class="hp-audience-label">For visitors</p>
-                        <h3>I&rsquo;m visiting a venue</h3>
-                        <p>
-                            Search for a product, store, department or gate. You get step-by-step directions to the exact shelf or bay. No app, no account.
-                        </p>
-                        <ul class="hp-audience-list">
-                            <li>Opens in your phone browser from a QR scan</li>
-                            <li>Step-free routes for wheelchairs and pushchairs</li>
-                            <li>Available in local African languages</li>
-                        </ul>
-                        <a href="contact.html" class="hp-text-link">How visitors use it &rarr;</a>
-                    </article>
+    <!-- pedestrian route -->
+    <path id="cxRoute" d="M110 414 V300 H150 V244 H250 V158 H470 V122 H514" fill="none" stroke="#00e1df" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M110 414 V300 H150 V244 H250 V158 H470 V122 H514" fill="none" stroke="url(#cxGlow)" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
 
-                    <article class="hp-audience-card hp-audience-card--primary">
-                        <p class="hp-audience-label">For owners &amp; operators</p>
-                        <h3>I own or operate a venue</h3>
-                        <p>
-                            We map your floor plans, then show you zone traffic, product demand and where shoppers give up &mdash; including sales your POS reports cannot explain.
-                        </p>
-                        <ul class="hp-audience-list">
-                            <li>Zone performance and corridor flow, reported weekly</li>
-                            <li>Anchor spillover measured from real movement</li>
-                            <li>Figures you can take to a lease negotiation or a board meeting</li>
-                        </ul>
-                        <a href="solutions.html" class="hp-text-link">What operators get &rarr;</a>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <g fill="#05080a" stroke="#00e1df" stroke-width="2">
+      <circle cx="110" cy="414" r="5"/>
+      <circle cx="250" cy="158" r="5"/>
+      <circle cx="514" cy="122" r="5"/>
+    </g>
+    <circle cx="514" cy="122" r="11" fill="none" stroke="#00e1df" stroke-opacity="0.4"/>
 
-        <!-- PROBLEM -->
-        <section class="hp-section">
-            <div class="container">
-                <div class="hp-two-col">
-                    <div class="hp-problem">
-                        <p class="hp-kicker">Why it matters</p>
-                        <h2 class="hp-h2">The sale is lost before it ever reaches your shop.</h2>
-                        <p>
-                            A shopper who cannot find an item rarely complains. They leave. The sale never appears in your reports, and nothing tells you why.
-                        </p>
-                        <p>
-                            That gap between wanting to buy and buying is the signal most venues never see. Waide records it: what people searched for, where they went, and where they stopped.
-                        </p>
-                    </div>
+    <text x="122" y="410" fill="#b7bec7" font-family="ui-monospace, monospace" font-size="8">PARKING A</text>
+    <text x="470" y="110" fill="#b7bec7" font-family="ui-monospace, monospace" font-size="8">L1-014</text>
+    <text x="258" y="150" fill="#8b939d" font-family="ui-monospace, monospace" font-size="8">LIFT / STEP-FREE</text>
+    <text x="420" y="344" fill="#8b939d" font-family="ui-monospace, monospace" font-size="8">LEVEL 1</text>
+    <text x="92" y="248" fill="#8b939d" font-family="ui-monospace, monospace" font-size="8">GROUND</text>
 
-                    <div class="hp-facts">
-                        <div class="hp-fact">
-                            <span class="hp-fact-num">15&ndash;20%</span>
-                            <p>of shoppers in large stores are estimated to leave without buying because they could not find what they came for.</p>
-                            <span class="hp-tag hp-tag--estimate">Industry estimate</span>
-                        </div>
-                        <div class="hp-fact">
-                            <span class="hp-fact-num">US$5&ndash;7M</span>
-                            <p>annual sales a large venue could lose on that basis. Modelled, not measured.</p>
-                            <span class="hp-tag hp-tag--model">Waide model</span>
-                        </div>
-                        <div class="hp-fact">
-                            <span class="hp-fact-num">0</span>
-                            <p>lines in a standard sales report that explain where that loss came from.</p>
-                            <span class="hp-tag">Observed</span>
-                        </div>
-                    </div>
-                </div>
+    <line x1="24" y1="426" x2="616" y2="426" stroke="rgba(255,255,255,0.1)"/>
+    <g font-family="ui-monospace, monospace" font-size="8" fill="#8b939d">
+      <line x1="24" y1="444" x2="48" y2="444" stroke="#00e1df" stroke-width="2"/>
+      <text x="56" y="447">PEDESTRIAN ROUTE</text>
+      <line x1="192" y1="444" x2="216" y2="444" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-dasharray="2 6"/>
+      <text x="224" y="447">VEHICLE ROUTE</text>
+      <text x="616" y="447" text-anchor="end">ILLUSTRATION</text>
+    </g>
+  </svg>
+  <figcaption>Illustrative spatial model &middot; not an operational screenshot</figcaption>
+</figure>
 
-                <p class="hp-evidence-note">
-                    These figures are estimates and models. The sources, assumptions and calculation are in the <a href="evidence.html">evidence register</a>.
-                </p>
-            </div>
-        </section>
-
-        <!-- WHAT WAIDE DOES -->
-        <section class="hp-section hp-section--alt">
-            <div class="container">
-                <p class="hp-kicker">What Waide is</p>
-                <h2 class="hp-h2">One system. Three layers.</h2>
-                <p class="hp-lead">
-                    Most vendors sell one of these. Waide runs all three on the same map, so what visitors do feeds what operators see.
-                </p>
-
-                <div class="hp-layers">
-                    <article class="hp-layer">
-                        <div class="hp-layer-index" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg>
-                        </div>
-                        <h3>Map the space</h3>
-                        <p>
-                            We turn floor plans, store footprints, shelf layouts and parking into a digital twin you can navigate.
-                        </p>
-                    </article>
-
-                    <article class="hp-layer">
-                        <div class="hp-layer-index" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                        </div>
-                        <h3>Guide the visitor</h3>
-                        <p>
-                            A QR scan opens the map in the phone browser. Shoppers search once and follow directions to the shelf, store or exit.
-                        </p>
-                    </article>
-
-                    <article class="hp-layer">
-                        <div class="hp-layer-index" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
-                        </div>
-                        <h3>Understand the movement</h3>
-                        <p>
-                            Every search, route and drop-off is recorded: what people wanted, where they went and where they gave up.
-                        </p>
-                    </article>
-                </div>
-
-                <p class="hp-layer-note">Visitors see a map. Operators get a record of every search and route.</p>
-            </div>
-        </section>
-
-        <!-- PROOF -->
-        <section class="hp-section hp-proof" id="proof">
-            <div class="container">
-                <p class="hp-kicker">Novare Lekki, Lagos</p>
-                <h2 class="hp-h2">What is live at Novare Lekki</h2>
-                <p class="hp-lead">
-                    We built the 22,000 m&sup2; digital twin at our own cost. Every other claim on this site refers back to it, so here is exactly what exists today.
-                </p>
-
-                <div class="hp-stat-grid">
-                    <div class="hp-stat"><strong>22,000 m&sup2;</strong><span>Mall mapped as a digital twin</span></div>
-                    <div class="hp-stat"><strong>900</strong><span>Shoprite shelves mapped at shelf level</span></div>
-                    <div class="hp-stat"><strong>150+</strong><span>Store footprints indexed</span></div>
-                    <div class="hp-stat"><strong>1,000</strong><span>Parking bays mapped</span></div>
-                </div>
-
-                <div class="hp-status-grid">
-                    <div class="hp-status-col hp-status-col--live">
-                        <h3>Live today</h3>
-                        <ul>
-                            <li>Digital twin of the ground floor, Level 1 and Parking Level A</li>
-                            <li>Shelf-level index of 900 Shoprite shelves</li>
-                            <li>QR-activated web navigation &mdash; no app download</li>
-                            <li>Accessible routing built into the platform</li>
-                            <li>Active pilot with Novare management</li>
-                        </ul>
-                    </div>
-                    <div class="hp-status-col hp-status-col--next">
-                        <h3>Still being proven</h3>
-                        <ul>
-                            <li>Measured conversion and drop-off results from the pilot</li>
-                            <li>Independent validation of zone performance data</li>
-                            <li>Commercial rollout terms beyond the pilot</li>
-                            <li>Deployments at additional venues</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="hp-proof-actions">
-                    <a href="case-study-novare-lekki.html" class="btn btn-cyan">Read the pilot scope</a>
-                    <a href="evidence.html" class="hp-text-link">Read the claims register &rarr;</a>
-                </div>
-
-                <figure class="hp-video-facade">
-                    <a href="https://www.youtube.com/watch?v=h5VMVRjg1kA" target="_blank" rel="noopener" aria-label="Watch the Waide Maps walkthrough on YouTube (opens in a new tab)">
-                        <img src="public/modern-mall-interior.png" alt="Mall interior at Novare Lekki" loading="lazy" width="1280" height="720">
-                        <span class="hp-play" aria-hidden="true">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21 6 3"/></svg>
-                        </span>
-                    </a>
-                </figure>
-                <p class="hp-video-caption">A walkthrough of Waide Maps.</p>
-            </div>
-        </section>
-
-        <!-- HOW IT WORKS -->
-        <section class="hp-section">
-            <div class="container">
-                <p class="hp-kicker">How it works</p>
-                <h2 class="hp-h2">How a deployment works</h2>
-                <p class="hp-lead">No hardware to install and no app for visitors to download.</p>
-
-                <div class="hp-steps">
-                    <article class="hp-step">
-                        <span class="hp-step-num">STEP 01</span>
-                        <h3>Send us the floor plans</h3>
-                        <p>We map the floors, units, shelves and parking bays. Most single-site deployments take a few weeks; larger or older venues take longer.</p>
-                    </article>
-                    <article class="hp-step">
-                        <span class="hp-step-num">STEP 02</span>
-                        <h3>Visitors scan once</h3>
-                        <p>A QR code at the entrance opens the venue in the browser. Shoppers search, then follow the route.</p>
-                    </article>
-                    <article class="hp-step">
-                        <span class="hp-step-num">STEP 03</span>
-                        <h3>You get weekly reports</h3>
-                        <p>Reports show search demand, zone traffic, corridor flow and drop-off. At 180 days you get a full evaluation.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- OUTCOMES -->
-        <section class="hp-section hp-section--alt">
-            <div class="container">
-                <p class="hp-kicker">For owners &amp; operators</p>
-                <h2 class="hp-h2">What operators do with it</h2>
-                <p class="hp-lead">Each of these is a decision the data is meant to support.</p>
-
-                <div class="hp-outcomes">
-                    <article class="hp-outcome">
-                        <h3>Find sales you are missing</h3>
-                        <p>When a shopper searches and finds the shelf, the trip ends in a purchase instead of an exit.</p>
-                    </article>
-                    <article class="hp-outcome">
-                        <h3>See how the space performs</h3>
-                        <p>Zone traffic, corridor flow, search demand and drop-off, reported every week.</p>
-                    </article>
-                    <article class="hp-outcome">
-                        <h3>Make the case to your board</h3>
-                        <p>Anchor spillover measured from real movement. Board and investor reports use data the venue owns.</p>
-                    </article>
-                    <article class="hp-outcome">
-                        <h3>Serve every visitor</h3>
-                        <p>Accessible routes and local-language navigation are included in every deployment.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- INDUSTRIES -->
-        <section class="hp-section">
-            <div class="container">
-                <p class="hp-kicker">Where it applies</p>
-                <h2 class="hp-h2">Starting with retail. Built for any large indoor space.</h2>
-                <p class="hp-lead">
-                    The same three layers apply wherever people get lost and operators cannot see the floor. Retail comes first because the lost sales are easiest to measure.
-                </p>
-
-                <div class="hp-industries">
-                    <a class="hp-industry" href="use-cases.html">
-                        <h3>Malls &amp; supermarkets</h3>
-                        <p>Shelf-level navigation, zone performance and inventory demand.</p>
-                    </a>
-                    <a class="hp-industry" href="use-cases.html">
-                        <h3>Hospitals</h3>
-                        <p>Patient wayfinding, accessible routes and zone utilisation.</p>
-                    </a>
-                    <a class="hp-industry" href="use-cases.html">
-                        <h3>Airports</h3>
-                        <p>Passenger flow, concession performance and connection guidance.</p>
-                    </a>
-                    <a class="hp-industry" href="use-cases.html">
-                        <h3>Universities</h3>
-                        <p>Campus orientation and accessible navigation for students and visitors.</p>
-                    </a>
-                    <a class="hp-industry" href="use-cases.html">
-                        <h3>Corporate real estate</h3>
-                        <p>Visitor management and space utilisation across large campuses.</p>
-                    </a>
-                    <a class="hp-industry" href="use-cases.html">
-                        <h3>Warehouses &amp; logistics</h3>
-                        <p>Inventory location and routing across large facilities.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ACCESSIBILITY -->
-        <section class="hp-access">
-            <div class="hp-access-inner">
-                <div>
-                    <h2>Accessible routes come as standard.</h2>
-                    <p>
-                        Waide can route wheelchair users, people with visual impairments and anyone who struggles to read a screen. Accessible paths are in every deployment and cost nothing extra.
-                    </p>
-                </div>
-                <a href="use-cases.html" class="hp-text-link">See accessible routing &rarr;</a>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="hp-section">
-            <div class="container hp-center">
-                <p class="hp-kicker">Questions</p>
-                <h2 class="hp-h2">Common questions</h2>
-
-                <div class="hp-faq">
-                    <details class="hp-faq-item">
-                        <summary>What does Waide do?</summary>
-                        <div class="hp-faq-answer">
-                            Waide maps a venue into a digital twin, adds navigation visitors open from a QR scan, and turns the searches and routes into reports for the operator. Visitors get directions. The operator gets a record of what people looked for and where they went.
-                        </div>
-                    </details>
-
-                    <details class="hp-faq-item">
-                        <summary>Is this just an indoor navigation company?</summary>
-                        <div class="hp-faq-answer">
-                            No. Navigation is how visitors use it. The data it produces is what operators buy: zone performance, product demand, drop-off and lease evidence they cannot get from a POS or footfall counter alone.
-                        </div>
-                    </details>
-
-                    <details class="hp-faq-item">
-                        <summary>What is live at Novare Lekki right now?</summary>
-                        <div class="hp-faq-answer">
-                            A 22,000 m&sup2; digital twin covering the ground floor, Level 1 and Parking Level A; 900 Shoprite shelves mapped at shelf level; 150+ store footprints; 1,000 parking bays; and QR-activated web navigation. It is a six-month pilot, not a commercial rollout. <a href="evidence.html">Read the full status</a>.
-                        </div>
-                    </details>
-
-                    <details class="hp-faq-item">
-                        <summary>Do visitors need to download an app?</summary>
-                        <div class="hp-faq-answer">
-                            No. A QR code at the entrance opens Waide in the phone browser. Nothing to install and no account to create, which matters where phone storage and data are limited.
-                        </div>
-                    </details>
-
-                    <details class="hp-faq-item">
-                        <summary>Who owns the shopper data?</summary>
-                        <div class="hp-faq-answer">
-                            The venue owns the data collected in its building. We remove personal identifiers, never sell personal data, and set retention terms in the contract.
-                        </div>
-                    </details>
-
-                    <details class="hp-faq-item">
-                        <summary>What does a deployment cost?</summary>
-                        <div class="hp-faq-answer">
-                            Three routes: a fixed-fee pilot on one venue, an indicative per-venue platform fee (from US$399/month), or a portfolio agreement for three or more sites. <a href="pricing.html">See how pricing works</a>, or <a href="contact.html">request a walkthrough</a> for a scoped quote.
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- HOW YOU BUY -->
-        <section class="hp-section hp-section--alt" id="how-you-buy">
-            <div class="container">
-                <div class="hp-center">
-                    <p class="hp-kicker">How you buy</p>
-                    <h2 class="hp-h2">Three ways to buy</h2>
-                    <p class="hp-lead">
-                        Every route starts with a floor-plan review and a written scope. You decide how far to go.
-                    </p>
-                </div>
-
-                <div class="hp-buy-grid">
-                    <article class="hp-buy-card">
-                        <p class="hp-buy-step">01 &middot; Pilot</p>
-                        <h3>Prove it on one venue.</h3>
-                        <p>90&ndash;180 days, fixed scope and fee, and success measures agreed before launch. The pilot ends with a written evaluation.</p>
-                        <p class="hp-buy-price">Fixed fee <span>per venue</span></p>
-                        <a href="pricing.html#pilot" class="hp-text-link">Scope a pilot &rarr;</a>
-                    </article>
-
-                    <article class="hp-buy-card hp-buy-card--primary">
-                        <p class="hp-buy-step">02 &middot; Single venue</p>
-                        <h3>Deploy one venue.</h3>
-                        <p>Digital twin, visitor navigation and the operator dashboard on one site, with directory updates included.</p>
-                        <p class="hp-buy-price">From US$399 <span>per month</span></p>
-                        <a href="pricing.html#rates" class="hp-text-link">See indicative rates &rarr;</a>
-                    </article>
-
-                    <article class="hp-buy-card">
-                        <p class="hp-buy-step">03 &middot; Portfolio</p>
-                        <h3>Run every site from one dashboard.</h3>
-                        <p>Volume pricing across three or more venues, one contract, shared benchmarks and a named account lead.</p>
-                        <p class="hp-buy-price">Custom <span>per-venue tiers</span></p>
-                        <a href="pricing.html#portfolio" class="hp-text-link">Discuss a portfolio &rarr;</a>
-                    </article>
-                </div>
-
-                <p class="hp-buy-note">
-                    Prices are indicative and confirmed after a floor-plan review. See <a href="pricing.html">how pricing works</a> for what is included, what is not, and how a quote is built.
-                </p>
-            </div>
-        </section>
-
-        <!-- FINAL CTA -->
-        <section class="hp-final">
-            <div class="container">
-                <h2>Start with your floor plan.</h2>
-                <p>
-                    A floor plan and a floor count are enough for us to come back with the scope, the price and what you would learn in the first 90 days.
-                </p>
-                <div class="hp-hero-actions" style="margin-bottom: 0;">
-                    <a href="contact.html" class="btn btn-cyan btn-large" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'final_book_walkthrough' });">Request a 20-minute walkthrough</a>
-                    <a href="case-study-novare-lekki.html" class="btn btn-outline btn-large">See the Novare Lekki pilot</a>
-                </div>
-                <p class="hp-final-mail">Prefer email? <a href="mailto:thankgod@waidemobility.org">thankgod@waidemobility.org</a></p>
-            </div>
-        </section>
-
-        </main>
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <div class="footer-logo">
-                            <div class="logo">
-                                <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy">
-                            </div>
-                            <span>Waide Mobility</span>
-                        </div>
-                        <p>Digital twins, indoor navigation and spatial analytics for malls, hospitals, airports and campuses.</p>
-                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;" onclick="gtag('event', 'click', { event_category: 'cta', event_label: 'footer_request_walkthrough' });">Request a walkthrough</a>
-                    </div>
-                    <div class="footer-links">
-                        <div class="link-group">
-                            <h3 class="link-group-title">Industries</h3>
-                            <ul>
-                                <li><a href="use-cases.html">Retail Malls</a></li>
-                                <li><a href="use-cases.html">Supermarkets &amp; Grocery</a></li>
-                                <li><a href="use-cases.html">Hospitals &amp; Healthcare</a></li>
-                                <li><a href="use-cases.html">Airports &amp; Transport</a></li>
-                                <li><a href="use-cases.html">Universities &amp; Campuses</a></li>
-                                <li><a href="use-cases.html">Warehouses &amp; Logistics</a></li>
-                            </ul>
-                        </div>
-                        <div class="link-group">
-                            <h3 class="link-group-title">Company</h3>
-                            <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="case-study-novare-lekki.html">Novare Lekki pilot</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="evidence.html">Evidence &amp; claims</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2026 Waide Mobility Ltd. All rights reserved.</p>
-                    <div class="footer-legal">
-                        <a href="evidence.html">Evidence &amp; claims</a>
-                        <a href="contact.html">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
+  </section>
 
-    <!-- Core JavaScript -->
-    <script src="script-clean.js?v=2" defer></script>
-    
-    <script>
-    // Keep a single, quiet error handler. Detailed errors belong in monitoring, not the console.
-    window.addEventListener('error', function (e) {
-        if (e && e.filename && e.filename.indexOf('waidemobility') !== -1) {
-            console.warn('Waide page error:', e.message);
-        }
-    });
-    </script>
+  <section class="cx-section cx-section--tight" aria-label="Documented project scope">
+    <div class="cx-wrap">
+      <div class="cx-stat-band">
+        <div class="cx-stat"><strong>22,000 m&sup2;</strong><span>Mall area mapped in the Novare Lekki pilot</span></div>
+        <div class="cx-stat"><strong>3 levels</strong><span>Ground floor, Level 1 and Parking Level A</span></div>
+        <div class="cx-stat"><strong>150+</strong><span>Store footprints digitised</span></div>
+        <div class="cx-stat"><strong>1,000+</strong><span>Parking bays in the vehicle network</span></div>
+      </div>
+      <p class="cx-note" style="margin-top:1rem;">Figures describe the documented scope of one pilot project. They are not a claim of portfolio scale or measured commercial outcomes.</p>
+    </div>
+  </section>
 
-    <script>
-    // Close the mobile menu after a link is followed
-    document.querySelectorAll('.nav-links a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            var navLinks = document.querySelector('.nav-links');
-            var hamburger = document.querySelector('.hamburger');
-            if (navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                if (hamburger) hamburger.classList.remove('active');
-            }
-        });
-    });
-    </script>
+  <section class="cx-section">
+    <div class="cx-wrap cx-editorial">
+      <div>
+        <p class="cx-kicker">The problem</p>
+        <h2 class="cx-h2">Buildings hold more information than their operators can use.</h2>
+      </div>
+      <div>
+        <p class="cx-lead">Most large facilities run on disconnected drawings, spreadsheets, signs and local knowledge. The data exists, but it is not structured, not connected and not usable at the moment a decision has to be made.</p>
+        <p class="cx-body">Waide works on that gap. We turn building layouts, asset lists and spatial records into structured geospatial systems: maps that route people, models that describe spaces, and interfaces that show an operator what is happening on the floor.</p>
+        <div class="cx-grid-2" style="margin-top:2rem; gap:1.25rem;">
+          <div class="cx-card cx-card--plain">
+            <h3>Disconnected spatial data</h3>
+            <p>Plans in CAD, tenant lists in spreadsheets, asset records in another system. None of them share a coordinate system or a definition.</p>
+          </div>
+          <div class="cx-card cx-card--plain">
+            <h3>Navigation that stops at the door</h3>
+            <p>Street maps do not know about units, levels, lifts or a corridor that closes on Mondays. Visitors ask staff instead.</p>
+          </div>
+          <div class="cx-card cx-card--plain">
+            <h3>Low visibility of physical assets</h3>
+            <p>Operators can see a sales total, but not how people moved through the building to produce it.</p>
+          </div>
+          <div class="cx-card cx-card--plain">
+            <h3>Accessibility added late</h3>
+            <p>Step-free routes and screen-reader support are treated as an upgrade, after the map and the interface are already fixed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cx-section cx-section--alt">
+    <div class="cx-wrap">
+      <div class="cx-section-head">
+        <div>
+          <p class="cx-kicker">Capabilities</p>
+          <h2 class="cx-h2">Five areas of work, one spatial discipline.</h2>
+          <p class="cx-lead">Each division can be commissioned on its own. Most projects combine two or three.</p>
+        </div>
+        <div class="cx-section-head-side">
+          <a class="cx-btn cx-btn--ghost" href="services.html">All services</a>
+        </div>
+      </div>
+
+      <div class="cx-service-list">
+        <a class="cx-service-row" href="service-geospatial-engineering.html">
+          <span class="cx-service-num">01</span>
+          <div>
+            <h3>Geospatial engineering &amp; mapping</h3>
+            <p>GIS mapping, indoor and outdoor data collection, CAD-to-GIS conversion, georeferencing, feature extraction, route networks and spatial databases.</p>
+          </div>
+          <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="cx-service-row" href="service-digital-twins.html">
+          <span class="cx-service-num">02</span>
+          <div>
+            <h3>Digital twins &amp; built-asset information</h3>
+            <p>Multi-floor digital twins, building layout digitisation, space and asset inventories, indoor spatial models and facility information workflows.</p>
+          </div>
+          <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="cx-service-row" href="service-gis-platforms.html">
+          <span class="cx-service-num">03</span>
+          <div>
+            <h3>GIS platforms &amp; geospatial software</h3>
+            <p>Web GIS applications, mobile mapping interfaces, spatial APIs, PostGIS architecture, dashboards and role-based access.</p>
+          </div>
+          <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="cx-service-row" href="service-accessible-mobility.html">
+          <span class="cx-service-num">04</span>
+          <div>
+            <h3>Accessible mobility &amp; wayfinding</h3>
+            <p>Indoor navigation, step-free routes, accessible point-of-interest data, audio guidance and screen-reader-compatible interfaces.</p>
+          </div>
+          <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="cx-service-row" href="service-technical-advisory.html">
+          <span class="cx-service-num">05</span>
+          <div>
+            <h3>Technical advisory &amp; capacity building</h3>
+            <p>Requirements analysis, GIS implementation advisory, data-management frameworks, quality assurance, training and documentation.</p>
+          </div>
+          <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cx-section">
+    <div class="cx-wrap">
+      <div class="cx-project">
+        <figure class="cx-project-visual">
+  <svg viewBox="0 0 640 420" role="img" aria-labelledby="projTitle projDesc">
+    <title id="projTitle">Novare Lekki mapped scope</title>
+    <desc id="projDesc">Diagram of the three mapped levels: Parking Level A with more than 1,000 bays, the ground floor with the anchor supermarket and more than 150 store footprints, and Level 1. A step-free route line connects all three.</desc>
+    <defs>
+      <pattern id="projGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.04)"/>
+      </pattern>
+    </defs>
+    <rect width="640" height="420" fill="#05080a"/>
+    <rect width="640" height="420" fill="url(#projGrid)"/>
+    <text x="24" y="30" fill="#7f8a94" font-family="ui-monospace, monospace" font-size="9" letter-spacing="2">MAPPED SCOPE / NOVARE LEKKI</text>
+    <text x="616" y="30" text-anchor="end" fill="#00e1df" font-family="ui-monospace, monospace" font-size="9" letter-spacing="2">3 LEVELS</text>
+    <line x1="24" y1="42" x2="616" y2="42" stroke="rgba(255,255,255,0.12)"/>
+
+    <!-- Level 1 -->
+    <g>
+      <rect x="56" y="64" width="420" height="86" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.18)"/>
+      <g fill="rgba(6,182,212,0.06)" stroke="rgba(6,182,212,0.3)">
+        <rect x="70" y="78" width="52" height="30"/>
+        <rect x="128" y="78" width="52" height="30"/>
+        <rect x="186" y="78" width="52" height="30"/>
+        <rect x="244" y="78" width="52" height="30"/>
+        <rect x="302" y="78" width="52" height="30"/>
+        <rect x="360" y="78" width="52" height="30"/>
+        <rect x="418" y="78" width="44" height="30"/>
+      </g>
+      <g fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)">
+        <rect x="70" y="116" width="52" height="22"/>
+        <rect x="128" y="116" width="52" height="22"/>
+        <rect x="186" y="116" width="52" height="22"/>
+        <rect x="244" y="116" width="52" height="22"/>
+        <rect x="302" y="116" width="52" height="22"/>
+        <rect x="360" y="116" width="52" height="22"/>
+        <rect x="418" y="116" width="44" height="22"/>
+      </g>
+      <text x="492" y="84" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Level 1</text>
+      <text x="492" y="103" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">RETAIL UNITS</text>
+      <text x="492" y="121" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">WAYPOINTS</text>
+    </g>
+
+    <!-- Ground floor -->
+    <g>
+      <rect x="56" y="168" width="420" height="86" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.18)"/>
+      <g fill="rgba(0,225,223,0.07)" stroke="rgba(0,225,223,0.4)">
+        <rect x="70" y="182" width="126" height="58"/>
+      </g>
+      <text x="80" y="205" fill="#00e1df" font-family="ui-monospace, monospace" font-size="7">ANCHOR SUPERMARKET</text>
+      <text x="80" y="217" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="7">900 SHELVES INDEXED</text>
+      <g fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.16)">
+        <rect x="208" y="182" width="60" height="26"/>
+        <rect x="274" y="182" width="60" height="26"/>
+        <rect x="340" y="182" width="60" height="26"/>
+        <rect x="406" y="182" width="56" height="26"/>
+        <rect x="208" y="214" width="60" height="26"/>
+        <rect x="274" y="214" width="60" height="26"/>
+        <rect x="340" y="214" width="60" height="26"/>
+        <rect x="406" y="214" width="56" height="26"/>
+      </g>
+      <text x="492" y="188" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Ground floor</text>
+      <text x="492" y="207" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">150+ FOOTPRINTS</text>
+      <text x="492" y="225" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">SHELF-LEVEL INDEX</text>
+    </g>
+
+    <!-- Parking -->
+    <g>
+      <rect x="56" y="272" width="420" height="86" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.18)"/>
+      <g fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.13)">
+        <rect x="70" y="288" width="34" height="20"/>
+        <rect x="110" y="288" width="34" height="20"/>
+        <rect x="150" y="288" width="34" height="20"/>
+        <rect x="190" y="288" width="34" height="20"/>
+        <rect x="230" y="288" width="34" height="20"/>
+        <rect x="270" y="288" width="34" height="20"/>
+        <rect x="70" y="316" width="34" height="20"/>
+        <rect x="110" y="316" width="34" height="20"/>
+        <rect x="150" y="316" width="34" height="20"/>
+        <rect x="190" y="316" width="34" height="20"/>
+        <rect x="230" y="316" width="34" height="20"/>
+        <rect x="270" y="316" width="34" height="20"/>
+      </g>
+      <text x="320" y="322" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">VEHICLE NETWORK / PARKING BAYS</text>
+      <text x="492" y="292" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Parking A</text>
+      <text x="492" y="311" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">1,000+ BAYS</text>
+      <text x="492" y="329" fill="#9ca3af" font-family="ui-monospace, monospace" font-size="8">STEP-FREE ACCESS</text>
+    </g>
+
+    <!-- route -->
+    <path d="M60 372 H500 V330" fill="none" stroke="rgba(0,225,223,0.5)" stroke-width="2" stroke-dasharray="4 6"/>
+    <path d="M504 330 V240 H500 V156" fill="none" stroke="rgba(0,225,223,0.35)" stroke-width="2" stroke-dasharray="4 6"/>
+    <circle cx="500" cy="330" r="4" fill="#00e1df"/>
+    <circle cx="500" cy="240" r="4" fill="#00e1df"/>
+    <circle cx="500" cy="156" r="4" fill="#00e1df"/>
+
+    <text x="24" y="404" fill="#7f8a94" font-family="ui-monospace, monospace" font-size="8" letter-spacing="1.5">APPROX. 22,000 m² &middot; REPORTED PROJECT SCOPE</text>
+  </svg>
+  <figcaption>Diagram of mapped scope &middot; not a screenshot</figcaption>
+</figure>
+
+        <div>
+          <span class="cx-tag">Featured project &middot; pilot in progress</span>
+          <h2 class="cx-h2">Indoor spatial mapping and digital twin development, Novare Lekki Mall.</h2>
+          <p class="cx-lead">A multi-level mall in Lekki, Lagos, mapped as a structured indoor environment with separate pedestrian and vehicle networks, shelf-level retail indexing and step-free routing.</p>
+          <dl class="cx-experience">
+            <div class="cx-experience-row"><dt>Location</dt><dd>Lekki, Lagos, Nigeria</dd></div>
+            <div class="cx-experience-row"><dt>Scope</dt><dd>Approx. 22,000 m&sup2; over three levels</dd></div>
+            <div class="cx-experience-row"><dt>Methods</dt><dd>JOSM digitisation, georeferencing, Dijkstra routing</dd></div>
+            <div class="cx-experience-row"><dt>Status</dt><dd>Six-month pilot; results not yet published</dd></div>
+          </dl>
+          <div class="cx-hero-actions">
+            <a class="cx-btn cx-btn--primary" href="project-novare-lekki.html">Read the project record</a>
+            <a class="cx-btn cx-btn--ghost" href="projects.html">Project library</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cx-section cx-section--alt">
+    <div class="cx-wrap">
+      <div class="cx-section-head">
+        <div>
+          <p class="cx-kicker">Delivery</p>
+          <h2 class="cx-h2">A defined process, not an open-ended engagement.</h2>
+          <p class="cx-lead">Every assignment follows the same five stages. Each stage has a named output that you can review before the next one starts.</p>
+        </div>
+        <div class="cx-section-head-side">
+          <a class="cx-btn cx-btn--ghost" href="approach.html">Our approach</a>
+        </div>
+      </div>
+
+      <ol class="cx-steps">
+        <li class="cx-step">
+          <div>
+            <h3>Discover and assess</h3>
+            <p>Define the decision the system has to support, then audit the plans, lists and records that already exist.</p>
+          </div>
+          <div class="cx-step-output"><span>Output</span>Scope note and data-gap register</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Collect and structure spatial data</h3>
+            <p>Georeference drawings, digitise units and routes, and build the attribute schema behind them.</p>
+          </div>
+          <div class="cx-step-output"><span>Output</span>Validated spatial dataset</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Engineer and integrate</h3>
+            <p>Build the data model, routing network, interfaces and any integrations the scope calls for.</p>
+          </div>
+          <div class="cx-step-output"><span>Output</span>Working system in a test environment</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Validate and deploy</h3>
+            <p>Walk the routes, test the interface, check accessibility behaviour and accept the system against the scope.</p>
+          </div>
+          <div class="cx-step-output"><span>Output</span>QA record and deployment sign-off</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Train, document and support</h3>
+            <p>Hand over the documentation, train the team that will run the system and agree the support arrangement.</p>
+          </div>
+          <div class="cx-step-output"><span>Output</span>Manuals, training record and support plan</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cx-section">
+    <div class="cx-wrap cx-editorial cx-editorial--reverse">
+      <div>
+        <p class="cx-kicker">Inclusive infrastructure</p>
+        <h2 class="cx-h2">Accessibility is part of the spatial model, not a later patch.</h2>
+        <p class="cx-lead">A route that works for a wheelchair user usually works better for everyone: a parent with a pushchair, a visitor with luggage, a delivery trolley. We map step-free paths as a separate network rather than an afterthought.</p>
+        <ul class="cx-list">
+          <li>Step-free routes built from lifts, ramps and level access, checked on site.</li>
+          <li>Screen-reader-compatible interfaces and audio guidance in scope where required.</li>
+          <li>Accessible point-of-interest data: entrances, toilets, service desks and assistance points.</li>
+          <li>Accessibility testing with disabled users where the project allows it.</li>
+        </ul>
+        <p class="cx-note" style="margin-top:1.2rem;">We implement and test accessibility. We do not claim third-party accessibility certification or accredited compliance where no audit has been carried out.</p>
+        <div class="cx-hero-actions">
+          <a class="cx-btn cx-btn--ghost" href="service-accessible-mobility.html">Accessible mobility</a>
+        </div>
+      </div>
+      <figure class="cx-profile-photo">
+        <img src="public/iac-2025-group.jpg" alt="Participants at the Inclusive Africa Conference 2025" loading="lazy" width="1200" height="800">
+        <figcaption>Inclusive Africa Conference 2025 &middot; accessibility and inclusion work</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cx-section cx-section--alt">
+    <div class="cx-wrap">
+      <div class="cx-section-head">
+        <div>
+          <p class="cx-kicker">Insights</p>
+          <h2 class="cx-h2">Technical notes from current work.</h2>
+          <p class="cx-lead">Short, specific write-ups on indoor GIS, digital twins and accessible navigation. No thought-leadership filler.</p>
+        </div>
+        <div class="cx-section-head-side">
+          <a class="cx-btn cx-btn--ghost" href="insights.html">All insights</a>
+        </div>
+      </div>
+      <div class="cx-grid-3">
+        <a class="cx-service-row" href="insight-indoor-spatial-data-model.html" style="display:block; padding:1.5rem 0; border-top:1px solid var(--cx-line);">
+          <p class="cx-kicker">Indoor GIS</p>
+          <h3 style="font-size:1.1rem; margin:0.4rem 0 0.5rem;">What a usable indoor spatial data model contains</h3>
+          <p style="color:var(--cx-muted); font-size:0.9rem; margin:0;">Levels, units, connections and route edges: the four layers a navigation system actually needs.</p>
+          <p class="cx-mono" style="color:var(--cx-cyan); margin-top:1rem;">Read note &rarr;</p>
+        </a>
+        <a class="cx-service-row" href="insight-josm-building-digitisation.html" style="display:block; padding:1.5rem 0; border-top:1px solid var(--cx-line);">
+          <p class="cx-kicker">Digitisation</p>
+          <h3 style="font-size:1.1rem; margin:0.4rem 0 0.5rem;">Digitising a mall in JOSM: the unglamorous part of digital twins</h3>
+          <p style="color:var(--cx-muted); font-size:0.9rem; margin:0;">How floor plans, imagery and field checks become a clean, routable indoor dataset.</p>
+          <p class="cx-mono" style="color:var(--cx-cyan); margin-top:1rem;">Read note &rarr;</p>
+        </a>
+        <a class="cx-service-row" href="insight-accessible-wayfinding.html" style="display:block; padding:1.5rem 0; border-top:1px solid var(--cx-line);">
+          <p class="cx-kicker">Accessibility</p>
+          <h3 style="font-size:1.1rem; margin:0.4rem 0 0.5rem;">What accessible wayfinding requires before the map is drawn</h3>
+          <p style="color:var(--cx-muted); font-size:0.9rem; margin:0;">Route classification, assistance points and testing: the decisions that cannot be added at the end.</p>
+          <p class="cx-mono" style="color:var(--cx-cyan); margin-top:1rem;">Read note &rarr;</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cx-section">
+    <div class="cx-wrap">
+      <div class="cx-cta">
+        <div>
+          <p class="cx-kicker">Start a conversation</p>
+          <h2 class="cx-h2">Have a building, a dataset or a brief that needs structure?</h2>
+          <p class="cx-lead">Send the venue type, the country and what you are trying to decide. We will reply with whether we can help, what we would need and what the first stage would deliver.</p>
+        </div>
+        <div class="cx-cta-actions">
+          <a class="cx-btn cx-btn--primary" href="contact.html">Discuss a project</a>
+          <a class="cx-btn cx-btn--ghost" href="procurement.html">Procurement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cx-footer">
+  <div class="cx-wrap">
+    <div class="cx-footer-grid">
+      <div class="cx-footer-brand">
+        <a class="cx-brand" href="index.html">
+          <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
+          <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+        </a>
+        <p>Geospatial engineering, digital twins and accessible wayfinding for buildings and complex infrastructure. Lagos, Nigeria.</p>
+        <p><a class="cx-link" href="mailto:sales@waidemobility.com">sales@waidemobility.com</a></p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="service-geospatial-engineering.html">Geospatial engineering</a></li>
+          <li><a href="service-digital-twins.html">Digital twins</a></li>
+          <li><a href="service-gis-platforms.html">GIS platforms</a></li>
+          <li><a href="service-accessible-mobility.html">Accessible mobility</a></li>
+          <li><a href="service-technical-advisory.html">Technical advisory</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="approach.html">Our approach</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="about.html">About Waide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Work with us</h2>
+        <ul>
+          <li><a href="procurement.html">Procurement &amp; partnerships</a></li>
+          <li><a href="capability-statement.html">Capability statement</a></li>
+          <li><a href="platform.html">Technology platform</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cx-footer-bottom">
+      <span>&copy; 2026 Waide Mobility. All rights reserved.</span>
+      <span>Lagos, Nigeria &middot; <a class="cx-link" href="contact.html">Project enquiries</a></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="consultancy.js" defer></script>
 </body>
 </html>

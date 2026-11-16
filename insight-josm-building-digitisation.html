@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digitising a Mall in JOSM: Indoor Mapping Workflow | Waide Mobility</title>
+  <meta name="description" content="How floor plans, imagery and field checks become a routable indoor dataset in JOSM, including tagging decisions, validation and where automation does not help.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://waidemobility.com/insight-josm-building-digitisation.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:title" content="Digitising a Mall in JOSM: Indoor Mapping Workflow | Waide Mobility">
+  <meta property="og:description" content="How floor plans, imagery and field checks become a routable indoor dataset in JOSM, including tagging decisions, validation and where automation does not help.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://waidemobility.com/insight-josm-building-digitisation.html">
+  <meta property="og:site_name" content="Waide Mobility">
+  <meta property="og:image" content="https://waidemobility.com/public/og-waide.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Digitising a Mall in JOSM: Indoor Mapping Workflow | Waide Mobility">
+  <meta name="twitter:description" content="How floor plans, imagery and field checks become a routable indoor dataset in JOSM, including tagging decisions, validation and where automation does not help.">
+  <meta name="twitter:image" content="https://waidemobility.com/public/og-waide.png">
+  <meta name="twitter:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="consultancy.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Geospatial engineering, digital twins and digital infrastructure consultancy based in Lagos, Nigeria.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Geospatial engineering","Indoor mapping","Digital twins","GIS platforms","Spatial data infrastructure","Accessible wayfinding","Building information modelling"]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://waidemobility.com/insight-josm-building-digitisation.html#webpage","url":"https://waidemobility.com/insight-josm-building-digitisation.html","name":"Digitising a Mall in JOSM: Indoor Mapping Workflow | Waide Mobility","description":"How floor plans, imagery and field checks become a routable indoor dataset in JOSM, including tagging decisions, validation and where automation does not help.","inLanguage":"en","about":{"@id":"https://waidemobility.com/#organization"},"headline":"Digitising a Mall in JOSM: Indoor Mapping Workflow | Waide Mobility","author":{"@type":"Person","name":"ThankGod Jacob Chibueze"},"publisher":{"@id":"https://waidemobility.com/#organization"},"mainEntityOfPage":"https://waidemobility.com/insight-josm-building-digitisation.html"}
+  </script>
+</head>
+<body class="cx">
+  <a class="cx-skip" href="#main-content">Skip to content</a>
+<header class="cx-header">
+  <div class="cx-wrap cx-header-inner">
+    <a class="cx-brand" href="index.html">
+      <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
+      <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+    </a>
+    <button class="cx-menu-btn" type="button" aria-expanded="false" aria-controls="cx-primary-nav" aria-label="Open navigation menu">
+      <span aria-hidden="true"></span>
+    </button>
+    <nav class="cx-nav" id="cx-primary-nav" aria-label="Primary">
+      <a href="services.html" data-nav="services">Services</a>
+      <a href="projects.html" data-nav="projects">Projects</a>
+      <a href="approach.html" data-nav="approach">Approach</a>
+      <a href="expertise.html" data-nav="expertise">Expertise</a>
+      <a href="insights.html" data-nav="insights" aria-current="page">Insights</a>
+      <a href="procurement.html" data-nav="procurement">Procurement</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a class="cx-header-cta" href="contact.html">Discuss a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="cx-hero">
+    <div class="cx-wrap cx-wrap--narrow">
+      <nav class="cx-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="insights.html">Insights</a><span aria-hidden="true">/</span><span>JOSM digitisation</span></nav>
+      <p class="cx-eyebrow">Technical note &middot; Digitisation</p>
+      <h1 class="cx-h1" style="font-size:clamp(2.1rem,4.4vw,3.4rem); max-width:26ch;">Digitising a mall in JOSM: the unglamorous part of digital twins.</h1>
+      <p class="cx-sub">The visible part of an indoor mapping project is the interface. Most of the effort sits in tracing, tagging and connecting geometry that nobody outside the project will ever look at directly.</p>
+      <p class="cx-note" style="margin-top:1.2rem;">By ThankGod Jacob Chibueze &middot; Waide Mobility</p>
+    </div>
+  </section>
+
+  <section class="cx-section">
+    <div class="cx-wrap cx-wrap--narrow">
+
+      <h2 class="cx-h2" style="font-size:1.55rem;">Why JOSM.</h2>
+      <p class="cx-body">JOSM is an OpenStreetMap editor. It is not purpose-built for indoor mapping, and it does not look like a commercial GIS. It is useful here for three reasons: it handles relations and tags well, it works offline on a local extract, and its data model is open and inspectable.</p>
+      <p class="cx-body">For an indoor project, the alternative is usually a CAD trace in a desktop GIS. That works, but the result tends to be a set of polygons with attributes, not a connected topology. JOSM pushes toward shared nodes and explicit relations, which is closer to what routing needs.</p>
+      <p class="cx-body">The cost is that JOSM will accept almost anything. Tagging consistency is a project discipline, not a feature of the editor.</p>
+
+      <h2 class="cx-h2" style="font-size:1.55rem; margin-top:2.5rem;">The workflow, in order.</h2>
+      <ol class="cx-steps" style="margin-top:1.5rem;">
+        <li class="cx-step">
+          <div>
+            <h3>Prepare a local working file</h3>
+            <p>Create a separate <code>.osm</code> file for the building. Do not mix the indoor dataset into a live map extract you also edit for other purposes.</p>
+          </div>
+          <div class="cx-step-output"><span>Check</span>File opens cleanly; no stray objects</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Set the imagery and reference frame</h3>
+            <p>Load the best available imagery and align it with the plan using identifiable control points. Record the offset and the residual error.</p>
+          </div>
+          <div class="cx-step-output"><span>Check</span>Alignment residual within the stated tolerance</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Draw the building outline and levels</h3>
+            <p>Create the outer shell, then separate level containers. Keep level names exactly as they appear on signage, with a short code for the database.</p>
+          </div>
+          <div class="cx-step-output"><span>Check</span>Every level has a name and an order</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Trace units and circulation</h3>
+            <p>Draw unit polygons and the walkable area as separate features. Share nodes at doorways so the geometry is connected, not just visually adjacent.</p>
+          </div>
+          <div class="cx-step-output"><span>Check</span>No unit overlaps a corridor polygon</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Add doors, lifts and facilities</h3>
+            <p>Place nodes for doors and vertical connectors, and tag them with access, level and step-free attributes. Add toilets, desks and assistance points.</p>
+          </div>
+          <div class="cx-step-output"><span>Check</span>Every connector links two levels or two spaces</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Build and validate the route graph</h3>
+            <p>Create the pedestrian edges over the walkable area. Run topology checks, then walk a sample of routes on site and correct the graph.</p>
+          </div>
+          <div class="cx-step-output"><span>Check</span>All destinations reachable; no wall crossings</div>
+        </li>
+      </ol>
+
+      <h2 class="cx-h2" style="font-size:1.55rem; margin-top:2.5rem;">Tagging decisions that matter.</h2>
+      <p class="cx-body">Indoor tagging has a small vocabulary and a lot of local interpretation. The project needs a written convention, applied consistently, or the dataset becomes a pile of near-duplicates.</p>
+      <div class="cx-table-wrap">
+        <table class="cx-table">
+          <thead><tr><th scope="col">Feature</th><th scope="col">Useful attributes</th><th scope="col">Common error</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Unit</th><td>Name, category, level, reference, access</td><td>Using the tenant name as the only identifier</td></tr>
+            <tr><th scope="row">Corridor</th><td>Level, width, access, surface</td><td>Drawing corridors as unconnected polygons</td></tr>
+            <tr><th scope="row">Door</th><td>Access, automatic, width, step-free</td><td>Placing doors without connecting the shared node</td></tr>
+            <tr><th scope="row">Lift</th><td>Levels served, capacity, access, status</td><td>Modelling a lift as a single point with no level links</td></tr>
+            <tr><th scope="row">Stairs</th><td>Levels, direction, step-free = no</td><td>Forgetting to exclude stairs from the accessible graph</td></tr>
+            <tr><th scope="row">Facility</th><td>Type, level, access, opening hours</td><td>Mixing public and staff-only facilities in one category</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="cx-h2" style="font-size:1.55rem; margin-top:2.5rem;">Where automation helps, and where it does not.</h2>
+      <p class="cx-body">Automated extraction can find building outlines, car park bays and some repeated features from imagery. It is less reliable for indoor units, door access rules and level connectors, because those depend on information that is not visible in a photograph.</p>
+      <p class="cx-body">In this project, parking geometry and building features were digitised manually, with field verification. Automated detection was not used and is not credited with the result. Manual tracing is slower, but it produces geometry that can be explained and corrected.</p>
+      <div class="cx-callout">
+        <p><strong>Do not overstate the method.</strong> If a feature was traced by hand, say so. If a model was used to suggest a boundary that a person then accepted, say that instead. The provenance of each feature is part of the dataset's quality.</p>
+      </div>
+
+      <h2 class="cx-h2" style="font-size:1.55rem; margin-top:2.5rem;">Validation is a site activity.</h2>
+      <p class="cx-body">Desktop validation catches geometry errors. It does not catch a door that is permanently locked, a lift that serves only the car park, or a corridor that is used for storage. Those are discovered by walking the building with the venue team.</p>
+      <p class="cx-body">A practical field check covers entrances, level connectors, the route from parking to the retail floor, and at least one destination of each type. Findings are logged with a photograph where permitted and a correction against the feature identifier.</p>
+
+      <h2 class="cx-h2" style="font-size:1.55rem; margin-top:2.5rem;">What this produces.</h2>
+      <p class="cx-body">The output is not a map image. It is an editable dataset with a schema, a tag convention, a route graph and a validation record. That is the asset a client can maintain, extend and export.</p>
+      <p class="cx-body">It is also the part that most digital twin marketing skips. A rendered model is easy to demonstrate. A routable, validated, maintainable indoor dataset is the work.</p>
+
+    </div>
+  </section>
+
+  <section class="cx-section cx-section--alt">
+    <div class="cx-wrap cx-wrap--narrow">
+      <p class="cx-kicker">Related</p>
+      <ul class="cx-list">
+        <li><a href="insight-indoor-spatial-data-model.html">What a usable indoor spatial data model contains</a></li>
+        <li><a href="service-geospatial-engineering.html">Service: geospatial engineering and mapping</a></li>
+        <li><a href="service-digital-twins.html">Service: digital twins and built-asset information</a></li>
+        <li><a href="project-novare-lekki.html">Project: Novare Lekki Mall</a></li>
+      </ul>
+      <div class="cx-hero-actions">
+        <a class="cx-btn cx-btn--primary" href="contact.html">Discuss a mapping project</a>
+        <a class="cx-btn cx-btn--ghost" href="insights.html">All insights</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cx-footer">
+  <div class="cx-wrap">
+    <div class="cx-footer-grid">
+      <div class="cx-footer-brand">
+        <a class="cx-brand" href="index.html">
+          <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
+          <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+        </a>
+        <p>Geospatial engineering, digital twins and accessible wayfinding for buildings and complex infrastructure. Lagos, Nigeria.</p>
+        <p><a class="cx-link" href="mailto:sales@waidemobility.com">sales@waidemobility.com</a></p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="service-geospatial-engineering.html">Geospatial engineering</a></li>
+          <li><a href="service-digital-twins.html">Digital twins</a></li>
+          <li><a href="service-gis-platforms.html">GIS platforms</a></li>
+          <li><a href="service-accessible-mobility.html">Accessible mobility</a></li>
+          <li><a href="service-technical-advisory.html">Technical advisory</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="approach.html">Our approach</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="about.html">About Waide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Work with us</h2>
+        <ul>
+          <li><a href="procurement.html">Procurement &amp; partnerships</a></li>
+          <li><a href="capability-statement.html">Capability statement</a></li>
+          <li><a href="platform.html">Technology platform</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cx-footer-bottom">
+      <span>&copy; 2026 Waide Mobility. All rights reserved.</span>
+      <span>Lagos, Nigeria &middot; <a class="cx-link" href="contact.html">Project enquiries</a></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="consultancy.js" defer></script>
+</body>
+</html>

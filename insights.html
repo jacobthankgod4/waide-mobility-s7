@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technical Insights on Indoor GIS & Digital Twins | Waide Mobility</title>
+  <meta name="description" content="Technical notes on indoor spatial data models, JOSM building digitisation and accessible wayfinding requirements, drawn from current Waide project work.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://waidemobility.com/insights.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:title" content="Technical Insights on Indoor GIS & Digital Twins | Waide Mobility">
+  <meta property="og:description" content="Technical notes on indoor spatial data models, JOSM building digitisation and accessible wayfinding requirements, drawn from current Waide project work.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://waidemobility.com/insights.html">
+  <meta property="og:site_name" content="Waide Mobility">
+  <meta property="og:image" content="https://waidemobility.com/public/og-waide.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Technical Insights on Indoor GIS & Digital Twins | Waide Mobility">
+  <meta name="twitter:description" content="Technical notes on indoor spatial data models, JOSM building digitisation and accessible wayfinding requirements, drawn from current Waide project work.">
+  <meta name="twitter:image" content="https://waidemobility.com/public/og-waide.png">
+  <meta name="twitter:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="consultancy.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Geospatial engineering, digital twins and digital infrastructure consultancy based in Lagos, Nigeria.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Geospatial engineering","Indoor mapping","Digital twins","GIS platforms","Spatial data infrastructure","Accessible wayfinding","Building information modelling"]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://waidemobility.com/insights.html#webpage","url":"https://waidemobility.com/insights.html","name":"Technical Insights on Indoor GIS \u0026 Digital Twins | Waide Mobility","description":"Technical notes on indoor spatial data models, JOSM building digitisation and accessible wayfinding requirements, drawn from current Waide project work.","inLanguage":"en","about":{"@id":"https://waidemobility.com/#organization"}}
+  </script>
+</head>
+<body class="cx">
+  <a class="cx-skip" href="#main-content">Skip to content</a>
+<header class="cx-header">
+  <div class="cx-wrap cx-header-inner">
+    <a class="cx-brand" href="index.html">
+      <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
+      <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+    </a>
+    <button class="cx-menu-btn" type="button" aria-expanded="false" aria-controls="cx-primary-nav" aria-label="Open navigation menu">
+      <span aria-hidden="true"></span>
+    </button>
+    <nav class="cx-nav" id="cx-primary-nav" aria-label="Primary">
+      <a href="services.html" data-nav="services">Services</a>
+      <a href="projects.html" data-nav="projects">Projects</a>
+      <a href="approach.html" data-nav="approach">Approach</a>
+      <a href="expertise.html" data-nav="expertise">Expertise</a>
+      <a href="insights.html" data-nav="insights" aria-current="page">Insights</a>
+      <a href="procurement.html" data-nav="procurement">Procurement</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a class="cx-header-cta" href="contact.html">Discuss a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="cx-hero">
+    <div class="cx-wrap">
+      <nav class="cx-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Insights</span></nav>
+      <p class="cx-eyebrow">Technical notes</p>
+      <h1 class="cx-h1 cx-h1--wide">Working notes on spatial systems.</h1>
+      <p class="cx-sub">Short technical write-ups drawn from current work: indoor data models, digitisation methods and accessible wayfinding. No listicles, no invented research, no publication dates we cannot evidence.</p>
+    </div>
+  </section>
+
+  <section class="cx-section">
+    <div class="cx-wrap">
+      <h2 class="cx-visually-hidden">Technical notes</h2>
+      <div class="cx-service-list">
+
+        <a class="cx-service-row" href="insight-indoor-spatial-data-model.html">
+          <span class="cx-service-num">01</span>
+          <div>
+            <p class="cx-kicker">Indoor GIS</p>
+            <h3>What a usable indoor spatial data model contains</h3>
+            <p>Levels, spaces, connections and route edges: the four layers a navigation system actually needs, and the schema decisions that determine whether it can be maintained.</p>
+          </div>
+          <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+
+        <a class="cx-service-row" href="insight-josm-building-digitisation.html">
+          <span class="cx-service-num">02</span>
+          <div>
+            <p class="cx-kicker">Digitisation</p>
+            <h3>Digitising a mall in JOSM: the unglamorous part of digital twins</h3>
+            <p>How floor plans, imagery and field checks become a clean, routable indoor dataset, and where manual digitisation still beats automation.</p>
+          </div>
+          <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+
+        <a class="cx-service-row" href="insight-accessible-wayfinding.html">
+          <span class="cx-service-num">03</span>
+          <div>
+            <p class="cx-kicker">Accessibility</p>
+            <h3>What accessible wayfinding requires before the map is drawn</h3>
+            <p>Route classification, assistance points and interface testing: the decisions that cannot be added at the end of a wayfinding project.</p>
+          </div>
+          <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cx-section cx-section--alt">
+    <div class="cx-wrap cx-editorial">
+      <div>
+        <p class="cx-kicker">Editorial policy</p>
+        <h2 class="cx-h2">Why there are only three notes.</h2>
+      </div>
+      <div>
+        <p class="cx-lead">We publish when there is something specific to say. A technical note is written by the person who did the work, reviewed against the project record, and left unpublished if the evidence is not there.</p>
+        <ul class="cx-list">
+          <li>No generated volume to fill a blog index.</li>
+          <li>No invented authors, dates or citations.</li>
+          <li>No client material published without permission.</li>
+          <li>No claims that a pilot result has been measured when it has not.</li>
+        </ul>
+        <p class="cx-note" style="margin-top:1rem;">Where a note refers to the Novare Lekki pilot, it describes method and scope. Operational outcomes from that pilot have not been published.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cx-section">
+    <div class="cx-wrap">
+      <div class="cx-cta">
+        <div>
+          <p class="cx-kicker">Stay in touch</p>
+          <h2 class="cx-h2">Working on a spatial problem worth writing about?</h2>
+          <p class="cx-lead">We are interested in projects where the data model is the hard part: multi-level venues, mixed indoor and outdoor networks, accessible routing and long-lived asset information.</p>
+        </div>
+        <div class="cx-cta-actions">
+          <a class="cx-btn cx-btn--primary" href="contact.html">Discuss a project</a>
+          <a class="cx-btn cx-btn--ghost" href="services.html">Our services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cx-footer">
+  <div class="cx-wrap">
+    <div class="cx-footer-grid">
+      <div class="cx-footer-brand">
+        <a class="cx-brand" href="index.html">
+          <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
+          <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+        </a>
+        <p>Geospatial engineering, digital twins and accessible wayfinding for buildings and complex infrastructure. Lagos, Nigeria.</p>
+        <p><a class="cx-link" href="mailto:sales@waidemobility.com">sales@waidemobility.com</a></p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="service-geospatial-engineering.html">Geospatial engineering</a></li>
+          <li><a href="service-digital-twins.html">Digital twins</a></li>
+          <li><a href="service-gis-platforms.html">GIS platforms</a></li>
+          <li><a href="service-accessible-mobility.html">Accessible mobility</a></li>
+          <li><a href="service-technical-advisory.html">Technical advisory</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="approach.html">Our approach</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="about.html">About Waide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Work with us</h2>
+        <ul>
+          <li><a href="procurement.html">Procurement &amp; partnerships</a></li>
+          <li><a href="capability-statement.html">Capability statement</a></li>
+          <li><a href="platform.html">Technology platform</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cx-footer-bottom">
+      <span>&copy; 2026 Waide Mobility. All rights reserved.</span>
+      <span>Lagos, Nigeria &middot; <a class="cx-link" href="contact.html">Project enquiries</a></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="consultancy.js" defer></script>
+</body>
+</html>
