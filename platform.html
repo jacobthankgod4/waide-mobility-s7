@@ -3,317 +3,592 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platform - Waide Mobility</title>
+    <meta name="description" content="How the Waide platform works: how the map is built from floor plans, how routes are calculated, what the dashboard measures, and what the platform does not do.">
+    <meta name="keywords" content="solutions, smart wayfinding, indoor mapping, geoconquesting, proximity advertising, smart building integration">
+    <title>Platform Overview - Waide Mobility</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+    <link rel="manifest" href="public/site.webmanifest">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/147004606.js"></script>
+    <!-- End of HubSpot Embed Code -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does Waide need to start mapping a venue?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A current floor plan, a tenant or department list and a short walkthrough. If the plans are out of date, Waide surveys the space first." }
+        },
+        {
+          "@type": "Question",
+          "name": "How are routes updated when a store moves?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The venue tells Waide, or the tenancy data changes, and the map is updated. Directory and tenant changes are included for the term of the agreement; a physical renovation is re-mapped as a separate job." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the visitor need to share their location?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The QR scan opens a map with a search box. Location permission is only relevant if a venue adds indoor positioning later." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is venue data stored?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In the region agreed in the contract. The venue can request an export of its own data at any time, and retention is set in the agreement." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a venue see the measurements before committing?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Six metrics are fixed in the pilot scope, with baselines and reporting dates, before any work starts." }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="min-h-screen bg-black">
         <!-- Navigation -->
-        <nav class="nav">
-            <a href="index.html" class="nav-brand">
-                <div class="logo">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10V6c0-2-2-4-4-4H4c-2 0-4 2-4 4v10c0 1.1.9 2 2 2h2"/>
-                        <circle cx="7" cy="17" r="2"/>
-                        <path d="M9 17h6"/>
-                        <circle cx="17" cy="17" r="2"/>
-                    </svg>
-                </div>
-                <span class="brand-text">Waide Mobility</span>
-            </a>
+        <nav class="nav sticky">
+            <div class="nav-brand" style="display: flex; align-items: center; gap: 8px;">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+                    <div class="logo" style="display: flex; align-items: center;">
+                        <img src="public/waide-logo.png" alt="Waide Mobility Logo" width="30" height="30" loading="lazy" style="display: block;" />
+                    </div>
+                    <span class="brand-text" style="line-height: 1; font-weight: 600;">Waide Mobility</span>
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="solutions.html" class="nav-link">Solutions</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="pricing.html" class="nav-link">Pricing</a>
+                <div class="nav-item">
+                    <a href="use-cases.html" class="nav-link">Use Cases</a>
+                    <button class="mobile-dropdown-toggle" style="display: none;">
+                        Use Cases
+                        <span>Ã¢â€“Â¼</span>
+                    </button>
+                    <div class="mega-dropdown">
+                        <div class="mega-dropdown-content">
+                            <div class="dropdown-section">
+                                <p class="dropdown-heading">Ã°Å¸ÂÂ¥ Healthcare & Public</p>
+                                <div class="dropdown-links">
+                                    <a href="blog/hospital-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸ÂÂ¥</span>
+                                        Hospital Navigation
+                                    </a>
+                                    <a href="blog/library-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸â€œÅ¡</span>
+                                        Library Navigation
+                                    </a>
+                                    <a href="blog/museum-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Ââ€ºÃ¯Â¸Â</span>
+                                        Museum Navigation
+                                    </a>
+                                    <a href="blog/university-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Å½â€œ</span>
+                                        University Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <p class="dropdown-heading">Ã°Å¸ÂÂ¢ Commercial & Retail</p>
+                                <div class="dropdown-links">
+                                    <a href="blog/mall-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸â€ºÂÃ¯Â¸Â</span>
+                                        Mall Navigation
+                                    </a>
+                                    <a href="blog/office-building-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸ÂÂ¢</span>
+                                        Office Building Navigation
+                                    </a>
+                                    <a href="blog/hotel-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸ÂÂ¨</span>
+                                        Hotel Navigation
+                                    </a>
+                                    <a href="blog/casino-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Å½Â°</span>
+                                        Casino Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <p class="dropdown-heading">Ã°Å¸Å¡â€¡ Transportation & Logistics</p>
+                                <div class="dropdown-links">
+                                    <a href="blog/airport-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã¢Å“Ë†Ã¯Â¸Â</span>
+                                        Airport Navigation
+                                    </a>
+                                    <a href="blog/train-station-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Å¡â€š</span>
+                                        Train Station Navigation
+                                    </a>
+                                    <a href="blog/subway-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Å¡â€¡</span>
+                                        Subway Navigation
+                                    </a>
+                                    <a href="blog/warehouse-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸â€œÂ¦</span>
+                                        Warehouse Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-dropdown-content" style="margin-top: 1rem;">
+                            <div class="dropdown-section">
+                                <p class="dropdown-heading">Ã°Å¸Å½Â¯ Entertainment & Events</p>
+                                <div class="dropdown-links">
+                                    <a href="blog/sports-venue-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã¢Å¡Â½</span>
+                                        Sports Venue Navigation
+                                    </a>
+                                    <a href="blog/theme-park-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Å½Â¢</span>
+                                        Theme Park Navigation
+                                    </a>
+                                    <a href="blog/convention-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸ÂÂ¢</span>
+                                        Convention Center Navigation
+                                    </a>
+                                    <a href="blog/cruise-ship-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Å¡Â¢</span>
+                                        Cruise Ship Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <p class="dropdown-heading">Ã°Å¸ÂÂ­ Industrial & Tech</p>
+                                <div class="dropdown-links">
+                                    <a href="blog/manufacturing-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸ÂÂ­</span>
+                                        Manufacturing Navigation
+                                    </a>
+                                    <a href="blog/data-center-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸â€™Â¾</span>
+                                        Data Center Navigation
+                                    </a>
+                                    <a href="blog/parking-garage-navigation.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Å¡â€”</span>
+                                        Parking Garage Navigation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="dropdown-section">
+                                <p class="dropdown-heading">Ã°Å¸â€Â§ Solutions</p>
+                                <div class="dropdown-links">
+                                    <a href="smart-building-integration.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Ââ€”Ã¯Â¸Â</span>
+                                        Smart Building Integration
+                                    </a>
+                                    <a href="indoor-proximity-advertising.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸â€œÂ±</span>
+                                        Proximity Advertising
+                                    </a>
+                                    <a href="geoconquesting.html" class="dropdown-link">
+                                        <span class="dropdown-link-icon">Ã°Å¸Å½Â¯</span>
+                                        Geoconquesting
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <div class="dropdown-section">
+                            <p class="dropdown-heading">Ã°Å¸ÂÂ¥ Healthcare & Public</p>
+                            <div class="dropdown-links">
+                                <a href="blog/hospital-navigation.html" class="dropdown-link">Ã°Å¸ÂÂ¥ Hospital Navigation</a>
+                                <a href="blog/library-navigation.html" class="dropdown-link">Ã°Å¸â€œÅ¡ Library Navigation</a>
+                                <a href="blog/museum-navigation.html" class="dropdown-link">Ã°Å¸Ââ€ºÃ¯Â¸Â Museum Navigation</a>
+                                <a href="blog/university-navigation.html" class="dropdown-link">Ã°Å¸Å½â€œ University Navigation</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <p class="dropdown-heading">Ã°Å¸ÂÂ¢ Commercial & Retail</p>
+                            <div class="dropdown-links">
+                                <a href="blog/mall-navigation.html" class="dropdown-link">Ã°Å¸â€ºÂÃ¯Â¸Â Mall Navigation</a>
+                                <a href="blog/office-building-navigation.html" class="dropdown-link">Ã°Å¸ÂÂ¢ Office Building Navigation</a>
+                                <a href="blog/hotel-navigation.html" class="dropdown-link">Ã°Å¸ÂÂ¨ Hotel Navigation</a>
+                                <a href="blog/casino-navigation.html" class="dropdown-link">Ã°Å¸Å½Â° Casino Navigation</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <p class="dropdown-heading">Ã°Å¸Å¡â€¡ Transportation & Logistics</p>
+                            <div class="dropdown-links">
+                                <a href="blog/airport-navigation.html" class="dropdown-link">Ã¢Å“Ë†Ã¯Â¸Â Airport Navigation</a>
+                                <a href="blog/train-station-navigation.html" class="dropdown-link">Ã°Å¸Å¡â€š Train Station Navigation</a>
+                                <a href="blog/subway-navigation.html" class="dropdown-link">Ã°Å¸Å¡â€¡ Subway Navigation</a>
+                                <a href="blog/warehouse-navigation.html" class="dropdown-link">Ã°Å¸â€œÂ¦ Warehouse Navigation</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <p class="dropdown-heading">Ã°Å¸Å½Â¯ Entertainment & Events</p>
+                            <div class="dropdown-links">
+                                <a href="blog/sports-venue-navigation.html" class="dropdown-link">Ã¢Å¡Â½ Sports Venue Navigation</a>
+                                <a href="blog/theme-park-navigation.html" class="dropdown-link">Ã°Å¸Å½Â¢ Theme Park Navigation</a>
+                                <a href="blog/convention-center-navigation.html" class="dropdown-link">Ã°Å¸ÂÂ¢ Convention Center Navigation</a>
+                                <a href="blog/cruise-ship-navigation.html" class="dropdown-link">Ã°Å¸Å¡Â¢ Cruise Ship Navigation</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <p class="dropdown-heading">Ã°Å¸ÂÂ­ Industrial & Tech</p>
+                            <div class="dropdown-links">
+                                <a href="blog/manufacturing-navigation.html" class="dropdown-link">Ã°Å¸ÂÂ­ Manufacturing Navigation</a>
+                                <a href="blog/data-center-navigation.html" class="dropdown-link">Ã°Å¸â€™Â¾ Data Center Navigation</a>
+                                <a href="blog/parking-garage-navigation.html" class="dropdown-link">Ã°Å¸Å¡â€” Parking Garage Navigation</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <p class="dropdown-heading">Ã°Å¸â€Â§ Solutions</p>
+                            <div class="dropdown-links">
+                                <a href="smart-building-integration.html" class="dropdown-link">Ã°Å¸Ââ€”Ã¯Â¸Â Smart Building Integration</a>
+                                <a href="indoor-proximity-advertising.html" class="dropdown-link">Ã°Å¸â€œÂ± Proximity Advertising</a>
+                                <a href="geoconquesting.html" class="dropdown-link">Ã°Å¸Å½Â¯ Geoconquesting</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="solutions.html" class="nav-link active">Solutions</a>
+                <a href="about.html" id="about" class="nav-link">About Us</a>
+                <a href="blog/index.html" class="nav-link">Blog</a>
+                <a href="pricing.html" id="pricing" class="nav-link">Pricing</a>
+                <button class="btn btn-primary" onclick="window.location.href='contact.html'">Request a walkthrough</button>
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16,18 22,12 16,6"/>
-                            <polyline points="8,6 2,12 8,18"/>
-                        </svg>
-                        Developer Platform
-                    </div>
-                    <h1 class="hero-title">
-                        Build the Future of
-                        <br>
-                        <span class="gradient-text">Mobility</span>
-                    </h1>
-                    <p class="hero-description">
-                        Comprehensive APIs, SDKs, and tools to integrate smart mobility solutions into your applications. From indoor navigation to fleet management, everything you need is here.
+        
+        
+        <main id="main-content">
+
+            <header class="pg-hero">
+                <div class="pg-wrap">
+                    <p class="pg-kicker">Platform</p>
+                    <h1 class="pg-h1 pg-h1--wide">How the map is built, and kept current.</h1>
+                    <p class="pg-sub">
+                        A short technical description of what sits under the visitor experience: the map, the routing, the dashboard and the data rules. No black box.
                     </p>
-                    <div class="hero-buttons">
-                        <!-- Updated button text from "Get API Key" to "Get in Touch" -->
-                        <button class="btn btn-primary btn-large">
-                            Get in Touch
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12,5 19,12 12,19"/>
-                            </svg>
-                        </button>
-                        <button class="btn btn-outline btn-large">View Documentation</button>
+                    <div class="pg-actions">
+                        <a href="contact.html" class="btn btn-primary btn-large">Request a 20-minute walkthrough</a>
+                        <a href="evidence.html" class="btn btn-outline btn-large">Read the evidence register</a>
+                    </div>
+                    <div class="pg-facts">
+                        <div class="pg-fact"><strong>3 levels</strong><span>mapped at Novare Lekki</span></div>
+                        <div class="pg-fact"><strong>900</strong><span>shelves indexed</span></div>
+                        <div class="pg-fact"><strong>6</strong><span>pilot metrics</span></div>
+                        <div class="pg-fact"><strong>0</strong><span>apps to install</span></div>
                     </div>
                 </div>
+            </header>
 
-                <!-- Added Interactive Map Section -->
-                <div class="map-section">
-                    <!-- Added partnership text above the map iframe -->
-                    <div class="partnership-text">
-                        <p>In partnership with Situm Maps</p>
+            <section class="pg-section pg-section--alt">
+                <div class="pg-wrap">
+                    <p class="pg-kicker">The map</p>
+                    <h2 class="pg-h2">From floor plan to searchable twin.</h2>
+                    <p class="pg-lead">
+                        The map is built once, from the plans the venue already has, and updated when the building changes. Everything else runs on top of it.
+                    </p>
+
+                    <div class="pg-grid">
+                        <article class="pg-card">
+                            <h3>Inputs</h3>
+                            <ul class="pg-list">
+                                <li>Floor plans in PDF, CAD or image format</li>
+                                <li>Tenant or department list with names and units</li>
+                                <li>Shelf and product data where product search is in scope</li>
+                                <li>A walkthrough with someone who knows the building</li>
+                            </ul>
+                        </article>
+                        <article class="pg-card">
+                            <h3>What gets drawn</h3>
+                            <ul class="pg-list">
+                                <li>Every public level, including parking</li>
+                                <li>Units, entrances, lifts, stairs and facilities</li>
+                                <li>Walkable paths between destinations</li>
+                                <li>Step-free connections, marked separately</li>
+                            </ul>
+                        </article>
+                        <article class="pg-card">
+                            <h3>What gets indexed</h3>
+                            <ul class="pg-list">
+                                <li>Store, department, counter and facility names</li>
+                                <li>Product and category names, where supplied</li>
+                                <li>Synonyms and local-language terms</li>
+                                <li>Opening hours and temporary closures</li>
+                            </ul>
+                        </article>
                     </div>
-                    <div class="map-header">
-                        <h2>Waide Mobility in partnership with Situm</h2>
-                        <p>Experience our indoor positioning technology in action with real-time interactive mapping</p>
+
+                    <p class="pg-note">
+                        If the plans are out of date, we survey the space first. That is a separate, quoted piece of work, and we say so before starting.
+                    </p>
+                </div>
+            </section>
+
+            <section class="pg-section">
+                <div class="pg-wrap">
+                    <p class="pg-kicker">The route</p>
+                    <h2 class="pg-h2">How a search becomes a route.</h2>
+                    <ol class="pg-step-list">
+                        <li class="pg-step">
+                            <h3>The visitor scans a QR code</h3>
+                            <p>The code opens the venue in the phone browser. There is no app, no login and no location permission required to start.</p>
+                        </li>
+                        <li class="pg-step">
+                            <h3>They search for a destination</h3>
+                            <p>Product, store, department, facility or exit. The search index returns the closest match and shows where it sits on the map.</p>
+                        </li>
+                        <li class="pg-step">
+                            <h3>The route is built on the path graph</h3>
+                            <p>Routes follow walkable paths, change level at lifts or stairs, and avoid closures marked by the venue. Step-free routes use lifts and ramps only.</p>
+                        </li>
+                        <li class="pg-step">
+                            <h3>The visit is recorded, without a profile</h3>
+                            <p>The search, the route and whether it was completed are logged against the venue, not against a named person.</p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="pg-section pg-section--alt">
+                <div class="pg-wrap">
+                    <p class="pg-kicker">The dashboard</p>
+                    <h2 class="pg-h2">The six things a pilot measures.</h2>
+                    <p class="pg-lead">
+                        These are the definitions fixed before a pilot starts, so the result cannot be chosen after the fact. The same six appear in the Novare Lekki measurement plan.
+                    </p>
+
+                    <div class="pg-table-wrap">
+                        <table class="pg-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Metric</th>
+                                    <th scope="col">Definition</th>
+                                    <th scope="col">What it answers</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Search completion</th>
+                                    <td>Share of searches that end with the visitor reaching the destination</td>
+                                    <td>Does the map get people there?</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Drop-off zone</th>
+                                    <td>The zone where abandoned routes cluster</td>
+                                    <td>Where does the building lose people?</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Top unmet searches</th>
+                                    <td>Searches with no match or no completed route, by volume</td>
+                                    <td>What do visitors want that the venue does not have, or cannot name?</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">QR scan to route</th>
+                                    <td>Share of scans that start a route in the same session</td>
+                                    <td>Is the entry point working?</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Zone dwell change</th>
+                                    <td>Time spent in a zone, compared with the same period before launch</td>
+                                    <td>Did movement patterns change?</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Route completion time</th>
+                                    <td>Median time from route start to arrival, for the same destination type</td>
+                                    <td>Are routes getting shorter or longer?</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://map-viewer.situm.com/" 
-                            width="100%" 
-                            height="600" 
-                            frameborder="0" 
-                            allowfullscreen>
-                        </iframe>
-                        <div class="map-logo-overlay">
-                            <div class="logo">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10V6c0-2-2-4-4-4H4c-2 0-4 2-4 4v10c0 1.1.9 2 2 2h2"/>
-                                    <circle cx="7" cy="17" r="2"/>
-                                    <path d="M9 17h6"/>
-                                    <circle cx="17" cy="17" r="2"/>
-                                </svg>
-                            </div>
-                            <span class="brand-text">Waide Mobility</span>
-                        </div>
-                        <!-- Added fullscreen overlay to cover Situm logo -->
-                        <div class="map-logo-overlay-fullscreen">
-                            <div class="logo">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10V6c0-2-2-4-4-4H4c-2 0-4 2-4 4v10c0 1.1.9 2 2 2h2"/>
-                                    <circle cx="7" cy="17" r="2"/>
-                                    <path d="M9 17h6"/>
-                                    <circle cx="17" cy="17" r="2"/>
-                                </svg>
-                            </div>
-                            <span class="brand-text">Waide Mobility</span>
+
+                    <p class="pg-note">
+                        Reporting is weekly during a pilot. Baselines are captured before launch. No result is published without a sample size and the period it covers.
+                    </p>
+                </div>
+            </section>
+
+            <section class="pg-section">
+                <div class="pg-wrap">
+                    <p class="pg-kicker">Data</p>
+                    <h2 class="pg-h2">What we collect, and what we do not.</h2>
+                    <div class="pg-grid pg-grid--two">
+                        <article class="pg-card">
+                            <h3>Collected</h3>
+                            <ul class="pg-list">
+                                <li>Search terms entered in the venue</li>
+                                <li>Routes started, completed or abandoned</li>
+                                <li>Zone-level movement derived from routes</li>
+                                <li>Device type, for compatibility testing</li>
+                            </ul>
+                        </article>
+                        <article class="pg-card">
+                            <h3>Not collected</h3>
+                            <ul class="pg-list">
+                                <li>Names, phone numbers or email addresses</li>
+                                <li>Persistent profiles across visits</li>
+                                <li>Precise location outside the venue</li>
+                                <li>Payment or loyalty data</li>
+                            </ul>
+                        </article>
+                    </div>
+                    <p class="pg-note">
+                        The venue owns the data collected in its building. Waide removes personal identifiers, does not sell personal data, and agrees retention terms in the deployment contract. Security and data-handling documentation is available during procurement.
+                    </p>
+                </div>
+            </section>
+
+            <section class="pg-section pg-section--alt">
+                <div class="pg-wrap">
+                    <p class="pg-kicker">Limits</p>
+                    <h2 class="pg-h2">What the platform does not do.</h2>
+                    <p class="pg-lead">
+                        A shorter list than most vendors publish, and the reason the rest of this site can be specific.
+                    </p>
+                    <div class="pg-table-wrap">
+                        <table class="pg-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Not offered today</th>
+                                    <th scope="col">What that means</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Hardware</th>
+                                    <td>No beacons, kiosks or sensors are required, and none are included. If a venue wants them, they are scoped separately.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Security and CCTV integration</th>
+                                    <td>Incident pinning, camera feeds and guard dispatch are not part of the product.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">POS and ERP integration</th>
+                                    <td>Reports are delivered from Waide and can be exported. Direct system integration is not included today.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Advertising</th>
+                                    <td>The map does not serve ads or sell placements.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Accessibility certification</th>
+                                    <td>Accessible routes are mapped and tested in-house. No third-party certification is claimed.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pg-section">
+                <div class="pg-wrap">
+                    <p class="pg-kicker">Questions</p>
+                    <h2 class="pg-h2">Common questions</h2>
+                    <div class="pg-faq">
+                        <details>
+                            <summary>What do you need to start mapping?</summary>
+                            <p>A current floor plan, a tenant or department list and a short walkthrough. If the plans are out of date, we survey the space first.</p>
+                        </details>
+                        <details>
+                            <summary>How are routes updated when a store moves?</summary>
+                            <p>The venue tells us, or the tenancy data changes, and the map is updated. Directory and tenant changes are included for the term of the agreement; a physical renovation is re-mapped as a separate job.</p>
+                        </details>
+                        <details>
+                            <summary>Does the visitor need to share their location?</summary>
+                            <p>No. The QR scan opens a map with a search box. Location permission is only relevant if a venue adds indoor positioning later.</p>
+                        </details>
+                        <details>
+                            <summary>Can you prove the routes are correct?</summary>
+                            <p>Routes are walked on site before launch. During a pilot, route completion and drop-off by zone show where the map is failing, and the map is corrected.</p>
+                        </details>
+                        <details>
+                            <summary>Where is the data stored?</summary>
+                            <p>In the region agreed in the contract. The venue can request an export of its own data at any time, and retention is set in the agreement.</p>
+                        </details>
+                        <details>
+                            <summary>Can we see the measurements before we commit?</summary>
+                            <p>Yes. The six metrics above are fixed in the pilot scope, with baselines and reporting dates, before any work starts.</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pg-section pg-section--alt">
+                <div class="pg-wrap">
+                    <div class="pg-cta">
+                        <h2 class="pg-h2">Ask us the awkward question.</h2>
+                        <p class="pg-lead">
+                            If something on this page is unclear, or you want the definition behind a number, ask. We would rather answer it now than have it surface in procurement.
+                        </p>
+                        <div class="pg-actions">
+                            <a href="contact.html" class="btn btn-primary btn-large">Request a 20-minute walkthrough</a>
+                            <a href="pricing.html" class="btn btn-outline btn-large">See pricing</a>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Platform Features -->
-                <div class="platform-features">
-                    <div class="platform-card">
-                        <div class="platform-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="16,18 22,12 16,6"/>
-                                <polyline points="8,6 2,12 8,18"/>
-                            </svg>
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <img src="public/waide-logo.png" alt="Waide Mobility" width="30" height="30" loading="lazy">
                         </div>
-                        <div class="platform-content">
-                            <h3>REST APIs</h3>
-                            <p>Comprehensive RESTful APIs for all mobility services with real-time data access.</p>
-                            <ul>
-                                <li>• Real-time location tracking</li>
-                                <li>• Route optimization</li>
-                                <li>• Fleet management</li>
-                            </ul>
-                        </div>
+                        <span>Waide Mobility</span>
                     </div>
-
-                    <div class="platform-card">
-                        <div class="platform-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
-                            </svg>
-                        </div>
-                        <div class="platform-content">
-                            <h3>Mobile SDKs</h3>
-                            <p>Native iOS and Android SDKs for seamless mobile integration.</p>
-                            <ul>
-                                <li>• iOS Swift SDK</li>
-                                <li>• Android Kotlin SDK</li>
-                                <li>• React Native support</li>
-                            </ul>
-                        </div>
+                    <p>Indoor maps, visitor navigation and floor-level reporting for large buildings in Africa.</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Request a walkthrough</a>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <p class="link-group-title">Platform</p>
+                        <ul>
+                            <li><a href="solutions.html">Solutions</a></li>
+                            <li><a href="use-cases.html">Industries</a></li>
+                            <li><a href="platform.html">How the map is built</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="evidence.html">Evidence register</a></li>
+                        </ul>
                     </div>
-
-                    <div class="platform-card">
-                        <div class="platform-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-                            </svg>
-                        </div>
-                        <div class="platform-content">
-                            <h3>Cloud Infrastructure</h3>
-                            <p>Scalable cloud services with global edge computing capabilities.</p>
-                            <ul>
-                                <li>• 99.9% uptime SLA</li>
-                                <li>• Global CDN</li>
-                                <li>• Auto-scaling</li>
-                            </ul>
-                        </div>
+                    <div class="link-group">
+                        <p class="link-group-title">Company</p>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="case-study-novare-lekki.html">Novare Lekki pilot</a></li>
+                            <li><a href="partner-form.html">Partner with us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
                     </div>
                 </div>
-
-                <!-- Pricing Section -->
-                <section id="pricing" class="pricing-section">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2>Indoor Space Solutions</h2>
-                            <p>Transform your indoor spaces with our smart navigation technology. Choose monthly or yearly plans.</p>
-                            <div class="pricing-toggle">
-                                <span>Monthly</span>
-                                <button class="toggle-switch" id="pricingToggle">
-                                    <span class="toggle-slider"></span>
-                                </button>
-                                <span>Yearly <span class="discount">Save 20%</span></span>
-                            </div>
-                        </div>
-
-                        <div class="pricing-grid">
-                            <div class="pricing-card">
-                                <div class="pricing-header">
-                                    <h3>Small Spaces</h3>
-                                    <div class="price">
-                                        <span class="currency">$</span>
-                                        <!-- Updated pricing to $1,500 monthly and $13,999 yearly -->
-                                        <span class="amount" data-monthly="1500" data-yearly="13999">1500</span>
-                                        <span class="period">/month</span>
-                                    </div>
-                                    <p>Perfect for retail stores & small offices</p>
-                                </div>
-                                <ul class="features-list">
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Up to 5,000 sq ft coverage
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Basic indoor positioning
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Mobile app integration
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        24/7 support
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary" onclick="window.location.href='contact.html?plan=small'">Get Started</button>
-                            </div>
-
-                            <div class="pricing-card featured">
-                                <div class="popular-badge">Most Popular</div>
-                                <div class="pricing-header">
-                                    <h3>Medium Spaces</h3>
-                                    <div class="price">
-                                        <span class="currency">$</span>
-                                        <!-- Updated pricing to scale appropriately with base pricing -->
-                                        <span class="amount" data-monthly="2500" data-yearly="23999">2500</span>
-                                        <span class="period">/month</span>
-                                    </div>
-                                    <p>Ideal for shopping centers & hospitals</p>
-                                </div>
-                                <ul class="features-list">
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Up to 50,000 sq ft coverage
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Advanced AR navigation
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Real-time analytics
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        API access & integrations
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Priority support
-                                    </li>
-                                </ul>
-                                <button class="btn btn-cyan" onclick="window.location.href='contact.html?plan=medium'">Get Started</button>
-                            </div>
-
-                            <div class="pricing-card">
-                                <div class="pricing-header">
-                                    <h3>Large Spaces</h3>
-                                    <div class="price">
-                                        <span class="custom-price">Custom</span>
-                                    </div>
-                                    <p>For airports & mega complexes</p>
-                                </div>
-                                <ul class="features-list">
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Unlimited coverage area
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Full AI navigation suite
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Custom integrations
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        White-label solutions
-                                    </li>
-                                    <li>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        </svg>
-                                        Dedicated support team
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary" onclick="window.location.href='contact.html?plan=enterprise'">Contact Sales</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
-        </section>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Waide Mobility. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

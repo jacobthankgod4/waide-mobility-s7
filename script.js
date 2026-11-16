@@ -358,15 +358,44 @@ function handleContactForm(e) {
     return
   }
 
-  // Show loading state
-  const submitBtn = document.getElementById("submitBtn")
-  showLoadingState(submitBtn)
+  const spaceTypeLabels = {
+    mall: "Mall or supermarket",
+    hospital: "Hospital or clinic",
+    transport: "Airport or station",
+    education: "University or campus",
+    workplace: "Office or estate",
+    industrial: "Warehouse or industrial",
+    events: "Stadium, arena or venue",
+    other: "Something else",
+  }
+  const spaceSizeLabels = {
+    small: "Under 5,000 m2",
+    medium: "5,000 to 25,000 m2",
+    large: "25,000 to 100,000 m2",
+    xlarge: "Over 100,000 m2",
+  }
 
-  // Simulate form submission
-  setTimeout(() => {
-    hideLoadingState(submitBtn)
-    showSuccessModal()
-  }, 2000)
+  const lines = [
+    "Name: " + formData.firstName + " " + formData.lastName,
+    "Email: " + formData.email,
+    "Phone: " + (formData.phone || "not given"),
+    "Company or venue: " + formData.company,
+    "Venue type: " + (spaceTypeLabels[formData.spaceType] || formData.spaceType),
+    "Floor area: " + (spaceSizeLabels[formData.spaceSize] || formData.spaceSize),
+    "",
+    "What they are trying to fix:",
+    formData.message || "not given",
+  ]
+
+  const subject = "Indoor map enquiry - " + formData.company
+  const mailto =
+    "mailto:sales@waidemobility.com?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(lines.join("\n"))
+
+  window.location.href = mailto
+  showSuccessModal()
 }
 
 // Password Toggle Functionality

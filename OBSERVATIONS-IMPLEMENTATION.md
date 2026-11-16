@@ -247,3 +247,55 @@ These need a page-by-page rewrite, not a find-and-replace: “seamless” usuall
 - No console errors.
 - All local links resolve; `/sitemap.xml` returns 200.
 - Zero remaining occurrences of `till`, `actually`, `quietly`, `seamless`, `unlock`, `empower`, `revolution`, `leverage`, `cutting-edge`, `transform your`, `not just`, `isn't just`, `more than just`, `we believe`, `holistic` or `synergy` in the four rewritten pages.
+
+## 11. Round four: Mappedin content model across the site
+
+Reference read: `mappedin.com` home, `/platform/`, `/wayfinding/`, `/industries/malls/`, `/pricing/`. Structure only; no Mappedin copy, customers, logos or statistics were reused.
+
+### What changed
+
+| File | Change |
+|---|---|
+| `solutions.html` | Rebuilt: hero + fact band, three layers (map, route, record), without/with contrast, six capabilities, scope table, venue links, deployment steps, six-question FAQ, CTA |
+| `use-cases.html` | Rebuilt as an industries index: seven venue sections with visitor/operator split, full guide library, five-question FAQ |
+| `platform.html` | Rebuilt from the orphaned developer/API page into "how the map is built": inputs, drawing, indexing, route steps, six-metric table, data collected/not collected, limits, FAQ |
+| `about.html` | Rebuilt: 2019 / 5 people / 1 pilot facts, why we exist, four working rules, five team cards, where we are, what we are not |
+| `contact.html` | Rebuilt: plain hero, honest direct contacts (Lagos, Nairobi partnership), what-happens-next steps, FAQ; removed the invented "800 deployments", US phone number and San Francisco address. The form now opens the visitor's email app instead of faking a submission |
+| Six capability pages | Rebuilt to one template: `smart-wayfinding`, `interactive-indoor-mapping`, `seamless-outdoor-indoor-navigation`, `smart-building-integration`, `indoor-proximity-advertising`, `geoconquesting`. Advertising and geoconquesting are now explicit "not offered" pages rather than promises |
+| `styles.css` | Added the `pg-*` page kit, contact page additions, and non-heading labels for nav/footer (`dropdown-heading`, `link-group-title`) |
+| `CONTENT-REFERENCE.md` | New: Mappedin model, Waide adaptation rules, per-page section map and gaps, pages to retire, copy rules, verification checklist |
+| Root footers | Replaced the "powered by artificial intelligence" footer and its dead `href="#"` links on root pages with the standard honest footer |
+
+### New shared page structure
+
+Every rebuilt page follows the same order:
+
+1. Kicker and one-sentence promise
+2. Actions (one primary CTA, one secondary)
+3. Fact band with labelled numbers
+4. One section per idea, never a feature dump
+5. Before/after contrast table or a status table
+6. Scope: what is included and what is not
+7. Measurement or deployment steps
+8. Five or six FAQs written as objections
+9. CTA with what happens next
+
+### What was deliberately left out
+
+Mappedin's security, CCTV, leasing and ad-tech modules are not copied. Each is either listed under "Not included today" or given its own page explaining why Waide does not offer it. That keeps the site specific without implying capability that does not exist.
+
+### Round-four verification
+
+- Lighthouse on the eleven rebuilt pages (`solutions`, `use-cases`, `platform`, `about`, `contact`, and the six capability pages): **100 accessibility, 100 best practices, 100 SEO**, zero failures.
+- No horizontal overflow at the measured desktop width; all form field IDs intact on `contact.html`.
+- No console errors; no dead `href="#"` on rebuilt pages.
+- All local links resolve except two known legacy cases recorded in `CONTENT-REFERENCE.md` (`roi-calculator.html` links to three pages that do not exist, and one blog image is missing).
+- FAQ visible text matches the `FAQPage` JSON-LD on all six capability pages, `solutions.html`, `use-cases.html` and `platform.html`.
+
+### Still outstanding
+
+1. Blog and team footers still use the old copy and, on team pages, contain a stray mobile navigation block inside the footer.
+2. Roughly 20 blog guides still use the pre-audit voice.
+3. `phase-one.html`, `phase-two.html` and `phase-three.html` still carry unfounded expansion claims ("100,000+ locations", "all 54 countries"). These are the largest remaining credibility risk.
+4. No screenshots, diagrams or route examples anywhere on the site. The new pages are text-only.
+5. `seamless-outdoor-indoor-navigation.html` keeps its old filename while the copy now says the handoff is a tap or a scan, not seamless. Rename with a redirect if the URL is not yet indexed.
