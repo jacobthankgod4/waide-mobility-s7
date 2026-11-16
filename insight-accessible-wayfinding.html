@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Accessible Wayfinding Requirements Before Mapping | Waide Mobility</title>
-  <meta name="description" content="Route classification, destination information and interface behaviour: the accessibility decisions that cannot be retrofitted to a wayfinding project.">
+  <title>Planning Accessible Routes Before Mapping | Waide Mobility</title>
+  <meta name="description" content="Why step-free routes, clear destination details and screen-reader directions need to be planned before a map is built.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://waidemobility.com/insight-accessible-wayfinding.html">
@@ -12,8 +12,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <meta property="og:title" content="Accessible Wayfinding Requirements Before Mapping | Waide Mobility">
-  <meta property="og:description" content="Route classification, destination information and interface behaviour: the accessibility decisions that cannot be retrofitted to a wayfinding project.">
+  <meta property="og:title" content="Planning Accessible Routes Before Mapping | Waide Mobility">
+  <meta property="og:description" content="Why step-free routes, clear destination details and screen-reader directions need to be planned before a map is built.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://waidemobility.com/insight-accessible-wayfinding.html">
   <meta property="og:site_name" content="Waide Mobility">
@@ -23,8 +23,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Accessible Wayfinding Requirements Before Mapping | Waide Mobility">
-  <meta name="twitter:description" content="Route classification, destination information and interface behaviour: the accessibility decisions that cannot be retrofitted to a wayfinding project.">
+  <meta name="twitter:title" content="Planning Accessible Routes Before Mapping | Waide Mobility">
+  <meta name="twitter:description" content="Why step-free routes, clear destination details and screen-reader directions need to be planned before a map is built.">
   <meta name="twitter:image" content="https://waidemobility.com/public/og-waide.png">
   <meta name="twitter:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="consultancy.css">
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Geospatial engineering, digital twins and digital infrastructure consultancy based in Lagos, Nigeria.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Geospatial engineering","Indoor mapping","Digital twins","GIS platforms","Spatial data infrastructure","Accessible wayfinding","Building information modelling"]}
+{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Indoor maps, accessible routes and digital tools for buildings, based in Lagos, Nigeria.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Geospatial engineering","Indoor mapping","Digital twins","GIS platforms","Spatial data infrastructure","Accessible wayfinding","Building information modelling"]}
   </script>
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","@id":"https://waidemobility.com/insight-accessible-wayfinding.html#webpage","url":"https://waidemobility.com/insight-accessible-wayfinding.html","name":"Accessible Wayfinding Requirements Before Mapping | Waide Mobility","description":"Route classification, destination information and interface behaviour: the accessibility decisions that cannot be retrofitted to a wayfinding project.","inLanguage":"en","about":{"@id":"https://waidemobility.com/#organization"},"headline":"Accessible Wayfinding Requirements Before Mapping | Waide Mobility","author":{"@type":"Person","name":"ThankGod Jacob Chibueze"},"publisher":{"@id":"https://waidemobility.com/#organization"},"mainEntityOfPage":"https://waidemobility.com/insight-accessible-wayfinding.html"}
@@ -44,7 +44,7 @@
   <div class="cx-wrap cx-header-inner">
     <a class="cx-brand" href="index.html">
       <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
-      <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+      <span class="cx-brand-name">Waide Mobility<span>Maps &amp; digital tools</span></span>
     </a>
     <button class="cx-menu-btn" type="button" aria-expanded="false" aria-controls="cx-primary-nav" aria-label="Open navigation menu">
       <span aria-hidden="true"></span>
@@ -69,8 +69,8 @@
     <div class="cx-wrap cx-wrap--narrow">
       <nav class="cx-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="insights.html">Insights</a><span aria-hidden="true">/</span><span>Accessible wayfinding</span></nav>
       <p class="cx-eyebrow">Technical note &middot; Accessibility</p>
-      <h1 class="cx-h1" style="font-size:clamp(2.1rem,4.4vw,3.4rem); max-width:26ch;">What accessible wayfinding requires before the map is drawn.</h1>
-      <p class="cx-sub">Accessibility is usually treated as a review at the end of a wayfinding project. By then the route model, the interface and the content have already made most of their decisions.</p>
+      <h1 class="cx-h1" style="font-size:clamp(2.1rem,4.4vw,3.4rem); max-width:26ch;">Plan accessible routes before drawing the map</h1>
+      <p class="cx-sub">Step-free routes, useful destination details and screen-reader directions all depend on decisions made before the map is built. This note explains what to include.</p>
       <p class="cx-note" style="margin-top:1.2rem;">By ThankGod Jacob Chibueze &middot; Waide Mobility</p>
     </div>
   </section>
@@ -153,19 +153,19 @@
       <div class="cx-footer-brand">
         <a class="cx-brand" href="index.html">
           <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
-          <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+          <span class="cx-brand-name">Waide Mobility<span>Maps &amp; digital tools</span></span>
         </a>
-        <p>Geospatial engineering, digital twins and accessible wayfinding for buildings and complex infrastructure. Lagos, Nigeria.</p>
+        <p>Indoor maps, accessible routes and digital tools for buildings. Based in Lagos, Nigeria.</p>
         <p><a class="cx-link" href="mailto:sales@waidemobility.com">sales@waidemobility.com</a></p>
       </div>
       <div>
         <h2>Services</h2>
         <ul>
-          <li><a href="service-geospatial-engineering.html">Geospatial engineering</a></li>
-          <li><a href="service-digital-twins.html">Digital twins</a></li>
-          <li><a href="service-gis-platforms.html">GIS platforms</a></li>
-          <li><a href="service-accessible-mobility.html">Accessible mobility</a></li>
-          <li><a href="service-technical-advisory.html">Technical advisory</a></li>
+          <li><a href="service-geospatial-engineering.html">Building and site maps</a></li>
+          <li><a href="service-digital-twins.html">Building maps and records</a></li>
+          <li><a href="service-gis-platforms.html">Web maps and tools</a></li>
+          <li><a href="service-accessible-mobility.html">Accessible routes</a></li>
+          <li><a href="service-technical-advisory.html">Mapping advice and training</a></li>
         </ul>
       </div>
       <div>

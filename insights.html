@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Technical Insights on Indoor GIS & Digital Twins | Waide Mobility</title>
-  <meta name="description" content="Technical notes on indoor spatial data models, JOSM building digitisation and accessible wayfinding requirements, drawn from current Waide project work.">
+  <title>Mapping Project Notes | Waide Mobility</title>
+  <meta name="description" content="Clear notes on mapping indoor spaces, using JOSM and planning accessible routes, based on Waide project work.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://waidemobility.com/insights.html">
@@ -12,8 +12,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <meta property="og:title" content="Technical Insights on Indoor GIS & Digital Twins | Waide Mobility">
-  <meta property="og:description" content="Technical notes on indoor spatial data models, JOSM building digitisation and accessible wayfinding requirements, drawn from current Waide project work.">
+  <meta property="og:title" content="Mapping Project Notes | Waide Mobility">
+  <meta property="og:description" content="Clear notes on mapping indoor spaces, using JOSM and planning accessible routes, based on Waide project work.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://waidemobility.com/insights.html">
   <meta property="og:site_name" content="Waide Mobility">
@@ -23,8 +23,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Technical Insights on Indoor GIS & Digital Twins | Waide Mobility">
-  <meta name="twitter:description" content="Technical notes on indoor spatial data models, JOSM building digitisation and accessible wayfinding requirements, drawn from current Waide project work.">
+  <meta name="twitter:title" content="Mapping Project Notes | Waide Mobility">
+  <meta name="twitter:description" content="Clear notes on mapping indoor spaces, using JOSM and planning accessible routes, based on Waide project work.">
   <meta name="twitter:image" content="https://waidemobility.com/public/og-waide.png">
   <meta name="twitter:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="consultancy.css">
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Geospatial engineering, digital twins and digital infrastructure consultancy based in Lagos, Nigeria.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Geospatial engineering","Indoor mapping","Digital twins","GIS platforms","Spatial data infrastructure","Accessible wayfinding","Building information modelling"]}
+{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Indoor maps, accessible routes and digital tools for buildings, based in Lagos, Nigeria.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Geospatial engineering","Indoor mapping","Digital twins","GIS platforms","Spatial data infrastructure","Accessible wayfinding","Building information modelling"]}
   </script>
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CollectionPage","@id":"https://waidemobility.com/insights.html#webpage","url":"https://waidemobility.com/insights.html","name":"Technical Insights on Indoor GIS \u0026 Digital Twins | Waide Mobility","description":"Technical notes on indoor spatial data models, JOSM building digitisation and accessible wayfinding requirements, drawn from current Waide project work.","inLanguage":"en","about":{"@id":"https://waidemobility.com/#organization"}}
@@ -44,7 +44,7 @@
   <div class="cx-wrap cx-header-inner">
     <a class="cx-brand" href="index.html">
       <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
-      <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+      <span class="cx-brand-name">Waide Mobility<span>Maps &amp; digital tools</span></span>
     </a>
     <button class="cx-menu-btn" type="button" aria-expanded="false" aria-controls="cx-primary-nav" aria-label="Open navigation menu">
       <span aria-hidden="true"></span>
@@ -69,8 +69,8 @@
     <div class="cx-wrap">
       <nav class="cx-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Insights</span></nav>
       <p class="cx-eyebrow">Technical notes</p>
-      <h1 class="cx-h1 cx-h1--wide">Working notes on spatial systems.</h1>
-      <p class="cx-sub">Short technical write-ups drawn from current work: indoor data models, digitisation methods and accessible wayfinding. No listicles, no invented research, no publication dates we cannot evidence.</p>
+      <h1 class="cx-h1 cx-h1--wide">Notes from our mapping projects</h1>
+      <p class="cx-sub">These short articles explain how we map indoor spaces, connect routes and plan accessible directions. They use examples from our work and describe the decisions behind them.</p>
     </div>
   </section>
 
@@ -83,8 +83,8 @@
           <span class="cx-service-num">01</span>
           <div>
             <p class="cx-kicker">Indoor GIS</p>
-            <h3>What a usable indoor spatial data model contains</h3>
-            <p>Levels, spaces, connections and route edges: the four layers a navigation system actually needs, and the schema decisions that determine whether it can be maintained.</p>
+            <h3>What an indoor map needs for routing</h3>
+            <p>Learn how floors, places and connections fit together to help a route planner guide visitors through a building.</p>
           </div>
           <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
         </a>
@@ -93,8 +93,8 @@
           <span class="cx-service-num">02</span>
           <div>
             <p class="cx-kicker">Digitisation</p>
-            <h3>Digitising a mall in JOSM: the unglamorous part of digital twins</h3>
-            <p>How floor plans, imagery and field checks become a clean, routable indoor dataset, and where manual digitisation still beats automation.</p>
+            <h3>How we use JOSM to map a mall</h3>
+            <p>How floor plans and site checks become a building map, and why some details still need careful manual work.</p>
           </div>
           <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
         </a>
@@ -103,8 +103,8 @@
           <span class="cx-service-num">03</span>
           <div>
             <p class="cx-kicker">Accessibility</p>
-            <h3>What accessible wayfinding requires before the map is drawn</h3>
-            <p>Route classification, assistance points and interface testing: the decisions that cannot be added at the end of a wayfinding project.</p>
+            <h3>Plan accessible routes before drawing the map</h3>
+            <p>Why step-free routes, useful destination details and screen-reader directions need to be planned from the start.</p>
           </div>
           <span class="cx-service-arrow" aria-hidden="true">&rarr;</span>
         </a>
@@ -117,15 +117,15 @@
     <div class="cx-wrap cx-editorial">
       <div>
         <p class="cx-kicker">Editorial policy</p>
-        <h2 class="cx-h2">Why there are only three notes.</h2>
+        <h2 class="cx-h2">Why we publish only a few notes</h2>
       </div>
       <div>
-        <p class="cx-lead">We publish when there is something specific to say. A technical note is written by the person who did the work, reviewed against the project record, and left unpublished if the evidence is not there.</p>
+        <p class="cx-lead">We publish notes when they can explain a specific part of our work. Each note is checked against project records, and we leave out claims we cannot support.</p>
         <ul class="cx-list">
-          <li>No generated volume to fill a blog index.</li>
-          <li>No invented authors, dates or citations.</li>
-          <li>No client material published without permission.</li>
-          <li>No claims that a pilot result has been measured when it has not.</li>
+          <li>We write about work we can explain from project records.</li>
+          <li>We include authors, dates and sources only when we can verify them.</li>
+          <li>We publish client information only with permission.</li>
+          <li>We report pilot results only when they have been measured and can be shared.</li>
         </ul>
         <p class="cx-note" style="margin-top:1rem;">Where a note refers to the Novare Lekki pilot, it describes method and scope. Operational outcomes from that pilot have not been published.</p>
       </div>
@@ -137,8 +137,8 @@
       <div class="cx-cta">
         <div>
           <p class="cx-kicker">Stay in touch</p>
-          <h2 class="cx-h2">Working on a spatial problem worth writing about?</h2>
-          <p class="cx-lead">We are interested in projects where the data model is the hard part: multi-level venues, mixed indoor and outdoor networks, accessible routing and long-lived asset information.</p>
+          <h2 class="cx-h2">Have a mapping challenge to discuss?</h2>
+          <p class="cx-lead">We are interested in projects involving multi-level buildings, indoor and outdoor routes, accessible directions and long-term building records.</p>
         </div>
         <div class="cx-cta-actions">
           <a class="cx-btn cx-btn--primary" href="contact.html">Discuss a project</a>
@@ -156,19 +156,19 @@
       <div class="cx-footer-brand">
         <a class="cx-brand" href="index.html">
           <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
-          <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+          <span class="cx-brand-name">Waide Mobility<span>Maps &amp; digital tools</span></span>
         </a>
-        <p>Geospatial engineering, digital twins and accessible wayfinding for buildings and complex infrastructure. Lagos, Nigeria.</p>
+        <p>Indoor maps, accessible routes and digital tools for buildings. Based in Lagos, Nigeria.</p>
         <p><a class="cx-link" href="mailto:sales@waidemobility.com">sales@waidemobility.com</a></p>
       </div>
       <div>
         <h2>Services</h2>
         <ul>
-          <li><a href="service-geospatial-engineering.html">Geospatial engineering</a></li>
-          <li><a href="service-digital-twins.html">Digital twins</a></li>
-          <li><a href="service-gis-platforms.html">GIS platforms</a></li>
-          <li><a href="service-accessible-mobility.html">Accessible mobility</a></li>
-          <li><a href="service-technical-advisory.html">Technical advisory</a></li>
+          <li><a href="service-geospatial-engineering.html">Building and site maps</a></li>
+          <li><a href="service-digital-twins.html">Building maps and records</a></li>
+          <li><a href="service-gis-platforms.html">Web maps and tools</a></li>
+          <li><a href="service-accessible-mobility.html">Accessible routes</a></li>
+          <li><a href="service-technical-advisory.html">Mapping advice and training</a></li>
         </ul>
       </div>
       <div>

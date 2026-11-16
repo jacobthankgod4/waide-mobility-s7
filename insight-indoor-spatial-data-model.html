@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>What a Usable Indoor Spatial Data Model Contains | Waide Mobility</title>
-  <meta name="description" content="Levels, spaces, connections and route edges: the four layers an indoor navigation system needs, and the schema decisions that determine maintainability.">
+  <title>What an Indoor Map Needs for Routing | Waide Mobility</title>
+  <meta name="description" content="What a building map needs to guide visitors between floors, rooms, lifts and other places.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://waidemobility.com/insight-indoor-spatial-data-model.html">
@@ -12,8 +12,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <meta property="og:title" content="What a Usable Indoor Spatial Data Model Contains | Waide Mobility">
-  <meta property="og:description" content="Levels, spaces, connections and route edges: the four layers an indoor navigation system needs, and the schema decisions that determine maintainability.">
+  <meta property="og:title" content="What an Indoor Map Needs for Routing | Waide Mobility">
+  <meta property="og:description" content="What a building map needs to guide visitors between floors, rooms, lifts and other places.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://waidemobility.com/insight-indoor-spatial-data-model.html">
   <meta property="og:site_name" content="Waide Mobility">
@@ -23,8 +23,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="What a Usable Indoor Spatial Data Model Contains | Waide Mobility">
-  <meta name="twitter:description" content="Levels, spaces, connections and route edges: the four layers an indoor navigation system needs, and the schema decisions that determine maintainability.">
+  <meta name="twitter:title" content="What an Indoor Map Needs for Routing | Waide Mobility">
+  <meta name="twitter:description" content="What a building map needs to guide visitors between floors, rooms, lifts and other places.">
   <meta name="twitter:image" content="https://waidemobility.com/public/og-waide.png">
   <meta name="twitter:image:alt" content="Waide Mobility - geospatial engineering, digital twins and digital infrastructure">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="consultancy.css">
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Geospatial engineering, digital twins and digital infrastructure consultancy based in Lagos, Nigeria.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Geospatial engineering","Indoor mapping","Digital twins","GIS platforms","Spatial data infrastructure","Accessible wayfinding","Building information modelling"]}
+{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Indoor maps, accessible routes and digital tools for buildings, based in Lagos, Nigeria.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Geospatial engineering","Indoor mapping","Digital twins","GIS platforms","Spatial data infrastructure","Accessible wayfinding","Building information modelling"]}
   </script>
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","@id":"https://waidemobility.com/insight-indoor-spatial-data-model.html#webpage","url":"https://waidemobility.com/insight-indoor-spatial-data-model.html","name":"What a Usable Indoor Spatial Data Model Contains | Waide Mobility","description":"Levels, spaces, connections and route edges: the four layers an indoor navigation system needs, and the schema decisions that determine maintainability.","inLanguage":"en","about":{"@id":"https://waidemobility.com/#organization"},"headline":"What a Usable Indoor Spatial Data Model Contains | Waide Mobility","author":{"@type":"Person","name":"ThankGod Jacob Chibueze"},"publisher":{"@id":"https://waidemobility.com/#organization"},"mainEntityOfPage":"https://waidemobility.com/insight-indoor-spatial-data-model.html"}
@@ -44,7 +44,7 @@
   <div class="cx-wrap cx-header-inner">
     <a class="cx-brand" href="index.html">
       <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
-      <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+      <span class="cx-brand-name">Waide Mobility<span>Maps &amp; digital tools</span></span>
     </a>
     <button class="cx-menu-btn" type="button" aria-expanded="false" aria-controls="cx-primary-nav" aria-label="Open navigation menu">
       <span aria-hidden="true"></span>
@@ -69,8 +69,8 @@
     <div class="cx-wrap cx-wrap--narrow">
       <nav class="cx-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="insights.html">Insights</a><span aria-hidden="true">/</span><span>Indoor data model</span></nav>
       <p class="cx-eyebrow">Technical note &middot; Indoor GIS</p>
-      <h1 class="cx-h1" style="font-size:clamp(2.1rem,4.4vw,3.4rem); max-width:26ch;">What a usable indoor spatial data model contains.</h1>
-      <p class="cx-sub">Most indoor mapping projects start with a drawing and end with a picture. A navigation system needs four layers underneath that picture, and a schema that lets each layer be queried and maintained.</p>
+      <h1 class="cx-h1" style="font-size:clamp(2.1rem,4.4vw,3.4rem); max-width:26ch;">What an indoor map needs for routing</h1>
+      <p class="cx-sub">A floor plan shows rooms and walls. To guide someone from a parking bay to a lift and then to a shop, the map also needs floors, places and the paths that connect them.</p>
       <p class="cx-note" style="margin-top:1.2rem;">By ThankGod Jacob Chibueze &middot; Waide Mobility</p>
     </div>
   </section>
@@ -166,19 +166,19 @@
       <div class="cx-footer-brand">
         <a class="cx-brand" href="index.html">
           <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
-          <span class="cx-brand-name">Waide Mobility<span>Geospatial &amp; digital systems</span></span>
+          <span class="cx-brand-name">Waide Mobility<span>Maps &amp; digital tools</span></span>
         </a>
-        <p>Geospatial engineering, digital twins and accessible wayfinding for buildings and complex infrastructure. Lagos, Nigeria.</p>
+        <p>Indoor maps, accessible routes and digital tools for buildings. Based in Lagos, Nigeria.</p>
         <p><a class="cx-link" href="mailto:sales@waidemobility.com">sales@waidemobility.com</a></p>
       </div>
       <div>
         <h2>Services</h2>
         <ul>
-          <li><a href="service-geospatial-engineering.html">Geospatial engineering</a></li>
-          <li><a href="service-digital-twins.html">Digital twins</a></li>
-          <li><a href="service-gis-platforms.html">GIS platforms</a></li>
-          <li><a href="service-accessible-mobility.html">Accessible mobility</a></li>
-          <li><a href="service-technical-advisory.html">Technical advisory</a></li>
+          <li><a href="service-geospatial-engineering.html">Building and site maps</a></li>
+          <li><a href="service-digital-twins.html">Building maps and records</a></li>
+          <li><a href="service-gis-platforms.html">Web maps and tools</a></li>
+          <li><a href="service-accessible-mobility.html">Accessible routes</a></li>
+          <li><a href="service-technical-advisory.html">Mapping advice and training</a></li>
         </ul>
       </div>
       <div>
