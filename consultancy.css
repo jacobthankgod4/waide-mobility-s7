@@ -1911,3 +1911,9 @@ body.cx img, body.cx svg { max-width: 100%; }
   .cx-gallery-progress span,
   .cx-gallery-date { transition: none; }
 }
+
+/* The widget's speech toggle only announces its state, not page content. */
+.cx .asw-menu .asw-btn[data-key="screen-reader"],
+.cx .asw-menu .asw-profile-btn[data-key="blind"] {
+  display: none !important;
+}
