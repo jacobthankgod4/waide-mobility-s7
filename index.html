@@ -211,9 +211,6 @@
           <button type="button" class="cx-gallery-nav cx-gallery-nav--next" data-gallery-next aria-label="Next image">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5 L16 12 L9 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="cx-gallery-progress cx-gallery-progress--overlay" role="progressbar" aria-label="Image sequence progress" aria-valuemin="1" aria-valuemax="57" aria-valuenow="1" data-gallery-progress>
-            <span></span>
-          </div>
         </div>
         <div class="cx-gallery-console">
           <div class="cx-gallery-readout">
@@ -221,10 +218,19 @@
             <div><span class="cx-gallery-readout-label">MAPPING STAGE</span><strong data-gallery-current-stage>Mall plan overlay</strong></div>
             <p class="cx-gallery-count"><span data-gallery-index>01</span><span class="cx-gallery-count-divider">/</span><span data-gallery-total>57</span></p>
           </div>
-          <nav class="cx-gallery-dates" aria-label="Jump to capture date" data-gallery-dates></nav>
-          <ul class="cx-gallery-thumbs cx-gallery-thumbs--novare" data-gallery-thumbs>
-            <li><a href="#home-nv-1" data-gallery-thumb aria-label="Show image 1: A colored indoor floor-plan overlay is positioned over satellite imagery at the Novare site."><img src="public/novare/captures/novare-06.jpg" alt="" width="96" height="60"></a></li>
-          </ul>
+          <div class="cx-gallery-progress cx-gallery-progress--side" role="progressbar" aria-label="Image sequence progress" aria-valuemin="1" aria-valuemax="57" aria-valuenow="1" data-gallery-progress>
+            <span></span>
+          </div>
+          <div class="cx-gallery-side-group">
+            <h3 class="cx-gallery-side-label">Jump to date</h3>
+            <nav class="cx-gallery-dates" aria-label="Jump to capture date" data-gallery-dates></nav>
+          </div>
+          <div class="cx-gallery-side-group cx-gallery-side-group--captures">
+            <h3 class="cx-gallery-side-label">All captures</h3>
+            <ul class="cx-gallery-thumbs cx-gallery-thumbs--novare" data-gallery-thumbs>
+              <li><a href="#home-nv-1" data-gallery-thumb aria-label="Show image 1: A colored indoor floor-plan overlay is positioned over satellite imagery at the Novare site."><img src="public/novare/captures/novare-06.jpg" alt="" width="96" height="60"></a></li>
+            </ul>
+          </div>
         </div>
         <p class="cx-visually-hidden" aria-live="polite" data-gallery-status></p>
       </figure>
