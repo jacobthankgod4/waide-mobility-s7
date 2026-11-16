@@ -1632,7 +1632,22 @@ body.cx img, body.cx svg { max-width: 100%; }
 
 .cx-gallery--novare .cx-gallery-caption > span:last-child {
   min-width: 0;
-  overflow-wrap: anywhere;
+}
+
+@media (min-width: 1024px) {
+  .cx-gallery--novare .cx-gallery-caption {
+    gap: 0.4rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    font-size: clamp(0.7rem, 1.03vw, 0.925rem);
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+
+  .cx-gallery--novare .cx-gallery-caption > span:last-child {
+    overflow-wrap: normal;
+    white-space: nowrap;
+  }
 }
 
 .cx-gallery--novare .cx-gallery-num {
