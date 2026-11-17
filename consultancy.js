@@ -139,7 +139,7 @@
       if (dateNav) dateNav.textContent = ""
 
       manifest.forEach(function (item, index) {
-        var imagePath = "public/novare/captures/novare-" + ("0" + item.capture).slice(-2) + ".jpg"
+        var imagePath = "public/novare/captures-cropped/novare-" + ("0" + item.capture).slice(-2) + ".jpg"
         var slideId = slideIdPrefix + "-" + (index + 1)
         var slide = document.createElement("div")
         slide.className = "cx-gallery-slide"
@@ -151,8 +151,8 @@
         var image = document.createElement("img")
         image.src = imagePath
         image.alt = item.caption
-        image.width = 1280
-        image.height = 800
+        image.width = item.capture <= 15 ? 1277 : 1280
+        image.height = item.capture >= 52 ? 610 : item.capture === 11 ? 654 : 715
         image.loading = index === 0 ? "eager" : "lazy"
         image.decoding = "async"
         slide.appendChild(image)
