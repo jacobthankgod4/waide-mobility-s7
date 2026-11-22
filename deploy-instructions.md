@@ -31,7 +31,7 @@ brew install supabase/tap/supabase
 supabase login
 supabase link --project-ref elkkokyluvibctjqkjus
 supabase functions deploy send-partnership-email
-supabase secrets set RESEND_API_KEY=re_gsoXEWL7_3JYwcaF7MnFiCGCXi6UqcQYJ
+supabase secrets set RESEND_API_KEY=re_your_resend_api_key
 ```
 
 ## 3. Test

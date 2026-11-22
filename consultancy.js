@@ -31,7 +31,7 @@
     })
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 980) closeMenu()
+      if (window.innerWidth > 1180) closeMenu()
     })
   }
 
@@ -41,6 +41,25 @@
 
   if (form) {
     var status = document.getElementById("cx-form-status")
+
+    /* Deep links from the supplies pages preselect the enquiry type and
+       subject, e.g. contact.html?division=supplies&subject=Supplier%20dossier */
+    try {
+      var params = new URLSearchParams(window.location.search)
+      var categoryField = document.getElementById("cx-category")
+      var division = params.get("division")
+      if (categoryField) {
+        if (division === "supplies") categoryField.value = "supplies"
+        else if (division === "mapping") categoryField.value = "consultancy"
+      }
+      var subjectField = document.getElementById("cx-subject")
+      var presetSubject = params.get("subject")
+      if (subjectField && presetSubject && !subjectField.value) {
+        subjectField.value = presetSubject
+      }
+    } catch (error) {
+      /* Older browsers keep the plain form. */
+    }
 
     var setStatus = function (message, state) {
       if (!status) return
@@ -79,6 +98,7 @@
 
       var categoryLabels = {
         general: "General enquiry",
+        supplies: "Medical supplies quotation",
         consultancy: "Consultancy project",
         procurement: "Procurement or tender",
         partnership: "Technical partnership",
