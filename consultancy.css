@@ -1985,7 +1985,7 @@ body.cx img, body.cx svg { max-width: 100%; }
 
 .cx-split-pair {
   display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   background: rgba(255, 255, 255, 0.16);
 }
@@ -1994,6 +1994,7 @@ body.cx img, body.cx svg { max-width: 100%; }
   position: relative;
   display: block;
   min-width: 0;
+  aspect-ratio: 3 / 3.95;
   overflow: hidden;
   background: #04070a;
   color: inherit;
@@ -2004,8 +2005,7 @@ body.cx img, body.cx svg { max-width: 100%; }
   display: block;
   width: 100%;
   min-width: 0;
-  height: auto;
-  aspect-ratio: 3 / 3.95;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.6s var(--cx-ease);
 }
@@ -2535,7 +2535,7 @@ body.cx img, body.cx svg { max-width: 100%; }
 @media (max-width: 980px) {
   .cx-hero--split .cx-hero-grid { grid-template-columns: minmax(0, 1fr); }
   .cx-split-visual { order: -1; }
-  .cx-split-cell img { aspect-ratio: 3 / 3.1; }
+  .cx-split-cell { aspect-ratio: 3 / 3.1; }
   .cx-band-grid { grid-template-columns: minmax(0, 1fr); }
   .cx-record-meta { margin-left: 0; }
 }
@@ -2550,7 +2550,7 @@ body.cx img, body.cx svg { max-width: 100%; }
 
 @media (max-width: 640px) {
   .cx-hero--split .cx-h1 { font-size: clamp(2.05rem, 9.4vw, 2.85rem); }
-  .cx-split-cell img { aspect-ratio: 3 / 3.35; }
+  .cx-split-cell { aspect-ratio: 3 / 3.35; }
   .cx-split-tag { top: 0.55rem; left: 0.55rem; padding: 0.25rem 0.4rem; font-size: 0.56rem; }
   .cx-split-cell-go { display: none; }
   .cx-split-foot { font-size: 0.72rem; padding: 0.7rem 0.8rem; }
