@@ -2059,38 +2059,6 @@ body.cx img, body.cx svg { max-width: 100%; }
 .cx-split-cell:hover .cx-split-cell-go,
 .cx-split-cell:focus-visible .cx-split-cell-go { opacity: 1; color: var(--cx-turquoise); }
 
-.cx-split-foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.4rem 1.25rem;
-  padding: 0.8rem 1rem;
-  border-top: 1px solid var(--cx-line);
-  font-size: 0.76rem;
-  line-height: 1.5;
-  color: var(--cx-muted-strong);
-}
-
-.cx-split-foot-label {
-  font-family: var(--cx-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--cx-turquoise);
-  margin-right: 0.45rem;
-}
-
-.cx-split-foot a {
-  margin-left: auto;
-  color: var(--cx-muted-strong);
-  text-decoration: none;
-  white-space: nowrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-}
-
-.cx-split-foot a:hover { color: var(--cx-turquoise); border-bottom-color: rgba(0, 225, 223, 0.5); }
-
 /* ---------- Division rail ---------- */
 
 .cx-division-rail {
@@ -2553,7 +2521,6 @@ body.cx img, body.cx svg { max-width: 100%; }
   .cx-split-cell { aspect-ratio: 3 / 3.35; }
   .cx-split-tag { top: 0.55rem; left: 0.55rem; padding: 0.25rem 0.4rem; font-size: 0.56rem; }
   .cx-split-cell-go { display: none; }
-  .cx-split-foot { font-size: 0.72rem; padding: 0.7rem 0.8rem; }
   .cx-band-docs { grid-template-columns: minmax(0, 1fr); }
   .cx-endcap-in { align-items: flex-start; }
 }
