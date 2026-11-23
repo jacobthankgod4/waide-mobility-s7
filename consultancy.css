@@ -2780,35 +2780,7 @@ a.cx-area:hover .cx-area-go { color: var(--cx-turquoise); }
   .cx-area, .cx-area-media img, .cx-area-go { transition: none; }
 }
 
-/* ---------- Image disclosure, credits and policy pages ---------- */
-
-.cx-media-note {
-  margin: 1rem 0 0;
-  font-family: var(--cx-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.04em;
-  line-height: 1.7;
-  color: #7c848d;
-  max-width: 84ch;
-}
-
-.cx-media-note a { color: #aeb5bd; }
-
-.cx-stock-flag {
-  position: absolute;
-  left: 0.55rem;
-  bottom: 0.55rem;
-  z-index: 1;
-  padding: 0.18rem 0.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(0, 0, 0, 0.72);
-  color: #cfd4da;
-  font-family: var(--cx-mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  pointer-events: none;
-}
+/* ---------- Policy pages ---------- */
 
 .cx-prose { max-width: 78ch; }
 
@@ -2872,6 +2844,4 @@ a.cx-area:hover .cx-area-go { color: var(--cx-turquoise); }
 }
 
 @media (max-width: 520px) {
-  .cx-stock-flag { display: none; }
-}
-
+  
