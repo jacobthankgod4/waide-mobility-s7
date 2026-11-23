@@ -8,6 +8,7 @@
    Environment (values only, never in code):
      AGENTMAIL_API_KEY         API key from console.agentmail.to
      AGENTMAIL_WEBHOOK_SECRET  Svix signing secret of the webhook endpoint
+     AGENTMAIL_INBOX           optional existing inbox address to send from
 */
 
 'use strict'
@@ -39,7 +40,13 @@ function mailClient() {
   return cachedClient
 }
 
+/* Use the inbox named in AGENTMAIL_INBOX when it is set (the address already
+   exists in the account, so nothing new is created and replies arrive in the
+   inbox the owner already watches). Otherwise create one, idempotently. */
 async function agentInbox(mail) {
+  if (process.env.AGENTMAIL_INBOX) {
+    return { inboxId: process.env.AGENTMAIL_INBOX, email: process.env.AGENTMAIL_INBOX }
+  }
   if (!cachedInbox) {
     cachedInbox = await mail.inboxes.create({
       clientId: INBOX_CLIENT_ID,
