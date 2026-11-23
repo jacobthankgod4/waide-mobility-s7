@@ -1,17 +1,23 @@
 {
   "name": "waide-mobility",
   "version": "1.0.0",
-  "description": "Indoor and outdoor navigation app for African venues",
+  "description": "Waide Mobility: medical, mobility and orthopaedic supplies sourced to order, and indoor maps and accessible routes for buildings.",
+  "private": true,
   "scripts": {
-    "build": "echo 'Static site - no build needed'",
+    "build": "node stage.mjs",
     "start": "python -m http.server 8000"
   },
   "keywords": [
-    "navigation",
+    "medical-supplies",
+    "mobility-equipment",
     "indoor-mapping",
     "accessibility",
-    "africa"
+    "nigeria"
   ],
   "author": "Waide Mobility",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "agentmail": "^0.5.54",
+    "svix": "^1.99.1"
+  }
 }

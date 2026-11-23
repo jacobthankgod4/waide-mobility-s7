@@ -1,7 +1,7 @@
 {
   "name": "Waide Mobility",
   "short_name": "Waide",
-  "description": "Geospatial engineering, digital twins and digital infrastructure consultancy.",
+  "description": "Medical, mobility and orthopaedic supplies sourced to order, and indoor maps and accessible routes for buildings.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",

@@ -1,0 +1,135 @@
+# Waide Mobility
+
+> Waide Mobility is a Lagos, Nigeria company that supplies medical consumables,
+> mobility equipment and orthopaedic supports to institutional buyers, and
+> separately delivers indoor mapping and accessible wayfinding for buildings.
+> Supplies are quoted against a buyer's written specification rather than sold
+> from a published catalogue. Founded and led by ThankGod Jacob Chibueze.
+
+Everything below is stated by the company about itself. Figures are scope
+figures for the work described, not sales, revenue, adoption or satisfaction
+metrics. Where something is not claimed, that is stated explicitly.
+
+## Legal identity
+
+- Registered name: Waide Mobility Ltd
+- Company registration number (Corporate Affairs Commission, Nigeria): RC 8283881
+- Incorporated: 19 February 2025, under the Companies and Allied Matters Act
+  2020, as a private company limited by shares
+- Tax identification number: 32854623-0001
+- Certificate of incorporation (PDF):
+  https://waidemobility.com/public/registration/waide-mobility-cac-certificate.pdf
+- Registration particulars: https://waidemobility.com/procurement.html#registration
+
+Registration is legal identity. It is not a product licence, a certification or
+an approved-supplier status.
+
+## Contact
+
+- Procurement email: sales@waidemobility.com
+- Enquiries: https://waidemobility.com/contact.html
+- Location: Lagos, Nigeria. Remote delivery elsewhere by agreement.
+- Response target: three working days for enquiries.
+
+## What the company supplies
+
+Medical, mobility and orthopaedic products sourced to order for hospitals,
+clinics, diagnostic centres, NGOs, missions, humanitarian programmes, schools,
+universities, training institutions, government agencies and public buyers.
+
+Categories:
+
+- Medical consumables and equipment: dressings, bandages, wound care, syringes,
+  needles, infusion consumables, examination gloves, protective wear, diagnostic
+  sets, ward equipment.
+- Mobility equipment: manual and transit wheelchairs, walking frames, rollators,
+  crutches, walking sticks, transfer boards and belts.
+- Orthopaedic supports: knee, ankle and wrist braces, walking boots,
+  post-operative footwear, cervical collars, arm slings, pressure-relief and
+  seating cushions.
+
+Sourcing model: ordered from manufacturers and authorised distributors, quoted
+per line with manufacturer, country of origin, HS or UNSPSC classification where
+applicable, warranty and spares terms, delivery time and delivery terms. No
+warehouse stock and no standing price list. Quotations in NGN or USD.
+
+Boundaries: Waide does not assess patients, prescribe products, fit wheelchairs
+or adjust orthoses. Clinical specification comes from the buyer's clinician.
+No minimum order value; manufacturer pack sizes apply.
+
+## What the company delivers in mapping
+
+Indoor and outdoor building maps, floor-plan digitisation, searchable place
+lists, pedestrian and vehicle route networks, step-free accessible routes, web
+and mobile map interfaces, building records, and mapping advice and training.
+
+Methods: source audit and georeferencing, documented JOSM digitisation, indoor
+feature schemas with stable identifiers, separate pedestrian, vehicle and
+step-free networks with explicit transfer nodes, Dijkstra shortest-path routing
+with mode-specific edge costs, topology and positional validation, and field
+verification against the physical building.
+
+## Reference project
+
+Novare Lekki Mall, Lekki, Lagos, Nigeria. Completed six-month engagement.
+
+- Scope: approximately 22,000 m2 across three levels (ground floor, Level 1,
+  Parking Level A).
+- 150+ store footprints digitised.
+- 1,000+ parking bays included in the vehicle network.
+- 900 Shoprite shelf positions indexed by aisle and category.
+- Deliverables: indoor spatial dataset, separate pedestrian and vehicle
+  networks, retail shelf index, step-free route layer, route validation record.
+- Role: lead geospatial and digital systems delivery.
+- Record: https://waidemobility.com/project-novare-lekki.html
+
+All figures are counts of mapped features. No revenue, adoption, visitor or
+satisfaction results are published.
+
+## Procurement
+
+- Procurement and supplier information: https://waidemobility.com/procurement.html
+- Capability statement, printable: https://waidemobility.com/capability-statement.html
+- Project experience register: https://waidemobility.com/projects.html
+- Supplies and quotation route: https://waidemobility.com/supplies.html
+
+Routes handled: requests for quotation, tenders, prequalification and vendor
+onboarding, requests for proposal, subconsultancy and joint bids, institutional
+partnerships, and document requests.
+
+Documents issued on request for a named opportunity: supplier dossier,
+capability statement, method summaries, personnel profiles, clarifications.
+
+## What is not claimed
+
+- No ISO certification or quality certification.
+- No approved-supplier status for any particular institution.
+- No audited accounts.
+- No client references beyond the named reference project, and no client
+  names published without written permission.
+- No UN affiliation, vendor registration or accreditation that has not been
+  granted.
+- No measured operational outcomes from the reference project.
+
+A buyer should confirm the availability of any document before relying on it
+in a tender.
+
+## People
+
+- ThankGod Jacob Chibueze - Founder and Lead Geospatial and Digital Systems
+  Consultant. GIS, software engineering, digital twins, spatial databases,
+  indoor mapping, accessible technology.
+- Abdoulaye Diakite PhD - BIM and built-environment information collaboration
+  (project-specific collaborator).
+- Fareed Gombilla - accessible UI/UX co-design (project-specific collaborator).
+
+## Site map
+
+- https://waidemobility.com/ - company overview
+- https://waidemobility.com/supplies.html - supplies, categories, process
+- https://waidemobility.com/services.html - indoor mapping services
+- https://waidemobility.com/projects.html - project register
+- https://waidemobility.com/procurement.html - procurement and supplier documents
+- https://waidemobility.com/capability-statement.html - printable company profile
+- https://waidemobility.com/about.html - company background
+- https://waidemobility.com/contact.html - enquiry form and contact details

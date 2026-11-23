@@ -1,8 +1,142 @@
 /* Waide Mobility — consultancy site behaviour
    Mobile navigation, form preparation and small progressive enhancements.
-   No third-party scripts. */
+   No analytics or advertising scripts. */
 ;(function () {
   "use strict"
+
+  /* Sienna accessibility widget compatibility.
+     The widget snapshots each element's computed font size into an inline px
+     value (and data-asw-org-font-size). That freezes responsive typography:
+     a heading measured at desktop width stays at its desktop px size after the
+     viewport narrows. We keep the widget's text-scaling feature but express its
+     value as a ratio against the element's current responsive size, then
+     re-measure on resize and orientation change. When the ratio is 1 we remove
+     the inline value entirely and let the stylesheet and media queries work.
+     This touches only elements the widget itself has marked. */
+  var widgetFont = (function () {
+    var observer = null
+    var scale = null
+    var resizeTimer = 0
+    var frame = 0
+    var writing = false
+
+    if (typeof MutationObserver !== "function" || typeof window.getComputedStyle !== "function") {
+      return { refresh: function () {} }
+    }
+
+    scale = new Map()
+
+    function inlineRatio(el) {
+      var inline = parseFloat(el.style.fontSize)
+      var original = parseFloat(el.getAttribute("data-asw-org-font-size"))
+      if (!isFinite(inline) || !isFinite(original) || original <= 0) return null
+      return inline / original
+    }
+
+    function candidates() {
+      var list = []
+      var marked = document.querySelectorAll("[data-asw-org-font-size]")
+      Array.prototype.forEach.call(marked, function (el) {
+        if (list.indexOf(el) === -1) list.push(el)
+      })
+      scale.forEach(function (ratio, el) {
+        if (list.indexOf(el) === -1) list.push(el)
+      })
+      return list
+    }
+
+    function normalize() {
+      if (writing) return
+      frame = 0
+      var elements = candidates()
+      if (!elements.length) return
+
+      var ratios = []
+      elements.forEach(function (el) {
+        var ratio = inlineRatio(el)
+        if (ratio === null) ratio = scale.get(el)
+        if (ratio === null || !isFinite(ratio) || ratio <= 0 || ratio > 5) return
+        if (Math.abs(ratio - 1) < 0.005) ratio = 1
+        ratios.push({ element: el, ratio: ratio })
+      })
+      if (!ratios.length) return
+
+      writing = true
+      observer.disconnect()
+
+      /* Pass 1: remove every frozen size so inherited sizes are responsive. */
+      ratios.forEach(function (item) {
+        item.element.style.removeProperty("font-size")
+        item.element.removeAttribute("data-asw-org-font-size")
+      })
+
+      /* Pass 2: measure all responsive base sizes before applying any scale. */
+      ratios.forEach(function (item) {
+        item.base = parseFloat(window.getComputedStyle(item.element).fontSize)
+      })
+
+      /* Pass 3: reapply only a real user-chosen scale. */
+      ratios.forEach(function (item) {
+        if (!isFinite(item.base) || item.base <= 0) {
+          scale.delete(item.element)
+          return
+        }
+        if (item.ratio === 1) {
+          scale.delete(item.element)
+          return
+        }
+        scale.set(item.element, item.ratio)
+        item.element.setAttribute("data-asw-org-font-size", String(item.base))
+        item.element.style.fontSize = (item.base * item.ratio).toFixed(2) + "px"
+      })
+
+      writing = false
+      observer.observe(document.documentElement, {
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["style"]
+      })
+    }
+
+    function schedule() {
+      if (writing || frame) return
+      if (window.requestAnimationFrame) {
+        frame = window.requestAnimationFrame(normalize)
+      } else {
+        frame = window.setTimeout(normalize, 50)
+      }
+    }
+
+    function refresh() {
+      window.clearTimeout(resizeTimer)
+      resizeTimer = window.setTimeout(normalize, 150)
+    }
+
+    observer = new MutationObserver(function (records) {
+      for (var i = 0; i < records.length; i++) {
+        var target = records[i].target
+        if (target && target.style && target.style.fontSize) {
+          schedule()
+          return
+        }
+      }
+    })
+
+    observer.observe(document.documentElement, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["style"]
+    })
+
+    window.addEventListener("resize", refresh)
+    window.addEventListener("orientationchange", refresh)
+    window.addEventListener("load", normalize)
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(normalize)
+    }
+
+    return { refresh: refresh }
+  })()
 
   var menuBtn = document.querySelector(".cx-menu-btn")
   var nav = document.getElementById("cx-primary-nav")
@@ -35,8 +169,9 @@
     })
   }
 
-  /* Contact form: validates, then opens the visitor's email client with a
-     complete message. It does not pretend to submit to a server. */
+  /* Contact form: validates, then posts to /api/enquiry. The server stores the
+     enquiry and notifies the procurement inbox, so the message is not lost on
+     a machine with no desktop mail client. */
   var form = document.getElementById("cx-contact-form")
 
   if (form) {
@@ -68,15 +203,53 @@
       else status.removeAttribute("data-state")
     }
 
+    var submitBtn = form.querySelector('button[type="submit"]')
+    var submitLabel = submitBtn ? submitBtn.textContent : "Send enquiry"
+    var donePanel = document.getElementById("cx-form-done")
+    var doneRef = document.getElementById("cx-form-ref")
+    var sending = false
+
+    function lock(state) {
+      if (!submitBtn) return
+      submitBtn.disabled = state
+      submitBtn.textContent = state ? "Sending…" : submitLabel
+    }
+
+    function showDone(reference) {
+      if (!donePanel) {
+        setStatus("Enquiry received. Your reference is " + reference + ".", "ok")
+        return
+      }
+      if (doneRef) doneRef.textContent = reference
+      setStatus("", null)
+      form.hidden = true
+      donePanel.hidden = false
+      donePanel.focus()
+    }
+
+    /* The AgentMail inbox sends the visitor the reference, so the enquiry can
+       carry on by email. Best effort: the enquiry is already stored and
+       notified, so a failure here changes nothing the visitor sees. */
+    function acknowledge(payload, reference) {
+      if (!reference) return
+      fetch("/api/agent-mail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          email: payload.email,
+          name: payload.name,
+          reference: reference,
+          subject: payload.subject
+        })
+      }).catch(function () {})
+    }
+
     form.addEventListener("submit", function (event) {
       event.preventDefault()
+      if (sending) return
 
       /* Honeypot: a real visitor never fills this hidden field. */
       var trap = document.getElementById("cx-website")
-      if (trap && trap.value.trim() !== "") {
-        setStatus("Your message could not be prepared. Please email sales@waidemobility.com directly.", "error")
-        return
-      }
 
       if (!form.checkValidity()) {
         form.reportValidity()
@@ -91,40 +264,66 @@
         return
       }
 
-      var get = function (id) {
+      var value = function (id) {
         var el = document.getElementById(id)
         return el ? el.value.trim() : ""
       }
 
-      var categoryLabels = {
-        general: "General enquiry",
-        supplies: "Medical supplies quotation",
-        consultancy: "Consultancy project",
-        procurement: "Procurement or tender",
-        partnership: "Technical partnership",
-        platform: "Product and platform"
+      var payload = {
+        name: value("cx-name"),
+        organisation: value("cx-organisation"),
+        email: value("cx-email"),
+        category: value("cx-category"),
+        subject: value("cx-subject"),
+        message: value("cx-message"),
+        consent: Boolean(consent && consent.checked),
+        website: trap ? trap.value : "",
+        source_page: window.location.pathname + window.location.search
       }
 
-      var lines = [
-        "Name: " + get("cx-name"),
-        "Organisation: " + (get("cx-organisation") || "not given"),
-        "Email: " + get("cx-email"),
-        "Enquiry type: " + (categoryLabels[get("cx-category")] || get("cx-category")),
-        "",
-        get("cx-message")
-      ]
+      sending = true
+      lock(true)
+      setStatus("Sending your enquiry…", "pending")
 
-      var subject = (get("cx-subject") || "Website enquiry") + " — " + (categoryLabels[get("cx-category")] || "Enquiry")
-      var mailto =
-        "mailto:sales@waidemobility.com" +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(lines.join("\n"))
+      var controller = typeof AbortController === "function" ? new AbortController() : null
+      var timer = controller ? window.setTimeout(function () { controller.abort() }, 20000) : 0
+      var fallback = "The enquiry did not reach us. Email sales@waidemobility.com with the same details — what you wrote is still in the form above."
 
-      window.location.href = mailto
-      setStatus(
-        "Your email app should open with the message ready to send. If it does not, email sales@waidemobility.com directly.",
-        "ok"
-      )
+      fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload),
+        signal: controller ? controller.signal : undefined
+      }).then(function (response) {
+        return response.json().catch(function () { return {} }).then(function (data) {
+          return { status: response.status, data: data }
+        })
+      }).then(function (result) {
+        if (result.status === 200 && result.data && result.data.ok) {
+          showDone(result.data.reference || "on request")
+          acknowledge(payload, result.data.reference)
+          return
+        }
+        if (result.status === 422) {
+          setStatus("Some fields need checking. Confirm your name, email, enquiry type, subject, message and consent.", "error")
+          return
+        }
+        if (result.status === 429) {
+          setStatus("Several enquiries have come from this connection. Try again in ten minutes, or email sales@waidemobility.com.", "error")
+          return
+        }
+        if (result.status === 503) {
+          setStatus("The form cannot reach our inbox at the moment. Email sales@waidemobility.com — the message is still in the fields above.", "error")
+          return
+        }
+        setStatus(fallback, "error")
+      }).catch(function () {
+        setStatus(fallback, "error")
+      }).then(function () {
+        if (timer) window.clearTimeout(timer)
+        sending = false
+        lock(false)
+      })
     })
   }
 

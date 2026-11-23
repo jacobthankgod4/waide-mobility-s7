@@ -32,7 +32,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="consultancy.css">
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","url":"https://waidemobility.com/","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Medical supplies, mobility equipment and indoor maps for buildings.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Indoor mapping","Accessible routes","Building information","Medical consumables","Mobility equipment","Orthopaedic supports","Institutional buying"]}
+{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","legalName":"Waide Mobility Ltd","url":"https://waidemobility.com/","identifier":{"@type":"PropertyValue","propertyID":"CAC Company Registration Number","value":"8283881"},"taxID":"32854623-0001","foundingDate":"2025-02-19","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","description":"Medical, mobility and orthopaedic supplies sourced to order, and indoor mapping for buildings.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder \u0026 Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Indoor mapping","Accessible routes","Building information","Medical consumables","Mobility equipment","Orthopaedic supports","Institutional buying"]}
   </script>
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","@id":"https://waidemobility.com/insight-indoor-spatial-data-model.html#webpage","url":"https://waidemobility.com/insight-indoor-spatial-data-model.html","name":"What a Usable Indoor Spatial Data Model Contains | Waide Mobility","description":"Levels, spaces, connections and route edges: the four layers an indoor navigation system needs, and the schema decisions that determine maintainability.","inLanguage":"en","about":{"@id":"https://waidemobility.com/#organization"},"headline":"What a Usable Indoor Spatial Data Model Contains | Waide Mobility","author":{"@type":"Person","name":"ThankGod Jacob Chibueze"},"publisher":{"@id":"https://waidemobility.com/#organization"},"mainEntityOfPage":"https://waidemobility.com/insight-indoor-spatial-data-model.html"}
@@ -44,18 +44,16 @@
   <div class="cx-wrap cx-header-inner">
     <a class="cx-brand" href="index.html">
       <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
-      <span class="cx-brand-name">Waide Mobility<span>Medical supplies &amp; indoor maps</span></span>
+      <span class="cx-brand-name">Waide Mobility<span>Medical supplies</span></span>
     </a>
     <button class="cx-menu-btn" type="button" aria-expanded="false" aria-controls="cx-primary-nav" aria-label="Open navigation menu">
       <span aria-hidden="true"></span>
     </button>
     <nav class="cx-nav" id="cx-primary-nav" aria-label="Primary">
+      <a href="business-areas.html" data-nav="business-areas">Business Areas</a>
       <a href="supplies.html" data-nav="supplies">Supplies</a>
       <a href="services.html" data-nav="mapping">Mapping</a>
       <a href="projects.html" data-nav="projects">Projects</a>
-      <a href="approach.html" data-nav="approach">Approach</a>
-      <a href="expertise.html" data-nav="expertise">Expertise</a>
-      <a href="insights.html" data-nav="insights" aria-current="page">Insights</a>
       <a href="procurement.html" data-nav="procurement">Procurement</a>
       <a href="about.html" data-nav="about">About</a>
       <a href="contact.html" data-nav="contact">Contact</a>
@@ -126,7 +124,7 @@
       <h2 class="cx-h2" style="font-size:1.55rem; margin-top:2.5rem;">The maintenance question.</h2>
       <p class="cx-body">An indoor model decays. Tenants change, fit-outs move walls, a corridor closes for refurbishment. If updating the model requires the original consultant, the model has a short operational life.</p>
       <p class="cx-body">The schema should therefore be simple enough for a trained client team to maintain: clear feature types, a documented attribute list, an edit procedure and a review cycle. Complexity that only the builder understands is a delivery risk, not a mark of sophistication.</p>
-      <p class="cx-body">In the Novare Lekki pilot, the model was built in JOSM against an OpenStreetMap-style indoor schema. That choice keeps the data readable in open tools and makes the structure inspectable by another team. The trade-off is discipline: an open schema will happily accept inconsistent tagging, so validation rules have to be applied deliberately.</p>
+      <p class="cx-body">In the Novare Lekki Mall project, the model was built in JOSM against an OpenStreetMap-style indoor schema. That choice keeps the data readable in open tools and makes the structure inspectable by another team. The trade-off is discipline: an open schema will happily accept inconsistent tagging, so validation rules have to be applied deliberately.</p>
 
       <h2 class="cx-h2" style="font-size:1.55rem; margin-top:2.5rem;">A short checklist.</h2>
       <ul class="cx-list">
@@ -167,10 +165,22 @@
       <div class="cx-footer-brand">
         <a class="cx-brand" href="index.html">
           <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
-          <span class="cx-brand-name">Waide Mobility<span>Medical supplies &amp; indoor maps</span></span>
+          <span class="cx-brand-name">Waide Mobility<span>Medical supplies</span></span>
         </a>
         <p>Medical, mobility and orthopaedic supplies sourced to order, and indoor maps and accessible routes for buildings. Based in Lagos, Nigeria.</p>
         <p><a class="cx-link" href="mailto:sales@waidemobility.com">sales@waidemobility.com</a></p>
+      </div>
+      <div>
+        <h2>Business areas</h2>
+        <ul>
+          <li><a href="business-areas.html#medical-supplies">Medical supplies &amp; healthcare equipment</a></li>
+          <li><a href="business-areas.html#mobility-equipment">Mobility equipment &amp; aids</a></li>
+          <li><a href="business-areas.html#orthopaedic-equipment">Orthopaedic equipment</a></li>
+          <li><a href="business-areas.html#geospatial">Geospatial technology &amp; indoor mapping</a></li>
+          <li><a href="business-areas.html#tourism">Tourism</a></li>
+          <li><a href="business-areas.html#hospitality">Hospitality</a></li>
+          <li><a href="business-areas.html#construction-infrastructure">Construction &amp; infrastructure</a></li>
+        </ul>
       </div>
       <div>
         <h2>Services</h2>
@@ -190,6 +200,7 @@
           <li><a href="expertise.html">Expertise</a></li>
           <li><a href="insights.html">Insights</a></li>
           <li><a href="about.html">About Waide</a></li>
+          <li><a href="privacy.html">Privacy notice</a></li>
         </ul>
       </div>
       <div>
@@ -204,13 +215,13 @@
       </div>
     </div>
     <div class="cx-footer-bottom">
-      <span>&copy; 2026 Waide Mobility. All rights reserved.</span>
-      <span>Lagos, Nigeria &middot; <a class="cx-link" href="contact.html">Project enquiries</a></span>
+      <span>&copy; 2026 Waide Mobility Ltd &middot; RC 8283881. All rights reserved.</span>
+      <span>Lagos, Nigeria &middot; <a class="cx-link" href="contact.html">Project enquiries</a> &middot; <a class="cx-link" href="credits.html">Image credits</a></span>
     </div>
   </div>
 </footer>
 
   <script src="consultancy.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/sienna-accessibility@2.2.333/dist/sienna-accessibility.umd.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sienna-accessibility@2.2.333/dist/sienna-accessibility.umd.js" integrity="sha384-0KH2WYpIKGviyNd2L73jN0B5O/d6vMdncUyRe/ZuE1f9wLaExDOAJE6OH5TQRtOQ" crossorigin="anonymous" defer></script>
 </body>
 </html>

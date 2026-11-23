@@ -3,4 +3,43 @@ Allow: /
 Disallow: /api/
 Disallow: /supabase/
 
+# Answer engines and AI assistants: the site is public and may be read and
+# cited. Content is factual and dated; quote it as Waide Mobility's own
+# statement about itself.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Structured summary for language models and retrieval systems
+# https://waidemobility.com/llms.txt
+
 Sitemap: https://waidemobility.com/sitemap.xml

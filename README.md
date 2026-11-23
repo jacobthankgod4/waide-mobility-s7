@@ -11,6 +11,7 @@ There is no build step, no framework and no client-side routing. It is plain HTM
 | Page | File | Purpose |
 | --- | --- | --- |
 | Home | `index.html` | Positioning, service overview, flagship pilot, engagement routes |
+| Business areas | `business-areas.html` | The seven business areas presented as one portfolio |
 | Services | `services.html` | Index of the five service divisions |
 | Geospatial engineering and mapping | `service-geospatial-engineering.html` | Survey, digitisation, spatial databases, route networks |
 | Digital twins and built-asset information | `service-digital-twins.html` | Multi-level models, space and asset inventories |
@@ -63,7 +64,7 @@ Retired pages from earlier versions of the site are replaced by lightweight `met
 └── CONTENT-VERIFICATION.md           # what is evidenced, what is omitted
 ```
 
-`styles.css` and `script.js` remain because some retained assets and legacy pages reference them. The consultancy pages load only `consultancy.css` and `consultancy.js`.
+The consultancy pages load only `consultancy.css`, `consultancy.js` and `public/novare/novare-gallery-data.js`. The former legacy stylesheets and scripts, and the redirect stubs for retired pages, were removed on 23 November 2026; nothing references them.
 
 ---
 

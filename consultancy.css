@@ -669,6 +669,7 @@ body.cx img, body.cx svg { max-width: 100%; }
 .cx-card--plain { background: transparent; }
 .cx-card h3 { font-size: 1.05rem; margin: 0 0 0.5rem; }
 .cx-card p { margin: 0; font-size: 0.92rem; color: var(--cx-muted); }
+.cx-card .cx-card-title { font-size: 1.05rem; margin: 0 0 0.5rem; color: #ffffff; font-weight: 600; }
 .cx-card .cx-kicker { margin-bottom: 0.8rem; }
 
 /* ---------- Project feature ---------- */
@@ -972,18 +973,34 @@ body.cx img, body.cx svg { max-width: 100%; }
 
 .cx-form-status[data-state="error"] { color: #fca5a5; }
 .cx-form-status[data-state="ok"] { color: var(--cx-turquoise); }
+.cx-form-status[data-state="pending"] { color: #9ca3af; }
+
+/* Enquiry confirmation panel: replaces the form after a successful submit */
+.cx-form-done {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(94, 234, 212, 0.45);
+  border-radius: 12px;
+  background: rgba(94, 234, 212, 0.07);
+}
+.cx-form-done[hidden] { display: none; }
+.cx-form-done:focus { outline: 2px solid #5eead4; outline-offset: 3px; }
+.cx-form-done-title { font-size: 1.15rem; font-weight: 600; color: #ffffff; margin-bottom: 0.5rem; }
+.cx-form-done strong { color: #ffffff; letter-spacing: 0.02em; }
+.cx-form button[disabled] { opacity: 0.65; cursor: progress; }
 
 /* ---------- Footer ---------- */
 
 .cx-footer {
   border-top: 1px solid var(--cx-line);
-  padding: 3.5rem 0 2rem;
+  /* Bottom clearance reserves space for the fixed accessibility button. */
+  padding: 3.5rem 0 6.5rem;
   background: #030405;
 }
 
 .cx-footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr repeat(3, minmax(0, 0.7fr));
+  grid-template-columns: 1.4fr repeat(4, minmax(0, 0.7fr));
   gap: 2rem;
 }
 
@@ -1046,7 +1063,7 @@ body.cx img, body.cx svg { max-width: 100%; }
 
 .cx-breadcrumb a { color: #b7bec7; text-decoration: none; }
 .cx-breadcrumb a:hover { color: var(--cx-turquoise); }
-.cx-breadcrumb span[aria-hidden] { color: #4b535c; }
+.cx-breadcrumb span[aria-hidden] { color: #7c848d; }
 
 /* ---------- Editorial split ---------- */
 
@@ -1157,6 +1174,87 @@ body.cx img, body.cx svg { max-width: 100%; }
 .cx-doc h3 { font-size: 1rem; margin: 0 0 0.25rem; }
 .cx-doc p { margin: 0; font-size: 0.86rem; color: var(--cx-muted); }
 .cx-doc .cx-status { flex-shrink: 0; }
+
+/* ---- Company registration band (procurement) ---------------------------- */
+.cx-registration {
+  background: var(--cx-bg-soft);
+  border-top: 1px solid var(--cx-line);
+  border-bottom: 1px solid var(--cx-line);
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+}
+
+.cx-registration-in {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.75rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.cx-registration-doc { margin: 0; }
+
+.cx-registration-frame {
+  display: block;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: var(--cx-radius);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+  transition: transform 220ms var(--cx-ease), box-shadow 220ms var(--cx-ease);
+}
+
+.cx-registration-frame:hover,
+.cx-registration-frame:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 34px 80px rgba(0, 0, 0, 0.65);
+}
+
+.cx-registration-frame img { display: block; width: 100%; height: auto; }
+
+.cx-registration-doc figcaption {
+  margin-top: 0.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cx-muted);
+}
+
+.cx-registration .cx-band-actions { margin-top: 1.6rem; }
+
+/* ---- Two procurement paths --------------------------------------------- */
+.cx-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cx-path {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.9rem 1.75rem;
+  border: 1px solid var(--cx-line);
+  border-top: 3px solid var(--cx-cyan);
+  border-radius: var(--cx-radius);
+  background: var(--cx-bg-raised);
+}
+
+.cx-path h3 { font-size: 1.35rem; margin: 0; }
+.cx-path p { margin: 0; }
+
+.cx-path .cx-path-for {
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cx-muted);
+}
+
+.cx-path .cx-list { margin: 0.25rem 0 0; }
+.cx-path .cx-band-actions { margin-top: auto; padding-top: 1.1rem; }
+
+@media (max-width: 900px) {
+  .cx-registration-in,
+  .cx-paths { grid-template-columns: minmax(0, 1fr); }
+}
 
 /* ---------- CTA ---------- */
 
@@ -2533,3 +2631,247 @@ body.cx img, body.cx svg { max-width: 100%; }
   .cx-split-cell:hover img,
   .cx-cat:hover .cx-cat-media img { transform: none; }
 }
+
+/* ==========================================================================
+   Business areas portfolio
+   Seven business areas presented with one consistent card treatment.
+   Used by index.html and business-areas.html.
+   ========================================================================== */
+
+.cx-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1.1rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(0, 225, 223, 0.35);
+  border-radius: 999px;
+  background: rgba(0, 225, 223, 0.07);
+  font-family: var(--cx-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b8f5f1;
+}
+
+.cx-hero-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cx-turquoise);
+}
+
+.cx-areas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--cx-line);
+  border: 1px solid var(--cx-line);
+}
+
+.cx-area {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #050809;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.25s var(--cx-ease);
+}
+
+a.cx-area:hover { background: #081014; }
+
+.cx-area:focus-visible {
+  outline: 2px solid var(--cx-turquoise);
+  outline-offset: -2px;
+}
+
+.cx-area-media {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #04070a;
+  border-bottom: 1px solid var(--cx-line-soft);
+}
+
+.cx-area-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--cx-ease);
+}
+
+a.cx-area:hover .cx-area-media img { transform: scale(1.04); }
+
+.cx-area-index {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(3, 7, 9, 0.84);
+  font-family: var(--cx-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: #d7f9f7;
+}
+
+.cx-area-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+  padding: 1.05rem 1.1rem 1.15rem;
+}
+
+.cx-area h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.32;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.cx-area-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: auto 0 0;
+  font-family: var(--cx-mono);
+  font-size: 0.61rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8b939d;
+}
+
+.cx-area-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #aeb5bd;
+  transition: color 0.2s var(--cx-ease);
+}
+
+a.cx-area:hover .cx-area-go { color: var(--cx-turquoise); }
+
+@media (max-width: 1100px) {
+  .cx-areas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .cx-areas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cx-area-body { padding: 0.9rem 0.9rem 1rem; }
+  .cx-area h3 { font-size: 0.94rem; }
+}
+
+@media (max-width: 520px) {
+  .cx-areas { grid-template-columns: minmax(0, 1fr); }
+  .cx-area { flex-direction: row; align-items: stretch; }
+  .cx-area-media { flex: 0 0 42%; aspect-ratio: auto; border-bottom: 0; border-right: 1px solid var(--cx-line-soft); }
+  .cx-area-body { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cx-area, .cx-area-media img, .cx-area-go { transition: none; }
+}
+
+/* ---------- Image disclosure, credits and policy pages ---------- */
+
+.cx-media-note {
+  margin: 1rem 0 0;
+  font-family: var(--cx-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: #7c848d;
+  max-width: 84ch;
+}
+
+.cx-media-note a { color: #aeb5bd; }
+
+.cx-stock-flag {
+  position: absolute;
+  left: 0.55rem;
+  bottom: 0.55rem;
+  z-index: 1;
+  padding: 0.18rem 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.72);
+  color: #cfd4da;
+  font-family: var(--cx-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.cx-prose { max-width: 78ch; }
+
+.cx-prose > * + * { margin-top: 1.1rem; }
+
+.cx-prose h2 { margin-top: 2.6rem; }
+
+.cx-prose h3 {
+  margin-top: 2rem;
+  font-size: 1.05rem;
+}
+
+.cx-prose p,
+.cx-prose li {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--cx-muted-strong);
+}
+
+.cx-prose ul {
+  margin-top: 0.6rem;
+  padding-left: 1.15rem;
+}
+
+.cx-prose li { margin-bottom: 0.45rem; }
+
+.cx-prose dt {
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.cx-prose dd {
+  margin: 0.25rem 0 0;
+  color: var(--cx-muted-strong);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.cx-prose a { color: var(--cx-turquoise); }
+
+.cx-credits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--cx-line);
+}
+
+.cx-credits-list li {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--cx-line-soft);
+}
+
+.cx-credits-list span {
+  font-family: var(--cx-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  color: #8b939d;
+}
+
+@media (max-width: 520px) {
+  .cx-stock-flag { display: none; }
+}
+
