@@ -113,8 +113,11 @@ module.exports = async function handler(req, res) {
     return
   }
 
+  /* The acknowledgement is an optional extra on top of /api/enquiry. When
+     AgentMail is not set up there is nothing to send, so this answers quietly
+     instead of logging a failed request in the visitor's browser. */
   if (!result.configured) {
-    res.status(503).json({ ok: false, error: 'not_configured' })
+    res.status(200).json({ ok: false, configured: false })
     return
   }
 
