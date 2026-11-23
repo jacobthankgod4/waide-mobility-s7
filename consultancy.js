@@ -169,6 +169,36 @@
     })
   }
 
+  /* Scroll reveal. The class is added here rather than in the HTML, so a
+     visitor without JavaScript, with reduced motion, or with an old browser
+     always sees the finished page. Each section and card group slides in once
+     and is then unobserved; nothing re-animates while scrolling back up. */
+  var motionAllowed = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+
+  if (motionAllowed && "IntersectionObserver" in window) {
+    var revealTargets = document.querySelectorAll(
+      "main > section:not(.cx-hero), main .cx-area, main .cx-cat, main .cx-service-row, " +
+      "main .cx-step, main .cx-card, main .cx-division, main .cx-record"
+    )
+
+    if (revealTargets.length) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return
+          entry.target.classList.add("is-visible")
+          revealObserver.unobserve(entry.target)
+        })
+      }, { rootMargin: "0px 0px -6% 0px", threshold: 0.06 })
+
+      Array.prototype.forEach.call(revealTargets, function (el) {
+        var siblings = el.parentNode ? Array.prototype.indexOf.call(el.parentNode.children, el) : 0
+        el.classList.add("cx-reveal")
+        el.style.setProperty("--cx-reveal-delay", Math.min(Math.max(siblings, 0), 5) * 60 + "ms")
+        revealObserver.observe(el)
+      })
+    }
+  }
+
   /* Contact form: validates, then posts to /api/enquiry. The server stores the
      enquiry and notifies the procurement inbox, so the message is not lost on
      a machine with no desktop mail client. */
