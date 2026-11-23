@@ -2,6 +2,13 @@
   publish = "dist"
   command = "node stage.mjs"
 
+# The contact form posts to /api/enquiry on every host. On Netlify that path is
+# served by the function adapter in netlify/functions/enquiry.js.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]

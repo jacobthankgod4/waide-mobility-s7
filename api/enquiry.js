@@ -9,11 +9,16 @@
    Environment variables (all optional, but at least one delivery route must
    be configured or the endpoint answers 503 and the browser falls back to
    the documented email address):
+     BREVO_API_KEY                Brevo API key (xkeysib-...), preferred route
      SUPABASE_URL                 e.g. https://xxxx.supabase.co
      SUPABASE_SERVICE_ROLE_KEY    service role key, server side only
-     RESEND_API_KEY               Resend API key
+     RESEND_API_KEY               Resend API key, used only if Brevo is absent
      ENQUIRY_TO                   inbox that receives notifications
-     ENQUIRY_FROM                 verified Resend sender
+     ENQUIRY_FROM                 verified sender, e.g. Stephanie Ezedunukwe <sales@waidemobility.com>
+
+   Brevo is called over HTTPS, not port 587: serverless functions cannot hold
+   an SMTP socket open, and the Brevo REST API uses the same account and key.
+   The sender address must be verified in Brevo (Senders, Domains & IPs).
 */
 
 'use strict'
@@ -115,7 +120,67 @@ async function store(record) {
   return { configured: true, ok: response.ok }
 }
 
-async function notify(record) {
+function parseSender(value, fallback) {
+  var match = /^\s*(.*?)\s*<([^>]+)>\s*$/.exec(String(value || ''))
+  if (match) return { name: match[1] || 'Stephanie Ezedunukwe', email: match[2].trim() }
+  var email = String(value || fallback || '').trim()
+  return { name: process.env.ENQUIRY_SENDER_NAME || 'Stephanie Ezedunukwe', email: email }
+}
+
+/* Brevo transactional email over HTTPS. This is the configured route for the
+   contact form: every enquiry is delivered to the sales inbox with the
+   visitor's address as reply-to, so a reply goes straight back to them. */
+async function notifyBrevo(record) {
+  var key = process.env.BREVO_API_KEY
+  if (!key) return { configured: false, ok: false }
+
+  var to = process.env.ENQUIRY_TO || 'sales@waidemobility.com'
+  var sender = parseSender(process.env.ENQUIRY_FROM || to, to)
+
+  var rows = [
+    ['Reference', record.reference],
+    ['Name', record.name],
+    ['Organisation', record.organisation || 'not given'],
+    ['Email', record.email],
+    ['Enquiry type', CATEGORIES[record.category] || record.category],
+    ['Subject', record.subject],
+    ['Page', record.source_page || 'not given']
+  ]
+
+  var html = '<h2>Website enquiry ' + escapeHtml(record.reference) + '</h2>' +
+    '<table cellpadding="6" style="border-collapse:collapse;font:14px system-ui">' +
+    rows.map(function (row) {
+      return '<tr><th align="left" style="background:#f3f4f6">' + escapeHtml(row[0]) +
+        '</th><td>' + escapeHtml(row[1]) + '</td></tr>'
+    }).join('') +
+    '</table><h3>Message</h3><pre style="white-space:pre-wrap;font:14px system-ui">' +
+    escapeHtml(record.message) + '</pre>'
+
+  var text = 'Website enquiry ' + record.reference + '\n\n' +
+    rows.map(function (row) { return row[0] + ': ' + row[1] }).join('\n') +
+    '\n\nMessage\n' + record.message + '\n'
+
+  var response = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: {
+      'api-key': key,
+      accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      sender: sender,
+      to: [{ email: to }],
+      replyTo: { email: record.email, name: record.name },
+      subject: '[' + record.reference + '] ' + record.subject,
+      htmlContent: html,
+      textContent: text
+    })
+  })
+
+  return { configured: true, ok: response.ok, provider: 'brevo' }
+}
+
+async function notifyResend(record) {
   var key = process.env.RESEND_API_KEY
   if (!key) return { configured: false, ok: false }
 
@@ -156,7 +221,14 @@ async function notify(record) {
     })
   })
 
-  return { configured: true, ok: response.ok }
+  return { configured: true, ok: response.ok, provider: 'resend' }
+}
+
+/* Brevo first; Resend only when no Brevo key is set. */
+async function notify(record) {
+  var brevo = await notifyBrevo(record)
+  if (brevo.configured) return brevo
+  return notifyResend(record)
 }
 
 module.exports = async function handler(req, res) {
