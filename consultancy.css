@@ -2109,7 +2109,7 @@ body.cx img, body.cx svg { max-width: 100%; }
 }
 
 .cx-split-cell--supplies img { filter: saturate(0.9) contrast(1.06) brightness(1.24); }
-.cx-split-cell--spatial img { object-position: 52% 44%; filter: saturate(0.92) contrast(1.02) brightness(0.98); }
+.cx-split-cell--spatial img { object-position: 46% 50%; filter: saturate(0.95) contrast(1.03) brightness(1.06); }
 
 .cx-split-cell:hover img,
 .cx-split-cell:focus-visible img { transform: scale(1.035); }
@@ -2606,8 +2606,8 @@ body.cx img, body.cx svg { max-width: 100%; }
 
 @media (max-width: 980px) {
   .cx-hero--split .cx-hero-grid { grid-template-columns: minmax(0, 1fr); }
-  .cx-split-visual { order: -1; }
   .cx-split-cell { aspect-ratio: 3 / 3.1; }
+  .cx-split-visual { margin-top: 0.5rem; }
   .cx-band-grid { grid-template-columns: minmax(0, 1fr); }
   .cx-record-meta { margin-left: 0; }
 }
