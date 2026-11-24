@@ -215,7 +215,7 @@
       var division = params.get("division")
       if (categoryField) {
         if (division === "supplies") categoryField.value = "supplies"
-        else if (division === "mapping") categoryField.value = "consultancy"
+        else if (division === "mapping") categoryField.value = "mapping"
       }
       var subjectField = document.getElementById("cx-subject")
       var presetSubject = params.get("subject")

@@ -26,6 +26,9 @@
 var CATEGORIES = {
   general: 'General enquiry',
   supplies: 'Medical supplies quotation',
+  'supplies-tender': 'Supplies tender or prequalification',
+  mapping: 'Indoor mapping project',
+  'mapping-tender': 'Indoor mapping tender',
   consultancy: 'Consultancy project',
   procurement: 'Procurement or tender',
   partnership: 'Technical partnership',

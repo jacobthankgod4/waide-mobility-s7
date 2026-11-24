@@ -95,6 +95,7 @@ satisfaction results are published.
 - Procurement and supplier information: https://waidemobility.com/procurement.html
 - Capability statement, printable: https://waidemobility.com/capability-statement.html
 - Project experience register: https://waidemobility.com/projects.html
+- Shop supply categories and quote requests: https://waidemobility.com/shop.html
 - Supplies and quotation route: https://waidemobility.com/supplies.html
 
 Routes handled: requests for quotation, tenders, prequalification and vendor
@@ -130,6 +131,7 @@ in a tender.
 ## Site map
 
 - https://waidemobility.com/ - company overview
+- https://waidemobility.com/shop.html - supply categories and quote requests
 - https://waidemobility.com/supplies.html - supplies, categories, process
 - https://waidemobility.com/services.html - indoor mapping services
 - https://waidemobility.com/projects.html - project register
