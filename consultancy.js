@@ -624,4 +624,74 @@
       window.print()
     })
   }
+
+  /* Procurement automation status.
+     The console publishes automation-status.json into this repository and the
+     markup carries the last published figures, so the page is complete without
+     JavaScript. This refreshes those figures when the file can be read and
+     leaves them alone when it cannot. */
+  var statusBlock = document.querySelector("[data-automation-status]")
+  if (statusBlock) {
+    var setField = function (name, text) {
+      if (!text) return
+      var field = statusBlock.querySelector('[data-field="' + name + '"]')
+      if (field) field.textContent = text
+    }
+    var day = function (value) {
+      var date = new Date(value)
+      if (!value || isNaN(date.getTime())) return null
+      return date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+    }
+    var tally = function (value) {
+      return typeof value === "number" ? value.toLocaleString("en-GB") : null
+    }
+
+    fetch("automation-status.json", { headers: { Accept: "application/json" }, cache: "no-cache" })
+      .then(function (response) {
+        if (!response.ok) throw new Error("status unavailable")
+        return response.json()
+      })
+      .then(function (data) {
+        if (!data || data.schema !== "waide.automation-status/1") throw new Error("unknown schema")
+
+        var controls = data.controls || {}
+        var reference = data.reference || {}
+
+        setField("published", day(data.generatedAt))
+        if (controls.bidGateChecks) setField("gate-checks", String(controls.bidGateChecks))
+        if (controls.authorityCapabilities) setField("capabilities", controls.authorityCapabilities + " across six roles")
+        if (controls.correspondenceIntents) setField("intents", String(controls.correspondenceIntents))
+
+        if (reference.sanctions) {
+          var entries = tally(reference.sanctions.entries)
+          var listed = day(reference.sanctions.generatedAt)
+          if (entries) {
+            setField("sanctions", entries + " entries from the " + reference.sanctions.source + " lists" + (listed ? ", generated " + listed : ""))
+          }
+        }
+
+        if (reference.supplierRegistry) {
+          var imported = tally(reference.supplierRegistry.imported)
+          var retrieved = tally(reference.supplierRegistry.retrieved)
+          var importDate = day(reference.supplierRegistry.importedAt)
+          if (imported) {
+            setField("registry", imported + " entities imported from " + retrieved + " retrieved from the " + reference.supplierRegistry.source + " registry" + (importDate ? ", " + importDate : ""))
+          }
+        }
+
+        if (reference.exchangeRates) {
+          var rateDate = day(reference.exchangeRates.asOf)
+          setField("fx", reference.exchangeRates.source + (rateDate ? ", as of " + rateDate : ""))
+        }
+
+        if (controls.auditChain) {
+          setField("audit", controls.auditChain.valid ? "Verified, SHA-256 hash chain" : "Integrity failure recorded")
+        }
+
+        statusBlock.setAttribute("data-automation-state", "current")
+      })
+      .catch(function () {
+        statusBlock.setAttribute("data-automation-state", "unavailable")
+      })
+  }
 })()

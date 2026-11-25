@@ -15,6 +15,7 @@ const skipDirectories = new Set([".git", "dist", "node_modules", "supabase"])
 
 const requiredFiles = [
   "consultancy.css",
+  "automation-status.json",
   "consultancy.js",
   "site.webmanifest",
   "robots.txt",

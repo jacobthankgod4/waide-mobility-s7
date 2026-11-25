@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Procurement Automation &amp; Controls | Waide Mobility</title>
+  <meta name="description" content="How Waide Mobility handles an incoming RFQ or tender: document extraction, sanctions screening, a sixteen-check bid gate and named human authority before anything is sent or signed.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://waidemobility.com/automation.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:title" content="Procurement Automation &amp; Controls | Waide Mobility">
+  <meta property="og:description" content="What the software does with an incoming RFQ or tender, what it refuses to decide, and what it will never send on its own.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://waidemobility.com/automation.html">
+  <meta property="og:site_name" content="Waide Mobility">
+  <meta property="og:image" content="https://waidemobility.com/public/og-waide.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Waide Mobility — medical supplies and indoor mapping">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Procurement Automation &amp; Controls | Waide Mobility">
+  <meta name="twitter:description" content="Document extraction, sanctions screening, a sixteen-check bid gate and named human authority before a bid leaves.">
+  <meta name="twitter:image" content="https://waidemobility.com/public/og-waide.png">
+  <meta name="twitter:image:alt" content="Waide Mobility — medical supplies and indoor mapping">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="consultancy.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://waidemobility.com/#organization","name":"Waide Mobility","legalName":"Waide Mobility Ltd","url":"https://waidemobility.com/","identifier":{"@type":"PropertyValue","propertyID":"CAC Company Registration Number","value":"8283881"},"taxID":"32854623-0001","foundingDate":"2025-02-19","logo":"https://waidemobility.com/public/waide-logo.png","email":"sales@waidemobility.com","telephone":"+2348105634237","description":"Medical, mobility and orthopaedic supplies sourced to order, and indoor mapping for buildings.","address":{"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},"founder":{"@type":"Person","name":"ThankGod Jacob Chibueze","jobTitle":"Founder & Lead Geospatial and Digital Systems Consultant"},"areaServed":"Nigeria","knowsAbout":["Indoor mapping","Accessible routes","Building information","Medical consumables","Mobility equipment","Orthopaedic supports","Institutional buying"]}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://waidemobility.com/automation.html#webpage","url":"https://waidemobility.com/automation.html","name":"Procurement Automation & Controls | Waide Mobility","description":"How incoming requests for quotation, tenders and prequalification are extracted, screened, gated and routed to a named human authority.","inLanguage":"en","about":{"@id":"https://waidemobility.com/#organization"}}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://waidemobility.com/"},{"@type":"ListItem","position":2,"name":"Procurement and supplier information","item":"https://waidemobility.com/procurement.html"},{"@type":"ListItem","position":3,"name":"Procurement automation","item":"https://waidemobility.com/automation.html"}]}
+  </script>
+</head>
+<body class="cx">
+  <a class="cx-skip" href="#main-content">Skip to content</a>
+<header class="cx-header">
+  <div class="cx-wrap cx-header-inner">
+    <a class="cx-brand" href="index.html">
+      <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
+      <span class="cx-brand-name">Waide Mobility<span>Supplies &amp; mapping</span></span>
+    </a>
+    <button class="cx-menu-btn" type="button" aria-expanded="false" aria-controls="cx-primary-nav" aria-label="Open navigation menu">
+      <span aria-hidden="true"></span>
+    </button>
+    <nav class="cx-nav" id="cx-primary-nav" aria-label="Primary">
+      <a href="business-areas.html" data-nav="business-areas">Business Areas</a>
+      <a href="shop.html" data-nav="shop">Shop</a>
+      <a href="services.html" data-nav="mapping">Mapping</a>
+      <a href="projects.html" data-nav="projects">Projects</a>
+      <a href="procurement.html" data-nav="procurement">Procurement</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a class="cx-header-cta" href="contact.html">Start an enquiry</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="cx-hero" aria-labelledby="automation-title">
+    <div class="cx-wrap">
+      <nav class="cx-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="procurement.html">Procurement</a><span aria-hidden="true">/</span><span>Automation</span></nav>
+      <p class="cx-eyebrow">Procurement automation</p>
+      <h1 class="cx-h1 cx-h1--wide" id="automation-title">The checks a request passes before a quotation goes out.</h1>
+      <p class="cx-sub">Requests for quotation, tenders and prequalification arrive at a monitored inbox. This page describes what the software does with one, what it refuses to decide, and what it will never send on its own.</p>
+      <div class="cx-hero-actions">
+        <a class="cx-btn cx-btn--primary" href="#pipeline">Follow a request</a>
+        <a class="cx-btn cx-btn--ghost" href="#status">Current status</a>
+      </div>
+      <div class="cx-hero-meta">
+        <span><span class="cx-dot" aria-hidden="true"></span>16 mandatory checks before a bid</span>
+        <span>No automated approvals</span>
+        <span>Every decision recorded</span>
+        <span>Lagos, Nigeria</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cx-section cx-section--tight" aria-label="Automation at a glance">
+    <div class="cx-wrap">
+      <div class="cx-stat-band">
+        <div class="cx-stat"><strong>16</strong><span>Mandatory checks in the bid gate, each able to stop a submission</span></div>
+        <div class="cx-stat"><strong>20,636</strong><span>Sanctions entries screened against, from the OFAC and UN lists</span></div>
+        <div class="cx-stat"><strong>0</strong><span>Signatures, approvals, payments or guarantees the software may make alone</span></div>
+        <div class="cx-stat"><strong>SHA-256</strong><span>Hash-chained record of every decision, refusal and change</span></div>
+      </div>
+      <p class="cx-note" style="margin-top:1rem;">The software prepares, extracts, screens and checks. A named person decides. Where a mandatory fact is unknown, the answer is a hold rather than an assumption.</p>
+    </div>
+  </section>
+
+  <section class="cx-section" id="pipeline" aria-labelledby="pipeline-title">
+    <div class="cx-wrap">
+      <div class="cx-section-head">
+        <div>
+          <p class="cx-kicker">A single request, end to end</p>
+          <h2 class="cx-h2" id="pipeline-title">From an e-mail to a recorded decision.</h2>
+          <p class="cx-lead">The same sequence runs for a two-line consumables RFQ and for a multi-lot tender. Nothing leaves the process without the step before it having produced a result.</p>
+        </div>
+      </div>
+
+      <ol class="cx-steps">
+        <li class="cx-step">
+          <div>
+            <h3>Intake</h3>
+            <p>The request arrives by e-mail at a monitored inbox. The sender, subject and received time are recorded before anything is opened, and attachments are stored with their original bytes.</p>
+          </div>
+          <div class="cx-step-output"><span>Result</span>A recorded request with its documents attached and its timestamp fixed</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Extraction</h3>
+            <p>Text is pulled from each document page by page, including scanned pages read by OCR. The extraction records what it could not read instead of filling the gap.</p>
+          </div>
+          <div class="cx-step-output"><span>Result</span>Requirement text with unreadable pages listed explicitly</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Requirements</h3>
+            <p>Mandatory requirements, submission rules, deadlines, delivery terms and evaluation criteria are separated from background narrative and put into a checklist.</p>
+          </div>
+          <div class="cx-step-output"><span>Result</span>A requirements list that can be checked line by line</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Screening</h3>
+            <p>Suppliers and every other transaction party are screened against the OFAC SDN and UN consolidated lists. A name match is recorded as a potential match until a named person resolves it with reasons.</p>
+          </div>
+          <div class="cx-step-output"><span>Result</span>A screening result, with false positives identified as such</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Bid gate</h3>
+            <p>Sixteen deterministic checks cover legal identity, mandatory evidence, supplier approval, sanctions, product regulatory status, export control, the jurisdictional chain, contribution margin, cost completeness, peak cash, liability, amendments, deadline, evidence validity and signatory.</p>
+          </div>
+          <div class="cx-step-output"><span>Result</span>Bid-ready, hold, or no-bid, with the blocking reason named</div>
+        </li>
+        <li class="cx-step">
+          <div>
+            <h3>Authority</h3>
+            <p>The decision is routed to the role that holds it. A second, different authority is required above the threshold, the same person cannot satisfy both, and the approval binds to the exact figures it authorised and expires after 72 hours.</p>
+          </div>
+          <div class="cx-step-output"><span>Result</span>A signed decision, or a recorded refusal</div>
+        </li>
+      </ol>
+      <p class="cx-note" style="margin-top:1rem;">A changed amount, quantity or beneficiary voids an approval rather than inheriting it. A submission without an official receipt leaves the request at &ldquo;approved&rdquo; and does not proceed.</p>
+    </div>
+  </section>
+
+  <section class="cx-section cx-section--alt" aria-labelledby="controls-title">
+    <div class="cx-wrap">
+      <div class="cx-section-head">
+        <div>
+          <p class="cx-kicker">Controls</p>
+          <h2 class="cx-h2" id="controls-title">What the software enforces, and what happens when it cannot.</h2>
+          <p class="cx-lead">These are rules in code rather than instructions in a prompt. A failure is a refusal and an unknown is a hold, in both cases recorded.</p>
+        </div>
+      </div>
+
+      <div class="cx-table-wrap">
+        <table class="cx-table">
+          <thead>
+            <tr><th scope="col">Control</th><th scope="col">What is enforced</th><th scope="col">When a fact is unknown</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Authority matrix</th>
+              <td>25 named capabilities across six roles. The software holds no signature, approval, payment-release or guarantee authority at all.</td>
+              <td>Refused; the role that holds the right is asked to decide.</td>
+            </tr>
+            <tr>
+              <th scope="row">Dual control</th>
+              <td>Above the threshold a second, different authority must decide. The same person cannot give both decisions.</td>
+              <td>Held at the first decision.</td>
+            </tr>
+            <tr>
+              <th scope="row">Bid gate</th>
+              <td>Sixteen checks, each recorded with its own result and blocking reason.</td>
+              <td>Hold. Never a pass.</td>
+            </tr>
+            <tr>
+              <th scope="row">Sanctions screening</th>
+              <td>OFAC SDN and UN consolidated lists, refreshed with the source URL and hash of every file used.</td>
+              <td>A potential match blocks the bid until a named person resolves it.</td>
+            </tr>
+            <tr>
+              <th scope="row">Evidence</th>
+              <td>Source, issuing entity, issue and expiry dates, access class and permitted use per document. Conflicts between documents are flagged.</td>
+              <td>Expired or conflicting evidence blocks the bid.</td>
+            </tr>
+            <tr>
+              <th scope="row">Inbound correspondence</th>
+              <td>20 intent classes. External text is handled as data, never as an instruction. Bank-detail changes and requests for confidential documents are quarantined.</td>
+              <td>Quarantined for human review.</td>
+            </tr>
+            <tr>
+              <th scope="row">Payments</th>
+              <td>Three-way match between purchase order, delivery and invoice. Preparing, approving and releasing are separate roles.</td>
+              <td>No preparation without a match.</td>
+            </tr>
+            <tr>
+              <th scope="row">Record</th>
+              <td>Append-only ledger, each event hashed with the one before it. Rewriting any event breaks verification.</td>
+              <td>A broken chain is reported as an integrity failure.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="cx-section" id="status" aria-labelledby="status-title">
+    <div class="cx-wrap">
+      <div class="cx-section-head">
+        <div>
+          <p class="cx-kicker">Published status</p>
+          <h2 class="cx-h2" id="status-title">What the console currently holds.</h2>
+          <p class="cx-lead">Reference-data currency and control coverage, published by the procurement console itself. If the published file cannot be read, the figures below are the last ones it wrote.</p>
+        </div>
+      </div>
+
+      <div class="cx-table-wrap" data-automation-status>
+        <table class="cx-table">
+          <thead>
+            <tr><th scope="col">Item</th><th scope="col">Published value</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Snapshot published</th><td data-field="published">25 November 2026</td></tr>
+            <tr><th scope="row">Bid gate checks</th><td data-field="gate-checks">16</td></tr>
+            <tr><th scope="row">Authority capabilities</th><td data-field="capabilities">25 across six roles</td></tr>
+            <tr><th scope="row">Correspondence intent classes</th><td data-field="intents">20</td></tr>
+            <tr><th scope="row">Sanctions list</th><td data-field="sanctions">20,636 entries from the OFAC SDN and UN consolidated lists, generated 24 November 2026</td></tr>
+            <tr><th scope="row">Supplier registry</th><td data-field="registry">41 entities imported from 230 retrieved from the GLEIF LEI registry, 25 November 2026</td></tr>
+            <tr><th scope="row">Exchange rates</th><td data-field="fx">open.er-api.com, as of 24 November 2026</td></tr>
+            <tr><th scope="row">Audit chain</th><td data-field="audit">Verified, SHA-256 hash chain</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cx-note" style="margin-top:1rem;">This block is filled from <span class="cx-mono">automation-status.json</span>, which the console writes. No figure here is typed by hand.</p>
+    </div>
+  </section>
+
+  <section class="cx-section cx-section--alt" aria-labelledby="scope-title">
+    <div class="cx-wrap">
+      <div class="cx-section-head">
+        <div>
+          <p class="cx-kicker">Disclosure</p>
+          <h2 class="cx-h2" id="scope-title">What this page does not show, and why.</h2>
+        </div>
+      </div>
+      <div class="cx-grid-2" style="gap:1.5rem;">
+        <div class="cx-card cx-card--plain">
+          <h3>Not published</h3>
+          <ul class="cx-list cx-list--tight">
+            <li>Supplier names, contacts and bank details</li>
+            <li>Buyer names and tender documents</li>
+            <li>Prices, margins and cash positions</li>
+            <li>Correspondence and approval records</li>
+            <li>Which opportunities are being pursued</li>
+          </ul>
+        </div>
+        <div class="cx-card cx-card--plain">
+          <h3>Why</h3>
+          <p>Those records belong to the parties in a live procurement, and publishing them would damage a buyer&rsquo;s position or a supplier&rsquo;s confidence. The status above is limited to the currency of public reference data and the coverage of controls that exist in code.</p>
+          <p>Where a buyer or supplier needs evidence for their own file, it is issued for a named opportunity rather than posted here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cx-section" aria-labelledby="refusal-title">
+    <div class="cx-wrap">
+      <p class="cx-kicker">Where it stops</p>
+      <h2 class="cx-h2" id="refusal-title">Things the process will not do, even when asked.</h2>
+      <div class="cx-callout">
+        <p><strong>No invented credentials.</strong> A certificate, licence or approval exists only if a document in the evidence file proves it and has not expired. Fictitious references and unevidenced claims are refused rather than softened.</p>
+        <p><strong>No bid without evidence.</strong> A missing mandatory requirement produces a hold, not a best guess, and a deadline that has passed cannot be reopened by an approval.</p>
+        <p><strong>No payment without a match.</strong> An invoice that does not match its purchase order and its delivery cannot be prepared, and a changed beneficiary voids the release rather than inheriting it.</p>
+        <p><strong>No instruction from a document.</strong> Text inside an attachment or an e-mail that tells the system to pay, send or change a bank account is treated as content to report, never as a command to follow.</p>
+      </div>
+      <p class="cx-note" style="margin-top:1rem;">This is a control description, not a certification. It is not an ISO claim, an audit opinion, or an approved-supplier status.</p>
+    </div>
+  </section>
+
+  <section class="cx-section cx-section--alt">
+    <div class="cx-wrap">
+      <div class="cx-cta">
+        <div>
+          <p class="cx-kicker">Procurement contact</p>
+          <h2 class="cx-h2">Send the scope and the deadline.</h2>
+          <p class="cx-lead">Email <a class="cx-link" href="mailto:sales@waidemobility.com">sales@waidemobility.com</a> or use the enquiry form with the tender reference, the required scope and the submission date. A request that cannot be met within its deadline is answered before the deadline, not after it.</p>
+        </div>
+        <div class="cx-cta-actions">
+          <a class="cx-btn cx-btn--primary" href="contact.html?division=supplies&amp;subject=Request%20for%20quotation#enquiry">Send a request</a>
+          <a class="cx-btn cx-btn--ghost" href="procurement.html">Procurement and supplier information</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cx-footer">
+  <div class="cx-wrap">
+    <div class="cx-footer-grid">
+      <div class="cx-footer-brand">
+        <a class="cx-brand" href="index.html">
+          <img src="public/waide-logo.png" alt="Waide Mobility" width="34" height="34">
+          <span class="cx-brand-name">Waide Mobility<span>Supplies &amp; mapping</span></span>
+        </a>
+        <p>Medical, mobility and orthopaedic supplies sourced to order, and indoor maps and accessible routes for buildings. Based in Lagos, Nigeria.</p>
+        <p><a class="cx-link" href="mailto:sales@waidemobility.com">sales@waidemobility.com</a></p>
+        <p><a class="cx-link" href="tel:+2348105634237">+234 810 563 4237</a></p>
+      </div>
+      <div>
+        <h2>Business areas</h2>
+        <ul>
+          <li><a href="business-areas.html#medical-supplies">Medical supplies &amp; healthcare equipment</a></li>
+          <li><a href="business-areas.html#mobility-equipment">Mobility equipment &amp; aids</a></li>
+          <li><a href="business-areas.html#orthopaedic-equipment">Orthopaedic equipment</a></li>
+          <li><a href="business-areas.html#geospatial">Geospatial technology &amp; indoor mapping</a></li>
+          <li><a href="business-areas.html#tourism">Tourism</a></li>
+          <li><a href="business-areas.html#hospitality">Hospitality</a></li>
+          <li><a href="business-areas.html#construction-infrastructure">Construction &amp; infrastructure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="service-geospatial-engineering.html">Building and site maps</a></li>
+          <li><a href="service-digital-twins.html">Building maps and records</a></li>
+          <li><a href="service-gis-platforms.html">Web maps and tools</a></li>
+          <li><a href="service-accessible-mobility.html">Accessible routes</a></li>
+          <li><a href="service-technical-advisory.html">Mapping advice and training</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="approach.html">Our approach</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="about.html">About Waide</a></li>
+          <li><a href="privacy.html">Privacy notice</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Work with us</h2>
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="supplies.html">Supplies</a></li>
+          <li><a href="procurement.html">Procurement &amp; partnerships</a></li>
+          <li><a href="automation.html">Procurement automation</a></li>
+          <li><a href="capability-statement.html">Capability statement</a></li>
+          <li><a href="platform.html">Technology platform</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cx-footer-bottom">
+      <span>&copy; 2026 Waide Mobility Ltd &middot; RC 8283881. All rights reserved.</span>
+      <span>Lagos, Nigeria &middot; <a class="cx-link" href="contact.html">Project enquiries</a></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="consultancy.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sienna-accessibility@2.2.333/dist/sienna-accessibility.umd.js" integrity="sha384-0KH2WYpIKGviyNd2L73jN0B5O/d6vMdncUyRe/ZuE1f9wLaExDOAJE6OH5TQRtOQ" crossorigin="anonymous" defer></script>
+</body>
+</html>

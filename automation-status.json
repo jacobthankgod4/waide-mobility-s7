@@ -1,0 +1,33 @@
+{
+  "schema": "waide.automation-status/1",
+  "generatedAt": "2026-11-25T04:23:32.667Z",
+  "controls": {
+    "bidGateChecks": 16,
+    "authorityCapabilities": 25,
+    "correspondenceIntents": 20,
+    "auditChain": {
+      "algorithm": "sha256-chain",
+      "valid": true
+    }
+  },
+  "reference": {
+    "supplierRegistry": {
+      "source": "GLEIF LEI",
+      "retrieved": 230,
+      "imported": 41,
+      "importedAt": "2026-11-25T03:41:20.828Z"
+    },
+    "sanctions": {
+      "source": "OFAC SDN and UN consolidated",
+      "entries": 20636,
+      "generatedAt": "2026-11-24T10:28:33.526Z"
+    },
+    "exchangeRates": {
+      "source": "open.er-api.com",
+      "asOf": "Tue, 24 Nov 2026 00:02:31 +0000"
+    }
+  },
+  "published": {
+    "scope": "Reference-data currency and control coverage only. No supplier, buyer, document, price or approval record is published."
+  }
+}
