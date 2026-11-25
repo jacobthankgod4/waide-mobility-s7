@@ -30,6 +30,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "automation-status.json",
+      "use": "@vercel/static"
+    },
+    {
       "src": "sitemap.xml",
       "use": "@vercel/static"
     },
