@@ -1,0 +1,18 @@
+node_modules/
+.next/
+.tools/
+.tmp/
+next-env.d.ts
+*.log
+.DS_Store
+
+# Real reference data is harvested, not committed: legal entity names,
+# 8 MB of sanctions entries, FX and country risk.
+data/real/
+
+# The live store and ledger (real suppliers, prices, approvals).
+data/runtime/
+
+.env
+.env.local
+.env.*.local

@@ -1,0 +1,49 @@
+{
+  "name": "waide-procurement-os",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Waide Procurement OS (WPOS) - evidence-driven, authority-bounded autonomous procurement operating system",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -H 127.0.0.1 -p 4780",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 4780",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/engines.test.mjs tests/extraction.test.mjs tests/publishing.test.mjs tests/writepath.test.mjs",
+    "harvest": "node scripts/harvest-real-data.mjs",
+    "realize": "node scripts/realize-store.mjs",
+    "postgres": "node scripts/start-postgres.mjs",
+    "extract": "node scripts/extract-cli.mjs",
+    "seed": "node scripts/seed.mjs",
+    "verify": "node scripts/verify-writepath.mjs",
+    "agentmail:live": "node scripts/agentmail-live.mjs",
+    "publish:site": "node scripts/publish-automation.mjs",
+    "worker": "node scripts/temporal-worker.mjs"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.6.0",
+    "@temporalio/client": "^1.26.0",
+    "@temporalio/worker": "^1.26.0",
+    "agentmail": "^0.5.54",
+    "embedded-postgres": "^19.0.0-beta.20",
+    "exceljs": "^4.4.0",
+    "mammoth": "^1.13.0",
+    "next": "^15.5.0",
+    "pdfjs-dist": "^6.5.438",
+    "pg": "^8.23.1",
+    "playwright": "^1.65.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "svix": "^2.11.1",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.0"
+  }
+}
